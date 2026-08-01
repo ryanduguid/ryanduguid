@@ -20,7 +20,7 @@ A trial balance from the Xero API to a Power BI-ready CSV in one command. Raw-re
 
 ## Now
 
-Working in public practice while building the case that AI agents belong in accounting firms. Interested in how Claude fits review-heavy workflows without touching professional judgment.
+Public-practice accountant building the case that AI agents belong in accounting firms. Interested in how Claude fits review-heavy workflows without touching professional judgment.
 
 ## Contact
 
