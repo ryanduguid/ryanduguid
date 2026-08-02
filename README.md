@@ -12,7 +12,7 @@ Claude Code skills for Australian public-practice workflows: BAS preparation, FB
 
 ### [accounting-excel-toolkit](https://github.com/ryanduguid/accounting-excel-toolkit)
 
-Power Query functions and VBA modules from real month-end work: a Xero trial balance parser that survives the export format's traps, an ABN checksum validator, an AU financial-year helper, and a keyed reconciliation engine for subledger-vs-GL differences. All source lives as text, never buried in a binary workbook. **Power Query M, VBA, Excel.**
+Power Query functions and VBA modules for real month-end work: a Xero trial balance parser that survives the export format's traps, an ABN checksum validator, an AU financial-year helper, and a keyed reconciliation engine for subledger-vs-GL differences. All source lives as text, never buried in a binary workbook. **Power Query M, VBA, Excel.**
 
 ### [xero-trial-balance-export](https://github.com/ryanduguid/xero-trial-balance-export)
 
