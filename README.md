@@ -1,26 +1,42 @@
-# Ryan Duguid
+# Ryan Duguid — Accounting automation & AI agents
 
-Accountant in Newcastle NSW. CA ANZ Provisional Member. SAP S/4HANA certified in Financial Accounting and Management Accounting, L3 Xero certified specialist.
+Public-practice accountant in Newcastle, NSW. CA ANZ Provisional Member · SAP S/4HANA certified in Financial Accounting and Management Accounting · L3 Xero certified specialist.
 
-I build tools that take the manual work out of accounting: Claude Code skills, Power Query parsers, and API exports. Everything here started as work I did by hand: month-end closes, BAS quarters, FBT year-ends.
+I build reliable, reviewable tools for Australian accounting work: AI-agent workflows, Power Query parsers, and Xero/API exports. Everything here started as work I did by hand—month-end closes, BAS quarters, and FBT year-ends.
 
-## Projects
+[LinkedIn](https://www.linkedin.com/in/ryan-duguid/)
+
+## Featured projects
 
 ### [australian-accounting-skills](https://github.com/ryanduguid/australian-accounting-skills)
 
-Claude Code skills for Australian public-practice workflows: BAS preparation, FBT year-end, Division 7A registers, STP finalisation, month-end close, workpaper tie-outs. Agent skill packs existed for US corporate finance and Swedish bookkeeping law; I couldn't find one for AU practice, so I built it. Nine skills encode the workflow and the tie-out discipline, and send the agent to ato.gov.au for anything that changes yearly. **Claude Code, SKILL.md, AU tax workflow.**
+AI-agent skills for Australian public-practice workflows: BAS preparation, FBT year-end, Division 7A registers, STP finalisation, month-end close, and workpaper tie-outs. The skills encode the workflow and tie-out discipline, and send the agent to ato.gov.au for information that changes yearly. **Claude Code, SKILL.md, AU tax workflow.**
 
-### [accounting-excel-toolkit](https://github.com/ryanduguid/accounting-excel-toolkit)
+### [payday-super-checker](https://github.com/ryanduguid/payday-super-checker)
 
-Power Query functions and VBA modules for real month-end work: a Xero trial balance parser that survives the export format's traps, an ABN checksum validator, an AU financial-year helper, and a keyed reconciliation engine for subledger-vs-GL differences. All source lives as text, never buried in a binary workbook. **Power Query M, VBA, Excel.**
+A Python command-line checker for Australian payday-super deadlines. It reads payroll or clearing-house CSVs, flags late and unpaid contributions, and estimates SG-charge exposure with the assumptions visible. **Python, payroll CSV, superannuation compliance.**
 
 ### [xero-trial-balance-export](https://github.com/ryanduguid/xero-trial-balance-export)
 
-A trial balance from the Xero API to a Power BI-ready CSV in one command. Raw-requests Python that shows every OAuth2 step, survives Xero's single-use refresh-token rotation, and refuses any export where debits fail to equal credits. Replaces a 10-minute manual export-and-clean per entity per month. **Python, OAuth2, Xero API, Power BI.**
+A Xero trial balance to Power BI-ready CSV in one command. Readable Python that shows every OAuth2 step, survives Xero's single-use refresh-token rotation, and refuses any export where debits fail to equal credits. Replaces a 10-minute manual export-and-clean per entity per month. **Python, OAuth2, Xero API, Power BI.**
+
+### [accounting-excel-toolkit](https://github.com/ryanduguid/accounting-excel-toolkit)
+
+Power Query functions and VBA modules for real month-end work: a Xero trial balance parser, an ABN checksum validator, an AU financial-year helper, and a keyed reconciliation engine for subledger-vs-GL differences. All source lives as text, never buried in a binary workbook. **Power Query M, VBA, Excel.**
+
+### [au-tax-legislation-corpus](https://github.com/ryanduguid/au-tax-legislation-corpus)
+
+A reproducible builder for a provenance-rich retrieval corpus of in-force Commonwealth tax legislation. It keeps source, version, licensing and distribution controls alongside the data pipeline. **Python, legal data, RAG.**
+
+## How I build
+
+- **Workflow before content.** Automate repeatable steps and checks; verify rates, dates and legislation against the primary source.
+- **Tie out or it didn't happen.** Outputs should reconcile back to their source data and expose the exceptions that need review.
+- **Professional judgement stays human.** Tools support review-heavy work; they do not replace professional judgement or client confidentiality obligations.
 
 ## Now
 
-Public-practice accountant building the case that AI agents belong in accounting firms. Interested in how Claude fits review-heavy workflows without touching professional judgment.
+Public-practice accountant exploring how AI agents can make accounting-firm workflows more repeatable without taking over professional judgement.
 
 ## Contact
 
