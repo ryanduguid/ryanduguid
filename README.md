@@ -1,6 +1,6 @@
 # Ryan Duguid — Accounting automation & AI agents
 
-Public-practice accountant in Newcastle, NSW. CA ANZ Provisional Member · SAP S/4HANA certified in Financial Accounting and Management Accounting · L3 Xero certified specialist.
+Accountant in Newcastle, NSW. CA ANZ Provisional Member · SAP S/4HANA certified in Financial Accounting and Management Accounting · L3 Xero certified specialist.
 
 I build reliable, reviewable tools for Australian accounting work: AI-agent workflows, Power Query parsers, and Xero/API exports. Everything here started as work I did by hand—month-end closes, BAS quarters, and FBT year-ends.
 
@@ -36,7 +36,7 @@ A reproducible builder for a provenance-rich retrieval corpus of in-force Common
 
 ## Now
 
-Public-practice accountant exploring how AI agents can make accounting-firm workflows more repeatable without taking over professional judgement.
+Accountant exploring how AI agents can make accounting-firm workflows more repeatable without taking over professional judgement.
 
 ## Contact
 
