@@ -6,6 +6,12 @@ I build reliable, reviewable tools for Australian accounting work: AI-agent work
 
 [LinkedIn](https://www.linkedin.com/in/ryan-duguid/)
 
+## Start here
+
+- Need a payroll control? Start with [payday-super-checker](https://github.com/ryanduguid/payday-super-checker).
+- Need an auditable Xero-to-CSV export? Start with [xero-trial-balance-export](https://github.com/ryanduguid/xero-trial-balance-export).
+- Exploring AI-assisted accounting workflows? Start with [australian-accounting-skills](https://github.com/ryanduguid/australian-accounting-skills).
+
 ## Featured projects
 
 ### [australian-accounting-skills](https://github.com/ryanduguid/australian-accounting-skills)
@@ -27,6 +33,14 @@ Power Query functions and VBA modules for real month-end work: a Xero trial bala
 ### [au-tax-legislation-corpus](https://github.com/ryanduguid/au-tax-legislation-corpus)
 
 A reproducible builder for a provenance-rich retrieval corpus of in-force Commonwealth tax legislation. It keeps source, version, licensing and distribution controls alongside the data pipeline. **Python, legal data, RAG.**
+
+## Selected upstream contributions
+
+Merged contributions to external open-source projects:
+
+- [Meltano SDK: retain returned OAuth refresh tokens (PR #3727)](https://github.com/meltano/sdk/pull/3727)
+- [Matatika/tap-xero: correct OAuth configuration examples (PR #20)](https://github.com/Matatika/tap-xero/pull/20)
+- [OpenAccountants: payday super and payroll update for 2026–27 (PR #77)](https://github.com/openaccountants/openaccountants/pull/77), [AU FBT guide (PR #78)](https://github.com/openaccountants/openaccountants/pull/78), [AU Div 7A guide (PR #79)](https://github.com/openaccountants/openaccountants/pull/79), and [AU GST/BAS PAYG reporting guidance (PR #84)](https://github.com/openaccountants/openaccountants/pull/84)
 
 ## How I build
 
