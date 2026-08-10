@@ -2,7 +2,7 @@
 
 Accountant in Newcastle, NSW. CA ANZ Provisional Member · SAP S/4HANA certified in Financial Accounting and Management Accounting · L3 Xero certified specialist.
 
-I build reliable, reviewable tools for Australian accounting work: AI-agent workflows, Power Query parsers, and Xero/API exports. Everything here started as work I did by hand—month-end closes, BAS quarters, and FBT year-ends.
+I build reliable, reviewable tools for Australian accounting work: AI-agent workflows, Power Query parsers, and Xero/API exports. Some encode workflows I know well — month-end closes, BAS quarters, FBT year-ends. Others are design explorations that run on fabricated data only, and say so. All of it is written independently, in my own time and on my own equipment, with no client data.
 
 [LinkedIn](https://www.linkedin.com/in/ryan-duguid/)
 
