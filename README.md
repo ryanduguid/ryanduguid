@@ -11,6 +11,7 @@ I build reliable, reviewable tools for Australian accounting work: AI-agent work
 - Need a payroll control? Start with [payday-super-checker](https://github.com/ryanduguid/payday-super-checker).
 - Need an auditable Xero-to-CSV export? Start with [xero-trial-balance-export](https://github.com/ryanduguid/xero-trial-balance-export).
 - Exploring AI-assisted accounting workflows? Start with [australian-accounting-skills](https://github.com/ryanduguid/australian-accounting-skills).
+- Need a deterministic month-end exception pack? Start with [monthly-close-control-plane](https://github.com/ryanduguid/monthly-close-control-plane).
 
 ## Featured projects
 
@@ -33,6 +34,18 @@ Power Query functions and VBA modules for real month-end work: a Xero trial bala
 ### [au-tax-legislation-corpus](https://github.com/ryanduguid/au-tax-legislation-corpus)
 
 A reproducible builder for a provenance-rich retrieval corpus of in-force Commonwealth tax legislation. It keeps source, version, licensing and distribution controls alongside the data pipeline. **Python, legal data, RAG.**
+
+### [monthly-close-control-plane](https://github.com/ryanduguid/monthly-close-control-plane)
+
+A deterministic, review-first control pack for current/prior trial balances, variance thresholds, mapping coverage and subledger reconciliations. It produces evidence for human review without journals, payments or period-locking actions. **Python, month-end close, controls.**
+
+### [xero-ai-review-gateway](https://github.com/ryanduguid/xero-ai-review-gateway)
+
+A synthetic-data reference boundary for fixed-policy, redacted trial-balance review. It separates model-facing findings from reviewer evidence and exposes no accounting mutation tools. **Python, Xero-shaped data, AI governance.**
+
+### [au-tax-change-impact-monitor](https://github.com/ryanduguid/au-tax-change-impact-monitor)
+
+A provenance-first synthetic change-review queue that preserves source-version and incomplete-scope states, maps only exact source identifiers, and leaves technical-tax decisions to a human reviewer. **Python, tax provenance, review workflow.**
 
 ## Selected upstream contributions
 
