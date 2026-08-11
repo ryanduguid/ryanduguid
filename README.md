@@ -54,6 +54,7 @@ Merged contributions to external open-source projects:
 - [Meltano SDK: retain returned OAuth refresh tokens (PR #3727)](https://github.com/meltano/sdk/pull/3727)
 - [Matatika/tap-xero: correct OAuth configuration examples (PR #20)](https://github.com/Matatika/tap-xero/pull/20)
 - [OpenAccountants: payday super and payroll update for 2026–27 (PR #77)](https://github.com/openaccountants/openaccountants/pull/77), [AU FBT guide (PR #78)](https://github.com/openaccountants/openaccountants/pull/78), [AU Div 7A guide (PR #79)](https://github.com/openaccountants/openaccountants/pull/79), and [AU GST/BAS PAYG reporting guidance (PR #84)](https://github.com/openaccountants/openaccountants/pull/84)
+- [OpenAccountants: restore the AU GST/BAS guide and add a sync-integrity guard (PR #85)](https://github.com/openaccountants/openaccountants/pull/85) — recovers content a website sync had overwritten, and adds a CI check and tests so the same class of loss fails the build
 
 ## How I build
 
