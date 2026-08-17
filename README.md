@@ -1,11 +1,6 @@
 ![Ryan Duguid, accounting automation and AI agents, Australian practice](assets/banner.svg)
 
-I am an accountant in Newcastle, NSW. I write the tools I wanted while doing the
-work: BAS quarters, FBT year-ends, payday-super deadlines, month-end tie-outs.
-
-Some of these repositories encode workflows I have run for years. Others are
-design explorations that run on fabricated data and say so on the front page.
-All of it is written independently, in my own time and on my own equipment, with
+All of my repositories are written independently, in my own time and on my own equipment, with
 no client data.
 
 [LinkedIn](https://www.linkedin.com/in/ryan-duguid/) &#183; Provisional Member CA ANZ &#183; SAP S/4HANA certified in FI and CO &#183; Xero L3
@@ -40,7 +35,7 @@ the Australian super, FBT, Division 7A and GST guides
 [#78](https://github.com/openaccountants/openaccountants/pull/78),
 [#79](https://github.com/openaccountants/openaccountants/pull/79),
 [#84](https://github.com/openaccountants/openaccountants/pull/84)); restoring a
-guide a website sync had quietly overwritten, with a CI check so the same loss
+guide a website sync had overwritten, with a CI check so the same loss
 fails the build next time
 ([#85](https://github.com/openaccountants/openaccountants/pull/85)); binding the
 MCP transport to loopback
@@ -50,7 +45,6 @@ a licence classifier that broke the package build
 
 ## How this is written
 
-Rates, dates and section numbers get checked against the primary source rather
-than against my memory of them. Outputs reconcile back to what they came from
-and surface whatever does not tie. The professional call stays with a person;
-none of this makes it.
+Rates, dates and section numbers get checked against the primary source. 
+Outputs reconcile back to what they came from and surface whatever does not tie. 
+The professional call stays with a person; none of this makes it.
