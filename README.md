@@ -3,7 +3,7 @@
 All of my repositories are written independently, in my own time and on my own equipment, with
 no client data.
 
-[LinkedIn](https://www.linkedin.com/in/ryan-duguid/) &#183; Provisional Member CA ANZ &#183; SAP S/4HANA certified in FI and CO &#183; Xero L3
+Provisional Member CA ANZ &#183; SAP S/4HANA certified in FI and CO &#183; Xero L3
 
 ## Tools
 
