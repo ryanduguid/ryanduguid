@@ -14,7 +14,7 @@ no client data.
 | [australian-accounting-skills](https://github.com/ryanduguid/australian-accounting-skills) | Nine agent skills: BAS, FBT, Division 7A, STP, month-end close, workpaper tie-outs. |
 | [subcontractor-accounting-skills](https://github.com/ryanduguid/subcontractor-accounting-skills) | The same idea for contracting and mining services. Progress claims, retentions, WIP, fuel tax credits, Coal LSL, the contractor limbs of payroll tax. |
 | [accounting-excel-toolkit](https://github.com/ryanduguid/accounting-excel-toolkit) | Power Query and VBA that lives as text in git, not buried inside a workbook nobody can diff. |
-| [Nabla](https://github.com/ryanduguid/Nabla) | 130 LAMBDA functions in one workbook for dynamic-array financial models. Built from native Excel functions only, so what you assemble with it saves as an ordinary .xlsx with no add-ins and no macros. |
+| [Ozzit](https://github.com/ryanduguid/Ozzit) | 130 LAMBDA functions in one workbook for dynamic-array financial models. Built from native Excel functions only, so what you assemble with it saves as an ordinary .xlsx with no add-ins and no macros. |
 | [ato-benchmark-compare](https://github.com/ryanduguid/ato-benchmark-compare) | Scores a profit and loss against the ATO small business benchmarks on your own machine, and shows the working. |
 | [monthly-close-control-plane](https://github.com/ryanduguid/monthly-close-control-plane) | Builds the exception pack a close review actually needs. It writes no journals and locks no periods. |
 | [au-tax-legislation-corpus](https://github.com/ryanduguid/au-tax-legislation-corpus) | A reproducible build of in-force Commonwealth tax legislation for retrieval, with the provenance kept next to the text. |
