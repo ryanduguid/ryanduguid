@@ -1,7 +1,8 @@
 ![Ryan Duguid, accounting automation and AI agents, Australian practice](assets/banner.svg)
 
-All of my repositories are written independently, in my own time and on my own equipment, with
-no client data.
+I write my original projects in my own time, on my own equipment, using synthetic or non-client data.
+Some repositories on this account are forks used for upstream contributions; those forks retain the
+upstream projects' authorship and licence histories. No client data is committed.
 
 Provisional Member CA ANZ &#183; SAP S/4HANA certified in FI and CO &#183; Xero L3
 
@@ -9,7 +10,7 @@ Provisional Member CA ANZ &#183; SAP S/4HANA certified in FI and CO &#183; Xero 
 
 | Repository | What it does |
 | --- | --- |
-| [payday-super-checker](https://github.com/ryanduguid/payday-super-checker) | Reads a payroll CSV, flags the contributions that missed the seven-business-day deadline, and estimates the SG charge with every assumption on show. |
+| [payday-super-checker](https://github.com/ryanduguid/payday-super-checker) | Reads a payroll CSV, checks fund receipt against the ordinary seven-business-day period and supported allowable longer periods, and produces an experimental SG-charge estimate where the supplied facts establish lateness. It does not determine an employer's legal liability or the ATO's assessment. |
 | [xero-trial-balance-export](https://github.com/ryanduguid/xero-trial-balance-export) | One command, one balanced CSV. It refuses to write the file when debits do not equal credits. |
 | [australian-accounting-skills](https://github.com/ryanduguid/australian-accounting-skills) | Nine agent skills: BAS, FBT, Division 7A, STP, month-end close, workpaper tie-outs. |
 | [subcontractor-accounting-skills](https://github.com/ryanduguid/subcontractor-accounting-skills) | The same idea for contracting and mining services. Progress claims, retentions, WIP, fuel tax credits, Coal LSL, the contractor limbs of payroll tax. |
@@ -48,4 +49,4 @@ a licence classifier that broke the package build
 
 Rates, dates and section numbers get checked against the primary source. 
 Outputs reconcile back to what they came from and surface whatever does not tie. 
-The professional call stays with a person; none of this makes it.
+The tools prepare evidence and surface exceptions. A suitably authorised person remains responsible for professional judgement and any consequential action.
