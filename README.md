@@ -6,7 +6,7 @@ Provisional Member CA ANZ &#183; SAP S/4HANA certified in FI and CO &#183; Xero 
 
 ## Start here
 
-**[payday-super-checker](https://github.com/ryanduguid/payday-super-checker)** - Reads a payroll CSV, checks fund receipt against the ordinary seven-business-day period and supported allowable longer periods, and produces an experimental SG-charge estimate where the supplied facts establish lateness. It does not determine an employer's legal liability or the ATO's assessment.
+**[payday-super-checker](https://github.com/ryanduguid/payday-super-checker)** - Reads a payroll CSV, checks fund receipt against the ordinary seven-business-day period and supported allowable longer periods, and produces an experimental SG-charge estimate where the supplied facts establish lateness. It does not determine an employer's legal liability or the ATO's assessment. Python 3.10 or later, no runtime dependencies.
 
 ```bash
 git clone https://github.com/ryanduguid/payday-super-checker.git
@@ -14,9 +14,13 @@ cd payday-super-checker && pip install .
 payday-super-check examples/sample_payrun_no_transition.csv --as-at 2026-09-10
 ```
 
-**[Ozzit](https://github.com/ryanduguid/Ozzit)** - 130 LAMBDA functions in one workbook for dynamic-array financial models. Built from native Excel functions only, so workbooks you assemble with it save as an ordinary .xlsx with no add-ins and no macros. [Download ozzit.xlsx](https://github.com/ryanduguid/Ozzit/releases/download/v3.0.0/ozzit.xlsx).
+The sample file is in the clone. `pip install git+https://github.com/ryanduguid/payday-super-checker.git` installs the command without it.
 
-**[australian-accounting-skills](https://github.com/ryanduguid/australian-accounting-skills)** - Nine agent skills: BAS, FBT, Division 7A, STP, month-end close, workpaper tie-outs.
+**[Ozzit](https://github.com/ryanduguid/Ozzit)** - 130 LAMBDA functions in one workbook for dynamic-array financial models. Built from native Excel functions only, so workbooks you assemble with it save as an ordinary .xlsx with no add-ins and no macros. Needs Microsoft 365 or Excel 2024. [Download ozzit.xlsx](https://github.com/ryanduguid/Ozzit/releases/latest/download/ozzit.xlsx).
+
+**[australian-accounting-skills](https://github.com/ryanduguid/australian-accounting-skills)** - Nine Claude Code skills covering BAS, FBT, Division 7A, STP, month-end close, year-end workpapers and 13-week cashflow.
+
+In Claude Code:
 
 ```
 /plugin marketplace add ryanduguid/australian-accounting-skills
@@ -64,7 +68,7 @@ deriving the contradiction-scan tax year from rates
 ([#98](https://github.com/openaccountants/openaccountants/pull/98));
 validating workbook filters
 ([#100](https://github.com/openaccountants/openaccountants/pull/100));
-and pinning workflow actions
+and pinning workflow actions and scoping checkout credentials
 ([#104](https://github.com/openaccountants/openaccountants/pull/104)).
 
 ## How this is written
