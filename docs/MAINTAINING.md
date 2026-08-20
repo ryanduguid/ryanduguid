@@ -16,7 +16,7 @@ How to report a security concern is in [SECURITY.md](../SECURITY.md). Account-wi
 
 ## Updating the public README
 
-Keep the opening authorship paragraph that landed in [#18](https://github.com/ryanduguid/ryanduguid/pull/18). It distinguishes original projects from contribution forks. Do not replace it with a product tagline; the banner already states the practice area.
+The lead sentence is the practice area. Authorship (original work vs contribution forks) lives in **This account** at the bottom, where [#19](https://github.com/ryanduguid/ryanduguid/pull/19) moved it after [#18](https://github.com/ryanduguid/ryanduguid/pull/18). Do not move that paragraph back to the top.
 
 **Start here** is for the three different ways in: a CLI (`payday-super-checker`), a workbook (`Ozzit`), and Claude Code skills (`australian-accounting-skills`). Copy install commands from those repositories' READMEs in the same pull request as any command change. Do not invent a fourth featured tool without taking one out; three is the point.
 
@@ -49,7 +49,7 @@ That query is fourteen as of 21 August 2026: two outside OpenAccountants, twelve
 ## Style
 
 - Australian English (`judgement`, `honouring`, `licence` in prose).
-- No em dashes. [#7](https://github.com/ryanduguid/ryanduguid/pull/7) and [#8](https://github.com/ryanduguid/ryanduguid/pull/8) existed to take them out.
+- No em dashes. [#7](https://github.com/ryanduguid/ryanduguid/pull/7) and [#8](https://github.com/ryanduguid/ryanduguid/pull/8) existed to take them out. List separators are a hyphen with spaces (` - `).
 - Do not claim current public-practice employment. [#2](https://github.com/ryanduguid/ryanduguid/pull/2) dropped that wording. The tools are for that domain; that is not the same sentence.
 - Do not add a LinkedIn link while the profile is inactive. [#16](https://github.com/ryanduguid/ryanduguid/pull/16).
 - Narrow provenance: original work vs forks. [#5](https://github.com/ryanduguid/ryanduguid/pull/5), then [#18](https://github.com/ryanduguid/ryanduguid/pull/18).
@@ -63,7 +63,7 @@ The index is accounting automation for Australian practice. Leave off:
 - [claude-export](https://github.com/ryanduguid/claude-export), a private settings snapshot
 - [ryanduguid/.github](https://github.com/ryanduguid/.github), account-level community health files
 
-Forks used only to send upstream pull requests stay out of Start here and Also. They are already covered by the opening paragraph.
+Forks used only to send upstream pull requests stay out of Start here and Also. They are already covered by **This account**.
 
 ## Common mistakes
 
