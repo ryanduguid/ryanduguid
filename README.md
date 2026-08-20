@@ -6,7 +6,7 @@ Provisional Member CA ANZ &#183; SAP S/4HANA certified in FI and CO &#183; Xero 
 
 ## Start here
 
-**[payday-super-checker](https://github.com/ryanduguid/payday-super-checker)** — Reads a payroll CSV, checks fund receipt against the ordinary seven-business-day period and supported allowable longer periods, and produces an experimental SG-charge estimate where the supplied facts establish lateness. It does not determine an employer's legal liability or the ATO's assessment.
+**[payday-super-checker](https://github.com/ryanduguid/payday-super-checker)** - Reads a payroll CSV, checks fund receipt against the ordinary seven-business-day period and supported allowable longer periods, and produces an experimental SG-charge estimate where the supplied facts establish lateness. It does not determine an employer's legal liability or the ATO's assessment.
 
 ```bash
 git clone https://github.com/ryanduguid/payday-super-checker.git
@@ -14,9 +14,9 @@ cd payday-super-checker && pip install .
 payday-super-check examples/sample_payrun_no_transition.csv --as-at 2026-09-10
 ```
 
-**[Ozzit](https://github.com/ryanduguid/Ozzit)** — 130 LAMBDA functions in one workbook for dynamic-array financial models. Built from native Excel functions only, so what you assemble with it saves as an ordinary .xlsx with no add-ins and no macros. [Download ozzit.xlsx](https://github.com/ryanduguid/Ozzit/releases/download/v3.0.0/ozzit.xlsx).
+**[Ozzit](https://github.com/ryanduguid/Ozzit)** - 130 LAMBDA functions in one workbook for dynamic-array financial models. Built from native Excel functions only, so workbooks you assemble with it save as an ordinary .xlsx with no add-ins and no macros. [Download ozzit.xlsx](https://github.com/ryanduguid/Ozzit/releases/download/v3.0.0/ozzit.xlsx).
 
-**[australian-accounting-skills](https://github.com/ryanduguid/australian-accounting-skills)** — Nine agent skills: BAS, FBT, Division 7A, STP, month-end close, workpaper tie-outs.
+**[australian-accounting-skills](https://github.com/ryanduguid/australian-accounting-skills)** - Nine agent skills: BAS, FBT, Division 7A, STP, month-end close, workpaper tie-outs.
 
 ```
 /plugin marketplace add ryanduguid/australian-accounting-skills
@@ -25,16 +25,16 @@ payday-super-check examples/sample_payrun_no_transition.csv --as-at 2026-09-10
 
 ## Also
 
-- [xero-trial-balance-export](https://github.com/ryanduguid/xero-trial-balance-export) — One command, one balanced CSV. It refuses to write the file when debits do not equal credits.
-- [subcontractor-accounting-skills](https://github.com/ryanduguid/subcontractor-accounting-skills) — The same idea as the skills above, for contracting and mining services. Progress claims, retentions, WIP, fuel tax credits, Coal LSL, the contractor limbs of payroll tax.
-- [accounting-excel-toolkit](https://github.com/ryanduguid/accounting-excel-toolkit) — Power Query and VBA that live as text in git, not buried inside a workbook nobody can diff.
-- [ato-benchmark-compare](https://github.com/ryanduguid/ato-benchmark-compare) — Scores a profit and loss against the ATO small business benchmarks on your own machine, and shows the working.
-- [monthly-close-control-plane](https://github.com/ryanduguid/monthly-close-control-plane) — Builds the exception pack a close review actually needs. It writes no journals and locks no periods.
-- [au-tax-legislation-corpus](https://github.com/ryanduguid/au-tax-legislation-corpus) — A reproducible build of in-force Commonwealth tax legislation for retrieval, with the provenance kept next to the text.
-- [au-tax-change-impact-monitor](https://github.com/ryanduguid/au-tax-change-impact-monitor) — A review queue for possible changes to tax sources. It matches identifiers and leaves the judgement to a person.
-- [xero-ai-review-gateway](https://github.com/ryanduguid/xero-ai-review-gateway) — A boundary experiment on synthetic data: what an AI reviewer may see, and what it may never touch.
-- [DrDebits](https://github.com/ryanduguid/DrDebits) — Versioned, source-linked ethics instructions for tax practitioners working with LLMs.
-- [release-policy](https://github.com/ryanduguid/release-policy) — The reusable release workflow behind the tags in these repositories. Fail-closed gates, SBOM, build provenance.
+- [xero-trial-balance-export](https://github.com/ryanduguid/xero-trial-balance-export) - One command, one balanced CSV. It refuses to write the file when debits do not equal credits.
+- [subcontractor-accounting-skills](https://github.com/ryanduguid/subcontractor-accounting-skills) - Agent skills for contracting and mining services. Progress claims, retentions, WIP, fuel tax credits, Coal LSL, the contractor limbs of payroll tax.
+- [accounting-excel-toolkit](https://github.com/ryanduguid/accounting-excel-toolkit) - Power Query and VBA that live as text in git, not buried inside a workbook nobody can diff.
+- [ato-benchmark-compare](https://github.com/ryanduguid/ato-benchmark-compare) - Scores a profit and loss against the ATO small business benchmarks on your own machine, and shows the working.
+- [monthly-close-control-plane](https://github.com/ryanduguid/monthly-close-control-plane) - Builds the exception pack a close review actually needs. It writes no journals and locks no periods.
+- [au-tax-legislation-corpus](https://github.com/ryanduguid/au-tax-legislation-corpus) - A reproducible build of in-force Commonwealth tax legislation for retrieval, with the provenance kept next to the text.
+- [au-tax-change-impact-monitor](https://github.com/ryanduguid/au-tax-change-impact-monitor) - A review queue for possible changes to tax sources. It matches identifiers and leaves the judgement to a person.
+- [xero-ai-review-gateway](https://github.com/ryanduguid/xero-ai-review-gateway) - A boundary experiment on synthetic data for what an AI reviewer may see, and what it may never touch.
+- [DrDebits](https://github.com/ryanduguid/DrDebits) - Versioned, source-linked ethics instructions for tax practitioners working with LLMs.
+- [release-policy](https://github.com/ryanduguid/release-policy) - The reusable release workflow behind the tags in these repositories. Fail-closed gates, SBOM, build provenance.
 
 ## Merged into other people's projects
 
