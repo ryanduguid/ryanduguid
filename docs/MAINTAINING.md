@@ -28,7 +28,20 @@ The lead sentence is the practice area. Authorship (original work vs contributio
 gh search prs "author:ryanduguid is:merged -user:ryanduguid"
 ```
 
-That query is fourteen as of 21 August 2026: two outside OpenAccountants, twelve in it. If the number moves, update both the total and the OpenAccountants clause.
+That query is fifteen as of 21 August 2026: three outside OpenAccountants (Meltano, Matatika, Sophia-Script), twelve in it. If the number moves, update both the total and the OpenAccountants clause.
+
+## Pinned repositories
+
+GitHub has no public pin API (`pinItem` is not on the public Mutation type). The live profile pins these six, in this order. To change them, open https://github.com/ryanduguid while signed in and choose **Customize your pins**:
+
+1. `payday-super-checker`
+2. `Ozzit`
+3. `australian-accounting-skills`
+4. `xero-trial-balance-export`
+5. `DrDebits`
+6. `ato-benchmark-compare`
+
+Do not pin `.github`, contribution forks, or Resume-Matcher. After changing pins, check https://github.com/ryanduguid for the heading **Pinned** (not **Popular**).
 
 ## Claims that must be checked
 
@@ -51,7 +64,7 @@ That query is fourteen as of 21 August 2026: two outside OpenAccountants, twelve
 - Australian English (`judgement`, `honouring`, `licence` in prose).
 - No em dashes. [#7](https://github.com/ryanduguid/ryanduguid/pull/7) and [#8](https://github.com/ryanduguid/ryanduguid/pull/8) existed to take them out. List separators are a hyphen with spaces (` - `).
 - Do not claim current public-practice employment. [#2](https://github.com/ryanduguid/ryanduguid/pull/2) dropped that wording. The tools are for that domain; that is not the same sentence.
-- Do not add a LinkedIn link while the profile is inactive. [#16](https://github.com/ryanduguid/ryanduguid/pull/16).
+- Do not add a LinkedIn link while the profile is inactive. [#16](https://github.com/ryanduguid/ryanduguid/pull/16). That includes the GitHub social-account slot (`gh api user/social_accounts`), not only the README.
 - Narrow provenance: original work vs forks. [#5](https://github.com/ryanduguid/ryanduguid/pull/5), then [#18](https://github.com/ryanduguid/ryanduguid/pull/18).
 - Counts of skills, functions and merged pull requests are part of the prose. A renamed project (Nabla to Ozzit, [#14](https://github.com/ryanduguid/ryanduguid/pull/14)) is a README change in the same breath as the repository rename.
 

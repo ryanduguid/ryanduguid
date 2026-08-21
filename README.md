@@ -42,11 +42,13 @@ In Claude Code:
 
 ## Merged into other people's projects
 
-Fourteen changes so far, most of them small, which is rather the point.
+Fifteen changes so far, most of them small, which is rather the point.
 [meltano/sdk#3727](https://github.com/meltano/sdk/pull/3727) keeps a rotated
 OAuth refresh token instead of throwing it away.
 [Matatika/tap-xero#20](https://github.com/Matatika/tap-xero/pull/20) corrects
-configuration examples that could not have worked. Twelve at
+configuration examples that could not have worked.
+[farag2/Sophia-Script-for-Windows#737](https://github.com/farag2/Sophia-Script-for-Windows/pull/737)
+puts copied localization strings back in the language files they belong to. Twelve at
 [openaccountants](https://github.com/openaccountants/openaccountants/pulls?q=is%3Apr+author%3Aryanduguid+is%3Amerged):
 the Australian super, FBT, Division 7A and GST guides
 ([#77](https://github.com/openaccountants/openaccountants/pull/77),
