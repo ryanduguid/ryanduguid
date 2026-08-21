@@ -46,7 +46,7 @@ live profile pins, in the order returned by GitHub GraphQL as at 21 August 2026,
 listed below. GitHub's signed-out page and GraphQL response are the source of truth;
 do not update this section from an unsaved Customize your pins dialog.
 
-1. `payday-super-checker`
+1. `CharlesHenryWickens` (formerly `payday-super-checker`)
 2. `Ozzit`
 3. `JohnSpenceOgilvy`
 4. `MaryAddisonHamilton`
@@ -60,7 +60,7 @@ Do not pin `.github`, contribution forks, or Resume-Matcher. After changing pins
 | Claim | Source of truth |
 | --- | --- |
 | Identity, location and credentials | Profile-owner assertions. Confirm with the owner before changing or republishing them |
-| Experimental payday-super review, possible SG-charge exposure and no liability or ATO-assessment determination | `payday-super-checker/README.md` and `paydaysuper/deadlines.py` |
+| Experimental payday-super review, possible SG-charge exposure and no liability or ATO-assessment determination | `CharlesHenryWickens/README.md` and `paydaysuper/deadlines.py` |
 | 130 LAMBDA functions, native Excel only, no add-ins or macros | `Ozzit/README.md` |
 | Xero trial-balance export requires movement and year-to-date balance before writing | `JohnSpenceOgilvy/README.md` "Balance gate" and source checks before CSV write |
 | Nine Claude Code skills for Australian public-practice workflows | `MaryAddisonHamilton/.claude/skills/*/SKILL.md` (nine folders) and that repo's README intro |
