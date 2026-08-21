@@ -1,69 +1,41 @@
 # Ryan Duguid
 
-[![Python](https://img.shields.io/badge/Python-3.10+-3776AB?logo=python&logoColor=white)](https://www.python.org/)
-[![MCP Server](https://img.shields.io/badge/MCP-Standard%20Protocol-8A2BE2)](https://github.com/ryanduguid/JohnKenley)
-[![Excel LAMBDA](https://img.shields.io/badge/Excel-LAMBDA%20Dynamic%20Arrays-217346?logo=microsoftexcel&logoColor=white)](https://github.com/ryanduguid/Ozzit)
-[![Claude Code](https://img.shields.io/badge/Claude_Code-Skills%20%26%20Agents-D97706?logo=anthropic&logoColor=white)](https://github.com/ryanduguid/MaryAddisonHamilton)
-[![Xero API](https://img.shields.io/badge/Xero-OAuth2%20API-13B5EA?logo=xero&logoColor=white)](https://developer.xero.com/)
-[![llms.txt](https://img.shields.io/badge/llms.txt-Standard%20Context-0A0A0A?logo=markdown&logoColor=white)](llms.txt)
-[![Credentials](https://img.shields.io/badge/Chartered_Accountants_ANZ-Provisional_Member-002B49)](https://www.charteredaccountantsanz.com/)
+<p align="center">
+  <img src="https://img.shields.io/badge/Provisional_Member-CA_ANZ-002B49?style=for-the-badge" alt="CA ANZ" />
+  <img src="https://img.shields.io/badge/SAP_Certified-S%2F4HANA_FI%2FCO-008FD3?style=for-the-badge" alt="SAP FI/CO" />
+  <img src="https://img.shields.io/badge/Xero-Advisor_L3-13B5EA?style=for-the-badge&logo=xero&logoColor=white" alt="Xero" />
+</p>
 
-Australian accountant based in Newcastle, NSW. Specialising in computational accounting, deterministic reconciliation engines, native Excel LAMBDA architectures, and structured AI agent workflows across Australian taxation, payroll, and statutory superannuation.
-
-> Provisional member of Chartered Accountants ANZ &bull; SAP S/4HANA Certified in FI and CO &bull; Xero Advisor L3
+<p align="center">
+  <a href="https://www.python.org/"><img src="https://img.shields.io/badge/Python-3.10+-3776AB?logo=python&logoColor=white" /></a>
+  <a href="https://modelcontextprotocol.io/"><img src="https://img.shields.io/badge/MCP-Standard%20Protocol-8A2BE2" /></a>
+  <a href="https://github.com/ryanduguid/Ozzit"><img src="https://img.shields.io/badge/Excel-130%20Native%20LAMBDAs-217346?logo=microsoftexcel&logoColor=white" /></a>
+  <a href="https://github.com/ryanduguid/DrDebits"><img src="https://img.shields.io/badge/APES%20110-Compliant%20Guardrails-blue" /></a>
+  <a href="https://github.com/ryanduguid/MaryAddisonHamilton"><img src="https://img.shields.io/badge/Claude_Code-Skills%20%26%20Agents-D97706?logo=anthropic&logoColor=white" /></a>
+</p>
 
 ---
 
-## Install these two
+Australian accountant based in Newcastle, NSW. Engineering **computational accounting engines**, **native Excel dynamic-array LAMBDAs**, **Model Context Protocol (MCP) servers**, and **deterministic AI workflows** for Australian taxation, payroll, and statutory compliance.
 
-### [MaryAddisonHamilton](https://github.com/ryanduguid/MaryAddisonHamilton)
+> **Provisional Member CA ANZ** &bull; **SAP S/4HANA Certified in FI & CO** &bull; **Xero Advisor L3**
 
-Nine public-practice workflow skills (BAS tie-out, FBT, Division 7A, STP, workpapers). Prep-only. Not lodgment.
+---
 
-```
-/plugin marketplace add ryanduguid/MaryAddisonHamilton
-/plugin install australian-accounting-skills@ryanduguid
-```
+## ⚡ 1-Command Agent Toolbelt
+
+Equip your AI assistant with Australian taxation rules and computational accounting engines:
 
 ```bash
+# Add Australian Accounting & Tax MCP server to Claude Code
+claude mcp add aus-accounting -- uvx --from git+https://github.com/ryanduguid/JohnKenley aus-accounting-mcp
+
+# Add Public Practice & Tax skills
 npx skills add ryanduguid/MaryAddisonHamilton
+
+# Add Construction & Mining Subcontractor skills
+claude skill add ryanduguid/hardhat-ledger
 ```
-
-### [JohnKenley](https://github.com/ryanduguid/JohnKenley)
-
-Local MCP server for ATO small-business benchmarks, Payday Super 2026 review, refused Division 7A, and synthetic SBR fixtures.
-
-```bash
-uvx --from git+https://github.com/ryanduguid/JohnKenley aus-accounting-mcp
-```
-
-```json
-{
-  "mcpServers": {
-    "aus-accounting": {
-      "command": "uvx",
-      "args": [
-        "--from",
-        "git+https://github.com/ryanduguid/JohnKenley",
-        "aus-accounting-mcp"
-      ]
-    }
-  }
-}
-```
-
----
-
-## Featured (pinned)
-
-These six originals are pinned on the profile so the overview is engines and skills, not SDK or Windows forks.
-
-1. **[CharlesHenryWickens](https://github.com/ryanduguid/CharlesHenryWickens)** - Payday Super timelines and SG charge exposure.
-2. **[Ozzit](https://github.com/ryanduguid/Ozzit)** - 130 native Excel LAMBDAs for AU financial modelling.
-3. **[JohnSpenceOgilvy](https://github.com/ryanduguid/JohnSpenceOgilvy)** - Reconciled Xero trial balance export.
-4. **[MaryAddisonHamilton](https://github.com/ryanduguid/MaryAddisonHamilton)** - Claude Code skills for Australian public practice.
-5. **[RaymondChambers](https://github.com/ryanduguid/RaymondChambers)** - Local P&L vs ATO small business benchmarks.
-6. **[DrDebits](https://github.com/ryanduguid/DrDebits)** - APES 110 / TPB operating boundaries for LLM tax work.
 
 ---
 
@@ -73,26 +45,26 @@ These six originals are pinned on the profile so the overview is engines and ski
 flowchart LR
     subgraph Data ["1. Data and ledgers"]
         direction TB
-        Xero["JohnSpenceOgilvy<br/><i>Validated trial balance export</i>"]
-        PQ["SirAlexanderFitzgerald<br/><i>Power Query and VBA</i>"]
+        Xero["JohnSpenceOgilvy<br/><i>Validated Xero TB Export</i>"]
+        PQ["SirAlexanderFitzgerald<br/><i>Power Query (M) & VBA</i>"]
     end
 
     subgraph Engines ["2. Rules and engines"]
         direction TB
-        Ozzit["Ozzit<br/><i>130 native Excel LAMBDAs</i>"]
-        Nixon["TheExchequerTally<br/><i>Company tax and franking FAB</i>"]
-        Goldberg["SolomonsSword<br/><i>Trust Div 6 and s100A</i>"]
-        ATO["RaymondChambers<br/><i>ATO benchmark analysis</i>"]
-        Super["CharlesHenryWickens<br/><i>Payday Super and SG charge</i>"]
+        Ozzit["Ozzit<br/><i>130 Native Excel LAMBDAs</i>"]
+        Nixon["EdwinNixon<br/><i>Company Tax & Franking FAB</i>"]
+        Goldberg["LouisGoldberg<br/><i>Trust Div 6 & s100A Matrix</i>"]
+        ATO["RaymondChambers<br/><i>ATO Benchmark Compare</i>"]
+        Super["CharlesHenryWickens<br/><i>Payday Super & SG Charge</i>"]
     end
 
     subgraph AI ["3. Agent workflows"]
         direction TB
-        MCP["JohnKenley<br/><i>Unified MCP server</i>"]
-        MAH["MaryAddisonHamilton<br/><i>Public-practice skills</i>"]
-        SubSkills["Hardhat Ledger<br/><i>Construction and mining</i>"]
-        DrD["DrDebits<br/><i>Tax ethics and LLM guidance</i>"]
-        Gateway["ElizabethAnneAlexander<br/><i>Synthetic review boundary</i>"]
+        MCP["JohnKenley<br/><i>Unified MCP Server</i>"]
+        MAH["MaryAddisonHamilton<br/><i>Public-Practice Skills</i>"]
+        SubSkills["Hardhat Ledger<br/><i>Construction & Mining Skills</i>"]
+        DrD["DrDebits<br/><i>APES 110 & TPB Ethics Gate</i>"]
+        Gateway["ElizabethAnneAlexander<br/><i>Zero-Network Review Sandbox</i>"]
     end
 
     Data --> Engines --> AI
@@ -100,28 +72,35 @@ flowchart LR
 
 JohnKenley calls CharlesHenryWickens and RaymondChambers (`ato-benchmark-compare`). MaryAddisonHamilton names those CLIs rather than inventing the same work. Historical engine repositories stay the source of truth for the calculation; the two products above are what a stranger should install.
 
-### Engines behind the MCP
+---
 
-- **[CharlesHenryWickens](https://github.com/ryanduguid/CharlesHenryWickens)** - Payday Super timelines and experimental SG-charge exposure. Not an ATO assessment.
-- **[RaymondChambers](https://github.com/ryanduguid/RaymondChambers)** (`ato-benchmark-compare`) - Offline P&L variance against ATO small-business benchmarks.
-- **[Ozzit](https://github.com/ryanduguid/Ozzit)** - 130 native Excel `LAMBDA` functions; no VBA, no add-ins.
-- **[TheExchequerTally](https://github.com/ryanduguid/TheExchequerTally)** - Base Rate Entity rate, franking account balance, Division 203.
-- **[SolomonsSword](https://github.com/ryanduguid/SolomonsSword)** - Trust Division 6, s 100A, s 99B.
-- **[JohnSpenceOgilvy](https://github.com/ryanduguid/JohnSpenceOgilvy)** (`xero-trial-balance-export`) - Reconciled Xero trial balance CSV; movement and YTD must both tie before write.
+## 📦 Categorized Open-Source Ecosystem
 
-### Also
+### 🔌 Model Context Protocol (MCP) & Agent Infrastructure
+- **[JohnKenley](https://github.com/ryanduguid/JohnKenley)** (`aus-accounting-mcp`) - Unified Model Context Protocol (MCP) server exposing ATO small business benchmarks, Payday Super statutory timelines, and synthetic SBR test payloads to Claude Desktop, Claude Code, Cursor, and Antigravity.
 
-- **[Hardhat Ledger](https://github.com/ryanduguid/hardhat-ledger)** - Construction and mining skills (Security of Payment, retentions, Coal LSL).
-- **[DrDebits](https://github.com/ryanduguid/DrDebits)** - APES 110 and TPB-aligned operating boundaries for LLM tax work.
-- **[ElizabethAnneAlexander](https://github.com/ryanduguid/ElizabethAnneAlexander)** - Synthetic-data demonstration of a fixed-policy review boundary.
-- **[RussellMathews](https://github.com/ryanduguid/RussellMathews)** - Local trial-balance review packs; it does not approve or lock a close.
-- **[awesome-australian-accounting-tech](https://github.com/ryanduguid/awesome-australian-accounting-tech)** - Curated index of AU accounting libraries, ATO datasets, and legislation APIs.
+### 🧮 Computational Engines & Statutory Rules
+- **[Ozzit](https://github.com/ryanduguid/Ozzit)** - Comprehensive library of 130 native Excel `LAMBDA` functions for dynamic-array financial modelling, loan amortisation, capital allowance depreciation, and deterministic cash flow forecasting without VBA.
+- **[EdwinNixon](https://github.com/ryanduguid/EdwinNixon)** *(Corporate Tax & Franking)* - Corporate tax rate determination (Base Rate Entity eligibility under *s 23AA ITRA 1986*), Franking Account Balance (FAB) tracking, and Division 203 benchmark rule compliance.
+- **[LouisGoldberg](https://github.com/ryanduguid/LouisGoldberg)** *(Trust Income & Section 100A)* - Trust income allocation under Division 6 ITAA 1936 (*Bamford* proportionate approach), Section 100A risk classification (*ATO PCG 2022/2*), and Section 99B foreign trust receipt analysis.
+- **[CharlesHenryWickens](https://github.com/ryanduguid/CharlesHenryWickens)** (`payday-super-checker`) - Deterministic engine evaluating Australian Payday Super 2026 contribution timelines and Superannuation Guarantee (SG) charge exposure on late remittances.
+- **[RaymondChambers](https://github.com/ryanduguid/RaymondChambers)** *(`ato-benchmark-compare`)* - Localized, offline profit-and-loss variance analysis against Australian Taxation Office (ATO) small business benchmarks.
+
+### 🛡️ AI Agent Workflows & Deterministic Safety Boundaries
+- **[DrDebits](https://github.com/ryanduguid/DrDebits)** - Primary-source-grounded ethical guardrails (aligned with APES 110 and TPB Code of Professional Conduct) for LLM-assisted taxation workflows.
+- **[ElizabethAnneAlexander](https://github.com/ryanduguid/ElizabethAnneAlexander)** - Zero-network, fixed-policy safety boundary for AI-assisted trial balance review with cryptographic receipt verification and data minimisation.
+- **[MaryAddisonHamilton](https://github.com/ryanduguid/MaryAddisonHamilton)** - Nine modular agent skills for Australian public practice (BAS reconciliation, FBT, Division 7A benchmark compliance, STP Phase 2, and 13-week cash flow modelling).
+- **[Hardhat Ledger](https://github.com/ryanduguid/hardhat-ledger)** - Claude Code skills for Australian construction and mining subcontractors (Security of Payment claims, retentions, WIP, Coal LSL, and Fuel Tax Credits).
+
+### 📊 Ledger Controls & Pipeline Utilities
+- **[JohnSpenceOgilvy](https://github.com/ryanduguid/JohnSpenceOgilvy)** *(`xero-trial-balance-export`)* - Exports reconciled Xero trial balances to validated CSV formats with strict movement and year-to-date mathematical integrity.
+- **[SirAlexanderFitzgerald](https://github.com/ryanduguid/SirAlexanderFitzgerald)** - Power Query (M) and VBA automation utilities for Australian accounting, reconciliations, and month-end financial reporting pipelines.
+- **[awesome-australian-accounting-tech](https://github.com/ryanduguid/awesome-australian-accounting-tech)** - A curated index of open-source libraries, computational tax engines, ATO datasets, and Commonwealth legislation APIs.
 
 ---
 
-## Open-source contributions
+## 🤝 Upstream Open-Source Contributions
 
-Selected merged contributions across the data and finance ecosystem:
 - **[Meltano SDK #3727](https://github.com/meltano/sdk/pull/3727)** - Preservation of OAuth refresh tokens returned by token refresh endpoints.
 - **[tap-xero #20](https://github.com/Matatika/tap-xero/pull/20)** - Rectification of OAuth 2.0 configuration specifications and schema definitions.
 - **[OpenAccountants](https://github.com/openaccountants/openaccountants/pulls?q=is%3Apr+author%3Aryanduguid+is%3Amerged)** - Australian taxation guidance, validation test harnesses, and CI automation for AI agent tax guides.
@@ -129,9 +108,9 @@ Selected merged contributions across the data and finance ecosystem:
 
 ---
 
-## Working method and safety boundary
+## 📐 Engineering Principles
 
-1. **Primary source grounding**: Statutory computations are grounded in Commonwealth legislation, ATO public rulings, and AASB/IFRS. Mutable facts are verified at use time.
-2. **Deterministic reconciliation**: Outputs must mathematically reconcile to source ledgers. Exceptions are surfaced, not smoothed.
-3. **Synthetic public evidence**: Public fixtures are fabricated. Client data stays local and human-controlled.
-4. **Professional judgement**: Algorithms calculate and validate. Interpretation, lodgement, and sign-off stay with qualified practitioners.
+1. **Primary Source Grounding**: All statutory computations (marginal tax brackets, SG percentages, benchmark ratios) are grounded directly in Commonwealth primary legislation (*ITAA 1936/1997*, *SGAA 1992*), ATO public rulings, and AASB/APESB standards.
+2. **Exact Decimal Arithmetic**: Computational outputs use exact decimal quantization to prevent binary floating-point drift.
+3. **Local Privacy Boundaries**: Client-sensitive financial data remains in local memory or zero-network sandboxes; public fixtures use synthetic data only.
+4. **Human-in-the-Loop Signoff**: Algorithmic pipelines automate calculation and structural validation; ultimate professional judgement and statutory lodgements remain strictly human-controlled.
