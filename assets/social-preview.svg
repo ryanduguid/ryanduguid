@@ -1,0 +1,108 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="640" viewBox="0 0 1280 640" role="img" aria-label="Ryan Duguid - Australian Computational Accounting Stack">
+  <defs>
+    <linearGradient id="cardGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#F9F7F1" stop-opacity="0.95"/>
+    </linearGradient>
+    <filter id="cardShadow" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#1B2A36" flood-opacity="0.08"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect x="0" y="0" width="1280" height="640" fill="#F4F0E6"/>
+
+  <!-- Subtle Ledger Grid Lines -->
+  <g stroke="#E2D9C5" stroke-width="1" opacity="0.6">
+    <path d="M0 80 H1280"/>
+    <path d="M0 160 H1280"/>
+    <path d="M0 240 H1280"/>
+    <path d="M0 320 H1280"/>
+    <path d="M0 400 H1280"/>
+    <path d="M0 480 H1280"/>
+    <path d="M0 560 H1280"/>
+    <path d="M160 0 V640"/>
+    <path d="M320 0 V640"/>
+    <path d="M480 0 V640"/>
+    <path d="M640 0 V640"/>
+    <path d="M800 0 V640"/>
+    <path d="M960 0 V640"/>
+    <path d="M1120 0 V640"/>
+  </g>
+
+  <!-- Accent Red Double-Entry Margin Lines -->
+  <path d="M72 0 V640" stroke="#9C2B2B" stroke-width="1.8" opacity="0.4"/>
+  <path d="M78 0 V640" stroke="#9C2B2B" stroke-width="1.2" opacity="0.25"/>
+
+  <!-- Header Wordmark -->
+  <text x="110" y="96" font-family="Georgia, Times New Roman, serif" font-size="52" font-weight="bold" fill="#1B2A36" letter-spacing="-0.5">Ryan Duguid</text>
+  <text x="110" y="132" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="19" font-weight="600" fill="#7A6855" letter-spacing="1.2">AUSTRALIAN COMPUTATIONAL ACCOUNTING &amp; DETERMINISTIC AGENTS</text>
+
+  <!-- Badges Row -->
+  <g transform="translate(110, 154)">
+    <!-- Badge 1 -->
+    <rect x="0" y="0" width="190" height="28" rx="6" fill="#002B49"/>
+    <text x="95" y="18" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif" font-size="12" font-weight="bold" fill="#FFFFFF" text-anchor="middle">CA ANZ Provisional</text>
+    <!-- Badge 2 -->
+    <rect x="200" y="0" width="180" height="28" rx="6" fill="#13B5EA"/>
+    <text x="290" y="18" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif" font-size="12" font-weight="bold" fill="#FFFFFF" text-anchor="middle">Xero Advisor L3</text>
+    <!-- Badge 3 -->
+    <rect x="390" y="0" width="190" height="28" rx="6" fill="#3776AB"/>
+    <text x="485" y="18" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif" font-size="12" font-weight="bold" fill="#FFFFFF" text-anchor="middle">SAP S/4HANA FI &amp; CO</text>
+    <!-- Badge 4 -->
+    <rect x="590" y="0" width="180" height="28" rx="6" fill="#8A2BE2"/>
+    <text x="680" y="18" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif" font-size="12" font-weight="bold" fill="#FFFFFF" text-anchor="middle">MCP Standard Server</text>
+  </g>
+
+  <!-- 3 Pillar Architecture Cards -->
+  <!-- Card 1: Data & Ledgers -->
+  <g transform="translate(110, 215)" filter="url(#cardShadow)">
+    <rect width="330" height="340" rx="12" fill="url(#cardGrad)" stroke="#D8CDB8" stroke-width="1.2"/>
+    <rect width="330" height="40" rx="12" fill="#1B2A36"/>
+    <rect y="28" width="330" height="12" fill="#1B2A36"/>
+    <text x="20" y="26" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif" font-size="14" font-weight="bold" fill="#FFFFFF">1. DATA &amp; LEDGERS</text>
+    <text x="20" y="70" font-family="Georgia, serif" font-size="18" font-weight="bold" fill="#1B2A36">JohnSpenceOgilvy</text>
+    <text x="20" y="92" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif" font-size="13" fill="#6B7A85">Xero Trial Balance CSV Exporter</text>
+    <path d="M20 115 H310" stroke="#E5DECE" stroke-width="1"/>
+    <text x="20" y="145" font-family="Georgia, serif" font-size="18" font-weight="bold" fill="#1B2A36">SirAlexanderFitzgerald</text>
+    <text x="20" y="167" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif" font-size="13" fill="#6B7A85">Power Query (M) &amp; VBA Automation</text>
+    <path d="M20 190 H310" stroke="#E5DECE" stroke-width="1"/>
+    <text x="20" y="220" font-family="Georgia, serif" font-size="18" font-weight="bold" fill="#1B2A36">monthly-close-control</text>
+    <text x="20" y="242" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif" font-size="13" fill="#6B7A85">Deterministic Close &amp; Period Locking</text>
+  </g>
+
+  <!-- Card 2: Rules & Engines -->
+  <g transform="translate(470, 215)" filter="url(#cardShadow)">
+    <rect width="340" height="340" rx="12" fill="url(#cardGrad)" stroke="#D8CDB8" stroke-width="1.2"/>
+    <rect width="340" height="40" rx="12" fill="#217346"/>
+    <rect y="28" width="340" height="12" fill="#217346"/>
+    <text x="20" y="26" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif" font-size="14" font-weight="bold" fill="#FFFFFF">2. COMPUTATIONAL ENGINES</text>
+    <text x="20" y="70" font-family="Georgia, serif" font-size="18" font-weight="bold" fill="#1B2A36">Ozzit</text>
+    <text x="20" y="92" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif" font-size="13" fill="#6B7A85">130 Native Excel Dynamic LAMBDAs</text>
+    <path d="M20 115 H320" stroke="#E5DECE" stroke-width="1"/>
+    <text x="20" y="145" font-family="Georgia, serif" font-size="18" font-weight="bold" fill="#1B2A36">EdwinNixon &amp; LouisGoldberg</text>
+    <text x="20" y="167" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif" font-size="13" fill="#6B7A85">Corporate Tax (BRE/FAB) &amp; Div 6 Trusts</text>
+    <path d="M20 190 H320" stroke="#E5DECE" stroke-width="1"/>
+    <text x="20" y="220" font-family="Georgia, serif" font-size="18" font-weight="bold" fill="#1B2A36">payday-super &amp; RaymondChambers</text>
+    <text x="20" y="242" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif" font-size="13" fill="#6B7A85">Payday Super 2026 &amp; ATO Benchmarks</text>
+  </g>
+
+  <!-- Card 3: AI & Safety Boundaries -->
+  <g transform="translate(840, 215)" filter="url(#cardShadow)">
+    <rect width="330" height="340" rx="12" fill="url(#cardGrad)" stroke="#D8CDB8" stroke-width="1.2"/>
+    <rect width="330" height="40" rx="12" fill="#8A2BE2"/>
+    <rect y="28" width="330" height="12" fill="#8A2BE2"/>
+    <text x="20" y="26" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif" font-size="14" font-weight="bold" fill="#FFFFFF">3. AGENTS &amp; SAFETY GATES</text>
+    <text x="20" y="70" font-family="Georgia, serif" font-size="18" font-weight="bold" fill="#1B2A36">aus-accounting-mcp</text>
+    <text x="20" y="92" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif" font-size="13" fill="#6B7A85">Unified Model Context Protocol Server</text>
+    <path d="M20 115 H310" stroke="#E5DECE" stroke-width="1"/>
+    <text x="20" y="145" font-family="Georgia, serif" font-size="18" font-weight="bold" fill="#1B2A36">MaryAddisonHamilton</text>
+    <text x="20" y="167" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif" font-size="13" fill="#6B7A85">Claude Code Skills for Public Practice</text>
+    <path d="M20 190 H310" stroke="#E5DECE" stroke-width="1"/>
+    <text x="20" y="220" font-family="Georgia, serif" font-size="18" font-weight="bold" fill="#1B2A36">DrDebits &amp; Safety Gateway</text>
+    <text x="20" y="242" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif" font-size="13" fill="#6B7A85">APES 110 Ethics &amp; Synthetic Sandboxes</text>
+  </g>
+
+  <!-- Footer Watermark -->
+  <text x="1170" y="605" font-family="Consolas, Courier New, monospace" font-size="14" font-weight="bold" fill="#7A6855" text-anchor="end">github.com/ryanduguid</text>
+</svg>
