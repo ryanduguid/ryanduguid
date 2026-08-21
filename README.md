@@ -39,7 +39,7 @@ flowchart LR
         MAH["MaryAddisonHamilton<br/><i>Public-Practice Workflow Skills</i>"]
         SubSkills["Hardhat Ledger<br/><i>Construction & Mining Skills</i>"]
         DrD["DrDebits<br/><i>Tax Ethics & LLM Guidance</i>"]
-        Gateway["ElizabethAnneAlexander<br/><i>Synthetic Data Safety Perimeter</i>"]
+        Gateway["ElizabethAnneAlexander<br/><i>Synthetic Review Boundary</i>"]
     end
 
     Data --> Engines --> AI
@@ -62,13 +62,13 @@ flowchart LR
 ### Ledger Connectors & Controls
 - **[JohnSpenceOgilvy](https://github.com/ryanduguid/JohnSpenceOgilvy)** *(`xero-trial-balance-export` package)* - Exports reconciled Xero trial balances to validated CSV formats for Power BI, Excel, and pandas, enforcing strict movement and year-to-date mathematical integrity.
 - **[SirAlexanderFitzgerald](https://github.com/ryanduguid/SirAlexanderFitzgerald)** - Power Query (M) and VBA automation utilities for Australian accounting, ledger reconciliations, and structured month-end financial reporting pipelines.
-- **[monthly-close-control-plane](https://github.com/ryanduguid/monthly-close-control-plane)** - Review-first governance controls for trial balance exports featuring deterministic period locking and exception surfacing.
+- **[monthly-close-control-plane](https://github.com/ryanduguid/monthly-close-control-plane)** - Local review-pack generator for validated trial balance exports, with deterministic exception surfacing, source hashes, and human acknowledgements.
 
 ### AI Agent Workflows & Deterministic Safety
 - **[MaryAddisonHamilton](https://github.com/ryanduguid/MaryAddisonHamilton)** *(`australian-accounting-skills` plugin pack)* - Nine modular agent skills for Australian public practice (BAS reconciliation, FBT, Division 7A statutory benchmark compliance, STP Phase 2, and 13-week cash flow modelling).
 - **[Hardhat Ledger](https://github.com/ryanduguid/hardhat-ledger)** - Claude Code skills tailored for Australian construction and mining subcontractors (payment claims under Security of Payment acts, retention tracking, WIP billing, Coal LSL, and contractor payroll tax provisions).
 - **[DrDebits](https://github.com/ryanduguid/DrDebits)** - Versioned, primary-source-grounded ethical and operational boundaries (aligned with APES 110 and TPB Code of Professional Conduct) for LLM-assisted taxation workflows.
-- **[ElizabethAnneAlexander](https://github.com/ryanduguid/ElizabethAnneAlexander)** - Fixed-policy, zero-network security perimeter for AI-assisted trial balance review utilising synthetic test datasets.
+- **[ElizabethAnneAlexander](https://github.com/ryanduguid/ElizabethAnneAlexander)** - Synthetic-data demonstration of a fixed-policy boundary for AI-assisted trial balance review, with no network or accounting-system write client.
 
 ### Curated Indexes
 - **[awesome-australian-accounting-tech](https://github.com/ryanduguid/awesome-australian-accounting-tech)** - A curated index of open-source libraries, computational accounting engines, ATO datasets, Commonwealth legislation APIs, and professional standards.
@@ -105,5 +105,5 @@ Selected merged contributions across the data and finance ecosystem:
 
 1. **Primary Source Grounding**: All statutory computations (marginal tax brackets, SG percentages, benchmark ratios, penalty rates) are grounded directly in Commonwealth primary legislation, ATO public rulings, and AASB/IFRS accounting standards.
 2. **Deterministic Reconciliation**: Computational outputs must mathematically reconcile to underlying source ledgers before downstream consumption. Invariants and reconciliation exceptions are surfaced explicitly.
-3. **Privacy & Synthetic Data by Design**: Public repositories execute exclusively against sanitised, synthetic data structures. Architectural boundaries isolate confidential client ledgers from non-deterministic external LLM invocations.
+3. **Synthetic Public Evidence & Local Client Boundaries**: Public fixtures, examples, and tests use fabricated or synthetic data. Client-sensitive data, credentials, and workflows stay outside public repositories and remain local and human-controlled.
 4. **Professional Judgement**: Algorithmic pipelines automate calculation and structural validation; ultimate interpretation, professional judgement, and statutory lodgements remain strictly within the purview of qualified practitioners.
