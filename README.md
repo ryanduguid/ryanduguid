@@ -7,11 +7,11 @@
 </p>
 
 <p align="center">
-  <a href="https://www.python.org/"><img src="https://img.shields.io/badge/Python-3.10+-3776AB?logo=python&logoColor=white" /></a>
-  <a href="https://modelcontextprotocol.io/"><img src="https://img.shields.io/badge/MCP-Standard%20Protocol-8A2BE2" /></a>
-  <a href="https://github.com/ryanduguid/Ozzit"><img src="https://img.shields.io/badge/Excel-130%20Native%20LAMBDAs-217346?logo=microsoftexcel&logoColor=white" /></a>
-  <a href="https://github.com/ryanduguid/DrDebits"><img src="https://img.shields.io/badge/APES%20110-Compliant%20Guardrails-blue" /></a>
-  <a href="https://github.com/ryanduguid/MaryAddisonHamilton"><img src="https://img.shields.io/badge/Claude_Code-Skills%20%26%20Agents-D97706?logo=anthropic&logoColor=white" /></a>
+  <a href="https://www.python.org/"><img src="https://img.shields.io/badge/Python-3.10+-3776AB?logo=python&logoColor=white" alt="Python 3.10 or later" /></a>
+  <a href="https://modelcontextprotocol.io/"><img src="https://img.shields.io/badge/MCP-Standard%20Protocol-8A2BE2" alt="Model Context Protocol" /></a>
+  <a href="https://github.com/ryanduguid/Ozzit"><img src="https://img.shields.io/badge/Excel-130%20Native%20LAMBDAs-217346?logo=microsoftexcel&logoColor=white" alt="Ozzit: 130 native Excel LAMBDAs" /></a>
+  <a href="https://github.com/ryanduguid/DrDebits"><img src="https://img.shields.io/badge/APES%20110-Compliant%20Guardrails-blue" alt="DrDebits APES 110 guardrails" /></a>
+  <a href="https://github.com/ryanduguid/MaryAddisonHamilton"><img src="https://img.shields.io/badge/Claude_Code-Skills%20%26%20Agents-D97706?logo=anthropic&logoColor=white" alt="Mary Addison Hamilton Claude Code skills" /></a>
 </p>
 
 ---
