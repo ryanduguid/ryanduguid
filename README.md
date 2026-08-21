@@ -18,20 +18,20 @@ Australian accountant based in Newcastle, NSW. I build open-source tools, Excel 
 flowchart LR
     subgraph Data ["1. Data & Ledgers"]
         direction TB
-        Xero["JohnSpenceOgilvy<br/><i>Xero Trial Balance Export</i>"]
+        Xero["JohnSpenceOgilvy<br/><i>Validated Trial Balance Export</i>"]
         PQ["SirAlexanderFitzgerald<br/><i>Power Query & VBA</i>"]
     end
 
     subgraph Engines ["2. Rules & Computational Engines"]
         direction TB
         Ozzit["Ozzit<br/><i>130 Native Excel LAMBDAs</i>"]
-        ATO["RaymondChambers<br/><i>ATO Benchmark Comparison</i>"]
+        ATO["RaymondChambers<br/><i>ATO Benchmark Analysis</i>"]
         Super["payday-super-checker<br/><i>Payday Super & SG Charge</i>"]
     end
 
     subgraph AI ["3. Agent Workflows & Safety Boundaries"]
         direction TB
-        MAH["MaryAddisonHamilton<br/><i>Claude Code Practice Skills</i>"]
+        MAH["MaryAddisonHamilton<br/><i>Public-Practice Workflow Skills</i>"]
         SubSkills["subcontractor-accounting-skills<br/><i>Construction & Mining Skills</i>"]
         DrD["DrDebits<br/><i>Tax Ethics & LLM Guidance</i>"]
         Gateway["xero-ai-review-gateway<br/><i>Synthetic Data Safety Gate</i>"]
@@ -47,7 +47,7 @@ flowchart LR
 ### Computational Engines & Rules
 - **[Ozzit](https://github.com/ryanduguid/Ozzit)** — Library of 130 native Excel `LAMBDA` functions for dynamic-array financial models, loan amortization, tax depreciation, and cash flow forecasting with no VBA or add-ins.
 - **[payday-super-checker](https://github.com/ryanduguid/payday-super-checker)** — Automated CLI tool for evaluating Australian payday-super contribution timelines, statutory due dates, and estimating potential Superannuation Guarantee (SG) charge exposure.
-- **[RaymondChambers](https://github.com/ryanduguid/RaymondChambers)** *(ATO Benchmark Compare)* — Local, offline profit-and-loss variance analysis against Australian Taxation Office (ATO) small business benchmarks with full audit trail working.
+- **[RaymondChambers](https://github.com/ryanduguid/RaymondChambers)** *(`ato-benchmark-compare`)* — Local, offline profit-and-loss variance analysis against Australian Taxation Office (ATO) small business benchmarks with full audit trail working.
 
 ### Ledger Connectors & Controls
 - **[JohnSpenceOgilvy](https://github.com/ryanduguid/JohnSpenceOgilvy)** *(`xero-trial-balance-export` package)* — Exports Xero trial balances to validated CSV for Power BI, Excel, and pandas only after movement and year-to-date balances reconcile.

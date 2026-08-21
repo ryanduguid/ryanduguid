@@ -50,7 +50,7 @@ do not update this section from an unsaved Customize your pins dialog.
 2. `Ozzit`
 3. `JohnSpenceOgilvy`
 4. `MaryAddisonHamilton`
-5. `ato-benchmark-compare`
+5. `RaymondChambers`
 6. `DrDebits`
 
 Do not pin `.github`, contribution forks, or Resume-Matcher. After changing pins, check https://github.com/ryanduguid for the heading **Pinned** (not **Popular**).
@@ -64,7 +64,7 @@ Do not pin `.github`, contribution forks, or Resume-Matcher. After changing pins
 | 130 LAMBDA functions, native Excel only, no add-ins or macros | `Ozzit/README.md` |
 | Xero trial-balance export requires movement and year-to-date balance before writing | `JohnSpenceOgilvy/README.md` "Balance gate" and source checks before CSV write |
 | Nine Claude Code skills for Australian public-practice workflows | `MaryAddisonHamilton/.claude/skills/*/SKILL.md` (nine folders) and that repo's README intro |
-| Local profit-and-loss comparison against ATO benchmarks, with working shown | `ato-benchmark-compare/README.md`; do not imply ATO endorsement |
+| Local profit-and-loss comparison against ATO benchmarks, with working shown | `RaymondChambers/README.md`; do not imply ATO endorsement |
 | Source-linked LLM operating guide for Australian accounting, tax and BAS work | `DrDebits/README.md`; do not imply certification or endorsement |
 | Selected external work is merged and attributable | The linked pull request pages and the four live GitHub CLI checks above |
 
