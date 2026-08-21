@@ -3,7 +3,7 @@
 <p align="center">
   <img src="https://img.shields.io/badge/Provisional_Member-CA_ANZ-002B49?style=for-the-badge" alt="CA ANZ" />
   <img src="https://img.shields.io/badge/SAP_Certified-S%2F4HANA_FI%2FCO-008FD3?style=for-the-badge" alt="SAP FI/CO" />
-  <img src="https://img.shields.io/badge/Xero-Advisor_L3-13B5EA?style=for-the-badge&logo=xero&logoColor=white" alt="Xero" />
+  <img src="https://img.shields.io/badge/Xero-L3_Specialist-13B5EA?style=for-the-badge&logo=xero&logoColor=white" alt="Xero" />
 </p>
 
 <p align="center">
@@ -18,7 +18,7 @@
 
 Australian accountant based in Newcastle, NSW. Engineering **computational accounting engines**, **native Excel dynamic-array LAMBDAs**, **Model Context Protocol (MCP) servers**, and **deterministic AI workflows** for Australian taxation, payroll, and statutory compliance.
 
-> **Provisional Member CA ANZ** &bull; **SAP S/4HANA Certified in FI & CO** &bull; **Xero Advisor L3**
+> **Provisional Member CA ANZ** &bull; **SAP S/4HANA Certified in FI & CO** &bull; **L3 Xero Specialist Certified**
 
 ---
 
