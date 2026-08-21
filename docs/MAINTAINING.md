@@ -105,3 +105,5 @@ Forks used only to send upstream pull requests stay out of the product list. **O
 - Listing six of the nine skills and calling it nine. The named set is BAS, FBT, Division 7A, STP, month-end close, year-end workpapers and 13-week cashflow; `xero-exports` and `workpaper-tie-out` are the other two.
 - Treating mentions of Xero, the ATO, CA ANZ or SAP as proof of employment, partnership, approval, registration or endorsement.
 - Using retired repository names (`aus-accounting-mcp`, `payday-super-checker`, `EdwinNixon`, `LouisGoldberg`) in new copy.
+
+CI now runs `.github/workflows/link-check.yml` so profile README links stay https.
