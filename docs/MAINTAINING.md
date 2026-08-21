@@ -66,7 +66,7 @@ Do not pin `.github`, contribution forks, or Resume-Matcher. After changing pins
 | Nine Claude Code skills for Australian public-practice workflows | `australian-accounting-skills/.claude/skills/*/SKILL.md` (nine folders) and that repo's README intro |
 | Local profit-and-loss comparison against ATO benchmarks, with working shown | `ato-benchmark-compare/README.md`; do not imply ATO endorsement |
 | Source-linked LLM operating guide for Australian accounting, tax and BAS work | `DrDebits/README.md`; do not imply certification or endorsement |
-| Selected external work is merged and attributable | The linked pull request pages and the three live GitHub CLI checks above |
+| Selected external work is merged and attributable | The linked pull request pages and the four live GitHub CLI checks above |
 
 ## Style
 
