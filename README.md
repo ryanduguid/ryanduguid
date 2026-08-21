@@ -47,7 +47,7 @@ flowchart LR
 ### Computational Engines & Rules
 - **[Ozzit](https://github.com/ryanduguid/Ozzit)** — Library of 130 native Excel `LAMBDA` functions for dynamic-array financial models, loan amortization, tax depreciation, and cash flow forecasting with no VBA or add-ins.
 - **[payday-super-checker](https://github.com/ryanduguid/payday-super-checker)** — Automated CLI tool for evaluating Australian payday-super contribution timelines, statutory due dates, and estimating potential Superannuation Guarantee (SG) charge exposure.
-- **[RaymondChambers](https://github.com/ryanduguid/RaymondChambers)** *(`ato-benchmark-compare`)* — Local, offline profit-and-loss variance analysis against Australian Taxation Office (ATO) small business benchmarks with full audit trail working.
+- **[RaymondChambers](https://github.com/ryanduguid/RaymondChambers)** *(`ato-benchmark-compare` package)* — Local, offline profit-and-loss variance analysis against Australian Taxation Office (ATO) small business benchmarks with full audit trail working.
 
 ### Ledger Connectors & Controls
 - **[JohnSpenceOgilvy](https://github.com/ryanduguid/JohnSpenceOgilvy)** *(`xero-trial-balance-export` package)* — Exports Xero trial balances to validated CSV for Power BI, Excel, and pandas only after movement and year-to-date balances reconcile.
