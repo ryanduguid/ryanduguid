@@ -15,7 +15,7 @@ Provisional Member CA ANZ; SAP S/4HANA certified in FI and CO; Xero L3
 
 ## Open-source contributions
 
-Selected merged work includes [Meltano SDK #3727](https://github.com/meltano/sdk/pull/3727) for retaining OAuth refresh tokens returned by token endpoints, [tap-xero #20](https://github.com/Matatika/tap-xero/pull/20) for correcting OAuth configuration examples, and [OpenAccountants](https://github.com/openaccountants/openaccountants/pulls?q=is%3Apr+author%3Aryanduguid+is%3Amerged) contributions spanning Australian tax guidance, safety and CI.
+Selected merged work includes [Meltano SDK #3727](https://github.com/meltano/sdk/pull/3727) for retaining OAuth refresh tokens returned by token endpoints, [tap-xero #20](https://github.com/Matatika/tap-xero/pull/20) for correcting OAuth configuration examples, [Sophia Script #737](https://github.com/farag2/Sophia-Script-for-Windows/pull/737) for returning copied localisation strings to their language files, and [OpenAccountants](https://github.com/openaccountants/openaccountants/pulls?q=is%3Apr+author%3Aryanduguid+is%3Amerged) contributions spanning Australian tax guidance, safety and CI.
 
 ## Working method
 

@@ -29,7 +29,8 @@ The credentials line is an assertion by the profile owner. Confirm it is current
 ```bash
 gh pr view 3727 --repo meltano/sdk --json author,mergedAt,url
 gh pr view 20 --repo Matatika/tap-xero --json author,mergedAt,url
-gh search prs --repo openaccountants/openaccountants --author ryanduguid --merged --limit 100
+gh pr view 737 --repo farag2/Sophia-Script-for-Windows --json author,mergedAt,url
+gh search prs --repo openaccountants/openaccountants --author ryanduguid --merged --limit 100 --json number,url,author,repository
 ```
 
 Use those results to confirm every contribution named in the profile is still merged and correctly attributed. A new merge does not itself require a profile edit.
@@ -40,9 +41,10 @@ Do not restore the banner, install commands, secondary-project catalogue or pull
 
 ## Pinned repositories
 
-GitHub has no public pin API (`pinItem` is not on the public Mutation type). The intended profile pins are listed below. GitHub's signed-out page and GraphQL response
-are the source of truth for whether the change is live; do not update this section from an
-unsaved Customize your pins dialog.
+GitHub has no public pin API (`pinItem` is not on the public Mutation type). The current
+live profile pins, in the order returned by GitHub GraphQL as at 21 August 2026, are
+listed below. GitHub's signed-out page and GraphQL response are the source of truth;
+do not update this section from an unsaved Customize your pins dialog.
 
 1. `payday-super-checker`
 2. `Ozzit`
