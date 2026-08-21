@@ -6,11 +6,11 @@
 [![Claude Code](https://img.shields.io/badge/Claude_Code-Skills%20%26%20Agents-D97706?logo=anthropic&logoColor=white)](https://github.com/ryanduguid/MaryAddisonHamilton)
 [![Xero API](https://img.shields.io/badge/Xero-OAuth2%20API-13B5EA?logo=xero&logoColor=white)](https://developer.xero.com/)
 [![llms.txt](https://img.shields.io/badge/llms.txt-Standard%20Context-0A0A0A?logo=markdown&logoColor=white)](llms.txt)
-[![Credentials](https://img.shields.io/badge/CA_ANZ-Provisional_Member-002B49)](https://www.charteredaccountantsanz.com/)
+[![Credentials](https://img.shields.io/badge/Chartered_Accountants_ANZ-Provisional_Member-002B49)](https://www.charteredaccountantsanz.com/)
 
 Australian accountant based in Newcastle, NSW. Specialising in computational accounting, deterministic reconciliation engines, native Excel LAMBDA architectures, and structured AI agent workflows across Australian taxation, payroll, and statutory superannuation.
 
-> Provisional Member CA ANZ &bull; SAP S/4HANA Certified in FI and CO &bull; Xero Advisor L3
+> Provisional member of Chartered Accountants ANZ &bull; SAP S/4HANA Certified in FI and CO &bull; Xero Advisor L3
 
 ---
 
