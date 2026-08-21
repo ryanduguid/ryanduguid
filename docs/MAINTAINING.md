@@ -22,7 +22,7 @@ The lead sentence is the practice area. Authorship (original work vs contributio
 
 **Also** is the rest of the accounting index, one sentence each. Take the sentence from the project's own README or GitHub description, not from memory.
 
-**Merged into other people's projects** is a selected list. Recount from GitHub rather than adding one and incrementing:
+**Selected work merged into other people's projects** names selected examples. Run this query to verify that each named contribution is still merged and correctly attributed:
 
 ```bash
 gh search prs "author:ryanduguid is:merged -user:ryanduguid"
