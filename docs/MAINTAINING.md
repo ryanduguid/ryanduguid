@@ -22,17 +22,21 @@ The lead sentence is the practice area. Authorship (original work vs contributio
 
 **Also** is the rest of the accounting index, one sentence each. Take the sentence from the project's own README or GitHub description, not from memory.
 
-**Merged into other people's projects** is a counted list. Recount from GitHub rather than adding one and incrementing:
+**Merged into other people's projects** is a selected list. Recount from GitHub rather than adding one and incrementing:
 
 ```bash
 gh search prs "author:ryanduguid is:merged -user:ryanduguid"
 ```
 
-That query is fifteen as of 21 August 2026: three outside OpenAccountants (Meltano, Matatika, Sophia-Script), twelve in it. If the number moves, update both the total and the OpenAccountants clause.
+Use that query to confirm every contribution named in the profile is still merged and
+correctly attributed. The profile lists selected work rather than a total, so a new merge
+does not itself require a profile edit.
 
 ## Pinned repositories
 
-GitHub has no public pin API (`pinItem` is not on the public Mutation type). The live profile pins these six, in this order. To change them, open https://github.com/ryanduguid while signed in and choose **Customize your pins**:
+GitHub has no public pin API (`pinItem` is not on the public Mutation type). The intended profile pins are listed below. GitHub's signed-out page and GraphQL response
+are the source of truth for whether the change is live; do not update this section from an
+unsaved Customize your pins dialog.
 
 1. `payday-super-checker`
 2. `Ozzit`

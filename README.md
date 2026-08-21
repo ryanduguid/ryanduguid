@@ -40,9 +40,9 @@ In Claude Code:
 - [DrDebits](https://github.com/ryanduguid/DrDebits) - Versioned, source-linked ethics instructions for tax practitioners working with LLMs.
 - [release-policy](https://github.com/ryanduguid/release-policy) - The reusable release workflow behind the tags in these repositories. Fail-closed gates, SBOM, build provenance.
 
-## Merged into other people's projects
+## Selected work merged into other people's projects
 
-Fifteen changes so far, most of them small, which is rather the point.
+Most of these changes are small, which is rather the point.
 [meltano/sdk#3727](https://github.com/meltano/sdk/pull/3727) keeps a rotated
 OAuth refresh token instead of throwing it away.
 [Matatika/tap-xero#20](https://github.com/Matatika/tap-xero/pull/20) corrects
