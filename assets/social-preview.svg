@@ -51,7 +51,7 @@
     <text x="485" y="18" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif" font-size="12" font-weight="bold" fill="#FFFFFF" text-anchor="middle">SAP S/4HANA FI &amp; CO</text>
     <!-- Badge 4 -->
     <rect x="590" y="0" width="180" height="28" rx="6" fill="#8A2BE2"/>
-    <text x="680" y="18" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif" font-size="12" font-weight="bold" fill="#FFFFFF" text-anchor="middle">MCP Standard Server</text>
+    <text x="680" y="18" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif" font-size="12" font-weight="bold" fill="#FFFFFF" text-anchor="middle">MCP &amp; Agent Workflows</text>
   </g>
 
   <!-- 3 Pillar Architecture Cards -->
@@ -67,8 +67,8 @@
     <text x="20" y="145" font-family="Georgia, serif" font-size="18" font-weight="bold" fill="#1B2A36">SirAlexanderFitzgerald</text>
     <text x="20" y="167" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif" font-size="13" fill="#6B7A85">Power Query (M) &amp; VBA Automation</text>
     <path d="M20 190 H310" stroke="#E5DECE" stroke-width="1"/>
-    <text x="20" y="220" font-family="Georgia, serif" font-size="18" font-weight="bold" fill="#1B2A36">monthly-close-control</text>
-    <text x="20" y="242" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif" font-size="13" fill="#6B7A85">Deterministic Close &amp; Period Locking</text>
+    <text x="20" y="220" font-family="Georgia, serif" font-size="18" font-weight="bold" fill="#1B2A36">Monthly Close Review Packs</text>
+    <text x="20" y="242" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif" font-size="13" fill="#6B7A85">Exceptions, Evidence &amp; Source Hashes</text>
   </g>
 
   <!-- Card 2: Rules & Engines -->
@@ -99,8 +99,8 @@
     <text x="20" y="145" font-family="Georgia, serif" font-size="18" font-weight="bold" fill="#1B2A36">MaryAddisonHamilton</text>
     <text x="20" y="167" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif" font-size="13" fill="#6B7A85">Claude Code Skills for Public Practice</text>
     <path d="M20 190 H310" stroke="#E5DECE" stroke-width="1"/>
-    <text x="20" y="220" font-family="Georgia, serif" font-size="18" font-weight="bold" fill="#1B2A36">DrDebits &amp; Safety Gateway</text>
-    <text x="20" y="242" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif" font-size="13" fill="#6B7A85">APES 110 Ethics &amp; Synthetic Sandboxes</text>
+    <text x="20" y="220" font-family="Georgia, serif" font-size="18" font-weight="bold" fill="#1B2A36">DrDebits &amp; Synthetic Review</text>
+    <text x="20" y="242" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif" font-size="13" fill="#6B7A85">APES 110 Guidance &amp; Fixed-Policy Demo</text>
   </g>
 
   <!-- Footer Watermark -->

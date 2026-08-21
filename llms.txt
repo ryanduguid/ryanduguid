@@ -17,9 +17,14 @@
 - **RaymondChambers** (https://github.com/ryanduguid/RaymondChambers): Offline profit-and-loss variance analysis against ATO small business benchmarks with auditable working papers (PyPI: `ato-benchmark-compare`).
 - **JohnSpenceOgilvy** (https://github.com/ryanduguid/JohnSpenceOgilvy): Reconciled Xero trial balance exporter enforcing movement and year-to-date mathematical integrity before CSV export (PyPI: `xero-trial-balance-export`).
 - **SirAlexanderFitzgerald** (https://github.com/ryanduguid/SirAlexanderFitzgerald): Power Query (M) and VBA automation utilities for Australian accounting and month-end financial reporting pipelines.
-- **monthly-close-control-plane** (https://github.com/ryanduguid/monthly-close-control-plane): Review-first governance controls for trial balance exports featuring deterministic period locking.
+- **monthly-close-control-plane** (https://github.com/ryanduguid/monthly-close-control-plane): Local, deterministic trial-balance review packs with exception surfacing, source hashes, and human acknowledgements; it does not approve or lock a close.
 - **MaryAddisonHamilton** (https://github.com/ryanduguid/MaryAddisonHamilton): Nine modular Claude Code skills for Australian public practice (BAS reconciliation, FBT, Division 7A benchmarks, STP Phase 2, and 13-week cash flow modelling).
 - **Hardhat Ledger** (https://github.com/ryanduguid/hardhat-ledger): Claude Code skills for Australian construction & mining subcontractors (Security of Payment claims, retentions, WIP billing, Coal LSL, and contractor payroll tax).
 - **DrDebits** (https://github.com/ryanduguid/DrDebits): Versioned, primary-source-grounded ethical instructions (APES 110 & TPB Code of Professional Conduct) for LLM-assisted taxation workflows.
-- **ElizabethAnneAlexander** (https://github.com/ryanduguid/ElizabethAnneAlexander): Zero-network, fixed-policy safety boundary for AI-assisted trial balance reviews using synthetic test data.
+- **ElizabethAnneAlexander** (https://github.com/ryanduguid/ElizabethAnneAlexander): Synthetic-data demonstration of a fixed-policy boundary for AI-assisted trial-balance review, with no network or accounting-system write client.
 - **awesome-australian-accounting-tech** (https://github.com/ryanduguid/awesome-australian-accounting-tech): Curated index of open-source libraries, ATO datasets, legislation APIs, and standards for Australian accounting technology.
+
+## Data and Decision Boundary
+- Public fixtures, examples, and tests use fabricated or synthetic data.
+- Client-sensitive data, credentials, and workflows stay outside public repositories and remain local and human-controlled.
+- Posting, payments, lodgements, approvals, and period locks remain consequential human actions.
