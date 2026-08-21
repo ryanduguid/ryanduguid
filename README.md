@@ -1,6 +1,7 @@
 # Ryan Duguid
 
 [![Python](https://img.shields.io/badge/Python-3.10+-3776AB?logo=python&logoColor=white)](https://www.python.org/)
+[![MCP Server](https://img.shields.io/badge/MCP-Standard%20Protocol-8A2BE2)](https://github.com/ryanduguid/aus-accounting-mcp)
 [![Excel LAMBDA](https://img.shields.io/badge/Excel-LAMBDA%20Dynamic%20Arrays-217346?logo=microsoftexcel&logoColor=white)](https://github.com/ryanduguid/Ozzit)
 [![Claude Code](https://img.shields.io/badge/Claude_Code-Skills%20%26%20Agents-D97706?logo=anthropic&logoColor=white)](https://github.com/ryanduguid/MaryAddisonHamilton)
 [![Xero API](https://img.shields.io/badge/Xero-OAuth2%20API-13B5EA?logo=xero&logoColor=white)](https://developer.xero.com/)
@@ -25,12 +26,15 @@ flowchart LR
     subgraph Engines ["2. Rules & Computational Engines"]
         direction TB
         Ozzit["Ozzit<br/><i>130 Native Excel LAMBDAs</i>"]
+        Nixon["EdwinNixon<br/><i>Company Tax & Franking FAB</i>"]
+        Goldberg["LouisGoldberg<br/><i>Trust Div 6 & s100A Matrix</i>"]
         ATO["RaymondChambers<br/><i>ATO Benchmark Comparison</i>"]
         Super["payday-super-checker<br/><i>Payday Super & SG Charge</i>"]
     end
 
     subgraph AI ["3. Agent Workflows & Safety Boundaries"]
         direction TB
+        MCP["aus-accounting-mcp<br/><i>Unified MCP Agent Server</i>"]
         MAH["MaryAddisonHamilton<br/><i>Claude Code Practice Skills</i>"]
         SubSkills["subcontractor-accounting-skills<br/><i>Construction & Mining Skills</i>"]
         DrD["DrDebits<br/><i>Tax Ethics & LLM Guidance</i>"]
@@ -44,8 +48,13 @@ flowchart LR
 
 ## 📦 Selected Projects
 
+### Unified Agent Infrastructure & MCP
+- **[aus-accounting-mcp](https://github.com/ryanduguid/aus-accounting-mcp)** — Unified Model Context Protocol (MCP) server exposing ATO benchmarks, Payday Super 2026 stress simulations, Division 7A amortisation, and synthetic SBR test payloads to Claude Desktop, Claude Code, Cursor, and Antigravity.
+
 ### Computational Engines & Rules
 - **[Ozzit](https://github.com/ryanduguid/Ozzit)** — Library of 130 native Excel `LAMBDA` functions for dynamic-array financial models, loan amortization, tax depreciation, and cash flow forecasting with no VBA or add-ins.
+- **[EdwinNixon](https://github.com/ryanduguid/EdwinNixon)** *(Corporate Tax & Franking)* — Corporate tax rate verification (Base Rate Entity test under *s 23AA ITRA 1986*), Franking Account Balance (FAB) ledger tracking, Division 203 benchmark rule compliance, and dividend distribution statements.
+- **[LouisGoldberg](https://github.com/ryanduguid/LouisGoldberg)** *(Trust Income & Section 100A)* — Trust income allocation under Division 6 ITAA 1936 (*Bamford v FCT* proportionate approach), Section 100A reimbursement agreement risk assessment (*ATO PCG 2022/2*), and Section 99B foreign trust receipt analysis.
 - **[payday-super-checker](https://github.com/ryanduguid/payday-super-checker)** — Automated CLI tool for evaluating Australian payday-super contribution timelines, statutory due dates, and estimating potential Superannuation Guarantee (SG) charge exposure.
 - **[RaymondChambers](https://github.com/ryanduguid/RaymondChambers)** *(ATO Benchmark Compare)* — Local, offline profit-and-loss variance analysis against Australian Taxation Office (ATO) small business benchmarks with full audit trail working.
 
