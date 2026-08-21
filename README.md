@@ -19,7 +19,7 @@ Australian accountant based in Newcastle, NSW. Specialising in computational acc
 flowchart LR
     subgraph Data ["1. Data & Ledgers"]
         direction TB
-        Xero["JohnSpenceOgilvy<br/><i>Xero Trial Balance Export</i>"]
+        Xero["JohnSpenceOgilvy<br/><i>Validated Trial Balance Export</i>"]
         PQ["SirAlexanderFitzgerald<br/><i>Power Query & VBA</i>"]
     end
 
@@ -28,14 +28,14 @@ flowchart LR
         Ozzit["Ozzit<br/><i>130 Native Excel LAMBDAs</i>"]
         Nixon["EdwinNixon<br/><i>Company Tax & Franking FAB</i>"]
         Goldberg["LouisGoldberg<br/><i>Trust Div 6 & s100A Matrix</i>"]
-        ATO["RaymondChambers<br/><i>ATO Benchmark Comparison</i>"]
+        ATO["RaymondChambers<br/><i>ATO Benchmark Analysis</i>"]
         Super["payday-super-checker<br/><i>Payday Super & SG Charge</i>"]
     end
 
     subgraph AI ["3. Agent Workflows & Safety Boundaries"]
         direction TB
         MCP["aus-accounting-mcp<br/><i>Unified MCP Agent Server</i>"]
-        MAH["MaryAddisonHamilton<br/><i>Claude Code Practice Skills</i>"]
+        MAH["MaryAddisonHamilton<br/><i>Public-Practice Workflow Skills</i>"]
         SubSkills["subcontractor-accounting-skills<br/><i>Construction & Mining Skills</i>"]
         DrD["DrDebits<br/><i>Tax Ethics & LLM Guidance</i>"]
         Gateway["xero-ai-review-gateway<br/><i>Synthetic Data Safety Perimeter</i>"]
@@ -56,15 +56,15 @@ flowchart LR
 - **[EdwinNixon](https://github.com/ryanduguid/EdwinNixon)** *(Corporate Tax & Franking)* — Corporate tax rate determination (Base Rate Entity eligibility under *s 23AA ITRA 1986*), Franking Account Balance (FAB) ledger tracking, Division 203 benchmark rule compliance, and automated dividend distribution statements.
 - **[LouisGoldberg](https://github.com/ryanduguid/LouisGoldberg)** *(Trust Income & Section 100A)* — Trust income allocation under Division 6 ITAA 1936 (*Bamford v FCT* proportionate approach), Section 100A reimbursement agreement risk classification (*ATO PCG 2022/2*), and Section 99B foreign trust receipt analysis.
 - **[payday-super-checker](https://github.com/ryanduguid/payday-super-checker)** — Deterministic CLI utility evaluating Australian Payday Super contribution timelines, statutory due dates, and estimating Superannuation Guarantee (SG) charge exposure on late remittances.
-- **[RaymondChambers](https://github.com/ryanduguid/RaymondChambers)** *(ATO Benchmark Compare)* — Localised, offline profit-and-loss variance analysis against Australian Taxation Office (ATO) small business benchmarks with comprehensive, auditable working papers.
+- **[RaymondChambers](https://github.com/ryanduguid/RaymondChambers)** *(`ato-benchmark-compare` package)* — Localised, offline profit-and-loss variance analysis against Australian Taxation Office (ATO) small business benchmarks with comprehensive, auditable working papers.
 
 ### Ledger Connectors & Controls
-- **[JohnSpenceOgilvy](https://github.com/ryanduguid/JohnSpenceOgilvy)** *(Xero Trial Balance Export)* — Exports reconciled Xero trial balances to validated CSV formats for Power BI, Excel, and pandas, enforcing strict movement and year-to-date mathematical integrity.
+- **[JohnSpenceOgilvy](https://github.com/ryanduguid/JohnSpenceOgilvy)** *(`xero-trial-balance-export` package)* — Exports reconciled Xero trial balances to validated CSV formats for Power BI, Excel, and pandas, enforcing strict movement and year-to-date mathematical integrity.
 - **[SirAlexanderFitzgerald](https://github.com/ryanduguid/SirAlexanderFitzgerald)** — Power Query (M) and VBA automation utilities for Australian accounting, ledger reconciliations, and structured month-end financial reporting pipelines.
 - **[monthly-close-control-plane](https://github.com/ryanduguid/monthly-close-control-plane)** — Review-first governance controls for trial balance exports featuring deterministic period locking and exception surfacing.
 
 ### AI Agent Workflows & Deterministic Safety
-- **[MaryAddisonHamilton](https://github.com/ryanduguid/MaryAddisonHamilton)** *(Australian Accounting Skills for Claude Code)* — Nine modular agent skills for Australian public practice (BAS reconciliation, FBT, Division 7A statutory benchmark compliance, STP Phase 2, and 13-week cash flow modelling).
+- **[MaryAddisonHamilton](https://github.com/ryanduguid/MaryAddisonHamilton)** *(`australian-accounting-skills` plugin pack)* — Nine modular agent skills for Australian public practice (BAS reconciliation, FBT, Division 7A statutory benchmark compliance, STP Phase 2, and 13-week cash flow modelling).
 - **[subcontractor-accounting-skills](https://github.com/ryanduguid/subcontractor-accounting-skills)** — Claude Code skills tailored for Australian construction and mining subcontractors (payment claims under Security of Payment acts, retention tracking, WIP billing, Coal LSL, and contractor payroll tax provisions).
 - **[DrDebits](https://github.com/ryanduguid/DrDebits)** — Versioned, primary-source-grounded ethical and operational boundaries (aligned with APES 110 and TPB Code of Professional Conduct) for LLM-assisted taxation workflows.
 - **[xero-ai-review-gateway](https://github.com/ryanduguid/xero-ai-review-gateway)** — Fixed-policy, zero-network security perimeter for AI-assisted trial balance review utilising synthetic test datasets.
