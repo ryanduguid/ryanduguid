@@ -4,7 +4,7 @@
 ## Developer Profile
 - **Name**: Ryan Duguid
 - **Location**: Newcastle, NSW, Australia
-- **Credentials**: Provisional Member CA ANZ, SAP S/4HANA Certified (FI & CO), Xero Advisor L3
+- **Credentials**: Provisional member of Chartered Accountants ANZ, SAP S/4HANA Certified (FI & CO), Xero Advisor L3
 - **Focus**: Open-source computational accounting, deterministic reconciliation engines, native Excel LAMBDAs, Model Context Protocol (MCP), and structured AI agent workflows.
 - **Jurisdiction**: Commonwealth of Australia (ATO, AASB, IFRS, TPB).
 
