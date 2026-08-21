@@ -34,7 +34,7 @@ claude mcp add aus-accounting -- uvx --from git+https://github.com/ryanduguid/Jo
 npx skills add ryanduguid/MaryAddisonHamilton
 
 # Add Construction & Mining Subcontractor skills
-claude skill add ryanduguid/hardhat-ledger
+npx skills add ryanduguid/hardhat-ledger
 ```
 
 ---
@@ -52,8 +52,8 @@ flowchart LR
     subgraph Engines ["2. Rules and engines"]
         direction TB
         Ozzit["Ozzit<br/><i>130 Native Excel LAMBDAs</i>"]
-        Nixon["EdwinNixon<br/><i>Company Tax & Franking FAB</i>"]
-        Goldberg["LouisGoldberg<br/><i>Trust Div 6 & s100A Matrix</i>"]
+        Tally["TheExchequerTally<br/><i>Company Tax & Franking FAB</i>"]
+        Sword["SolomonsSword<br/><i>Trust Div 6 & s100A Matrix</i>"]
         ATO["RaymondChambers<br/><i>ATO Benchmark Compare</i>"]
         Super["CharlesHenryWickens<br/><i>Payday Super & SG Charge</i>"]
     end
@@ -81,8 +81,8 @@ JohnKenley calls CharlesHenryWickens and RaymondChambers (`ato-benchmark-compare
 
 ### 🧮 Computational Engines & Statutory Rules
 - **[Ozzit](https://github.com/ryanduguid/Ozzit)** - Comprehensive library of 130 native Excel `LAMBDA` functions for dynamic-array financial modelling, loan amortisation, capital allowance depreciation, and deterministic cash flow forecasting without VBA.
-- **[EdwinNixon](https://github.com/ryanduguid/EdwinNixon)** *(Corporate Tax & Franking)* - Corporate tax rate determination (Base Rate Entity eligibility under *s 23AA ITRA 1986*), Franking Account Balance (FAB) tracking, and Division 203 benchmark rule compliance.
-- **[LouisGoldberg](https://github.com/ryanduguid/LouisGoldberg)** *(Trust Income & Section 100A)* - Trust income allocation under Division 6 ITAA 1936 (*Bamford* proportionate approach), Section 100A risk classification (*ATO PCG 2022/2*), and Section 99B foreign trust receipt analysis.
+- **[TheExchequerTally](https://github.com/ryanduguid/TheExchequerTally)** *(Corporate Tax & Franking)* - Corporate tax rate determination (Base Rate Entity eligibility under *s 23AA ITRA 1986*), Franking Account Balance (FAB) tracking, and Division 203 benchmark rule compliance.
+- **[SolomonsSword](https://github.com/ryanduguid/SolomonsSword)** *(Trust Income & Section 100A)* - Trust income allocation under Division 6 ITAA 1936 (*Bamford* proportionate approach), Section 100A risk classification (*ATO PCG 2022/2*), and Section 99B foreign trust receipt analysis.
 - **[CharlesHenryWickens](https://github.com/ryanduguid/CharlesHenryWickens)** (`payday-super-checker`) - Deterministic engine evaluating Australian Payday Super 2026 contribution timelines and Superannuation Guarantee (SG) charge exposure on late remittances.
 - **[RaymondChambers](https://github.com/ryanduguid/RaymondChambers)** *(`ato-benchmark-compare`)* - Localized, offline profit-and-loss variance analysis against Australian Taxation Office (ATO) small business benchmarks.
 
