@@ -40,10 +40,10 @@ unsaved Customize your pins dialog.
 
 1. `payday-super-checker`
 2. `Ozzit`
-3. `australian-accounting-skills`
-4. `xero-trial-balance-export`
-5. `DrDebits`
-6. `ato-benchmark-compare`
+3. `xero-trial-balance-export`
+4. `australian-accounting-skills`
+5. `ato-benchmark-compare`
+6. `DrDebits`
 
 Do not pin `.github`, contribution forks, or Resume-Matcher. After changing pins, check https://github.com/ryanduguid for the heading **Pinned** (not **Popular**).
 
