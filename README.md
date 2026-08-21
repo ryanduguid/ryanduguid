@@ -37,7 +37,7 @@ flowchart LR
         direction TB
         MCP["aus-accounting-mcp<br/><i>Unified MCP Agent Server</i>"]
         MAH["MaryAddisonHamilton<br/><i>Public-Practice Workflow Skills</i>"]
-        SubSkills["subcontractor-accounting-skills<br/><i>Construction & Mining Skills</i>"]
+        SubSkills["Hardhat Ledger<br/><i>Construction & Mining Skills</i>"]
         DrD["DrDebits<br/><i>Tax Ethics & LLM Guidance</i>"]
         Gateway["ElizabethAnneAlexander<br/><i>Synthetic Data Safety Perimeter</i>"]
     end
@@ -66,7 +66,7 @@ flowchart LR
 
 ### AI Agent Workflows & Deterministic Safety
 - **[MaryAddisonHamilton](https://github.com/ryanduguid/MaryAddisonHamilton)** *(`australian-accounting-skills` plugin pack)* - Nine modular agent skills for Australian public practice (BAS reconciliation, FBT, Division 7A statutory benchmark compliance, STP Phase 2, and 13-week cash flow modelling).
-- **[subcontractor-accounting-skills](https://github.com/ryanduguid/subcontractor-accounting-skills)** - Claude Code skills tailored for Australian construction and mining subcontractors (payment claims under Security of Payment acts, retention tracking, WIP billing, Coal LSL, and contractor payroll tax provisions).
+- **[Hardhat Ledger](https://github.com/ryanduguid/hardhat-ledger)** - Claude Code skills tailored for Australian construction and mining subcontractors (payment claims under Security of Payment acts, retention tracking, WIP billing, Coal LSL, and contractor payroll tax provisions).
 - **[DrDebits](https://github.com/ryanduguid/DrDebits)** - Versioned, primary-source-grounded ethical and operational boundaries (aligned with APES 110 and TPB Code of Professional Conduct) for LLM-assisted taxation workflows.
 - **[ElizabethAnneAlexander](https://github.com/ryanduguid/ElizabethAnneAlexander)** - Fixed-policy, zero-network security perimeter for AI-assisted trial balance review utilising synthetic test datasets.
 
