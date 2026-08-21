@@ -21,5 +21,5 @@
 - **MaryAddisonHamilton** (https://github.com/ryanduguid/MaryAddisonHamilton): Nine modular Claude Code skills for Australian public practice (BAS reconciliation, FBT, Division 7A benchmarks, STP Phase 2, and 13-week cash flow modelling).
 - **subcontractor-accounting-skills** (https://github.com/ryanduguid/subcontractor-accounting-skills): Claude Code skills for Australian construction & mining subcontractors (Security of Payment claims, retentions, WIP billing, Coal LSL, and contractor payroll tax).
 - **DrDebits** (https://github.com/ryanduguid/DrDebits): Versioned, primary-source-grounded ethical instructions (APES 110 & TPB Code of Professional Conduct) for LLM-assisted taxation workflows.
-- **xero-ai-review-gateway** (https://github.com/ryanduguid/xero-ai-review-gateway): Zero-network, fixed-policy safety boundary for AI-assisted trial balance reviews using synthetic test data.
+- **ElizabethAnneAlexander** (https://github.com/ryanduguid/ElizabethAnneAlexander): Zero-network, fixed-policy safety boundary for AI-assisted trial balance reviews using synthetic test data.
 - **awesome-australian-accounting-tech** (https://github.com/ryanduguid/awesome-australian-accounting-tech): Curated index of open-source libraries, ATO datasets, legislation APIs, and standards for Australian accounting technology.
