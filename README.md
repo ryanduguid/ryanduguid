@@ -50,12 +50,12 @@ flowchart LR
 - **[RaymondChambers](https://github.com/ryanduguid/RaymondChambers)** *(ATO Benchmark Compare)* — Local, offline profit-and-loss variance analysis against Australian Taxation Office (ATO) small business benchmarks with full audit trail working.
 
 ### Ledger Connectors & Controls
-- **[JohnSpenceOgilvy](https://github.com/ryanduguid/JohnSpenceOgilvy)** *(Xero Trial Balance Export)* — Exports Xero trial balances to validated CSV for Power BI, Excel, and pandas only after movement and year-to-date balances reconcile.
+- **[JohnSpenceOgilvy](https://github.com/ryanduguid/JohnSpenceOgilvy)** *(`xero-trial-balance-export` package)* — Exports Xero trial balances to validated CSV for Power BI, Excel, and pandas only after movement and year-to-date balances reconcile.
 - **[SirAlexanderFitzgerald](https://github.com/ryanduguid/SirAlexanderFitzgerald)** — Power Query and VBA utilities for Australian accounting and reporting workflows.
 - **[monthly-close-control-plane](https://github.com/ryanduguid/monthly-close-control-plane)** — Review-first controls for trial balance exports with deterministic period locking.
 
 ### AI Agent Workflows & Deterministic Safety
-- **[MaryAddisonHamilton](https://github.com/ryanduguid/MaryAddisonHamilton)** *(Australian Accounting Skills for Claude Code)* — 9 skills for Australian public practice workflows (BAS reconciliation, FBT, Division 7A loan agreements, STP Phase 2, and 13-week cashflows).
+- **[MaryAddisonHamilton](https://github.com/ryanduguid/MaryAddisonHamilton)** *(`australian-accounting-skills` plugin pack)* — 9 skills for Australian public practice workflows (BAS reconciliation, FBT, Division 7A loan agreements, STP Phase 2, and 13-week cashflows).
 - **[subcontractor-accounting-skills](https://github.com/ryanduguid/subcontractor-accounting-skills)** — Claude Code skills for Australian construction & mining subcontractors (progress claims, retentions, WIP, Coal LSL, and contractor payroll tax).
 - **[DrDebits](https://github.com/ryanduguid/DrDebits)** — Versioned, primary-source-linked ethical and operational instructions for LLM-assisted Australian accounting and tax work.
 - **[xero-ai-review-gateway](https://github.com/ryanduguid/xero-ai-review-gateway)** — Fixed-policy, zero-network safety boundary for AI-assisted trial balance review using synthetic test data.
