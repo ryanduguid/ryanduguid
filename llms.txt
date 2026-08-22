@@ -8,9 +8,10 @@
 - **Focus**: Open-source computational accounting, deterministic reconciliation engines, native Excel LAMBDAs, Model Context Protocol (MCP), and structured AI agent workflows.
 - **Jurisdiction**: Commonwealth of Australia (ATO, AASB, IFRS, TPB).
 
-## Install these two
+## Install these three
 - **australian-accounting-skills** (https://github.com/ryanduguid/australian-accounting-skills): Nine modular public-practice workflow skills (BAS tie-out, FBT, Division 7A loan-register workflow, STP year-end finalisation, workpapers). Claude Code plugin, Codex plugin, or `npx skills add ryanduguid/australian-accounting-skills`. Prep-only. Not lodgment. Not tax advice.
 - **au-tax-mcp-server** (https://github.com/ryanduguid/au-tax-mcp-server): Unified MCP server for ATO small-business benchmarks, Payday Super 2026 review, refused Division 7A, and synthetic SBR fixtures. Install: `uvx --from git+https://github.com/ryanduguid/au-tax-mcp-server aus-accounting-mcp`.
+- **hardhat-ledger** (https://github.com/ryanduguid/hardhat-ledger): Construction and mining subcontractor skills (Security of Payment, retentions, WIP, Coal LSL, Fuel Tax Credits). Install: `npx skills add ryanduguid/hardhat-ledger`. Prep-only. Not tax advice.
 
 ## Engines those products call
 - **payday-super-checker** (https://github.com/ryanduguid/payday-super-checker): Payday Super contribution timelines and experimental SG-charge exposure. Not an ATO assessment.
@@ -21,12 +22,11 @@
 - **xero-trial-balance-export** (https://github.com/ryanduguid/xero-trial-balance-export): Reconciled Xero trial balance exporter; movement and year-to-date must both tie before CSV write.
 - **accounting-excel-toolkit** (https://github.com/ryanduguid/accounting-excel-toolkit): Power Query (M) and VBA automation for Australian month-end reporting.
 - **monthly-close-control-plane** (https://github.com/ryanduguid/monthly-close-control-plane): Local trial-balance review packs with exception surfacing; it does not approve or lock a close.
-- **Hardhat Ledger** (https://github.com/ryanduguid/hardhat-ledger): Construction and mining skills (Security of Payment, retentions, WIP, Coal LSL).
 - **DrDebits** (https://github.com/ryanduguid/DrDebits): APES 110 and TPB-aligned operating boundaries for LLM-assisted taxation workflows.
 - **xero-ai-review-gateway** (https://github.com/ryanduguid/xero-ai-review-gateway): Synthetic-data demonstration of a fixed-policy trial-balance review boundary.
-- **australian-accounting-tech** (https://github.com/ryanduguid/australian-accounting-tech): Curated index of AU accounting libraries, ATO datasets, and legislation APIs.
+- **awesome-australian-accounting-tech** (https://github.com/ryanduguid/awesome-australian-accounting-tech): Curated index of AU accounting libraries, ATO datasets, and legislation APIs.
 
 ## Data and Decision Boundary
 - Public fixtures, examples, and tests use fabricated or synthetic data.
 - Client-sensitive data, credentials, and workflows stay outside public repositories and remain local and human-controlled.
-- Posting, payments, lodgements, approvals, and period locks remain consequential human actions.
+- Posting, payments, lodgments, approvals, and period locks remain consequential human actions.

@@ -1,24 +1,18 @@
 # Ryan Duguid
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Provisional_Member-CA_ANZ-5C2D91?style=for-the-badge&labelColor=04001F" alt="CA ANZ" />
-  <img src="https://img.shields.io/badge/SAP_Certified-S%2F4HANA_FI%2FCO-5C2D91?style=for-the-badge&labelColor=04001F" alt="SAP FI/CO" />
-  <img src="https://img.shields.io/badge/Xero-L3_Specialist-5C2D91?style=for-the-badge&logo=xero&logoColor=white&labelColor=04001F" alt="Xero" />
-</p>
-
-<p align="center">
   <a href="https://www.python.org/"><img src="https://img.shields.io/badge/Python-3.10+-5C2D91?logo=python&logoColor=white&labelColor=04001F" alt="Python 3.10 or later" /></a>
   <a href="https://modelcontextprotocol.io/"><img src="https://img.shields.io/badge/MCP-Standard%20Protocol-5C2D91?labelColor=04001F" alt="Model Context Protocol" /></a>
-  <a href="https://github.com/ryanduguid/Ozzit"><img src="https://img.shields.io/badge/Excel-130%20Native%20LAMBDAs-5C2D91?logo=microsoftexcel&logoColor=white&labelColor=04001F" alt="Ozzit: 130 native Excel LAMBDAs" /></a>
+  <a href="https://github.com/ryanduguid/Ozzit"><img src="https://img.shields.io/badge/Excel-130%20Native%20LAMBDAs-5C2D91?labelColor=04001F" alt="Ozzit: 130 native Excel LAMBDAs" /></a>
   <a href="https://github.com/ryanduguid/DrDebits"><img src="https://img.shields.io/badge/APES%20110-Aligned%20Guardrails-4F485E?labelColor=04001F" alt="DrDebits APES 110 aligned guardrails" /></a>
   <a href="https://github.com/ryanduguid/australian-accounting-skills"><img src="https://img.shields.io/badge/Claude_Code-Skills%20%26%20Agents-5C2D91?logo=anthropic&logoColor=white&labelColor=04001F" alt="Australian Accounting Skills Claude Code skills" /></a>
 </p>
 
 ---
 
-Australian accountant based in Newcastle, NSW. Engineering **computational accounting engines**, **native Excel dynamic-array LAMBDAs**, **Model Context Protocol (MCP) servers**, and **deterministic AI workflows** for Australian taxation, payroll, and statutory compliance.
+Australian accountant based in Newcastle, NSW. Engineering computational accounting engines, native Excel dynamic-array LAMBDAs, Model Context Protocol (MCP) servers, and deterministic AI workflows for Australian taxation, payroll, and statutory compliance.
 
-> **Provisional Member CA ANZ** &bull; **SAP S/4HANA Certified in FI & CO** &bull; **L3 Xero Specialist Certified**
+> Provisional member of Chartered Accountants ANZ &bull; SAP S/4HANA Certified (FI & CO) &bull; Xero specialist certification (Level 3)
 
 ---
 
@@ -69,8 +63,8 @@ flowchart LR
     subgraph AI ["3. Agent workflows"]
         direction TB
         MCP["au-tax-mcp-server<br/><i>Unified MCP Server</i>"]
-        MAH["australian-accounting-skills<br/><i>Public-Practice Skills</i>"]
-        SubSkills["Hardhat Ledger<br/><i>Construction & Mining Skills</i>"]
+        Skills["australian-accounting-skills<br/><i>Public-Practice Skills</i>"]
+        SubSkills["hardhat-ledger<br/><i>Construction & Mining Skills</i>"]
         DrD["DrDebits<br/><i>APES 110 & TPB Ethics Gate</i>"]
         Gateway["xero-ai-review-gateway<br/><i>Zero-Network Review Sandbox</i>"]
     end
@@ -83,17 +77,17 @@ flowchart LR
 
     class Xero,PQ dataBox;
     class Ozzit,Tally,Sword,ATO,Super engineBox;
-    class MCP,MAH,SubSkills,DrD,Gateway aiBox;
+    class MCP,Skills,SubSkills,DrD,Gateway aiBox;
 ```
 
-au-tax-mcp-server calls payday-super-checker and ato-benchmark-compare. australian-accounting-skills names those CLIs rather than inventing the same work. Historical engine repositories stay the source of truth for the calculation; the two products above are what a stranger should install.
+au-tax-mcp-server calls payday-super-checker and ato-benchmark-compare. australian-accounting-skills names the payday-super CLI rather than inventing the same work. Historical engine repositories stay the source of truth for the calculation; the products above are what a stranger should install.
 
 ---
 
 ## Open-Source Computational Ecosystem
 
 ### Model Context Protocol (MCP) and Agent Infrastructure
-- **[au-tax-mcp-server](https://github.com/ryanduguid/au-tax-mcp-server)** (`aus-accounting-mcp`) - Unified Model Context Protocol (MCP) server exposing ATO small business benchmarks, Payday Super statutory timelines, and synthetic SBR test payloads to Claude Desktop, Claude Code, Cursor, and Antigravity.
+- **[au-tax-mcp-server](https://github.com/ryanduguid/au-tax-mcp-server)** (`aus-accounting-mcp`) - Unified Model Context Protocol (MCP) server exposing ATO small business benchmarks, Payday Super statutory timelines, and synthetic SBR test payloads to Claude Desktop, Claude Code, Cursor, and Antigravity. Refuses Division 7A calculations by design. Preparation aid only, not tax advice.
 
 ### Computational Engines and Statutory Rules
 - **[Ozzit](https://github.com/ryanduguid/Ozzit)** - 130 native Excel `LAMBDA` functions for dynamic-array financial modelling. Derivative of Craig Hatmaker's Financial Starter Pack; this repo adds Australian GST/FY helpers. See [ATTRIBUTION.md](https://github.com/ryanduguid/Ozzit/blob/main/ATTRIBUTION.md). Not an individual-tax or Division 7A engine.
@@ -106,12 +100,13 @@ au-tax-mcp-server calls payday-super-checker and ato-benchmark-compare. australi
 - **[DrDebits](https://github.com/ryanduguid/DrDebits)** - Primary-source-grounded ethical guardrails (aligned with APES 110 and TPB Code of Professional Conduct) for LLM-assisted taxation workflows.
 - **[xero-ai-review-gateway](https://github.com/ryanduguid/xero-ai-review-gateway)** - Zero-network, fixed-policy safety boundary for AI-assisted trial balance review with cryptographic receipt verification and data minimisation.
 - **[australian-accounting-skills](https://github.com/ryanduguid/australian-accounting-skills)** - Nine modular agent skills for Australian public practice (BAS reconciliation, FBT, Division 7A loan-register workflow, STP year-end finalisation, and 13-week cash flow modelling).
-- **[Hardhat Ledger](https://github.com/ryanduguid/hardhat-ledger)** - Claude Code skills for Australian construction and mining subcontractors (Security of Payment claims, retentions, WIP, Coal LSL, and Fuel Tax Credits).
+- **[hardhat-ledger](https://github.com/ryanduguid/hardhat-ledger)** - Claude Code skills for Australian construction and mining subcontractors (Security of Payment claims, retentions, WIP, Coal LSL, and Fuel Tax Credits).
 
 ### Ledger Controls and Pipeline Utilities
 - **[xero-trial-balance-export](https://github.com/ryanduguid/xero-trial-balance-export)** - Exports reconciled Xero trial balances to validated CSV formats with strict movement and year-to-date mathematical integrity.
 - **[accounting-excel-toolkit](https://github.com/ryanduguid/accounting-excel-toolkit)** - Power Query (M) and VBA automation utilities for Australian accounting, reconciliations, and month-end financial reporting pipelines.
-- **[australian-accounting-tech](https://github.com/ryanduguid/awesome-australian-accounting-tech)** - A curated index of open-source libraries, computational tax engines, ATO datasets, and Commonwealth legislation APIs.
+- **[monthly-close-control-plane](https://github.com/ryanduguid/monthly-close-control-plane)** - Local trial-balance review packs with exception surfacing; it does not approve or lock a close.
+- **[awesome-australian-accounting-tech](https://github.com/ryanduguid/awesome-australian-accounting-tech)** - A curated index of open-source libraries, computational tax engines, ATO datasets, and Commonwealth legislation APIs.
 
 ---
 
@@ -129,4 +124,4 @@ au-tax-mcp-server calls payday-super-checker and ato-benchmark-compare. australi
 1. **Primary Source Grounding**: Computations that actually ship (Payday Super timing and experimental SG-charge estimates, ATO benchmark ratios, company tax/franking, trust allocation) are grounded in the cited Commonwealth legislation, ATO public rulings, and AASB/APESB standards. This account does not ship an individual marginal-tax or Medicare-levy engine.
 2. **Exact Decimal Arithmetic**: Computational outputs use exact decimal quantisation to prevent binary floating-point drift.
 3. **Local Privacy Boundaries**: Client-sensitive financial data remains in local memory or zero-network sandboxes; public fixtures use synthetic data only.
-4. **Human-in-the-Loop Signoff**: Algorithmic pipelines automate calculation and structural validation; ultimate professional judgement and statutory lodgements remain strictly human-controlled.
+4. **Human-in-the-Loop Signoff**: Algorithmic pipelines automate calculation and structural validation; ultimate professional judgement and statutory lodgment remain strictly human-controlled.
