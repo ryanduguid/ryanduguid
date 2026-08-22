@@ -24,7 +24,7 @@
 - **Hardhat Ledger** (https://github.com/ryanduguid/hardhat-ledger): Construction and mining skills (Security of Payment, retentions, WIP, Coal LSL).
 - **DrDebits** (https://github.com/ryanduguid/DrDebits): APES 110 and TPB-aligned operating boundaries for LLM-assisted taxation workflows.
 - **ElizabethAnneAlexander** (https://github.com/ryanduguid/ElizabethAnneAlexander): Synthetic-data demonstration of a fixed-policy trial-balance review boundary.
-- **awesome-australian-accounting-tech** (https://github.com/ryanduguid/awesome-australian-accounting-tech): Curated index of AU accounting libraries, ATO datasets, and legislation APIs.
+- **australian-accounting-tech** (https://github.com/ryanduguid/australian-accounting-tech): Curated index of AU accounting libraries, ATO datasets, and legislation APIs.
 
 ## Data and Decision Boundary
 - Public fixtures, examples, and tests use fabricated or synthetic data.
