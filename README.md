@@ -22,9 +22,9 @@ Australian accountant based in Newcastle, NSW. Engineering **computational accou
 
 ---
 
-## 1-Command Agent Toolbelt
+## Agent Environment Configuration
 
-Equip your AI assistant with Australian taxation rules and computational accounting engines:
+Integrate Australian statutory rules and deterministic computational engines into AI development environments:
 
 ```bash
 # Add Australian Accounting & Tax MCP server to Claude Code
@@ -39,7 +39,7 @@ npx skills add ryanduguid/hardhat-ledger
 
 ---
 
-## The stack those products sit on
+## Computational Accounting Architecture
 
 ```mermaid
 %%{init: {
@@ -90,7 +90,7 @@ JohnKenley calls CharlesHenryWickens and RaymondChambers (`ato-benchmark-compare
 
 ---
 
-## Categorised Open-Source Ecosystem
+## Open-Source Computational Ecosystem
 
 ### Model Context Protocol (MCP) and Agent Infrastructure
 - **[JohnKenley](https://github.com/ryanduguid/JohnKenley)** (`aus-accounting-mcp`) - Unified Model Context Protocol (MCP) server exposing ATO small business benchmarks, Payday Super statutory timelines, and synthetic SBR test payloads to Claude Desktop, Claude Code, Cursor, and Antigravity.
@@ -111,7 +111,7 @@ JohnKenley calls CharlesHenryWickens and RaymondChambers (`ato-benchmark-compare
 ### Ledger Controls and Pipeline Utilities
 - **[JohnSpenceOgilvy](https://github.com/ryanduguid/JohnSpenceOgilvy)** *(`xero-trial-balance-export`)* - Exports reconciled Xero trial balances to validated CSV formats with strict movement and year-to-date mathematical integrity.
 - **[SirAlexanderFitzgerald](https://github.com/ryanduguid/SirAlexanderFitzgerald)** - Power Query (M) and VBA automation utilities for Australian accounting, reconciliations, and month-end financial reporting pipelines.
-- **[awesome-australian-accounting-tech](https://github.com/ryanduguid/awesome-australian-accounting-tech)** - A curated index of open-source libraries, computational tax engines, ATO datasets, and Commonwealth legislation APIs.
+- **[australian-accounting-tech](https://github.com/ryanduguid/awesome-australian-accounting-tech)** - A curated index of open-source libraries, computational tax engines, ATO datasets, and Commonwealth legislation APIs.
 
 ---
 
