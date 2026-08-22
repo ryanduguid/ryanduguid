@@ -1,17 +1,17 @@
 # Ryan Duguid
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Provisional_Member-CA_ANZ-002B49?style=for-the-badge" alt="CA ANZ" />
-  <img src="https://img.shields.io/badge/SAP_Certified-S%2F4HANA_FI%2FCO-008FD3?style=for-the-badge" alt="SAP FI/CO" />
-  <img src="https://img.shields.io/badge/Xero-L3_Specialist-13B5EA?style=for-the-badge&logo=xero&logoColor=white" alt="Xero" />
+  <img src="https://img.shields.io/badge/Provisional_Member-CA_ANZ-5C2D91?style=for-the-badge&labelColor=04001F" alt="CA ANZ" />
+  <img src="https://img.shields.io/badge/SAP_Certified-S%2F4HANA_FI%2FCO-5C2D91?style=for-the-badge&labelColor=04001F" alt="SAP FI/CO" />
+  <img src="https://img.shields.io/badge/Xero-L3_Specialist-5C2D91?style=for-the-badge&logo=xero&logoColor=white&labelColor=04001F" alt="Xero" />
 </p>
 
 <p align="center">
-  <a href="https://www.python.org/"><img src="https://img.shields.io/badge/Python-3.10+-3776AB?logo=python&logoColor=white" alt="Python 3.10 or later" /></a>
-  <a href="https://modelcontextprotocol.io/"><img src="https://img.shields.io/badge/MCP-Standard%20Protocol-8A2BE2" alt="Model Context Protocol" /></a>
-  <a href="https://github.com/ryanduguid/Ozzit"><img src="https://img.shields.io/badge/Excel-130%20Native%20LAMBDAs-217346?logo=microsoftexcel&logoColor=white" alt="Ozzit: 130 native Excel LAMBDAs" /></a>
-  <a href="https://github.com/ryanduguid/DrDebits"><img src="https://img.shields.io/badge/APES%20110-Compliant%20Guardrails-blue" alt="DrDebits APES 110 guardrails" /></a>
-  <a href="https://github.com/ryanduguid/MaryAddisonHamilton"><img src="https://img.shields.io/badge/Claude_Code-Skills%20%26%20Agents-D97706?logo=anthropic&logoColor=white" alt="Mary Addison Hamilton Claude Code skills" /></a>
+  <a href="https://www.python.org/"><img src="https://img.shields.io/badge/Python-3.10+-5C2D91?logo=python&logoColor=white&labelColor=04001F" alt="Python 3.10 or later" /></a>
+  <a href="https://modelcontextprotocol.io/"><img src="https://img.shields.io/badge/MCP-Standard%20Protocol-5C2D91?labelColor=04001F" alt="Model Context Protocol" /></a>
+  <a href="https://github.com/ryanduguid/Ozzit"><img src="https://img.shields.io/badge/Excel-130%20Native%20LAMBDAs-5C2D91?logo=microsoftexcel&logoColor=white&labelColor=04001F" alt="Ozzit: 130 native Excel LAMBDAs" /></a>
+  <a href="https://github.com/ryanduguid/DrDebits"><img src="https://img.shields.io/badge/APES%20110-Compliant%20Guardrails-4F485E?labelColor=04001F" alt="DrDebits APES 110 guardrails" /></a>
+  <a href="https://github.com/ryanduguid/MaryAddisonHamilton"><img src="https://img.shields.io/badge/Claude_Code-Skills%20%26%20Agents-5C2D91?logo=anthropic&logoColor=white&labelColor=04001F" alt="Mary Addison Hamilton Claude Code skills" /></a>
 </p>
 
 ---
@@ -42,6 +42,14 @@ npx skills add ryanduguid/hardhat-ledger
 ## The stack those products sit on
 
 ```mermaid
+%%{init: {
+  'theme': 'base',
+  'themeVariables': {
+    'primaryTextColor': '#FFFFFF',
+    'lineColor': '#B1AFAD',
+    'tertiaryColor': '#04001F'
+  }
+}}%%
 flowchart LR
     subgraph Data ["1. Data and ledgers"]
         direction TB
@@ -68,6 +76,14 @@ flowchart LR
     end
 
     Data --> Engines --> AI
+
+    classDef dataBox fill:#140E24,stroke:#4F485E,stroke-width:1.5px,color:#FFFFFF;
+    classDef engineBox fill:#1E1236,stroke:#5C2D91,stroke-width:1.5px,color:#FFFFFF;
+    classDef aiBox fill:#2D184E,stroke:#8A4AC7,stroke-width:1.5px,color:#FFFFFF;
+
+    class Xero,PQ dataBox;
+    class Ozzit,Tally,Sword,ATO,Super engineBox;
+    class MCP,MAH,SubSkills,DrD,Gateway aiBox;
 ```
 
 JohnKenley calls CharlesHenryWickens and RaymondChambers (`ato-benchmark-compare`). MaryAddisonHamilton names those CLIs rather than inventing the same work. Historical engine repositories stay the source of truth for the calculation; the two products above are what a stranger should install.
