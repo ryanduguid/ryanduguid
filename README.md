@@ -22,7 +22,7 @@ Australian accountant based in Newcastle, NSW. Engineering **computational accou
 
 ---
 
-## ⚡ 1-Command Agent Toolbelt
+## 1-Command Agent Toolbelt
 
 Equip your AI assistant with Australian taxation rules and computational accounting engines:
 
@@ -90,32 +90,32 @@ JohnKenley calls CharlesHenryWickens and RaymondChambers (`ato-benchmark-compare
 
 ---
 
-## 📦 Categorized Open-Source Ecosystem
+## Categorised Open-Source Ecosystem
 
-### 🔌 Model Context Protocol (MCP) & Agent Infrastructure
+### Model Context Protocol (MCP) and Agent Infrastructure
 - **[JohnKenley](https://github.com/ryanduguid/JohnKenley)** (`aus-accounting-mcp`) - Unified Model Context Protocol (MCP) server exposing ATO small business benchmarks, Payday Super statutory timelines, and synthetic SBR test payloads to Claude Desktop, Claude Code, Cursor, and Antigravity.
 
-### 🧮 Computational Engines & Statutory Rules
+### Computational Engines and Statutory Rules
 - **[Ozzit](https://github.com/ryanduguid/Ozzit)** - Comprehensive library of 130 native Excel `LAMBDA` functions for dynamic-array financial modelling, loan amortisation, capital allowance depreciation, and deterministic cash flow forecasting without VBA.
 - **[TheExchequerTally](https://github.com/ryanduguid/TheExchequerTally)** *(Corporate Tax & Franking)* - Corporate tax rate determination (Base Rate Entity eligibility under *s 23AA ITRA 1986*), Franking Account Balance (FAB) tracking, and Division 203 benchmark rule compliance.
 - **[SolomonsSword](https://github.com/ryanduguid/SolomonsSword)** *(Trust Income & Section 100A)* - Trust income allocation under Division 6 ITAA 1936 (*Bamford* proportionate approach), Section 100A risk classification (*ATO PCG 2022/2*), and Section 99B foreign trust receipt analysis.
 - **[CharlesHenryWickens](https://github.com/ryanduguid/CharlesHenryWickens)** (`payday-super-checker`) - Deterministic engine evaluating Australian Payday Super 2026 contribution timelines and Superannuation Guarantee (SG) charge exposure on late remittances.
-- **[RaymondChambers](https://github.com/ryanduguid/RaymondChambers)** *(`ato-benchmark-compare`)* - Localized, offline profit-and-loss variance analysis against Australian Taxation Office (ATO) small business benchmarks.
+- **[RaymondChambers](https://github.com/ryanduguid/RaymondChambers)** *(`ato-benchmark-compare`)* - Localised, offline profit-and-loss variance analysis against Australian Taxation Office (ATO) small business benchmarks.
 
-### 🛡️ AI Agent Workflows & Deterministic Safety Boundaries
+### AI Agent Workflows and Deterministic Safety Boundaries
 - **[DrDebits](https://github.com/ryanduguid/DrDebits)** - Primary-source-grounded ethical guardrails (aligned with APES 110 and TPB Code of Professional Conduct) for LLM-assisted taxation workflows.
 - **[ElizabethAnneAlexander](https://github.com/ryanduguid/ElizabethAnneAlexander)** - Zero-network, fixed-policy safety boundary for AI-assisted trial balance review with cryptographic receipt verification and data minimisation.
 - **[MaryAddisonHamilton](https://github.com/ryanduguid/MaryAddisonHamilton)** - Nine modular agent skills for Australian public practice (BAS reconciliation, FBT, Division 7A benchmark compliance, STP Phase 2, and 13-week cash flow modelling).
 - **[Hardhat Ledger](https://github.com/ryanduguid/hardhat-ledger)** - Claude Code skills for Australian construction and mining subcontractors (Security of Payment claims, retentions, WIP, Coal LSL, and Fuel Tax Credits).
 
-### 📊 Ledger Controls & Pipeline Utilities
+### Ledger Controls and Pipeline Utilities
 - **[JohnSpenceOgilvy](https://github.com/ryanduguid/JohnSpenceOgilvy)** *(`xero-trial-balance-export`)* - Exports reconciled Xero trial balances to validated CSV formats with strict movement and year-to-date mathematical integrity.
 - **[SirAlexanderFitzgerald](https://github.com/ryanduguid/SirAlexanderFitzgerald)** - Power Query (M) and VBA automation utilities for Australian accounting, reconciliations, and month-end financial reporting pipelines.
 - **[awesome-australian-accounting-tech](https://github.com/ryanduguid/awesome-australian-accounting-tech)** - A curated index of open-source libraries, computational tax engines, ATO datasets, and Commonwealth legislation APIs.
 
 ---
 
-## 🤝 Upstream Open-Source Contributions
+## Upstream Open-Source Contributions
 
 - **[Meltano SDK #3727](https://github.com/meltano/sdk/pull/3727)** - Preservation of OAuth refresh tokens returned by token refresh endpoints.
 - **[tap-xero #20](https://github.com/Matatika/tap-xero/pull/20)** - Rectification of OAuth 2.0 configuration specifications and schema definitions.
@@ -124,9 +124,9 @@ JohnKenley calls CharlesHenryWickens and RaymondChambers (`ato-benchmark-compare
 
 ---
 
-## 📐 Engineering Principles
+## Engineering Principles
 
 1. **Primary Source Grounding**: All statutory computations (marginal tax brackets, SG percentages, benchmark ratios) are grounded directly in Commonwealth primary legislation (*ITAA 1936/1997*, *SGAA 1992*), ATO public rulings, and AASB/APESB standards.
-2. **Exact Decimal Arithmetic**: Computational outputs use exact decimal quantization to prevent binary floating-point drift.
+2. **Exact Decimal Arithmetic**: Computational outputs use exact decimal quantisation to prevent binary floating-point drift.
 3. **Local Privacy Boundaries**: Client-sensitive financial data remains in local memory or zero-network sandboxes; public fixtures use synthetic data only.
 4. **Human-in-the-Loop Signoff**: Algorithmic pipelines automate calculation and structural validation; ultimate professional judgement and statutory lodgements remain strictly human-controlled.
