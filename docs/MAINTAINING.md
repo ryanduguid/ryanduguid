@@ -17,7 +17,7 @@ How to report a security concern is in [SECURITY.md](../SECURITY.md). Account-wi
 
 ## Updating the public README
 
-The profile is an index, not a second catalogue of every engine. Lead with the two installable products, then the engines those products call. Keep current repository names (`JohnKenley`, `CharlesHenryWickens`, `TheExchequerTally`, `SolomonsSword`, `RussellMathews`).
+The profile is an index, not a second catalogue of every engine. Lead with the two installable products, then the engines those products call. Keep current repository names (`JohnKenley`, `CharlesHenryWickens`, `TheExchequerTally`, `SolomonsSword`, `RussellMathews`, `SirArthurFadden`).
 
 Keep one H1 (`Ryan Duguid`). The opening paragraph identifies Ryan as an Australian accountant in Newcastle, NSW, then names the supported subject areas once. It must not imply current public-practice employment, registration, vendor affiliation or regulatory endorsement.
 
@@ -74,8 +74,10 @@ GitHub About on the two flagship repositories (description, homepage, topics) is
 | Experimental payday-super review, possible SG-charge exposure and no ATO-assessment determination | `CharlesHenryWickens/README.md` and `paydaysuper/deadlines.py` |
 | 130 LAMBDA functions, native Excel only, no add-ins or macros | `Ozzit/README.md` |
 | Xero trial-balance export requires movement and year-to-date balance before writing | `JohnSpenceOgilvy/README.md` "Balance gate" |
+| Local trial-balance close controls and exception surfacing without period lock or approval assertions | `RussellMathews/README.md` |
 | Local profit-and-loss comparison against ATO benchmarks, with working shown | `RaymondChambers/README.md`; do not imply ATO endorsement |
 | Source-linked LLM operating guide for Australian accounting, tax and BAS work | `DrDebits/README.md`; do not imply certification or endorsement |
+| Corpus pipeline from Federal Register of Legislation with automated PII scan and redaction | `SirArthurFadden/README.md` and `BUILD.md` |
 | Selected external work is merged and attributable | The linked pull request pages and the four live GitHub CLI checks above |
 
 ## Style

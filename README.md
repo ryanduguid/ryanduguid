@@ -54,7 +54,9 @@ flowchart LR
     subgraph Data ["1. Data and ledgers"]
         direction TB
         Xero["JohnSpenceOgilvy<br/><i>Validated Xero TB Export</i>"]
+        Controls["RussellMathews<br/><i>Close Controls & Integrity</i>"]
         PQ["SirAlexanderFitzgerald<br/><i>Power Query (M) & VBA</i>"]
+        Legis["SirArthurFadden<br/><i>Tax Legislation Corpus</i>"]
     end
 
     subgraph Engines ["2. Rules and engines"]
@@ -81,7 +83,7 @@ flowchart LR
     classDef engineBox fill:#1E1236,stroke:#5C2D91,stroke-width:1.5px,color:#FFFFFF;
     classDef aiBox fill:#2D184E,stroke:#8A4AC7,stroke-width:1.5px,color:#FFFFFF;
 
-    class Xero,PQ dataBox;
+    class Xero,Controls,PQ,Legis dataBox;
     class Ozzit,Tally,Sword,ATO,Super engineBox;
     class MCP,MAH,SubSkills,DrD,Gateway aiBox;
 ```
@@ -96,6 +98,7 @@ JohnKenley calls CharlesHenryWickens and RaymondChambers (`ato-benchmark-compare
 - **[JohnKenley](https://github.com/ryanduguid/JohnKenley)** (`aus-accounting-mcp`) - Unified Model Context Protocol (MCP) server exposing ATO small business benchmarks, Payday Super statutory timelines, and synthetic SBR test payloads to Claude Desktop, Claude Code, Cursor, and Antigravity.
 
 ### Computational Engines and Statutory Rules
+- **[SirArthurFadden](https://github.com/ryanduguid/SirArthurFadden)** - Provenance-rich corpus pipeline and dataset of in-force Commonwealth taxation statutes, regulations, and legislative instruments with automated privacy redactions and citation graphs.
 - **[Ozzit](https://github.com/ryanduguid/Ozzit)** - Comprehensive library of 130 native Excel `LAMBDA` functions for dynamic-array financial modelling, loan amortisation, capital allowance depreciation, and deterministic cash flow forecasting without VBA.
 - **[TheExchequerTally](https://github.com/ryanduguid/TheExchequerTally)** *(Corporate Tax & Franking)* - Corporate tax rate determination (Base Rate Entity eligibility under *s 23AA ITRA 1986*), Franking Account Balance (FAB) tracking, and Division 203 benchmark rule compliance.
 - **[SolomonsSword](https://github.com/ryanduguid/SolomonsSword)** *(Trust Income & Section 100A)* - Trust income allocation under Division 6 ITAA 1936 (*Bamford* proportionate approach), Section 100A risk classification (*ATO PCG 2022/2*), and Section 99B foreign trust receipt analysis.
@@ -109,6 +112,7 @@ JohnKenley calls CharlesHenryWickens and RaymondChambers (`ato-benchmark-compare
 - **[Hardhat Ledger](https://github.com/ryanduguid/hardhat-ledger)** - Claude Code skills for Australian construction and mining subcontractors (Security of Payment claims, retentions, WIP, Coal LSL, and Fuel Tax Credits).
 
 ### Ledger Controls and Pipeline Utilities
+- **[RussellMathews](https://github.com/ryanduguid/RussellMathews)** - Deterministic financial close controls and review packs for trial-balance exports, enforcing period-end mathematical invariants without external network calls.
 - **[JohnSpenceOgilvy](https://github.com/ryanduguid/JohnSpenceOgilvy)** *(`xero-trial-balance-export`)* - Exports reconciled Xero trial balances to validated CSV formats with strict movement and year-to-date mathematical integrity.
 - **[SirAlexanderFitzgerald](https://github.com/ryanduguid/SirAlexanderFitzgerald)** - Power Query (M) and VBA automation utilities for Australian accounting, reconciliations, and month-end financial reporting pipelines.
 - **[awesome-australian-accounting-tech](https://github.com/ryanduguid/awesome-australian-accounting-tech)** - A curated index of open-source libraries, computational tax engines, ATO datasets, and Commonwealth legislation APIs.
