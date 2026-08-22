@@ -17,13 +17,13 @@ How to report a security concern is in [SECURITY.md](../SECURITY.md). Account-wi
 
 ## Updating the public README
 
-The profile is an index, not a second catalogue of every engine. Lead with the two installable products, then the engines those products call. Keep current repository names (`JohnKenley`, `CharlesHenryWickens`, `TheExchequerTally`, `SolomonsSword`, `RussellMathews`).
+The profile is an index, not a second catalogue of every engine. Lead with the two installable products, then the engines those products call. Keep current repository names (`au-tax-mcp-server`, `payday-super-checker`, `TheExchequerTally`, `SolomonsSword`, `monthly-close-control-plane`).
 
 Keep one H1 (`Ryan Duguid`). The opening paragraph identifies Ryan as an Australian accountant in Newcastle, NSW, then names the supported subject areas once. It must not imply current public-practice employment, registration, vendor affiliation or regulatory endorsement.
 
 The credentials line is an assertion by the profile owner. Confirm it is current before changing or republishing it. Use **provisional member of Chartered Accountants ANZ**, not a vendor-style `CA ANZ` shorthand in prose.
 
-**Install these two** is MaryAddisonHamilton then JohnKenley, each with the shortest install path that actually works. Do not add a third installable product here without a packaging decision in that repository.
+**Install these two** is australian-accounting-skills then au-tax-mcp-server, each with the shortest install path that actually works. Do not add a third installable product here without a packaging decision in that repository.
 
 **Featured (pinned)** must match the live GitHub pin list. GitHub has no public pin API.
 
@@ -44,23 +44,23 @@ Change pins in the GitHub UI (**Customize your pins**). After saving, check http
 
 Live pin order as at 21 August 2026:
 
-1. `CharlesHenryWickens` (formerly `payday-super-checker`)
+1. `payday-super-checker`
 2. `Ozzit`
-3. `JohnSpenceOgilvy`
-4. `MaryAddisonHamilton`
-5. `RaymondChambers`
+3. `xero-trial-balance-export`
+4. `australian-accounting-skills`
+5. `ato-benchmark-compare`
 6. `DrDebits`
 
 Intended next pin order, once changed in the UI:
 
-1. `MaryAddisonHamilton`
-2. `JohnKenley` (formerly `aus-accounting-mcp`)
-3. `CharlesHenryWickens`
+1. `australian-accounting-skills`
+2. `au-tax-mcp-server`
+3. `payday-super-checker`
 4. `Ozzit`
-5. `JohnSpenceOgilvy`
+5. `xero-trial-balance-export`
 6. `DrDebits`
 
-`RaymondChambers` remains public and is called by `JohnKenley`; it does not need its own pin once the MCP server is pinned. Do not pin `.github`, contribution forks, or Resume-Matcher.
+`ato-benchmark-compare` remains public and is called by `au-tax-mcp-server`; it does not need its own pin once the MCP server is pinned. Do not pin `.github`, contribution forks, or Resume-Matcher.
 
 GitHub About on the two flagship repositories (description, homepage, topics) is applied from each repo's `docs/DISCOVERY.md` via `scripts/publish-github-about.sh`.
 
@@ -69,12 +69,12 @@ GitHub About on the two flagship repositories (description, homepage, topics) is
 | Claim | Source of truth |
 | --- | --- |
 | Identity, location and credentials | Profile-owner assertions. Confirm with the owner before changing or republishing them |
-| Nine public-practice workflow skills, plugin and `npx skills` install | `MaryAddisonHamilton/README.md` and `.claude/skills/*/SKILL.md` (nine folders) |
-| Local MCP facade; uvx from GitHub; Div 7A refused; SBR synthetic | `JohnKenley/README.md` and `DISCLAIMER.md` |
-| Experimental payday-super review, possible SG-charge exposure and no ATO-assessment determination | `CharlesHenryWickens/README.md` and `paydaysuper/deadlines.py` |
+| Nine public-practice workflow skills, plugin and `npx skills` install | `australian-accounting-skills/README.md` and `.claude/skills/*/SKILL.md` (nine folders) |
+| Local MCP facade; uvx from GitHub; Div 7A refused; SBR synthetic | `au-tax-mcp-server/README.md` and `DISCLAIMER.md` |
+| Experimental payday-super review, possible SG-charge exposure and no ATO-assessment determination | `payday-super-checker/README.md` and `paydaysuper/deadlines.py` |
 | 130 LAMBDA functions, native Excel only, no add-ins or macros | `Ozzit/README.md` |
-| Xero trial-balance export requires movement and year-to-date balance before writing | `JohnSpenceOgilvy/README.md` "Balance gate" |
-| Local profit-and-loss comparison against ATO benchmarks, with working shown | `RaymondChambers/README.md`; do not imply ATO endorsement |
+| Xero trial-balance export requires movement and year-to-date balance before writing | `xero-trial-balance-export/README.md` "Balance gate" |
+| Local profit-and-loss comparison against ATO benchmarks, with working shown | `ato-benchmark-compare/README.md`; do not imply ATO endorsement |
 | Source-linked LLM operating guide for Australian accounting, tax and BAS work | `DrDebits/README.md`; do not imply certification or endorsement |
 | Selected external work is merged and attributable | The linked pull request pages and the four live GitHub CLI checks above |
 
@@ -104,6 +104,6 @@ Forks used only to send upstream pull requests stay out of the product list. **O
 - Saying the Xero exporter writes any trial balance. Both movement and year-to-date balances must reconcile before it writes the CSV.
 - Listing six of the nine skills and calling it nine. The named set is BAS, FBT, Division 7A, STP, month-end close, year-end workpapers and 13-week cashflow; `xero-exports` and `workpaper-tie-out` are the other two.
 - Treating mentions of Xero, the ATO, CA ANZ or SAP as proof of employment, partnership, approval, registration or endorsement.
-- Using retired repository names (`aus-accounting-mcp`, `payday-super-checker`, `EdwinNixon`, `LouisGoldberg`) in new copy.
+- Using retired repository names (`CharlesHenryWickens`, `JohnKenley`, `JohnSpenceOgilvy`, `MaryAddisonHamilton`, `ElizabethAnneAlexander`, `RaymondChambers`, `RussellMathews`, `SirArthurFadden`, `SirAlexanderFitzgerald`, `EdwinNixon`, `LouisGoldberg`) in new copy.
 
 CI now runs `.github/workflows/link-check.yml` so profile README links stay https.
