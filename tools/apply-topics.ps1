@@ -6,8 +6,8 @@ $ErrorActionPreference = "Stop"
 
 $repoTopics = @{
     "ryanduguid/JohnKenley" = @("mcp-server", "model-context-protocol", "australian-taxation", "accounting", "python")
-    "ryanduguid/Ozzit" = @("excel-lambda", "dynamic-arrays", "financial-modelling", "cash-flow", "tax-engine")
-    "ryanduguid/CharlesHenryWickens" = @("payday-super", "superannuation", "compliance-checker", "cli", "python")
+    "ryanduguid/Ozzit" = @("excel-lambda", "dynamic-arrays", "financial-modelling", "cash-flow", "gst")
+    "ryanduguid/CharlesHenryWickens" = @("payday-super", "superannuation", "sg-charge", "cli", "python")
     "ryanduguid/MaryAddisonHamilton" = @("claude-code", "agent-skills", "public-practice", "australian-accounting")
     "ryanduguid/DrDebits" = @("ai-guardrails", "ethics", "apes-110", "tpb", "tax-agents")
     "ryanduguid/TheExchequerTally" = @("corporate-tax", "franking-credits", "division-203", "base-rate-entity", "python")
@@ -16,7 +16,7 @@ $repoTopics = @{
     "ryanduguid/hardhat-ledger" = @("claude-code", "construction-accounting", "mining-subcontractor", "australian-tax")
     "ryanduguid/ElizabethAnneAlexander" = @("zero-network", "safety-boundary", "trial-balance", "accounting-ai")
     "ryanduguid/SirArthurFadden" = @("legislation-corpus", "tax-law", "australian-taxation", "python")
-    "ryanduguid/tax-radar-au" = @("tax-monitor", "surveillance", "statutory-changes", "python")
+    "ryanduguid/tax-radar-au" = @("synthetic-demo", "review-queue", "statutory-changes", "python")
     "ryanduguid/awesome-australian-accounting-tech" = @("awesome-list", "australian-accounting", "tax-tech", "open-source")
 }
 

@@ -4,18 +4,18 @@
 ## Developer Profile
 - **Name**: Ryan Duguid
 - **Location**: Newcastle, NSW, Australia
-- **Credentials**: Provisional member of Chartered Accountants ANZ, SAP S/4HANA Certified (FI & CO), Xero Advisor L3
+- **Credentials**: Provisional member of Chartered Accountants ANZ, SAP S/4HANA Certified (FI & CO), Xero specialist certification (Level 3)
 - **Focus**: Open-source computational accounting, deterministic reconciliation engines, native Excel LAMBDAs, Model Context Protocol (MCP), and structured AI agent workflows.
 - **Jurisdiction**: Commonwealth of Australia (ATO, AASB, IFRS, TPB).
 
 ## Install these two
-- **MaryAddisonHamilton** (https://github.com/ryanduguid/MaryAddisonHamilton): Nine modular public-practice workflow skills (BAS tie-out, FBT, Division 7A, STP Phase 2, workpapers). Claude Code plugin, Codex plugin, or `npx skills add ryanduguid/MaryAddisonHamilton`. Prep-only. Not lodgment. Not tax advice.
+- **MaryAddisonHamilton** (https://github.com/ryanduguid/MaryAddisonHamilton): Nine modular public-practice workflow skills (BAS tie-out, FBT, Division 7A loan-register workflow, STP year-end finalisation, workpapers). Claude Code plugin, Codex plugin, or `npx skills add ryanduguid/MaryAddisonHamilton`. Prep-only. Not lodgment. Not tax advice.
 - **JohnKenley** (https://github.com/ryanduguid/JohnKenley): Unified MCP server for ATO small-business benchmarks, Payday Super 2026 review, refused Division 7A, and synthetic SBR fixtures. Install: `uvx --from git+https://github.com/ryanduguid/JohnKenley aus-accounting-mcp`.
 
 ## Engines those products call
 - **CharlesHenryWickens** (https://github.com/ryanduguid/CharlesHenryWickens): Payday Super contribution timelines and experimental SG-charge exposure. Not an ATO assessment.
 - **RaymondChambers** (https://github.com/ryanduguid/RaymondChambers): Offline P&L variance against ATO small-business benchmarks (`ato-benchmark-compare`).
-- **Ozzit** (https://github.com/ryanduguid/Ozzit): 130 native Excel LAMBDA functions for dynamic-array financial modelling without VBA or add-ins.
+- **Ozzit** (https://github.com/ryanduguid/Ozzit): 130 native Excel LAMBDA functions for dynamic-array financial modelling without VBA or add-ins. Derivative of Craig Hatmaker's Financial Starter Pack; Australian helpers are GST, financial-year labels and two modelling depreciation schedules. See ATTRIBUTION.md.
 - **TheExchequerTally** (https://github.com/ryanduguid/TheExchequerTally): Corporate tax rate determination (Base Rate Entity under s 23AA ITRA 1986), franking account balance, Division 203.
 - **SolomonsSword** (https://github.com/ryanduguid/SolomonsSword): Trust income allocation under Division 6 ITAA 1936, s 100A, s 99B.
 - **JohnSpenceOgilvy** (https://github.com/ryanduguid/JohnSpenceOgilvy): Reconciled Xero trial balance exporter; movement and year-to-date must both tie before CSV write (`xero-trial-balance-export`).
