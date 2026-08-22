@@ -113,8 +113,11 @@ JohnKenley calls CharlesHenryWickens and RaymondChambers (`ato-benchmark-compare
 
 ### Ledger Controls and Pipeline Utilities
 - **[RussellMathews](https://github.com/ryanduguid/RussellMathews)** - Deterministic financial close controls and review packs for trial-balance exports, enforcing period-end mathematical invariants without external network calls.
+- **[tax-radar-au](https://github.com/ryanduguid/tax-radar-au)** - Provenance-first monitor tracking in-force Australian tax source and compilation updates into technical review queues.
+- **[release-policy](https://github.com/ryanduguid/release-policy)** - Reusable GitHub Actions release workflows, provenance attestation, and packaging verification gates.
 - **[JohnSpenceOgilvy](https://github.com/ryanduguid/JohnSpenceOgilvy)** *(`xero-trial-balance-export`)* - Exports reconciled Xero trial balances to validated CSV formats with strict movement and year-to-date mathematical integrity.
 - **[SirAlexanderFitzgerald](https://github.com/ryanduguid/SirAlexanderFitzgerald)** - Power Query (M) and VBA automation utilities for Australian accounting, reconciliations, and month-end financial reporting pipelines.
+- **[DiogenesLamp](https://github.com/ryanduguid/DiogenesLamp)** - Offline catalogue archiver and high-performance virtualised viewer for structured public gallery ingestion.
 - **[awesome-australian-accounting-tech](https://github.com/ryanduguid/awesome-australian-accounting-tech)** - A curated index of open-source libraries, computational tax engines, ATO datasets, and Commonwealth legislation APIs.
 
 ---

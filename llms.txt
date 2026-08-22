@@ -21,6 +21,9 @@
 - **JohnSpenceOgilvy** (https://github.com/ryanduguid/JohnSpenceOgilvy): Reconciled Xero trial balance exporter; movement and year-to-date must both tie before CSV write (`xero-trial-balance-export`).
 - **SirAlexanderFitzgerald** (https://github.com/ryanduguid/SirAlexanderFitzgerald): Power Query (M) and VBA automation for Australian month-end reporting.
 - **RussellMathews** (https://github.com/ryanduguid/RussellMathews): Local trial-balance review packs with exception surfacing; it does not approve or lock a close.
+- **tax-radar-au** (https://github.com/ryanduguid/tax-radar-au): Provenance-first monitor for in-force Australian tax source updates.
+- **release-policy** (https://github.com/ryanduguid/release-policy): Reusable GitHub Actions workflows and provenance attestation gates.
+- **DiogenesLamp** (https://github.com/ryanduguid/DiogenesLamp): Offline catalogue archiver and virtualised viewer for structured public gallery ingestion.
 - **SirArthurFadden** (https://github.com/ryanduguid/SirArthurFadden): Provenance-rich corpus pipeline for Commonwealth tax legislation with automated privacy redactions and citation graphs.
 - **Hardhat Ledger** (https://github.com/ryanduguid/hardhat-ledger): Construction and mining skills (Security of Payment, retentions, WIP, Coal LSL).
 - **DrDebits** (https://github.com/ryanduguid/DrDebits): APES 110 and TPB-aligned operating boundaries for LLM-assisted taxation workflows.
