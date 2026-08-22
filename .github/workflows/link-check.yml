@@ -20,19 +20,5 @@ jobs:
       - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
         with:
           python-version: "3.12"
-      - name: Require https Markdown links
-        run: |
-          python - <<'PY'
-          from pathlib import Path
-          import re
-          import sys
-
-          text = Path("README.md").read_text(encoding="utf-8")
-          links = re.findall(r"\[[^\]]+\]\(([^)]+)\)", text)
-          bad = [url for url in links if url.startswith("http:")]
-          print(f"checked {len(links)} links")
-          if bad:
-              print("http links:")
-              print("\n".join(bad))
-              raise SystemExit(1)
-          PY
+      - name: Resolve every link, fail on rename redirects
+        run: python tools/check_links.py
