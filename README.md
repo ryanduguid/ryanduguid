@@ -125,3 +125,7 @@ au-tax-mcp-server calls payday-super-checker and ato-benchmark-compare. australi
 2. **Exact Decimal Arithmetic**: Computational outputs use exact decimal quantisation to prevent binary floating-point drift.
 3. **Local Privacy Boundaries**: Client-sensitive financial data remains in local memory or zero-network sandboxes; public fixtures use synthetic data only.
 4. **Human-in-the-Loop Signoff**: Algorithmic pipelines automate calculation and structural validation; ultimate professional judgement and statutory lodgment remain strictly human-controlled.
+
+---
+
+Built using **[Hermes Agent](https://github.com/NousResearch/hermes-agent)** by Nous Research.
