@@ -3,7 +3,7 @@
 <p align="center">
   <a href="https://www.python.org/"><img src="https://img.shields.io/badge/Python-3.10+-5C2D91?logo=python&logoColor=white&labelColor=04001F" alt="Python 3.10 or later" /></a>
   <a href="https://modelcontextprotocol.io/"><img src="https://img.shields.io/badge/MCP-Standard%20Protocol-5C2D91?labelColor=04001F" alt="Model Context Protocol" /></a>
-  <a href="https://github.com/ryanduguid/Ozzit"><img src="https://img.shields.io/badge/Excel-130%20Native%20LAMBDAs-5C2D91?labelColor=04001F" alt="Ozzit: 130 native Excel LAMBDAs" /></a>
+  <a href="https://github.com/ryanduguid/Ozzit"><img src="https://img.shields.io/badge/Excel-134%20Native%20LAMBDAs-5C2D91?labelColor=04001F" alt="Ozzit: 134 native Excel LAMBDAs" /></a>
   <a href="https://github.com/ryanduguid/DrDebits"><img src="https://img.shields.io/badge/APES%20110-Aligned%20Guardrails-4F485E?labelColor=04001F" alt="DrDebits APES 110 aligned guardrails" /></a>
   <a href="https://github.com/ryanduguid/australian-accounting-skills"><img src="https://img.shields.io/badge/Claude_Code-Skills%20%26%20Agents-5C2D91?logo=anthropic&logoColor=white&labelColor=04001F" alt="Australian Accounting Skills Claude Code skills" /></a>
 </p>
@@ -53,7 +53,7 @@ flowchart LR
 
     subgraph Engines ["2. Rules and engines"]
         direction TB
-        Ozzit["Ozzit<br/><i>130 Native Excel LAMBDAs</i>"]
+        Ozzit["Ozzit<br/><i>134 Native Excel LAMBDAs</i>"]
         Tally["TheExchequerTally<br/><i>Company Tax & Franking FAB</i>"]
         Sword["SolomonsSword<br/><i>Trust Div 6 & s100A Matrix</i>"]
         ATO["ato-benchmark-compare<br/><i>ATO Benchmark Compare</i>"]
@@ -90,7 +90,7 @@ au-tax-mcp-server calls payday-super-checker and ato-benchmark-compare. australi
 - **[au-tax-mcp-server](https://github.com/ryanduguid/au-tax-mcp-server)** (`aus-accounting-mcp`) - Unified Model Context Protocol (MCP) server exposing ATO small business benchmarks, Payday Super statutory timelines, and synthetic SBR test payloads to Claude Desktop, Claude Code, Cursor, and Antigravity. Refuses Division 7A calculations by design. Preparation aid only, not tax advice.
 
 ### Computational Engines and Statutory Rules
-- **[Ozzit](https://github.com/ryanduguid/Ozzit)** - 130 native Excel `LAMBDA` functions for dynamic-array financial modelling. Derivative of a third-party Excel LAMBDA workbook, republished under the upstream author's written permission with attribution waived; this repo adds Australian GST/FY helpers. See [ATTRIBUTION.md](https://github.com/ryanduguid/Ozzit/blob/main/ATTRIBUTION.md). Not an individual-tax or Division 7A engine.
+- **[Ozzit](https://github.com/ryanduguid/Ozzit)** - 134 native Excel `LAMBDA` functions for dynamic-array financial modelling. Derivative of a third-party Excel LAMBDA workbook, republished under the upstream author's written permission with attribution waived; this repo adds Australian GST/FY helpers. See [ATTRIBUTION.md](https://github.com/ryanduguid/Ozzit/blob/main/ATTRIBUTION.md). Not an individual-tax or Division 7A engine.
 - **[TheExchequerTally](https://github.com/ryanduguid/TheExchequerTally)** *(Corporate Tax & Franking)* - Corporate tax rate determination (Base Rate Entity eligibility under *s 23AA ITRA 1986*), Franking Account Balance (FAB) tracking, and Division 203 benchmark rule compliance.
 - **[SolomonsSword](https://github.com/ryanduguid/SolomonsSword)** *(Trust Income & Section 100A)* - Trust income allocation under Division 6 ITAA 1936 (*Bamford* proportionate approach), Section 100A risk classification (*ATO PCG 2022/2*), and Section 99B foreign trust receipt analysis.
 - **[payday-super-checker](https://github.com/ryanduguid/payday-super-checker)** - Experimental Payday Super 2026 contribution-timing review and SG-charge *estimates*. Not a compliance determination.
