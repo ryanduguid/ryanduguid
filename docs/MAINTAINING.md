@@ -10,8 +10,6 @@ How to report a security concern is in [SECURITY.md](../SECURITY.md). Account-wi
 | --- | --- |
 | `README.md` | Public profile at github.com/ryanduguid |
 | `llms.txt` | Compact agent-facing index; keep it aligned with README |
-| `assets/banner.svg` | Retained source asset. The README does not render a banner |
-| `assets/social-preview.svg` | Source for the repository social-preview card. GitHub has no upload API; re-render and upload under Settings after editing it |
 | `SECURITY.md` | Reporting policy for this documentation-only repository |
 | `LICENSE` | CC BY 4.0 for the profile prose |
 | `docs/MAINTAINING.md` | This runbook |
