@@ -16,7 +16,7 @@
 ## Engines those products call
 - **payday-super-checker** (https://github.com/ryanduguid/payday-super-checker): Payday Super contribution timelines and experimental SG-charge exposure. Not an ATO assessment.
 - **ato-benchmark-compare** (https://github.com/ryanduguid/ato-benchmark-compare): Offline P&L variance against ATO small-business benchmarks.
-- **Ozzit** (https://github.com/ryanduguid/Ozzit): 130 native Excel LAMBDA functions for dynamic-array financial modelling without VBA or add-ins. Derivative of Craig Hatmaker's Financial Starter Pack; Australian helpers are GST, financial-year labels and two modelling depreciation schedules. See ATTRIBUTION.md.
+- **Ozzit** (https://github.com/ryanduguid/Ozzit): 130 native Excel LAMBDA functions for dynamic-array financial modelling without VBA or add-ins. Derivative of a third-party Excel LAMBDA workbook republished under written permission with attribution waived; Australian helpers are GST, financial-year labels and two modelling depreciation schedules. See ATTRIBUTION.md.
 - **TheExchequerTally** (https://github.com/ryanduguid/TheExchequerTally): Corporate tax rate determination (Base Rate Entity under s 23AA ITRA 1986), franking account balance, Division 203.
 - **SolomonsSword** (https://github.com/ryanduguid/SolomonsSword): Trust income allocation under Division 6 ITAA 1936, s 100A, s 99B.
 - **xero-trial-balance-export** (https://github.com/ryanduguid/xero-trial-balance-export): Reconciled Xero trial balance exporter; movement and year-to-date must both tie before CSV write.
