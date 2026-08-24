@@ -31,6 +31,24 @@ npx skills add ryanduguid/hardhat-ledger
 
 ---
 
+## Tools on the Web
+
+No install, no clone: these open in a browser and explain the rule they apply.
+
+| Tool | What it answers |
+| --- | --- |
+| [Coal LSL levy calculator](https://ryanduguid.github.io/tools/coal-lsl-levy/) | Which eligible wages formula applies under section 3B, and what the monthly levy comes to |
+| [Payday super due dates](https://ryanduguid.github.io/tools/payday-super/) | When a contribution is actually due since 1 July 2026, and the charge if it is late |
+| [ATO small business benchmarks](https://ryanduguid.github.io/tools/ato-benchmarks/) | Where a profit and loss sits against the published ATO ranges |
+| [Section 100A and Division 6](https://ryanduguid.github.io/tools/trust-distributions/) | Which PCG 2022/2 zone a trust distribution falls in, and each beneficiary's share |
+| [Company tax rate and franking](https://ryanduguid.github.io/tools/company-tax-franking/) | Whether a company is a base rate entity, and whether the franking account holds up |
+| [Subcontract ledger workflows](https://ryanduguid.github.io/tools/subcontractor-ledgers/) | Progress claims, retentions, work in progress, and the mining services regimes |
+| [Xero trial balance export](https://ryanduguid.github.io/tools/xero-trial-balance/) | How to get a trial balance out of Xero that actually balances |
+
+[About Ryan Duguid](https://ryanduguid.github.io/about/) covers the credentials, what the work is grounded in, and how to cite it.
+
+---
+
 ## Computational Accounting Architecture
 
 ```mermaid
