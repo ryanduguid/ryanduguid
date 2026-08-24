@@ -4,7 +4,7 @@ from __future__ import annotations
 
 import unittest
 
-from banner import Ledger
+from banner import Ledger, check
 
 
 class TestGeometry(unittest.TestCase):
@@ -77,6 +77,27 @@ class TestRendering(unittest.TestCase):
         out = Ledger(24).full("x" * 100, center=False).render().split("\n")
         self.assertEqual(len(out[1]), 24)
         self.assertEqual(out[1].count("."), 3)
+
+
+class TestGate(unittest.TestCase):
+    def test_a_clean_banner_passes(self):
+        text = Ledger(72).full("title").split("a", "b").render()
+        self.assertEqual(check("clean", text), [])
+
+    def test_a_ragged_block_fails(self):
+        self.assertTrue(check("ragged", "+---+\n|  |\n+---+"))
+
+    def test_a_non_ascii_character_fails(self):
+        text = Ledger(72).full("café").render()
+        failures = check("unicode", text)
+        self.assertTrue(any("ASCII" in f for f in failures))
+
+    def test_trailing_whitespace_fails(self):
+        self.assertTrue(check("trailing", "+--+\n|  | \n+--+"))
+
+    def test_a_stem_sitting_on_a_rule_fails(self):
+        text = "+----+\n| || |\n+----+"
+        self.assertTrue(any("junction" in f for f in check("stem", text)))
 
 
 if __name__ == "__main__":

@@ -94,3 +94,33 @@ class Ledger:
         rows = list(self._rows())
         rows.append(self._rule_line(self._band or 1))
         return "\n".join(rows)
+
+
+def check(name: str, text: str) -> list[str]:
+    """Gate one rendered block. Returns failure strings, empty when clean."""
+    lines = text.split("\n")
+    failures: list[str] = []
+
+    widths = {len(line) for line in lines}
+    if len(widths) != 1:
+        failures.append(f"{name}: ragged widths {sorted(widths)}")
+
+    if any(line != line.rstrip() for line in lines):
+        failures.append(f"{name}: trailing whitespace")
+
+    if any(ord(ch) > 127 for ch in text):
+        failures.append(f"{name}: non ASCII character present, output must be 7 bit ASCII")
+
+    for row, line in enumerate(lines, start=1):
+        for col, ch in enumerate(line, start=1):
+            if ch == "|":
+                for step in (-1, 1):
+                    neighbour = row - 1 + step
+                    if 0 <= neighbour < len(lines):
+                        other = lines[neighbour]
+                        if col <= len(other) and other[col - 1] == "-":
+                            failures.append(
+                                f"{name}: junction, pipe at row {row} column {col} "
+                                f"meets a rule, needs a plus"
+                            )
+    return failures
