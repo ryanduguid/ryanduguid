@@ -63,8 +63,9 @@ class Ledger:
         inner = self.width - 2
         # Empty values stay blank in full() rows (masthead spacers).
         # Hyphenation is for split() cells only.
-        if len(text) > inner:
-            text = text[: max(0, inner - 3)] + "..."
+        room = inner if center else inner - 1
+        if len(text) > room:
+            text = text[: max(0, room - 3)] + "..."
         body = text.center(inner) if center else " " + text.ljust(inner - 1)
         self._rows().append("|" + body[:inner] + "|")
         return self

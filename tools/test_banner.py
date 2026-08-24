@@ -73,6 +73,11 @@ class TestRendering(unittest.TestCase):
         out = Ledger(72).full("").render().split("\n")
         self.assertEqual(out[1], "|" + " " * 70 + "|")
 
+    def test_full_left_aligned_with_overlong_text_has_three_dot_ellipsis(self):
+        out = Ledger(24).full("x" * 100, center=False).render().split("\n")
+        self.assertEqual(len(out[1]), 24)
+        self.assertEqual(out[1].count("."), 3)
+
 
 if __name__ == "__main__":
     unittest.main()
