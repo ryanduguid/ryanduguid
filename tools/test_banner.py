@@ -4,7 +4,7 @@ from __future__ import annotations
 
 import unittest
 
-from banner import Ledger, check
+from banner import Ledger, check, load_wordmark, masthead, masthead_compact
 
 
 class TestGeometry(unittest.TestCase):
@@ -98,6 +98,35 @@ class TestGate(unittest.TestCase):
     def test_a_stem_sitting_on_a_rule_fails(self):
         text = "+----+\n| || |\n+----+"
         self.assertTrue(any("junction" in f for f in check("stem", text)))
+
+
+class TestMasthead(unittest.TestCase):
+    def test_the_wordmark_is_a_rectangle_of_the_expected_size(self):
+        rows = load_wordmark()
+        self.assertEqual(len(rows), 4)
+        self.assertEqual({len(r) for r in rows}, {64})
+
+    def test_the_masthead_passes_the_gate(self):
+        self.assertEqual(check("masthead", masthead()), [])
+
+    def test_the_spacer_rows_are_load_bearing(self):
+        lines = masthead().split("\n")
+        stripped = [line for index, line in enumerate(lines) if index not in (1, 6)]
+        self.assertTrue(check("no spacer", "\n".join(stripped)))
+
+    def test_the_wordmark_band_is_padded_so_no_stem_touches_a_rule(self):
+        lines = masthead().split("\n")
+        self.assertEqual(lines[1].strip("|").strip(), "")
+        self.assertEqual(lines[6].strip("|").strip(), "")
+
+    def test_the_masthead_closes_on_the_balance_line(self):
+        self.assertIn("in balance", masthead().split("\n")[-2])
+
+    def test_the_compact_masthead_drops_the_lettering_below_sixty(self):
+        out = masthead_compact()
+        self.assertEqual({len(line) for line in out.split("\n")}, {56})
+        self.assertNotIn("_____", out)
+        self.assertEqual(check("compact", out), [])
 
 
 if __name__ == "__main__":
