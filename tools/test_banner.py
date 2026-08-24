@@ -146,21 +146,27 @@ class TestGate(unittest.TestCase):
 class TestMasthead(unittest.TestCase):
     def test_the_wordmark_is_a_rectangle_of_the_expected_size(self):
         rows = load_wordmark()
-        self.assertEqual(len(rows), 4)
-        self.assertEqual({len(r) for r in rows}, {64})
+        self.assertEqual(len(rows), 5)
+        self.assertEqual({len(r) for r in rows}, {60})
 
     def test_the_masthead_passes_the_gate(self):
         self.assertEqual(check("masthead", masthead()), [])
 
     def test_the_spacer_rows_are_load_bearing(self):
         lines = masthead().split("\n")
-        stripped = [line for index, line in enumerate(lines) if index not in (1, 6)]
+        last_spacer = 1 + len(load_wordmark()) + 1
+        stripped = [
+            line
+            for index, line in enumerate(lines)
+            if index not in (1, last_spacer)
+        ]
         self.assertTrue(check("no spacer", "\n".join(stripped)))
 
     def test_the_wordmark_band_is_padded_so_no_stem_touches_a_rule(self):
         lines = masthead().split("\n")
+        last_spacer = 1 + len(load_wordmark()) + 1
         self.assertEqual(lines[1].strip("|").strip(), "")
-        self.assertEqual(lines[6].strip("|").strip(), "")
+        self.assertEqual(lines[last_spacer].strip("|").strip(), "")
 
     def test_the_masthead_closes_on_the_balance_line(self):
         self.assertIn("in balance", masthead().split("\n")[-2])
