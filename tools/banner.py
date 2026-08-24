@@ -181,9 +181,13 @@ def check(name: str, text: str) -> list[str]:
 
 
 def load_wordmark() -> list[str]:
-    """The vendored FIGlet Rectangles rendering of RYAN DUGUID, 64 by 4.
+    """The vendored FIGlet standard rendering of RYAN DUGUID, 60 by 5.
 
-    Regenerate with: npx figlet-cli -f Rectangles "RYAN DUGUID"
+    Rectangles (the previous face) made every letter the same box, so the
+    name was not readable as a name. Standard keeps 7-bit ASCII, fits the
+    70-column inner frame, and passes the junction gate.
+
+    Regenerate with: npx figlet-cli -f standard \"RYAN DUGUID\"
     """
     rows = WORDMARK.read_text(encoding="ascii").split("\n")
     rows = [row for row in rows if row.strip()]
@@ -244,7 +248,7 @@ def repo_header(name: str, tagline: str, gives: list[str], needs: list[str]) -> 
 def cli_banner(name: str, release: str, command: str) -> str:
     """A command line startup banner, 64 columns.
 
-    The release is written "release 1.4.0". A bare v before a digit reads as a
+    The release is written \"release 1.4.0\". A bare v before a digit reads as a
     down arrow with nothing to connect to, so the constructor rejects one
     rather than trusting every caller to strip it.
     """
