@@ -32,3 +32,60 @@ class Ledger:
         self.mid = 1 + ((width - 3) // 2) + 1
         self.left = self.mid - 2
         self.right = width - self.mid - 1
+        self._lines: list[str] = []
+        self._band: int | None = None
+
+    def _rows(self) -> list[str]:
+        return self._lines
+
+    def _cell(self, text: str, inner: int, center: bool) -> str:
+        text = text if text else "-"
+        room = inner - 1
+        if len(text) > room:
+            text = text[: max(0, room - 3)] + "..."
+        return text.center(inner) if center else " " + text.ljust(room)
+
+    def _rule_line(self, cols: int) -> str:
+        if cols == 1:
+            return "+" + "-" * (self.width - 2) + "+"
+        return "+" + "-" * self.left + "+" + "-" * self.right + "+"
+
+    def _open(self, cols: int) -> None:
+        rows = self._rows()
+        if self._band is None:
+            rows.append(self._rule_line(cols))
+        elif self._band != cols:
+            rows.append(self._rule_line(2))
+        self._band = cols
+
+    def full(self, text: str = "", center: bool = True) -> "Ledger":
+        self._open(1)
+        inner = self.width - 2
+        body = text.center(inner) if center else self._cell(text, inner, False)
+        self._rows().append("|" + body[:inner] + "|")
+        return self
+
+    def split(self, left: str, right: str, center: bool = False) -> "Ledger":
+        self._open(2)
+        a = self._cell(left, self.left, center)
+        b = self._cell(right, self.right, center)
+        self._rows().append("|" + a[: self.left] + "|" + b[: self.right] + "|")
+        return self
+
+    def rule(self) -> "Ledger":
+        self._rows().append(self._rule_line(self._band or 1))
+        return self
+
+    def art(self, lines: list[str]) -> "Ledger":
+        block = max(len(line) for line in lines)
+        pad = (self.width - 2 - block) // 2
+        for line in lines:
+            self._open(1)
+            body = " " * pad + line
+            self._rows().append("|" + body.ljust(self.width - 2)[: self.width - 2] + "|")
+        return self
+
+    def render(self) -> str:
+        rows = list(self._rows())
+        rows.append(self._rule_line(self._band or 1))
+        return "\n".join(row.rstrip("\n") for row in rows)

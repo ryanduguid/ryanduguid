@@ -30,5 +30,40 @@ class TestGeometry(unittest.TestCase):
             Ledger(23)
 
 
+class TestRendering(unittest.TestCase):
+    def test_every_line_is_exactly_the_width(self):
+        out = Ledger(72).full("title").split("a", "b").render().split("\n")
+        self.assertEqual({len(line) for line in out}, {72})
+
+    def test_a_band_change_emits_one_rule_carrying_the_junction(self):
+        out = Ledger(72).full("title").split("a", "b").render().split("\n")
+        self.assertEqual(out[2], "+" + "-" * 34 + "+" + "-" * 35 + "+")
+
+    def test_split_text_is_left_aligned_with_one_leading_space(self):
+        out = Ledger(72).split("gives", "needs").render().split("\n")
+        self.assertTrue(out[1].startswith("| gives"))
+        self.assertEqual(out[1][35], "|")
+
+    def test_overlong_cell_text_is_truncated_with_an_ellipsis(self):
+        out = Ledger(72).split("x" * 100, "y").render().split("\n")
+        self.assertEqual(len(out[1]), 72)
+        self.assertIn("...", out[1])
+
+    def test_an_empty_value_renders_as_a_hyphen(self):
+        out = Ledger(72).split("", "y").render().split("\n")
+        self.assertTrue(out[1].startswith("| -"))
+
+    def test_no_line_carries_trailing_whitespace(self):
+        out = Ledger(72).full("title").split("a", "b").render().split("\n")
+        for line in out:
+            self.assertEqual(line, line.rstrip())
+
+    def test_art_block_takes_one_offset_for_every_row(self):
+        art = ["####", "#", "####"]
+        out = Ledger(72).art(art).render().split("\n")
+        starts = [line.index("#") for line in out if "#" in line]
+        self.assertEqual(len(set(starts)), 1)
+
+
 if __name__ == "__main__":
     unittest.main()
