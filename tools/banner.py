@@ -19,9 +19,11 @@ ROOT = Path(__file__).resolve().parent.parent
 
 MIN_WIDTH = 24
 
-WORDMARK = Path(__file__).resolve().parent / "wordmark.txt"
+MAX_WIDTH = 80
 
-CONTENT = Path(__file__).resolve().parent / "banner_content.json"
+WORDMARK = ROOT / "tools" / "wordmark.txt"
+
+CONTENT = ROOT / "tools" / "banner_content.json"
 
 TARGETS = (
     "DiogenesLamp",
@@ -46,6 +48,12 @@ TARGETS = (
     "xero-trial-balance-export",
 )
 
+# Three targets were skipped on Ryan's ruling, 25 August 2026. Do not re-attempt:
+# xero-trial-balance-export pins its README SHA-256 as a constant inside a test,
+# release-policy pins its README digest in a hardcoded canonical table, and
+# tax-radar-au is archived and read only. Pasting a banner into the first two
+# means breaking a provenance guard, and into the third means unarchiving it.
+
 
 def load_content() -> dict[str, dict]:
     """Per repository banner content. Claims here must match that repo's README."""
@@ -62,6 +70,8 @@ class Ledger:
     def __init__(self, width: int) -> None:
         if width < MIN_WIDTH:
             raise ValueError(f"width {width} is below the minimum of {MIN_WIDTH}")
+        if width > MAX_WIDTH:
+            raise ValueError(f"width {width} is above the maximum of {MAX_WIDTH}")
         self.width = width
         self.mid = 1 + ((width - 3) // 2) + 1
         self.left = self.mid - 2
@@ -72,9 +82,17 @@ class Ledger:
     def _rows(self) -> list[str]:
         return self._lines
 
-    def _cell(self, text: str, inner: int, center: bool) -> str:
-        text = text if text else "-"
-        room = inner - 1
+    def _cell(self, text: str, inner: int, center: bool, blank: str = "-") -> str:
+        """One cell body of exactly `inner` columns.
+
+        `blank` is what an empty value renders as: a hyphen in a DR or CR cell,
+        nothing in a full width row, because those blank rows are the masthead's
+        spacer rows. Truncation with an ellipsis applies to every path. A left
+        aligned cell spends one column on its leading space, a centred one does
+        not, so a value that fits the cell exactly is never cut short.
+        """
+        text = text if text else blank
+        room = inner if center else inner - 1
         if len(text) > room:
             text = text[: max(0, room - 3)] + "..."
         return text.center(inner) if center else " " + text.ljust(room)
@@ -95,12 +113,7 @@ class Ledger:
     def full(self, text: str = "", center: bool = True) -> "Ledger":
         self._open(1)
         inner = self.width - 2
-        # Empty values stay blank in full() rows (masthead spacers).
-        # Hyphenation is for split() cells only.
-        room = inner if center else inner - 1
-        if len(text) > room:
-            text = text[: max(0, room - 3)] + "..."
-        body = text.center(inner) if center else " " + text.ljust(inner - 1)
+        body = self._cell(text, inner, center, blank="")
         self._rows().append("|" + body[:inner] + "|")
         return self
 
@@ -116,8 +129,13 @@ class Ledger:
         return self
 
     def art(self, lines: list[str]) -> "Ledger":
+        inner = self.width - 2
         block = max(len(line) for line in lines)
-        pad = (self.width - 2 - block) // 2
+        if block > inner:
+            # An ellipsis inside a letterform means nothing, so raise rather
+            # than clip a glyph mid stroke.
+            raise ValueError(f"art block of {block} columns does not fit {inner}")
+        pad = (inner - block) // 2
         for line in lines:
             self._open(1)
             body = " " * pad + line
@@ -147,16 +165,18 @@ def check(name: str, text: str) -> list[str]:
 
     for row, line in enumerate(lines, start=1):
         for col, ch in enumerate(line, start=1):
-            if ch == "|":
-                for step in (-1, 1):
-                    neighbour = row - 1 + step
-                    if 0 <= neighbour < len(lines):
-                        other = lines[neighbour]
-                        if col <= len(other) and other[col - 1] == "-":
-                            failures.append(
-                                f"{name}: junction, pipe at row {row} column {col} "
-                                f"meets a rule, needs a plus"
-                            )
+            if ch != "|":
+                continue
+            # Report once, even when a rule sits both above and below.
+            above_or_below = (row - 2, row)
+            if any(
+                0 <= n < len(lines) and col <= len(lines[n]) and lines[n][col - 1] == "-"
+                for n in above_or_below
+            ):
+                failures.append(
+                    f"{name}: junction, pipe at row {row} column {col} "
+                    f"meets a rule, needs a plus"
+                )
     return failures
 
 
@@ -201,7 +221,12 @@ def repo_header(name: str, tagline: str, gives: list[str], needs: list[str]) -> 
 
     Repository names are set as text, never as glyphs. The name
     payday-super-checker in a 5 by 5 font is 120 columns wide.
+
+    Each column carries between one and three entries. An empty list would
+    close the band on the rule that opened it, two rules with no data between.
     """
+    if not gives or not needs:
+        raise ValueError("gives and needs each need at least one entry")
     led = Ledger(72)
     led.full(name)
     led.rule()
@@ -220,8 +245,14 @@ def cli_banner(name: str, release: str, command: str) -> str:
     """A command line startup banner, 64 columns.
 
     The release is written "release 1.4.0". A bare v before a digit reads as a
-    down arrow with nothing to connect to.
+    down arrow with nothing to connect to, so the constructor rejects one
+    rather than trusting every caller to strip it.
     """
+    if release[:1] in ("v", "V") and release[1:2].isdigit():
+        raise ValueError(
+            f"release {release!r} starts with a bare v before a digit, "
+            f"write it as {release[1:]!r}"
+        )
     led = Ledger(64)
     led.full(name)
     led.rule()
@@ -291,7 +322,10 @@ def main(argv: list[str] | None = None) -> int:
         print(repo_header(args[1], record["tagline"], record["gives"], record["needs"]))
         return 0
 
-    print(f"usage: banner.py [--check | masthead | compact | notice | repo <name>]", file=sys.stderr)
+    print(
+        "usage: banner.py [--check | masthead | compact | notice | repo <name>]",
+        file=sys.stderr,
+    )
     return 1
 
 
