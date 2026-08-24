@@ -1,5 +1,24 @@
 # Ryan Duguid
 
+```
++----------------------------------------------------------------------+
+|                                                                      |
+|    _____ __ __ _____ _____    ____  _____ _____ _____ _____ ____     |
+|   | __  |  |  |  _  |   | |  |    \|  |  |   __|  |  |     |    \    |
+|   |    -|_   _|     | | | |  |  |  |  |  |  |  |  |  |-   -|  |  |   |
+|   |__|__| |_| |__|__|_|___|  |____/|_____|_____|_____|_____|____/    |
+|                                                                      |
++----------------------------------+-----------------------------------+
+|                DR                |                 CR                |
++----------------------------------+-----------------------------------+
+| Excel LAMBDA engines             | Newcastle, NSW                    |
+| MCP servers, CLI tools           | CA ANZ (prov), SAP, Xero          |
+| Australian tax and payroll       | github.com/ryanduguid             |
++----------------------------------+-----------------------------------+
+|                              in balance                              |
++----------------------------------------------------------------------+
+```
+
 <p align="center">
   <a href="https://www.python.org/"><img src="https://img.shields.io/badge/Python-3.10+-5C2D91?logo=python&logoColor=white&labelColor=04001F" alt="Python 3.10 or later" /></a>
   <a href="https://modelcontextprotocol.io/"><img src="https://img.shields.io/badge/MCP-Standard%20Protocol-5C2D91?labelColor=04001F" alt="Model Context Protocol" /></a>
