@@ -4,7 +4,16 @@ from __future__ import annotations
 
 import unittest
 
-from banner import Ledger, check, load_wordmark, masthead, masthead_compact
+from banner import (
+    Ledger,
+    check,
+    cli_banner,
+    load_wordmark,
+    masthead,
+    masthead_compact,
+    notice_scope,
+    repo_header,
+)
 
 
 class TestGeometry(unittest.TestCase):
@@ -127,6 +136,42 @@ class TestMasthead(unittest.TestCase):
         self.assertEqual({len(line) for line in out.split("\n")}, {56})
         self.assertNotIn("_____", out)
         self.assertEqual(check("compact", out), [])
+
+
+class TestTemplates(unittest.TestCase):
+    def test_a_repo_header_passes_the_gate(self):
+        out = repo_header(
+            "payday-super-checker",
+            "SG charge and due dates since 1 July 2026",
+            ["due date per payday event"],
+            ["payroll export CSV"],
+        )
+        self.assertEqual(check("repo", out), [])
+        self.assertEqual({len(line) for line in out.split("\n")}, {72})
+
+    def test_the_longest_repository_name_still_fits(self):
+        out = repo_header("awesome-australian-accounting-tech", "tagline", ["a"], ["b"])
+        self.assertEqual(check("longest", out), [])
+
+    def test_uneven_gives_and_needs_do_not_drop_rows(self):
+        out = repo_header("x", "y", ["a", "b", "c"], ["d"]).split("\n")
+        data = [line for line in out if line[1:3] in (" a", " b", " c")]
+        self.assertEqual(len(data), 3)
+        self.assertTrue(data[1].endswith("| -" + " " * 33 + "|"))
+        self.assertEqual(check("uneven", "\n".join(out)), [])
+
+    def test_the_cli_banner_is_sixty_four_columns_and_passes(self):
+        out = cli_banner("payday-super-checker", "1.4.0", "check payroll.csv")
+        self.assertEqual({len(line) for line in out.split("\n")}, {64})
+        self.assertEqual(check("cli", out), [])
+
+    def test_the_cli_banner_never_writes_a_bare_v_version(self):
+        out = cli_banner("tool", "1.4.0", "run")
+        self.assertIn("release 1.4.0", out)
+        self.assertNotIn("v1.4.0", out)
+
+    def test_the_scope_notice_passes(self):
+        self.assertEqual(check("notice", notice_scope()), [])
 
 
 if __name__ == "__main__":

@@ -162,3 +162,51 @@ def masthead_compact() -> str:
     led.full("computational accounting, Australian tax")
     led.split("DR  Excel, MCP, CLI", "CR  Newcastle NSW")
     return led.render()
+
+
+def repo_header(name: str, tagline: str, gives: list[str], needs: list[str]) -> str:
+    """A repository README header, 72 columns.
+
+    Repository names are set as text, never as glyphs. The name
+    payday-super-checker in a 5 by 5 font is 120 columns wide.
+    """
+    led = Ledger(72)
+    led.full(name)
+    led.rule()
+    led.full(tagline)
+    led.split("DR  what it gives you", "CR  what it needs")
+    led.rule()
+    rows = max(len(gives), len(needs))
+    for index in range(rows):
+        left = gives[index] if index < len(gives) else ""
+        right = needs[index] if index < len(needs) else ""
+        led.split(left, right)
+    return led.render()
+
+
+def cli_banner(name: str, release: str, command: str) -> str:
+    """A command line startup banner, 64 columns.
+
+    The release is written "release 1.4.0". A bare v before a digit reads as a
+    down arrow with nothing to connect to.
+    """
+    led = Ledger(64)
+    led.full(name)
+    led.rule()
+    led.full(f"release {release}   github.com/ryanduguid")
+    led.split(f"DR  {command}", "CR  reads local files only")
+    return led.render()
+
+
+def notice_scope() -> str:
+    """The scope fence every tax adjacent repository already needs."""
+    led = Ledger(72)
+    led.full("NOT ADVICE", center=False)
+    led.rule()
+    for line in (
+        "General information about Australian tax rules.",
+        "Not tax, legal or financial advice. Verify against the",
+        "primary source before relying on any output.",
+    ):
+        led.full(line, center=False)
+    return led.render()
