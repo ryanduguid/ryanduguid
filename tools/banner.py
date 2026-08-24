@@ -11,6 +11,7 @@ Exit 0 clean, 1 on any check failure. Stdlib only.
 
 from __future__ import annotations
 
+import json
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -18,6 +19,36 @@ ROOT = Path(__file__).resolve().parent.parent
 MIN_WIDTH = 24
 
 WORDMARK = Path(__file__).resolve().parent / "wordmark.txt"
+
+CONTENT = Path(__file__).resolve().parent / "banner_content.json"
+
+TARGETS = (
+    "DiogenesLamp",
+    "DrDebits",
+    "FireFalcon",
+    "Ozzit",
+    "PaciolisCube",
+    "SolomonsSword",
+    "TheExchequerTally",
+    "accounting-excel-toolkit",
+    "ato-benchmark-compare",
+    "au-tax-legislation-corpus",
+    "au-tax-mcp-server",
+    "australian-accounting-skills",
+    "awesome-australian-accounting-tech",
+    "hardhat-ledger",
+    "monthly-close-control-plane",
+    "payday-super-checker",
+    "release-policy",
+    "tax-radar-au",
+    "xero-ai-review-gateway",
+    "xero-trial-balance-export",
+)
+
+
+def load_content() -> dict[str, dict]:
+    """Per repository banner content. Claims here must match that repo's README."""
+    return json.loads(CONTENT.read_text(encoding="utf-8"))
 
 
 class Ledger:

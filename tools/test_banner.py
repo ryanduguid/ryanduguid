@@ -5,9 +5,12 @@ from __future__ import annotations
 import unittest
 
 from banner import (
+    ROOT,
+    TARGETS,
     Ledger,
     check,
     cli_banner,
+    load_content,
     load_wordmark,
     masthead,
     masthead_compact,
@@ -172,6 +175,43 @@ class TestTemplates(unittest.TestCase):
 
     def test_the_scope_notice_passes(self):
         self.assertEqual(check("notice", notice_scope()), [])
+
+
+class TestContent(unittest.TestCase):
+    def test_every_target_has_a_record(self):
+        content = load_content()
+        for name in TARGETS:
+            self.assertIn(name, content)
+
+    def test_there_are_exactly_twenty_targets(self):
+        self.assertEqual(len(TARGETS), 20)
+        self.assertEqual(len(set(TARGETS)), 20)
+
+    def test_no_private_or_excluded_repository_is_targeted(self):
+        excluded = {
+            "ryanduguid", ".github", "ryanduguid.github.io",
+            "ChestertonsFence", "Furphy", "claude-export",
+        }
+        self.assertEqual(excluded & set(TARGETS), set())
+
+    def test_every_record_renders_a_banner_that_passes_the_gate(self):
+        content = load_content()
+        for name in TARGETS:
+            record = content[name]
+            out = repo_header(name, record["tagline"], record["gives"], record["needs"])
+            self.assertEqual(check(name, out), [], f"{name} failed the gate")
+
+    def test_every_record_carries_between_one_and_three_of_each_column(self):
+        content = load_content()
+        for name in TARGETS:
+            record = content[name]
+            self.assertTrue(1 <= len(record["gives"]) <= 3, name)
+            self.assertTrue(1 <= len(record["needs"]) <= 3, name)
+
+    def test_no_record_uses_an_em_dash_or_en_dash(self):
+        raw = (ROOT / "tools" / "banner_content.json").read_text(encoding="utf-8")
+        self.assertNotIn("\u2014", raw)
+        self.assertNotIn("\u2013", raw)
 
 
 if __name__ == "__main__":

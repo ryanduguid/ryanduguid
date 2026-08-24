@@ -1,0 +1,241 @@
+{
+  "DiogenesLamp": {
+    "tagline": "Offline Yupoo catalogue archiver with a local viewer",
+    "gives": [
+      "one page scroll all sellers",
+      "search and filter catalogues",
+      "links back to Yupoo albums"
+    ],
+    "needs": [
+      "Yupoo seller links CSV or text",
+      "lamp scrape to fetch listings"
+    ]
+  },
+  "DrDebits": {
+    "tagline": "APES 110 and TPB Code guardrails for LLM tax work",
+    "gives": [
+      "APES 110 mapped guardrails",
+      "TPB Code GS01 to GS55 map",
+      "risk classified draft or stop"
+    ],
+    "needs": [
+      "drdebits.md as project context",
+      "Claude Code, Antigravity, Cursor"
+    ]
+  },
+  "FireFalcon": {
+    "tagline": "Australian FP&A pack on openfpa: 30 June, Xero AU",
+    "gives": [
+      "30 June year adjustments",
+      "GST BAS cash timing rules",
+      "AU payroll on cost rules"
+    ],
+    "needs": [
+      "an AI coding agent like Claude",
+      "company workspace and data"
+    ]
+  },
+  "Ozzit": {
+    "tagline": "134 native Excel LAMBDA functions for AU modelling",
+    "gives": [
+      "134 Excel LAMBDA functions",
+      "inline help per function",
+      "AU GST and depreciation rules"
+    ],
+    "needs": [
+      "Excel 365 or 2024 or newer"
+    ]
+  },
+  "PaciolisCube": {
+    "tagline": "IBM Planning Analytics budget model as source",
+    "gives": [
+      "runs TM1 rules with no server",
+      "validates model structure",
+      "prints a P and L report"
+    ],
+    "needs": [
+      "PA model files in Git format",
+      "CSV data for cube loading"
+    ]
+  },
+  "SolomonsSword": {
+    "tagline": "Division 6, s100A and s99B trust review tools",
+    "gives": [
+      "s100A green red risk zones",
+      "s99B foreign trust review",
+      "Division 6 allocation review"
+    ],
+    "needs": [
+      "beneficiary and amount data",
+      "trust facts like corpus value"
+    ]
+  },
+  "TheExchequerTally": {
+    "tagline": "Corporate tax rate, franking and Div 203 checks",
+    "gives": [
+      "Base Rate Entity FY testing",
+      "franking account ledger",
+      "dividend distribution statements"
+    ],
+    "needs": [
+      "turnover and passive income",
+      "entity ACN and dividend data"
+    ]
+  },
+  "accounting-excel-toolkit": {
+    "tagline": "Power Query and VBA utilities for Australian ledger work",
+    "gives": [
+      "Xero TB parser (Power Query)",
+      "ABN checksum validation",
+      "workpaper formatting VBA"
+    ],
+    "needs": [
+      "a Xero trial balance CSV",
+      "Excel for Power Query or VBA"
+    ]
+  },
+  "ato-benchmark-compare": {
+    "tagline": "Offline variance analysis against ATO benchmarks",
+    "gives": [
+      "ATO benchmark ratio compare",
+      "accurate turnover definition",
+      "shows the working per account"
+    ],
+    "needs": [
+      "P and L figures per account",
+      "account to label mapping"
+    ]
+  },
+  "au-tax-legislation-corpus": {
+    "tagline": "Provenance-rich corpus of Commonwealth tax legislation",
+    "gives": [
+      "946 tax titles as markdown",
+      "JSONL rows with provenance",
+      "rates and thresholds index"
+    ],
+    "needs": [
+      "curl and internet access",
+      "Federal Register API access"
+    ]
+  },
+  "au-tax-mcp-server": {
+    "tagline": "MCP server for AU tax review engines",
+    "gives": [
+      "MCP tools for AU tax review",
+      "delegates to reviewed engines",
+      "synthetic SBR test fixtures"
+    ],
+    "needs": [
+      "an MCP capable host client",
+      "uv or uvx to install it"
+    ]
+  },
+  "australian-accounting-skills": {
+    "tagline": "Claude Code and Codex skills for AU practice",
+    "gives": [
+      "nine AU practice workflows",
+      "BAS FBT and STP workflows",
+      "month end close checklists"
+    ],
+    "needs": [
+      "Claude Code, Codex, or CLI",
+      "Xero CSV exports"
+    ]
+  },
+  "awesome-australian-accounting-tech": {
+    "tagline": "Curated open source tools for AU accounting",
+    "gives": [
+      "curated AU accounting links",
+      "seven category tool index"
+    ],
+    "needs": [
+      "PR submissions to the list"
+    ]
+  },
+  "hardhat-ledger": {
+    "tagline": "Claude Code skills for AU subcontractor ledgers",
+    "gives": [
+      "progress claim schedules",
+      "retention ledger tracking",
+      "flags legal calls for review"
+    ],
+    "needs": [
+      "a job or tracking dimension",
+      "standard CSV ledger exports"
+    ]
+  },
+  "monthly-close-control-plane": {
+    "tagline": "Deterministic close controls for trial balances",
+    "gives": [
+      "close summary with exceptions",
+      "exceptions CSV for review",
+      "PASS REVIEW BLOCKED states"
+    ],
+    "needs": [
+      "current and prior TB CSV",
+      "an account mapping CSV"
+    ]
+  },
+  "payday-super-checker": {
+    "tagline": "SG charge and due dates since 1 July 2026",
+    "gives": [
+      "due date per payday event",
+      "nominal earnings and uplift",
+      "audit trail per employee"
+    ],
+    "needs": [
+      "payroll export CSV",
+      "fund receipt dates",
+      "national holiday calendar"
+    ]
+  },
+  "release-policy": {
+    "tagline": "Reusable release workflows and packaging gates",
+    "gives": [
+      "reusable release GH workflows",
+      "SBOM build and attestation",
+      "provenance attestation gate"
+    ],
+    "needs": [
+      "a pinned full commit SHA",
+      "a Python pyproject.toml"
+    ]
+  },
+  "tax-radar-au": {
+    "tagline": "Synthetic change review queue for AU tax sources",
+    "gives": [
+      "provenance tagged review queue",
+      "SUPERSEDED and BLOCKED states",
+      "impact queue JSON output"
+    ],
+    "needs": [
+      "baseline source index JSON",
+      "Register observation JSON",
+      "source to skill map JSON"
+    ]
+  },
+  "xero-ai-review-gateway": {
+    "tagline": "Fixed policy zero network Xero review gateway",
+    "gives": [
+      "redacted variance review",
+      "local human reviewer evidence",
+      "zero network fixed policy"
+    ],
+    "needs": [
+      "a validated Xero TB export",
+      "a review policy JSON file"
+    ]
+  },
+  "xero-trial-balance-export": {
+    "tagline": "Export Xero trial balances to validated CSV",
+    "gives": [
+      "tidy Xero TB CSV export",
+      "OAuth2 token refresh",
+      "balance check before write"
+    ],
+    "needs": [
+      "a Xero app client ID secret",
+      "an as at date to export"
+    ]
+  }
+}
