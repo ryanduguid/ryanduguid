@@ -12,6 +12,7 @@ Exit 0 clean, 1 on any check failure. Stdlib only.
 from __future__ import annotations
 
 import json
+import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -241,3 +242,58 @@ def notice_scope() -> str:
     ):
         led.full(line, center=False)
     return led.render()
+
+
+def all_blocks() -> list[tuple[str, str]]:
+    """Every block the gate covers, as (name, text)."""
+    content = load_content()
+    blocks = [
+        ("MASTHEAD_FULL", masthead()),
+        ("MASTHEAD_COMPACT", masthead_compact()),
+        ("CLI_BANNER", cli_banner("payday-super-checker", "1.4.0", "check payroll.csv")),
+        ("NOTICE_SCOPE", notice_scope()),
+    ]
+    for name in TARGETS:
+        record = content[name]
+        blocks.append(
+            (name, repo_header(name, record["tagline"], record["gives"], record["needs"]))
+        )
+    return blocks
+
+
+def main(argv: list[str] | None = None) -> int:
+    args = list(sys.argv[1:] if argv is None else argv)
+    if not args or args[0] == "--check":
+        blocks = all_blocks()
+        failures: list[str] = []
+        for name, text in blocks:
+            failures.extend(check(name, text))
+        for failure in failures:
+            print(failure)
+        print(f"{len(blocks)} blocks checked, {len(failures)} failures")
+        return 1 if failures else 0
+
+    if args[0] == "masthead":
+        print(masthead())
+        return 0
+    if args[0] == "compact":
+        print(masthead_compact())
+        return 0
+    if args[0] == "notice":
+        print(notice_scope())
+        return 0
+    if args[0] == "repo" and len(args) > 1:
+        content = load_content()
+        if args[1] not in content:
+            print(f"unknown repository: {args[1]}", file=sys.stderr)
+            return 1
+        record = content[args[1]]
+        print(repo_header(args[1], record["tagline"], record["gives"], record["needs"]))
+        return 0
+
+    print(f"usage: banner.py [--check | masthead | compact | notice | repo <name>]", file=sys.stderr)
+    return 1
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

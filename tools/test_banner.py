@@ -2,6 +2,8 @@
 
 from __future__ import annotations
 
+import contextlib
+import io
 import unittest
 
 from banner import (
@@ -12,6 +14,7 @@ from banner import (
     cli_banner,
     load_content,
     load_wordmark,
+    main,
     masthead,
     masthead_compact,
     notice_scope,
@@ -212,6 +215,35 @@ class TestContent(unittest.TestCase):
         raw = (ROOT / "tools" / "banner_content.json").read_text(encoding="utf-8")
         self.assertNotIn("\u2014", raw)
         self.assertNotIn("\u2013", raw)
+
+
+class TestCommandLine(unittest.TestCase):
+    def test_check_mode_passes_on_the_shipped_content(self):
+        buffer = io.StringIO()
+        with contextlib.redirect_stdout(buffer):
+            code = main(["--check"])
+        self.assertEqual(code, 0, buffer.getvalue())
+
+    def test_masthead_mode_prints_the_masthead(self):
+        buffer = io.StringIO()
+        with contextlib.redirect_stdout(buffer):
+            code = main(["masthead"])
+        self.assertEqual(code, 0)
+        self.assertIn("in balance", buffer.getvalue())
+
+    def test_repo_mode_prints_that_repository_header(self):
+        buffer = io.StringIO()
+        with contextlib.redirect_stdout(buffer):
+            code = main(["repo", "payday-super-checker"])
+        self.assertEqual(code, 0)
+        self.assertIn("payday-super-checker", buffer.getvalue())
+
+    def test_an_unknown_repository_is_an_error_not_a_traceback(self):
+        buffer = io.StringIO()
+        with contextlib.redirect_stderr(buffer):
+            code = main(["repo", "no-such-repo"])
+        self.assertEqual(code, 1)
+        self.assertIn("no-such-repo", buffer.getvalue())
 
 
 if __name__ == "__main__":
