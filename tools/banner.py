@@ -61,7 +61,11 @@ class Ledger:
     def full(self, text: str = "", center: bool = True) -> "Ledger":
         self._open(1)
         inner = self.width - 2
-        body = text.center(inner) if center else self._cell(text, inner, False)
+        # Empty values stay blank in full() rows (masthead spacers).
+        # Hyphenation is for split() cells only.
+        if len(text) > inner:
+            text = text[: max(0, inner - 3)] + "..."
+        body = text.center(inner) if center else " " + text.ljust(inner - 1)
         self._rows().append("|" + body[:inner] + "|")
         return self
 
@@ -88,4 +92,4 @@ class Ledger:
     def render(self) -> str:
         rows = list(self._rows())
         rows.append(self._rule_line(self._band or 1))
-        return "\n".join(row.rstrip("\n") for row in rows)
+        return "\n".join(rows)

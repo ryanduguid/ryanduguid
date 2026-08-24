@@ -64,6 +64,15 @@ class TestRendering(unittest.TestCase):
         starts = [line.index("#") for line in out if "#" in line]
         self.assertEqual(len(set(starts)), 1)
 
+    def test_overlong_centred_text_in_full_is_truncated_with_ellipsis(self):
+        out = Ledger(24).full("x" * 100).render().split("\n")
+        self.assertEqual(len(out[1]), 24)
+        self.assertIn("...", out[1])
+
+    def test_full_with_empty_string_renders_as_blank_row(self):
+        out = Ledger(72).full("").render().split("\n")
+        self.assertEqual(out[1], "|" + " " * 70 + "|")
+
 
 if __name__ == "__main__":
     unittest.main()
