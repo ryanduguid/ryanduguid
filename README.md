@@ -78,7 +78,7 @@ No install, no clone: these open in a browser and explain the rule they apply.
 | [Section 100A and Division 6](https://ryanduguid.github.io/tools/trust-distributions/) | Which PCG 2022/2 zone a trust distribution falls in, and each beneficiary's share |
 | [Company tax rate and franking](https://ryanduguid.github.io/tools/company-tax-franking/) | Whether a company is a base rate entity, and whether the franking account holds up |
 | [Subcontract ledger workflows](https://ryanduguid.github.io/tools/subcontractor-ledgers/) | Progress claims, retentions, work in progress, and the mining services regimes |
-| [Construction WIP schedule](https://ryanduguid.github.io/tools/wip-schedule/) | Cost-to-cost earned revenue, contract assets and liabilities, profit fade flags |
+| [Construction WIP schedule](https://ryanduguid.github.io/tools/wip-schedule/) | Cost-to-cost earned revenue, contract assets and liabilities, and profit-fade flags |
 | [Xero trial balance export](https://ryanduguid.github.io/tools/xero-trial-balance/) | How to get a trial balance out of Xero that actually balances |
 
 [About Ryan Duguid](https://ryanduguid.github.io/about/) covers the credentials, what the work is grounded in, and how to cite it.
