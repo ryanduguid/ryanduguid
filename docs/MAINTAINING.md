@@ -18,15 +18,15 @@ How to report a security concern is in [SECURITY.md](../SECURITY.md). Account-wi
 
 ## Updating the public README
 
-The profile is an index, not a second catalogue of every engine. Lead with the installable products, then the engines those products call. Keep current repository names (`au-tax-mcp-server`, `payday-super-checker`, `TheExchequerTally`, `SolomonsSword`, `monthly-close-control-plane`).
+The profile is an index, not a second catalogue of every engine. Lead with the three paths, then the installable products and the engines those products call. Keep current repository names (`au-tax-mcp-server`, `payday-super-checker`, `TheExchequerTally`, `SolomonsSword`, `monthly-close-control-plane`).
 
 Do not use a redundant H1. Open with a first-person sentence identifying Ryan as an Australian accountant in Newcastle, NSW, then name the supported subject areas once. It must not imply current public-practice employment, registration, vendor affiliation or regulatory endorsement.
 
 The credentials line is an assertion by the profile owner. Confirm it is current before changing or republishing it. Use **provisional member of Chartered Accountants ANZ**, not a vendor-style `CA ANZ` shorthand in prose.
 
-Keep one install block near the top with the two primary routes: `claude mcp add aus-accounting -- uvx aus-accounting-mcp` for au-tax-mcp-server and `npx skills add ryanduguid/australian-accounting-skills` for australian-accounting-skills. The MCP package is published on PyPI; do not replace the package command with a GitHub source install. Link hardhat-ledger later as a specialised workflow without a second `npx` command.
+Before the install block, present the three paths: Engage for scoped enquiries, Adopt for supported installs and fabricated-data evaluation, and Verify for credentials, sources and boundaries. Keep one install block near the top with exactly one copy of each primary command: `claude mcp add aus-accounting -- uvx aus-accounting-mcp` for au-tax-mcp-server and `npx skills add ryanduguid/australian-accounting-skills` for australian-accounting-skills. The MCP package is published on PyPI; do not replace the package command with a GitHub source install. Link hardhat-ledger later as a specialised workflow without a second `npx` command.
 
-Pins live only in the GitHub UI; the README has no pinned section. The pin record below must match the live list.
+Pins live only in the GitHub UI; the README has no pinned section. The pin record below must match the live list. Keep achievements hidden.
 
 Use a compact architecture flow from ledger data through deterministic rules and agent workflows to human review, with readiness controls also feeding human review. Follow it with a four-row table of representative linked repositories. Keep the full catalogue on the website, not in this README. Do not add an upstream contributions section.
 
@@ -47,16 +47,16 @@ Live pin order as at 22 August 2026:
 5. `DrDebits`
 6. `au-tax-mcp-server`
 
-Intended next pin order, once changed in the UI:
+Gated future pin order, only after Stage 2A passes:
 
-1. `australian-accounting-skills`
-2. `au-tax-mcp-server`
-3. `payday-super-checker`
+1. `review-ready-gate`
+2. `xero-trial-balance-export`
+3. `australian-accounting-skills`
 4. `Ozzit`
-5. `xero-trial-balance-export`
+5. `payday-super-checker`
 6. `DrDebits`
 
-`ato-benchmark-compare` remains public and is called by `au-tax-mcp-server`; it does not need its own pin once the MCP server is pinned. Do not pin `.github`, contribution forks, or Resume-Matcher.
+`au-tax-mcp-server` remains visible through Adopt and must not be duplicated as a pin after `review-ready-gate` is promoted. `ato-benchmark-compare` remains public and is called by `au-tax-mcp-server`; it does not need its own pin. Do not pin `.github`, contribution forks, or Resume-Matcher.
 
 GitHub About on the two flagship repositories (description, homepage, topics) is applied from each repo's `docs/DISCOVERY.md` via `scripts/publish-github-about.sh`.
 

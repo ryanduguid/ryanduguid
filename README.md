@@ -1,8 +1,16 @@
-I am an Australian accountant in Newcastle, NSW. I build open-source computational accounting tools, including aus-accounting-mcp and australian-accounting-skills, for Australian tax, payroll and statutory compliance.
+I am an Australian accountant in Newcastle, NSW. I build open-source computational accounting tools for Australian tax, payroll and statutory compliance, including aus-accounting-mcp and australian-accounting-skills.
 
 These are local review aids, not advice. They do not lodge or write to ledgers, and consequential outputs require human professional sign-off. I am not the US software product executive of the same name.
 
-I provide two public-practice routes:
+## Choose a path
+
+| Path | For | Next step |
+| --- | --- | --- |
+| **Engage** | Firm owners and prospective clients with an accounting workflow problem | [Send a scoped enquiry](https://ryanduguid.github.io/#engage) |
+| **Adopt** | Managers, reviewers and technical leads evaluating a tool with fabricated data | [Open the adoption route](https://ryanduguid.github.io/#adopt) |
+| **Verify** | Partners, reviewers and procurement checking credentials, sources and boundaries | [Inspect Evidence and Assurance](https://ryanduguid.github.io/evidence/) |
+
+### Adopt locally
 
 ```bash
 # Deterministic local MCP tools
@@ -12,7 +20,7 @@ claude mcp add aus-accounting -- uvx aus-accounting-mcp
 npx skills add ryanduguid/australian-accounting-skills
 ```
 
-Evidence and worked examples: [citation index](https://ryanduguid.github.io/evidence/) &bull; [Payday Super](https://ryanduguid.github.io/tools/payday-super/) &bull; [Xero trial balance](https://ryanduguid.github.io/tools/xero-trial-balance/)
+Worked examples: [Payday Super](https://ryanduguid.github.io/tools/payday-super/) &bull; [Xero trial balance](https://ryanduguid.github.io/tools/xero-trial-balance/)
 
 > Provisional member of Chartered Accountants ANZ &bull; SAP S/4HANA Certified (FI & CO) &bull; Xero specialist certification (Level 3)
 
