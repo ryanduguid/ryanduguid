@@ -138,7 +138,7 @@ au-tax-mcp-server calls payday-super-checker and ato-benchmark-compare. australi
 ## Open-Source Computational Ecosystem
 
 ### Model Context Protocol (MCP) and Agent Infrastructure
-- **[au-tax-mcp-server](https://github.com/ryanduguid/au-tax-mcp-server)** (`aus-accounting-mcp`) - Unified Model Context Protocol (MCP) server exposing ATO small business benchmarks, Payday Super statutory timelines, and synthetic SBR test payloads to Claude Desktop, Claude Code, Cursor, and Antigravity. Refuses Division 7A calculations by design. Preparation aid only, not tax advice.
+- **[au-tax-mcp-server](https://github.com/ryanduguid/au-tax-mcp-server)** (`aus-accounting-mcp`, official MCP registry [`io.github.ryanduguid/aus-accounting`](https://registry.modelcontextprotocol.io/v0.1/servers/io.github.ryanduguid%2Faus-accounting/versions/latest)) - Unified Model Context Protocol (MCP) server exposing ATO small business benchmarks, Payday Super statutory timelines, and synthetic SBR test payloads to Claude Desktop, Claude Code, Cursor, and Antigravity. Refuses Division 7A calculations by design. Preparation aid only, not tax advice.
 
 ### Computational Engines and Statutory Rules
 - **[Ozzit](https://github.com/ryanduguid/Ozzit)** - 134 native Excel `LAMBDA` functions for dynamic-array financial modelling. Derivative of a third-party Excel LAMBDA workbook, republished under the upstream author's written permission with attribution waived; this repo adds Australian GST/FY helpers. See [ATTRIBUTION.md](https://github.com/ryanduguid/Ozzit/blob/main/ATTRIBUTION.md). Not an individual-tax or Division 7A engine.
