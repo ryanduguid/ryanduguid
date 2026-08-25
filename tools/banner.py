@@ -43,16 +43,14 @@ TARGETS = (
     "monthly-close-control-plane",
     "payday-super-checker",
     "release-policy",
-    "tax-radar-au",
     "xero-ai-review-gateway",
     "xero-trial-balance-export",
 )
 
-# Three targets were skipped on Ryan's ruling, 25 August 2026. Do not re-attempt:
+# Two targets were skipped on Ryan's ruling, 25 August 2026. Do not re-attempt:
 # xero-trial-balance-export pins its README SHA-256 as a constant inside a test,
-# release-policy pins its README digest in a hardcoded canonical table, and
-# tax-radar-au is archived and read only. Pasting a banner into the first two
-# means breaking a provenance guard, and into the third means unarchiving it.
+# and release-policy pins its README digest in a hardcoded canonical table.
+# Pasting a banner into either means breaking a provenance guard.
 
 
 def load_content() -> dict[str, dict]:
