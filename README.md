@@ -66,6 +66,7 @@ No install, no clone: these open in a browser and explain the rule they apply.
 | [Subcontract ledger workflows](https://ryanduguid.github.io/tools/subcontractor-ledgers/) | Progress claims, retentions, work in progress, and the mining services regimes |
 | [Construction WIP schedule](https://ryanduguid.github.io/tools/wip-schedule/) | Cost-to-cost earned revenue, contract assets and liabilities, and profit-fade flags |
 | [Xero trial balance export](https://ryanduguid.github.io/tools/xero-trial-balance/) | How to get a trial balance out of Xero that actually balances |
+| [Is this pack allowed into manager review](https://ryanduguid.github.io/tools/review-ready-gate/) | Whether a BAS, month-end or year-end folder is READY for the review desk |
 
 [About Ryan Duguid](https://ryanduguid.github.io/about/) covers the credentials, what the work is grounded in, and how to cite it.
 
@@ -108,18 +109,27 @@ flowchart LR
         Gateway["xero-ai-review-gateway<br/><i>Zero-Network Review Sandbox</i>"]
     end
 
+    subgraph Controls ["4. Review gates"]
+        direction TB
+        Gate["review-ready-gate<br/><i>Pack readiness before review</i>"]
+        Close["monthly-close-control-plane<br/><i>TB exception packs</i>"]
+    end
+
     Data --> Engines --> AI
+    Data --> Controls
 
     classDef dataBox fill:#140E24,stroke:#4F485E,stroke-width:1.5px,color:#FFFFFF;
     classDef engineBox fill:#1E1236,stroke:#5C2D91,stroke-width:1.5px,color:#FFFFFF;
     classDef aiBox fill:#2D184E,stroke:#8A4AC7,stroke-width:1.5px,color:#FFFFFF;
+    classDef controlBox fill:#241836,stroke:#8A4AC7,stroke-width:1.5px,color:#FFFFFF;
 
     class Xero,PQ dataBox;
     class Ozzit,Tally,Sword,ATO,Super,WipTally engineBox;
     class MCP,Skills,SubSkills,DrD,Gateway aiBox;
+    class Gate,Close controlBox;
 ```
 
-au-tax-mcp-server calls payday-super-checker and ato-benchmark-compare. australian-accounting-skills names the payday-super CLI rather than inventing the same work. hardhat-ledger names TheWIPTally rather than inventing WIP arithmetic. Historical engine repositories stay the source of truth for the calculation; the products above are what a stranger should install.
+au-tax-mcp-server calls payday-super-checker and ato-benchmark-compare. australian-accounting-skills names the payday-super CLI and review-ready-gate rather than inventing the same work. review-ready-gate sits upstream of monthly-close-control-plane. hardhat-ledger names TheWIPTally rather than inventing WIP arithmetic. Historical engine repositories stay the source of truth for the calculation; the products above are what a stranger should install.
 
 ---
 
@@ -145,6 +155,7 @@ au-tax-mcp-server calls payday-super-checker and ato-benchmark-compare. australi
 ### Ledger Controls and Pipeline Utilities
 - **[xero-trial-balance-export](https://github.com/ryanduguid/xero-trial-balance-export)** - Exports reconciled Xero trial balances to validated CSV formats with strict movement and year-to-date mathematical integrity.
 - **[accounting-excel-toolkit](https://github.com/ryanduguid/accounting-excel-toolkit)** - Power Query (M) and VBA automation utilities for Australian accounting, reconciliations, and month-end financial reporting pipelines.
+- **[review-ready-gate](https://github.com/ryanduguid/review-ready-gate)** - Local readiness gate that stops incomplete BAS, month-end, and year-end packs reaching manager review. It does not approve a file.
 - **[monthly-close-control-plane](https://github.com/ryanduguid/monthly-close-control-plane)** - Local trial-balance review packs with exception surfacing; it does not approve or lock a close.
 - **[awesome-australian-accounting-tech](https://github.com/ryanduguid/awesome-australian-accounting-tech)** - A curated index of open-source libraries, computational tax engines, ATO datasets, and Commonwealth legislation APIs.
 

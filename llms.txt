@@ -19,6 +19,7 @@
 - **Company tax rate and franking** (https://ryanduguid.github.io/tools/company-tax-franking/): base rate entity test, franking account, Division 203 benchmark rule.
 - **Subcontract ledger workflows** (https://ryanduguid.github.io/tools/subcontractor-ledgers/): progress claims, retentions, WIP under AASB 15, Coal LSL, fuel tax credits.
 - **Xero trial balance export** (https://ryanduguid.github.io/tools/xero-trial-balance/): movement and year to date must both tie before a file is written.
+- **Is this pack allowed into manager review** (https://ryanduguid.github.io/tools/review-ready-gate/): local readiness gate for BAS, month-end and year-end folders. READY is not sign-off.
 
 ## Install these three
 - **australian-accounting-skills** (https://github.com/ryanduguid/australian-accounting-skills): Nine modular public-practice workflow skills (BAS tie-out, FBT, Division 7A loan-register workflow, STP year-end finalisation, workpapers). Claude Code plugin, Codex plugin, or `npx skills add ryanduguid/australian-accounting-skills`. Prep-only. Not lodgment. Not tax advice.
@@ -33,6 +34,7 @@
 - **SolomonsSword** (https://github.com/ryanduguid/SolomonsSword): Trust income allocation under Division 6 ITAA 1936, s 100A, s 99B.
 - **xero-trial-balance-export** (https://github.com/ryanduguid/xero-trial-balance-export): Reconciled Xero trial balance exporter; movement and year-to-date must both tie before CSV write.
 - **accounting-excel-toolkit** (https://github.com/ryanduguid/accounting-excel-toolkit): Power Query (M) and VBA automation for Australian month-end reporting.
+- **review-ready-gate** (https://github.com/ryanduguid/review-ready-gate): Pack-readiness gate upstream of manager review and of monthly-close-control-plane. It does not approve a file.
 - **monthly-close-control-plane** (https://github.com/ryanduguid/monthly-close-control-plane): Local trial-balance review packs with exception surfacing; it does not approve or lock a close.
 - **DrDebits** (https://github.com/ryanduguid/DrDebits): APES 110 and TPB-aligned operating boundaries for LLM-assisted taxation workflows.
 - **xero-ai-review-gateway** (https://github.com/ryanduguid/xero-ai-review-gateway): Synthetic-data demonstration of a fixed-policy trial-balance review boundary.
