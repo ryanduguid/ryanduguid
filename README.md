@@ -15,7 +15,7 @@ Proof: [evidence and citation index](https://ryanduguid.github.io/evidence/) &bu
 
 > Provisional member of Chartered Accountants ANZ &bull; SAP S/4HANA Certified (FI & CO) &bull; Xero specialist certification (Level 3)
 
-## Profile Ledger and Additional Skills
+## Profile Ledger
 
 <p align="center">
   <a href="https://www.python.org/"><img src="https://img.shields.io/badge/Python-3.10+-5C2D91?logo=python&logoColor=white&labelColor=04001F" alt="Python 3.10 or later" /></a>
@@ -25,23 +25,18 @@ Proof: [evidence and citation index](https://ryanduguid.github.io/evidence/) &bu
 </p>
 
 ```
-+----------------------------------------------------------------------+
-|                                                                      |
-|      ______   __ _    _   _   ____  _   _  ____ _   _ ___ ____       |
-|     |  _ \ \ / // \  | \ | | |  _ \| | | |/ ___| | | |_ _|  _ \      |
-|     | |_) \ V // _ \ |  \| | | | | | | | | |  _| | | || || | | |     |
-|     |  _ < | |/ ___ \| |\  | | |_| | |_| | |_| | |_| || || |_| |     |
-|     |_| \_\|_/_/   \_\_| \_| |____/ \___/ \____|\___/|___|____/      |
-|                                                                      |
-+----------------------------------+-----------------------------------+
-|                DR                |                 CR                |
-+----------------------------------+-----------------------------------+
-| Excel LAMBDA engines             | Newcastle, NSW                    |
-| MCP servers, CLI tools           | CA ANZ (prov), SAP, Xero          |
-| Australian tax and payroll       | github.com/ryanduguid             |
-+----------------------------------+-----------------------------------+
-|                              in balance                              |
-+----------------------------------------------------------------------+
++--------------------------------+
+| RYAN DUGUID                    |
+| COMPUTATIONAL ACCOUNTING       |
++---------------+----------------+
+| DR            | CR             |
++---------------+----------------+
+| Excel LAMBDAs | Newcastle, NSW |
+| MCP + CLI     | CA ANZ (prov.) |
+| Tax + payroll | SAP / Xero     |
++---------------+----------------+
+|           IN BALANCE           |
++--------------------------------+
 ```
 
 ```bash
