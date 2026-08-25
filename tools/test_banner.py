@@ -67,6 +67,49 @@ class TestProfileOpening(unittest.TestCase):
         )
 
 
+class TestAuthorityRoutes(unittest.TestCase):
+    def setUp(self):
+        self.readme = (ROOT / "README.md").read_text(encoding="utf-8")
+        self.llms = (ROOT / "llms.txt").read_text(encoding="utf-8")
+
+    def test_the_first_non_biographical_section_routes_three_audiences(self):
+        route_start = self.readme.index("## Choose a path")
+        first_install = self.readme.index("claude mcp add aus-accounting")
+        self.assertLess(route_start, first_install)
+        for label in ("Engage", "Adopt", "Verify"):
+            with self.subTest(label=label):
+                self.assertIn(label, self.readme[route_start:first_install])
+
+    def test_the_profile_has_one_supported_command_for_each_install_route(self):
+        self.assertEqual(self.readme.count("claude mcp add aus-accounting"), 1)
+        self.assertEqual(
+            self.readme.count(
+                "npx skills add ryanduguid/australian-accounting-skills"
+            ),
+            1,
+        )
+
+    def test_the_three_routes_use_the_canonical_site_destinations(self):
+        for url in (
+            "https://ryanduguid.github.io/#engage",
+            "https://ryanduguid.github.io/#adopt",
+            "https://ryanduguid.github.io/evidence/",
+        ):
+            with self.subTest(url=url):
+                self.assertEqual(self.readme.count(url), 1)
+
+    def test_llms_names_the_same_three_routes_and_data_boundary(self):
+        for text in (
+            "## Choose a route",
+            "Engage",
+            "Adopt",
+            "Verify",
+            "Do not send taxpayer information or client files",
+        ):
+            with self.subTest(text=text):
+                self.assertIn(text, self.llms)
+
+
 class TestGeometry(unittest.TestCase):
     def test_divider_column_at_72(self):
         led = Ledger(72)
