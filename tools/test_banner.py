@@ -23,6 +23,43 @@ from banner import (
 )
 
 
+class TestProfileOpening(unittest.TestCase):
+    def setUp(self):
+        self.readme = (ROOT / "README.md").read_text(encoding="utf-8")
+        self.opening = self.readme.split("\n## ", maxsplit=1)[0]
+
+    def test_the_opening_identifies_the_person_and_the_two_install_routes(self):
+        for anchor in (
+            "Australian accountant",
+            "Newcastle, NSW",
+            "computational accounting",
+            "aus-accounting-mcp",
+            "australian-accounting-skills",
+        ):
+            with self.subTest(anchor=anchor):
+                self.assertIn(anchor, self.opening)
+
+    def test_the_first_section_heading_precedes_the_generated_masthead(self):
+        self.assertLess(self.readme.index("\n## "), self.readme.index(masthead()))
+
+    def test_the_private_off_ledger_markers_are_absent(self):
+        self.assertNotIn("off-ledger:", self.readme)
+        self.assertNotIn("callsign:", self.readme)
+
+    def test_the_profile_links_to_the_three_canonical_proof_pages(self):
+        for url in (
+            "https://ryanduguid.github.io/evidence/",
+            "https://ryanduguid.github.io/tools/payday-super/",
+            "https://ryanduguid.github.io/tools/xero-trial-balance/",
+        ):
+            with self.subTest(url=url):
+                self.assertIn(url, self.readme)
+
+    def test_the_profile_has_no_tooling_attribution_footer(self):
+        self.assertNotRegex(self.readme, r"(?m)^Built using\b")
+        self.assertNotIn("Hermes Agent", self.readme)
+
+
 class TestGeometry(unittest.TestCase):
     def test_divider_column_at_72(self):
         led = Ledger(72)

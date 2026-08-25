@@ -1,5 +1,29 @@
 # Ryan Duguid
 
+Australian accountant in Newcastle, NSW, building open-source computational accounting tools for Australian tax, payroll and statutory compliance.
+
+These local review aids are not advice and do not lodge or write to ledgers. Consequential outputs require human professional sign-off. This is not the US software product executive of the same name.
+
+Install the two public-practice routes:
+
+```bash
+claude mcp add aus-accounting -- uvx --from git+https://github.com/ryanduguid/au-tax-mcp-server aus-accounting-mcp
+npx skills add ryanduguid/australian-accounting-skills
+```
+
+Proof: [evidence and citation index](https://ryanduguid.github.io/evidence/) &bull; [Payday Super worked example](https://ryanduguid.github.io/tools/payday-super/) &bull; [Xero trial balance worked example](https://ryanduguid.github.io/tools/xero-trial-balance/)
+
+> Provisional member of Chartered Accountants ANZ &bull; SAP S/4HANA Certified (FI & CO) &bull; Xero specialist certification (Level 3)
+
+## Profile Ledger and Additional Skills
+
+<p align="center">
+  <a href="https://www.python.org/"><img src="https://img.shields.io/badge/Python-3.10+-5C2D91?logo=python&logoColor=white&labelColor=04001F" alt="Python 3.10 or later" /></a>
+  <a href="https://modelcontextprotocol.io/"><img src="https://img.shields.io/badge/MCP-Standard%20Protocol-5C2D91?labelColor=04001F" alt="Model Context Protocol" /></a>
+  <a href="https://github.com/ryanduguid/Ozzit"><img src="https://img.shields.io/badge/Excel-134%20Native%20LAMBDAs-5C2D91?labelColor=04001F" alt="Ozzit: 134 native Excel LAMBDAs" /></a>
+  <a href="https://github.com/ryanduguid/DrDebits"><img src="https://img.shields.io/badge/APES%20110-Aligned%20Guardrails-4F485E?labelColor=04001F" alt="DrDebits APES 110 aligned guardrails" /></a>
+</p>
+
 ```
 +----------------------------------------------------------------------+
 |                                                                      |
@@ -20,45 +44,7 @@
 +----------------------------------------------------------------------+
 ```
 
-<!--
-off-ledger:
-  callsign: bravo-six
-  spawn: lumbridge
-  crossing: kariba
-  reading: parallel-lives
-  control: what-is-mine
-  safehouse: croft-manor
-  port: 2300
--->
-
-<p align="center">
-  <a href="https://www.python.org/"><img src="https://img.shields.io/badge/Python-3.10+-5C2D91?logo=python&logoColor=white&labelColor=04001F" alt="Python 3.10 or later" /></a>
-  <a href="https://modelcontextprotocol.io/"><img src="https://img.shields.io/badge/MCP-Standard%20Protocol-5C2D91?labelColor=04001F" alt="Model Context Protocol" /></a>
-  <a href="https://github.com/ryanduguid/Ozzit"><img src="https://img.shields.io/badge/Excel-134%20Native%20LAMBDAs-5C2D91?labelColor=04001F" alt="Ozzit: 134 native Excel LAMBDAs" /></a>
-  <a href="https://github.com/ryanduguid/DrDebits"><img src="https://img.shields.io/badge/APES%20110-Aligned%20Guardrails-4F485E?labelColor=04001F" alt="DrDebits APES 110 aligned guardrails" /></a>
-</p>
-
----
-
-Australian accountant based in Newcastle, NSW. Engineering computational accounting engines, native Excel dynamic-array LAMBDAs, Model Context Protocol (MCP) servers, and deterministic AI workflows for Australian taxation, payroll, and statutory compliance.
-
-Not the US software product executive of the same name. This account publishes local computational tools (Payday Super timing, ATO benchmark ratios) that refuse Division 7A and do not lodge. They are not a hosted ATO ruling library. Comparison: [Australian tax tools for AI agents](https://ryanduguid.github.io/tools/australian-tax-ai-agents/).
-
-> Provisional member of Chartered Accountants ANZ &bull; SAP S/4HANA Certified (FI & CO) &bull; Xero specialist certification (Level 3)
-
----
-
-## Agent Environment Configuration
-
-Integrate Australian statutory rules and deterministic computational engines into AI development environments:
-
 ```bash
-# Add Australian Accounting & Tax MCP server to Claude Code
-claude mcp add aus-accounting -- uvx --from git+https://github.com/ryanduguid/au-tax-mcp-server aus-accounting-mcp
-
-# Add Public Practice & Tax skills
-npx skills add ryanduguid/australian-accounting-skills
-
 # Add Construction & Mining Subcontractor skills
 npx skills add ryanduguid/hardhat-ledger
 ```
@@ -179,7 +165,3 @@ au-tax-mcp-server calls payday-super-checker and ato-benchmark-compare. australi
 2. **Exact Decimal Arithmetic**: Computational outputs use exact decimal quantisation to prevent binary floating-point drift.
 3. **Local Privacy Boundaries**: Client-sensitive financial data remains in local memory or zero-network sandboxes; public fixtures use synthetic data only.
 4. **Human-in-the-Loop Signoff**: Algorithmic pipelines automate calculation and structural validation; ultimate professional judgement and statutory lodgment remain strictly human-controlled.
-
----
-
-Built using **[Hermes Agent](https://github.com/NousResearch/hermes-agent)** by Nous Research.
