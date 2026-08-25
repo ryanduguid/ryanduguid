@@ -7,9 +7,11 @@
 - **Credentials**: Provisional member of Chartered Accountants ANZ, SAP S/4HANA Certified (FI & CO), Xero specialist certification (Level 3)
 - **Focus**: Open-source computational accounting, deterministic reconciliation engines, native Excel LAMBDAs, Model Context Protocol (MCP), and structured AI agent workflows.
 - **Jurisdiction**: Commonwealth of Australia (ATO, AASB, IFRS, TPB).
+- **Not**: the US software product executive of the same name.
 
 ## Tools on the web, no install
 - **About Ryan Duguid** (https://ryanduguid.github.io/about/): canonical profile page. Australian accountant in Newcastle NSW, provisional member of Chartered Accountants ANZ, SAP S/4HANA certified in financial and management accounting, Xero specialist certification level 3. Machine-readable Person data is in the JSON-LD on that page.
+- **Australian tax tools for AI agents** (https://ryanduguid.github.io/tools/australian-tax-ai-agents/): aus-accounting-mcp is a local computational MCP for Payday Super timing and ATO small-business benchmark ratios. It refuses Division 7A. It is not a hosted ATO document library.
 - **Coal LSL levy calculator** (https://ryanduguid.github.io/tools/coal-lsl-levy/): eligible wages under section 3B and the 2.7 per cent payroll levy, in the browser.
 - **Payday super due dates** (https://ryanduguid.github.io/tools/payday-super/): seven business days to fund receipt since 1 July 2026, twenty for a first contribution to a new fund.
 - **ATO small business benchmarks** (https://ryanduguid.github.io/tools/ato-benchmarks/): a profit and loss against the published ranges, offline.
