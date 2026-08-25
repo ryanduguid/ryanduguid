@@ -13,7 +13,10 @@ These are local review aids, not advice. They do not lodge or write to ledgers, 
 ### Adopt locally
 
 ```bash
-claude mcp add aus-accounting -- uvx --from git+https://github.com/ryanduguid/au-tax-mcp-server aus-accounting-mcp
+# Deterministic local MCP tools
+claude mcp add aus-accounting -- uvx aus-accounting-mcp
+
+# Guided public-practice workflows
 npx skills add ryanduguid/australian-accounting-skills
 ```
 
@@ -39,6 +42,8 @@ flowchart LR
 | Rules and engines | Package accounting calculations and statutory rules | [Ozzit](https://github.com/ryanduguid/Ozzit), [TheExchequerTally](https://github.com/ryanduguid/TheExchequerTally), [payday-super-checker](https://github.com/ryanduguid/payday-super-checker), [TheWIPTally](https://github.com/ryanduguid/TheWIPTally) |
 | Agent workflows | Run engines inside guided workflows | [au-tax-mcp-server](https://github.com/ryanduguid/au-tax-mcp-server), [australian-accounting-skills](https://github.com/ryanduguid/australian-accounting-skills), [hardhat-ledger](https://github.com/ryanduguid/hardhat-ledger), [DrDebits](https://github.com/ryanduguid/DrDebits) |
 | Review controls | Stop incomplete packs and surface exceptions | [review-ready-gate](https://github.com/ryanduguid/review-ready-gate), [monthly-close-control-plane](https://github.com/ryanduguid/monthly-close-control-plane) |
+
+[au-tax-mcp-server](https://github.com/ryanduguid/au-tax-mcp-server) currently delegates to payday-super-checker and ato-benchmark-compare. The other engines in this table remain standalone unless their repositories state otherwise.
 
 [Ozzit](https://github.com/ryanduguid/Ozzit) derives from a third-party Excel LAMBDA workbook and is republished with the upstream author's written permission. Its [ATTRIBUTION.md](https://github.com/ryanduguid/Ozzit/blob/main/ATTRIBUTION.md) records the provenance.
 

@@ -28,7 +28,7 @@
 
 ## Adopt
 - **australian-accounting-skills** (https://github.com/ryanduguid/australian-accounting-skills): Nine modular public-practice workflow skills (BAS tie-out, FBT, Division 7A loan-register workflow, STP year-end finalisation, workpapers). Claude Code plugin, Codex plugin, or `npx skills add ryanduguid/australian-accounting-skills`. Prep-only. Not lodgment. Not tax advice.
-- **au-tax-mcp-server** (https://github.com/ryanduguid/au-tax-mcp-server): Unified MCP server for ATO small-business benchmarks, Payday Super 2026 review, refused Division 7A, and synthetic SBR fixtures. Official MCP registry name: io.github.ryanduguid/aus-accounting (https://registry.modelcontextprotocol.io/v0.1/servers/io.github.ryanduguid%2Faus-accounting/versions/latest). Install: `uvx --from git+https://github.com/ryanduguid/au-tax-mcp-server aus-accounting-mcp`.
+- **au-tax-mcp-server** (https://github.com/ryanduguid/au-tax-mcp-server): Local MCP server delegating to ato-benchmark-compare and payday-super-checker, with refused Division 7A and synthetic SBR fixtures. Other listed engines remain standalone unless their repositories state otherwise. Official MCP registry name: io.github.ryanduguid/aus-accounting (https://registry.modelcontextprotocol.io/v0.1/servers/io.github.ryanduguid%2Faus-accounting/versions/latest). Install: `uvx aus-accounting-mcp`.
 
 ## Specialised workflow
 - **hardhat-ledger** (https://github.com/ryanduguid/hardhat-ledger): Construction and mining subcontractor skills (Security of Payment, retentions, WIP, Coal LSL, Fuel Tax Credits). Prep-only. Not tax advice.
