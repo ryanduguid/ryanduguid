@@ -78,6 +78,7 @@ No install, no clone: these open in a browser and explain the rule they apply.
 | [Section 100A and Division 6](https://ryanduguid.github.io/tools/trust-distributions/) | Which PCG 2022/2 zone a trust distribution falls in, and each beneficiary's share |
 | [Company tax rate and franking](https://ryanduguid.github.io/tools/company-tax-franking/) | Whether a company is a base rate entity, and whether the franking account holds up |
 | [Subcontract ledger workflows](https://ryanduguid.github.io/tools/subcontractor-ledgers/) | Progress claims, retentions, work in progress, and the mining services regimes |
+| [Construction WIP schedule](https://ryanduguid.github.io/tools/wip-schedule/) | Cost-to-cost earned revenue, contract assets and liabilities, and profit-fade flags |
 | [Xero trial balance export](https://ryanduguid.github.io/tools/xero-trial-balance/) | How to get a trial balance out of Xero that actually balances |
 
 [About Ryan Duguid](https://ryanduguid.github.io/about/) covers the credentials, what the work is grounded in, and how to cite it.
@@ -109,6 +110,7 @@ flowchart LR
         Sword["SolomonsSword<br/><i>Trust Div 6 & s100A Matrix</i>"]
         ATO["ato-benchmark-compare<br/><i>ATO Benchmark Compare</i>"]
         Super["payday-super-checker<br/><i>Payday Super & SG Charge</i>"]
+        WipTally["TheWIPTally<br/><i>AASB 15 Construction WIP</i>"]
     end
 
     subgraph AI ["3. Agent workflows"]
@@ -127,11 +129,11 @@ flowchart LR
     classDef aiBox fill:#2D184E,stroke:#8A4AC7,stroke-width:1.5px,color:#FFFFFF;
 
     class Xero,PQ dataBox;
-    class Ozzit,Tally,Sword,ATO,Super engineBox;
+    class Ozzit,Tally,Sword,ATO,Super,WipTally engineBox;
     class MCP,Skills,SubSkills,DrD,Gateway aiBox;
 ```
 
-au-tax-mcp-server calls payday-super-checker and ato-benchmark-compare. australian-accounting-skills names the payday-super CLI rather than inventing the same work. Historical engine repositories stay the source of truth for the calculation; the products above are what a stranger should install.
+au-tax-mcp-server calls payday-super-checker and ato-benchmark-compare. australian-accounting-skills names the payday-super CLI rather than inventing the same work. hardhat-ledger names TheWIPTally rather than inventing WIP arithmetic. Historical engine repositories stay the source of truth for the calculation; the products above are what a stranger should install.
 
 ---
 
@@ -146,12 +148,13 @@ au-tax-mcp-server calls payday-super-checker and ato-benchmark-compare. australi
 - **[SolomonsSword](https://github.com/ryanduguid/SolomonsSword)** *(Trust Income & Section 100A)* - Trust income allocation under Division 6 ITAA 1936 (*Bamford* proportionate approach), Section 100A risk classification (*ATO PCG 2022/2*), and Section 99B foreign trust receipt analysis.
 - **[payday-super-checker](https://github.com/ryanduguid/payday-super-checker)** - Experimental Payday Super 2026 contribution-timing review and SG-charge *estimates*. Not a compliance determination.
 - **[ato-benchmark-compare](https://github.com/ryanduguid/ato-benchmark-compare)** - Localised, offline profit-and-loss variance analysis against Australian Taxation Office (ATO) small business benchmarks.
+- **[TheWIPTally](https://github.com/ryanduguid/TheWIPTally)** *(Construction WIP)* - Deterministic AASB 15 construction work-in-progress schedule: cost-to-cost progress, constrained variations, per-contract contract assets and liabilities, profit fade. Review aid, not a determination.
 
 ### AI Agent Workflows and Deterministic Safety Boundaries
 - **[DrDebits](https://github.com/ryanduguid/DrDebits)** - Primary-source-grounded ethical guardrails (aligned with APES 110 and TPB Code of Professional Conduct) for LLM-assisted taxation workflows.
 - **[xero-ai-review-gateway](https://github.com/ryanduguid/xero-ai-review-gateway)** - Zero-network, fixed-policy safety boundary for AI-assisted trial balance review with cryptographic receipt verification and data minimisation.
 - **[australian-accounting-skills](https://github.com/ryanduguid/australian-accounting-skills)** - Nine modular agent skills for Australian public practice (BAS reconciliation, FBT, Division 7A loan-register workflow, STP year-end finalisation, and 13-week cash flow modelling).
-- **[hardhat-ledger](https://github.com/ryanduguid/hardhat-ledger)** - Claude Code skills for Australian construction and mining subcontractors (Security of Payment claims, retentions, WIP, Coal LSL, and Fuel Tax Credits).
+- **[hardhat-ledger](https://github.com/ryanduguid/hardhat-ledger)** - Claude Code skills for Australian construction and mining subcontractors (Security of Payment claims, retentions, WIP review workflow, Coal LSL, and Fuel Tax Credits). The WIP arithmetic lives in [TheWIPTally](https://github.com/ryanduguid/TheWIPTally).
 
 ### Ledger Controls and Pipeline Utilities
 - **[xero-trial-balance-export](https://github.com/ryanduguid/xero-trial-balance-export)** - Exports reconciled Xero trial balances to validated CSV formats with strict movement and year-to-date mathematical integrity.
@@ -172,7 +175,7 @@ au-tax-mcp-server calls payday-super-checker and ato-benchmark-compare. australi
 
 ## Engineering Principles
 
-1. **Primary Source Grounding**: Computations that actually ship (Payday Super timing and experimental SG-charge estimates, ATO benchmark ratios, company tax/franking, trust allocation) are grounded in the cited Commonwealth legislation, ATO public rulings, and AASB/APESB standards. This account does not ship an individual marginal-tax or Medicare-levy engine.
+1. **Primary Source Grounding**: Computations that actually ship (Payday Super timing and experimental SG-charge estimates, ATO benchmark ratios, company tax/franking, trust allocation, construction WIP) are grounded in the cited Commonwealth legislation, ATO public rulings, and AASB/APESB standards. This account does not ship an individual marginal-tax or Medicare-levy engine.
 2. **Exact Decimal Arithmetic**: Computational outputs use exact decimal quantisation to prevent binary floating-point drift.
 3. **Local Privacy Boundaries**: Client-sensitive financial data remains in local memory or zero-network sandboxes; public fixtures use synthetic data only.
 4. **Human-in-the-Loop Signoff**: Algorithmic pipelines automate calculation and structural validation; ultimate professional judgement and statutory lodgment remain strictly human-controlled.
