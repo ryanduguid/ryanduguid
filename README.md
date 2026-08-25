@@ -20,6 +20,17 @@
 +----------------------------------------------------------------------+
 ```
 
+<!--
+off-ledger:
+  callsign: bravo-six
+  spawn: lumbridge
+  crossing: kariba
+  reading: parallel-lives
+  control: what-is-mine
+  safehouse: croft-manor
+  port: 2300
+-->
+
 <p align="center">
   <a href="https://www.python.org/"><img src="https://img.shields.io/badge/Python-3.10+-5C2D91?logo=python&logoColor=white&labelColor=04001F" alt="Python 3.10 or later" /></a>
   <a href="https://modelcontextprotocol.io/"><img src="https://img.shields.io/badge/MCP-Standard%20Protocol-5C2D91?labelColor=04001F" alt="Model Context Protocol" /></a>
