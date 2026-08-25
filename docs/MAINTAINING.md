@@ -20,24 +20,17 @@ How to report a security concern is in [SECURITY.md](../SECURITY.md). Account-wi
 
 The profile is an index, not a second catalogue of every engine. Lead with the installable products, then the engines those products call. Keep current repository names (`au-tax-mcp-server`, `payday-super-checker`, `TheExchequerTally`, `SolomonsSword`, `monthly-close-control-plane`).
 
-Keep one H1 (`Ryan Duguid`). The opening paragraph identifies Ryan as an Australian accountant in Newcastle, NSW, then names the supported subject areas once. It must not imply current public-practice employment, registration, vendor affiliation or regulatory endorsement.
+Do not use a redundant H1. Open with a first-person sentence identifying Ryan as an Australian accountant in Newcastle, NSW, then name the supported subject areas once. It must not imply current public-practice employment, registration, vendor affiliation or regulatory endorsement.
 
 The credentials line is an assertion by the profile owner. Confirm it is current before changing or republishing it. Use **provisional member of Chartered Accountants ANZ**, not a vendor-style `CA ANZ` shorthand in prose.
 
-**Agent Environment Configuration** lists three installable products: australian-accounting-skills, au-tax-mcp-server, then hardhat-ledger, each with the shortest install path that actually works. hardhat-ledger qualified because it ships `.claude/skills/` consumed by `npx skills add`, the same packaging as the skills repo. Do not add a fourth installable product here without a packaging decision in that repository.
+Keep one install block near the top with the two primary routes: the `claude mcp add` command for au-tax-mcp-server and the `npx skills add` command for australian-accounting-skills. Link hardhat-ledger later as a specialised workflow without a second `npx` command.
 
 Pins live only in the GitHub UI; the README has no pinned section. The pin record below must match the live list.
 
-**Upstream Open-Source Contributions** names selected merged examples without a total. Run these checks to verify each named contribution is still merged and correctly attributed:
+Use a compact architecture flow from ledger data through deterministic rules and agent workflows to human review, with readiness controls also feeding human review. Follow it with a four-row table of representative linked repositories. Keep the full catalogue on the website, not in this README. Do not add an upstream contributions section.
 
-```bash
-gh pr view 3727 --repo meltano/sdk --json author,mergedAt,url
-gh pr view 20 --repo Matatika/tap-xero --json author,mergedAt,url
-gh pr view 737 --repo farag2/Sophia-Script-for-Windows --json author,mergedAt,url
-gh search prs --repo openaccountants/openaccountants --author ryanduguid --merged --limit 100 --json number,url,author,repository
-```
-
-**Engineering Principles** holds the primary-source, reconciliation, professional-judgement, provenance and client-data boundaries. Do not remove a boundary merely to shorten the profile.
+**Engineering boundaries** holds the primary-source, currency-arithmetic, client-data and professional-judgement boundaries. The architecture table carries the reconciliation role; the Ozzit paragraph records provenance. Do not remove a boundary merely to shorten the profile. Put the generated ASCII Profile Ledger at the bottom, immediately before the Hermes attribution.
 
 ## Pinned repositories
 
@@ -77,7 +70,6 @@ GitHub About on the two flagship repositories (description, homepage, topics) is
 | Xero trial-balance export requires movement and year-to-date balance before writing | `xero-trial-balance-export/README.md`, the balance-check paragraph under Scope and disclaimer |
 | Local profit-and-loss comparison against ATO benchmarks, with working shown | `ato-benchmark-compare/README.md`; do not imply ATO endorsement |
 | Source-linked LLM operating guide for Australian accounting, tax and BAS work | `DrDebits/README.md`; do not imply certification or endorsement |
-| Selected external work is merged and attributable | The linked pull request pages and the four live GitHub CLI checks above |
 
 ## Style
 
@@ -96,7 +88,7 @@ The index is accounting automation for Australian practice. Leave off:
 - `claude-export`, a private settings snapshot (private repository, so a link would 404 for every visitor)
 - [ryanduguid/.github](https://github.com/ryanduguid/.github), account-level community health files
 
-Forks used only to send upstream pull requests stay out of the product list. **Open-source contributions** may link merged upstream work.
+Forks used only to send upstream pull requests stay out of the product list.
 
 ## Common mistakes
 
