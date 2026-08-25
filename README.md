@@ -42,6 +42,8 @@ off-ledger:
 
 Australian accountant based in Newcastle, NSW. Engineering computational accounting engines, native Excel dynamic-array LAMBDAs, Model Context Protocol (MCP) servers, and deterministic AI workflows for Australian taxation, payroll, and statutory compliance.
 
+Not the US software product executive of the same name. This account publishes local computational tools (Payday Super timing, ATO benchmark ratios) that refuse Division 7A and do not lodge. They are not a hosted ATO ruling library. Comparison: [Australian tax tools for AI agents](https://ryanduguid.github.io/tools/australian-tax-ai-agents/).
+
 > Provisional member of Chartered Accountants ANZ &bull; SAP S/4HANA Certified (FI & CO) &bull; Xero specialist certification (Level 3)
 
 ---
@@ -69,6 +71,7 @@ No install, no clone: these open in a browser and explain the rule they apply.
 
 | Tool | What it answers |
 | --- | --- |
+| [Which Australian tax MCP to install](https://ryanduguid.github.io/tools/australian-tax-ai-agents/) | Computational engines vs a hosted ATO document library, and what aus-accounting-mcp refuses |
 | [Coal LSL levy calculator](https://ryanduguid.github.io/tools/coal-lsl-levy/) | Which eligible wages formula applies under section 3B, and what the monthly levy comes to |
 | [Payday super due dates](https://ryanduguid.github.io/tools/payday-super/) | When a contribution is actually due since 1 July 2026, and the charge if it is late |
 | [ATO small business benchmarks](https://ryanduguid.github.io/tools/ato-benchmarks/) | Where a profit and loss sits against the published ATO ranges |
