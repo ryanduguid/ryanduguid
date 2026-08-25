@@ -283,9 +283,9 @@ class TestContent(unittest.TestCase):
         for name in TARGETS:
             self.assertIn(name, content)
 
-    def test_there_are_exactly_twenty_targets(self):
-        self.assertEqual(len(TARGETS), 20)
-        self.assertEqual(len(set(TARGETS)), 20)
+    def test_there_are_exactly_nineteen_targets(self):
+        self.assertEqual(len(TARGETS), 19)
+        self.assertEqual(len(set(TARGETS)), 19)
 
     def test_no_private_or_excluded_repository_is_targeted(self):
         excluded = {

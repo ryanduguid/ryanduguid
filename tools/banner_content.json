@@ -201,19 +201,6 @@
       "a Python pyproject.toml"
     ]
   },
-  "tax-radar-au": {
-    "tagline": "Synthetic change review queue for AU tax sources",
-    "gives": [
-      "provenance tagged review queue",
-      "SUPERSEDED and BLOCKED states",
-      "impact queue JSON output"
-    ],
-    "needs": [
-      "baseline source index JSON",
-      "Register observation JSON",
-      "source to skill map JSON"
-    ]
-  },
   "xero-ai-review-gateway": {
     "tagline": "Fixed policy zero network Xero review gateway",
     "gives": [
