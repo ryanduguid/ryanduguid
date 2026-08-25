@@ -55,9 +55,17 @@ class TestProfileOpening(unittest.TestCase):
             with self.subTest(url=url):
                 self.assertIn(url, self.readme)
 
-    def test_the_profile_has_no_tooling_attribution_footer(self):
-        self.assertNotRegex(self.readme, r"(?m)^Built using\b")
-        self.assertNotIn("Hermes Agent", self.readme)
+    def test_the_profile_has_the_approved_tooling_attribution_footer(self):
+        attribution = (
+            "Orchestrated with [Hermes Agent]"
+            "(https://github.com/NousResearch/hermes-agent)."
+        )
+        self.assertEqual(1, self.readme.count(attribution))
+        self.assertTrue(self.readme.rstrip().endswith(attribution))
+        self.assertNotRegex(
+            self.readme,
+            r"(?mi)^Built (?:by|using)\b.*Hermes Agent",
+        )
 
 
 class TestGeometry(unittest.TestCase):
