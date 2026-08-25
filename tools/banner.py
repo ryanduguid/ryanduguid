@@ -194,17 +194,16 @@ def load_wordmark() -> list[str]:
 
 
 def masthead() -> str:
-    """The profile README masthead, 72 columns."""
-    led = Ledger(72)
-    led.full("")
-    led.art(load_wordmark())
-    led.full("")
-    led.split("DR", "CR", center=True)
+    """The mobile-safe profile README masthead, 34 columns."""
+    led = Ledger(34)
+    led.full("RYAN DUGUID", center=False)
+    led.full("COMPUTATIONAL ACCOUNTING", center=False)
+    led.split("DR", "CR")
     led.rule()
-    led.split("Excel LAMBDA engines", "Newcastle, NSW")
-    led.split("MCP servers, CLI tools", "CA ANZ (prov), SAP, Xero")
-    led.split("Australian tax and payroll", "github.com/ryanduguid")
-    led.full("in balance")
+    led.split("Excel LAMBDAs", "Newcastle, NSW")
+    led.split("MCP + CLI", "CA ANZ (prov.)")
+    led.split("Tax + payroll", "SAP / Xero")
+    led.full("IN BALANCE")
     return led.render()
 
 

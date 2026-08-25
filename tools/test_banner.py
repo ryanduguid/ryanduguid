@@ -14,7 +14,6 @@ from banner import (
     check,
     cli_banner,
     load_content,
-    load_wordmark,
     main,
     masthead,
     masthead_compact,
@@ -189,32 +188,29 @@ class TestGate(unittest.TestCase):
 
 
 class TestMasthead(unittest.TestCase):
-    def test_the_wordmark_is_a_rectangle_of_the_expected_size(self):
-        rows = load_wordmark()
-        self.assertEqual(len(rows), 5)
-        self.assertEqual({len(r) for r in rows}, {60})
+    def test_the_masthead_is_thirty_four_columns_wide(self):
+        self.assertEqual({len(line) for line in masthead().split("\n")}, {34})
+
+    def test_the_masthead_uses_the_compact_profile_ledger(self):
+        expected = """+--------------------------------+
+| RYAN DUGUID                    |
+| COMPUTATIONAL ACCOUNTING       |
++---------------+----------------+
+| DR            | CR             |
++---------------+----------------+
+| Excel LAMBDAs | Newcastle, NSW |
+| MCP + CLI     | CA ANZ (prov.) |
+| Tax + payroll | SAP / Xero     |
++---------------+----------------+
+|           IN BALANCE           |
++--------------------------------+"""
+        self.assertEqual(masthead(), expected)
 
     def test_the_masthead_passes_the_gate(self):
         self.assertEqual(check("masthead", masthead()), [])
 
-    def test_the_spacer_rows_are_load_bearing(self):
-        lines = masthead().split("\n")
-        last_spacer = 1 + len(load_wordmark()) + 1
-        stripped = [
-            line
-            for index, line in enumerate(lines)
-            if index not in (1, last_spacer)
-        ]
-        self.assertTrue(check("no spacer", "\n".join(stripped)))
-
-    def test_the_wordmark_band_is_padded_so_no_stem_touches_a_rule(self):
-        lines = masthead().split("\n")
-        last_spacer = 1 + len(load_wordmark()) + 1
-        self.assertEqual(lines[1].strip("|").strip(), "")
-        self.assertEqual(lines[last_spacer].strip("|").strip(), "")
-
     def test_the_masthead_closes_on_the_balance_line(self):
-        self.assertIn("in balance", masthead().split("\n")[-2])
+        self.assertIn("IN BALANCE", masthead().split("\n")[-2])
 
     def test_the_readme_carries_the_masthead_the_generator_renders(self):
         # The pasted artefact is what ships, so gate it against the generator.
@@ -338,7 +334,7 @@ class TestCommandLine(unittest.TestCase):
         with contextlib.redirect_stdout(buffer):
             code = main(["masthead"])
         self.assertEqual(code, 0)
-        self.assertIn("in balance", buffer.getvalue())
+        self.assertIn("IN BALANCE", buffer.getvalue())
 
     def test_repo_mode_prints_that_repository_header(self):
         buffer = io.StringIO()
