@@ -21,8 +21,6 @@ MIN_WIDTH = 24
 
 MAX_WIDTH = 80
 
-WORDMARK = ROOT / "tools" / "wordmark.txt"
-
 CONTENT = ROOT / "tools" / "banner_content.json"
 
 TARGETS = (
@@ -126,20 +124,6 @@ class Ledger:
         self._rows().append(self._rule_line(self._band or 1))
         return self
 
-    def art(self, lines: list[str]) -> "Ledger":
-        inner = self.width - 2
-        block = max(len(line) for line in lines)
-        if block > inner:
-            # An ellipsis inside a letterform means nothing, so raise rather
-            # than clip a glyph mid stroke.
-            raise ValueError(f"art block of {block} columns does not fit {inner}")
-        pad = (inner - block) // 2
-        for line in lines:
-            self._open(1)
-            body = " " * pad + line
-            self._rows().append("|" + body.ljust(self.width - 2)[: self.width - 2] + "|")
-        return self
-
     def render(self) -> str:
         rows = list(self._rows())
         rows.append(self._rule_line(self._band or 1))
@@ -176,21 +160,6 @@ def check(name: str, text: str) -> list[str]:
                     f"meets a rule, needs a plus"
                 )
     return failures
-
-
-def load_wordmark() -> list[str]:
-    """The vendored FIGlet standard rendering of RYAN DUGUID, 60 by 5.
-
-    Rectangles (the previous face) made every letter the same box, so the
-    name was not readable as a name. Standard keeps 7-bit ASCII, fits the
-    70-column inner frame, and passes the junction gate.
-
-    Regenerate with: npx figlet-cli -f standard 'RYAN DUGUID'
-    """
-    rows = WORDMARK.read_text(encoding="ascii").split("\n")
-    rows = [row for row in rows if row.strip()]
-    block = max(len(row) for row in rows)
-    return [row.ljust(block) for row in rows]
 
 
 def masthead() -> str:
