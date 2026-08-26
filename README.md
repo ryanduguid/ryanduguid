@@ -1,6 +1,6 @@
-I am an Australian accountant in Newcastle, NSW. I build open-source computational accounting tools for Australian tax, payroll and statutory compliance, including aus-accounting-mcp and australian-accounting-skills.
+I am an Australian accountant in Newcastle, NSW. I build open-source review-first computational accounting tools for accounting firms in Newcastle and the Hunter Valley, including aus-accounting-mcp and australian-accounting-skills.
 
-These are local review aids, not advice. They do not lodge or write to ledgers, and consequential outputs require human professional sign-off. I am not the US software product executive of the same name.
+The tools cover Xero, payroll, tax workflows and AI-assisted review. They are local review aids, not advice. They do not lodge or write to ledgers, and consequential outputs require human professional sign-off. I am not the US software product executive of the same name.
 
 ## Choose a path
 
@@ -23,6 +23,8 @@ npx skills add ryanduguid/australian-accounting-skills
 Worked examples: [Payday Super](https://ryanduguid.github.io/tools/payday-super/) &bull; [Xero trial balance](https://ryanduguid.github.io/tools/xero-trial-balance/)
 
 > Provisional member of Chartered Accountants ANZ &bull; SAP S/4HANA Certified (FI & CO) &bull; Xero specialist certification (Level 3)
+
+Independent records: [MCP Registry](https://registry.modelcontextprotocol.io/v0.1/servers/io.github.ryanduguid%2Faus-accounting/versions/latest) &bull; [PyPI](https://pypi.org/project/aus-accounting-mcp/) &bull; [SAP FI](https://www.credly.com/badges/750e7557-ab6d-4b28-a241-8252c263613a/public_url) &bull; [SAP CO](https://www.credly.com/badges/0f753c71-5f49-41be-8519-51e81030a8f1/public_url) &bull; merged upstream work in [Meltano SDK](https://github.com/meltano/sdk/pull/3727) and [OpenAccountants](https://github.com/OpenAccountants/openaccountants/pull/85).
 
 ## Browser tools
 
