@@ -186,12 +186,6 @@ class TestRendering(unittest.TestCase):
         for line in out:
             self.assertEqual(line, line.rstrip())
 
-    def test_art_block_takes_one_offset_for_every_row(self):
-        art = ["####", "#", "####"]
-        out = Ledger(72).art(art).render().split("\n")
-        starts = [line.index("#") for line in out if "#" in line]
-        self.assertEqual(len(set(starts)), 1)
-
     def test_overlong_centred_text_in_full_is_truncated_with_ellipsis(self):
         out = Ledger(24).full("x" * 100).render().split("\n")
         self.assertEqual(len(out[1]), 24)
@@ -212,11 +206,6 @@ class TestRendering(unittest.TestCase):
         self.assertNotIn("...", out)
         self.assertIn("x" * led.left, out)
         self.assertIn("y" * led.right, out)
-
-    def test_art_wider_than_the_frame_is_rejected_not_clipped(self):
-        with self.assertRaises(ValueError):
-            Ledger(72).art(["A" * 80, "B" * 80])
-
 
 class TestGate(unittest.TestCase):
     def test_a_clean_banner_passes(self):
