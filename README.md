@@ -2,6 +2,12 @@
 
 I'm an accountant in Newcastle, Australia. I build open-source tools for Australian tax, payroll and financial reporting.
 
+<p align="center"><a href="https://www.python.org/"><img src="https://img.shields.io/badge/Python-3.10+-5C2D91?logo=python&logoColor=white&labelColor=04001F" alt="Python 3.10 or later" /></a>
+  <a href="https://modelcontextprotocol.io/"><img src="https://img.shields.io/badge/MCP-Standard%20Protocol-5C2D91?labelColor=04001F" alt="Model Context Protocol" /></a>
+  <a href="https://github.com/ryanduguid/Ozzit"><img src="https://img.shields.io/badge/Excel-134%20Native%20LAMBDAs-5C2D91?labelColor=04001F" alt="Ozzit: 134 native Excel LAMBDAs" /></a>
+  <a href="https://github.com/ryanduguid/DrDebits"><img src="https://img.shields.io/badge/APES%20110-Aligned%20Guardrails-4F485E?labelColor=04001F" alt="DrDebits APES 110 aligned guardrails" /></a>
+  <a href="https://ryanduguid.github.io/"><img src="https://img.shields.io/badge/Australian%20Accounting-Open%20Source-5C2D91?labelColor=04001F" alt="Open-source Australian accounting tools" /></a></p>
+
 ## Selected work
 
 - [xero-trial-balance-export](https://github.com/ryanduguid/xero-trial-balance-export) exports reconciled Xero trial balances to CSV for Power BI, Excel and pandas.
