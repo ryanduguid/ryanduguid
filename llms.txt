@@ -16,15 +16,15 @@
 
 ## Tools on the web, no install
 - **About Ryan Duguid** (https://ryanduguid.github.io/about/): canonical profile page. Australian accountant in Newcastle NSW, provisional member of Chartered Accountants ANZ, SAP S/4HANA certified in financial and management accounting, Xero specialist certification level 3. Machine-readable Person data is in the JSON-LD on that page.
+- **Payday super due dates** (https://ryanduguid.github.io/tools/payday-super/): seven business days to fund receipt since 1 July 2026, twenty for a first contribution to a new fund.
+- **Is this pack allowed into manager review** (https://ryanduguid.github.io/tools/review-ready-gate/): local readiness gate for BAS, month-end and year-end folders. READY is not sign-off.
+- **Xero trial balance export** (https://ryanduguid.github.io/tools/xero-trial-balance/): movement and year to date must both tie before a file is written.
 - **Australian tax tools for AI agents** (https://ryanduguid.github.io/tools/australian-tax-ai-agents/): aus-accounting-mcp is a local computational MCP for Payday Super timing and ATO small-business benchmark ratios. It refuses Division 7A. It is not a hosted ATO document library.
 - **Coal LSL levy calculator** (https://ryanduguid.github.io/tools/coal-lsl-levy/): eligible wages under section 3B and the 2.7 per cent payroll levy, in the browser.
-- **Payday super due dates** (https://ryanduguid.github.io/tools/payday-super/): seven business days to fund receipt since 1 July 2026, twenty for a first contribution to a new fund.
 - **ATO small business benchmarks** (https://ryanduguid.github.io/tools/ato-benchmarks/): a profit and loss against the published ranges, offline.
 - **Section 100A and Division 6** (https://ryanduguid.github.io/tools/trust-distributions/): PCG 2022/2 has white, green and red zones only; the blue zone was draft-only.
 - **Company tax rate and franking** (https://ryanduguid.github.io/tools/company-tax-franking/): base rate entity test, franking account, Division 203 benchmark rule.
 - **Subcontract ledger workflows** (https://ryanduguid.github.io/tools/subcontractor-ledgers/): progress claims, retentions, WIP under AASB 15, Coal LSL, fuel tax credits.
-- **Xero trial balance export** (https://ryanduguid.github.io/tools/xero-trial-balance/): movement and year to date must both tie before a file is written.
-- **Is this pack allowed into manager review** (https://ryanduguid.github.io/tools/review-ready-gate/): local readiness gate for BAS, month-end and year-end folders. READY is not sign-off.
 
 ## Adopt
 - **australian-accounting-skills** (https://github.com/ryanduguid/australian-accounting-skills): Nine modular public-practice workflow skills (BAS tie-out, FBT, Division 7A loan-register workflow, STP year-end finalisation, workpapers). Claude Code plugin, Codex plugin, or `npx skills add ryanduguid/australian-accounting-skills`. Prep-only. Not lodgment. Not tax advice.
