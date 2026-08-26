@@ -88,7 +88,6 @@ class TestProfileOpening(unittest.TestCase):
         for anchor in (
             "Provisional member of Chartered Accountants ANZ",
             "Xero specialist certification (Level 3)",
-            "[More projects and technical notes](PROJECTS.md)",
             "https://ryanduguid.github.io/evidence/",
         ):
             with self.subTest(anchor=anchor):
@@ -101,7 +100,6 @@ class TestProfileOpening(unittest.TestCase):
 class TestAuthorityRoutes(unittest.TestCase):
     def setUp(self):
         self.readme = (ROOT / "README.md").read_text(encoding="utf-8")
-        self.projects = (ROOT / "PROJECTS.md").read_text(encoding="utf-8")
         self.llms = (ROOT / "llms.txt").read_text(encoding="utf-8")
 
     def test_the_profile_links_to_the_full_catalogue(self):
@@ -110,29 +108,6 @@ class TestAuthorityRoutes(unittest.TestCase):
             "(https://ryanduguid.github.io/)",
             self.readme,
         )
-
-    def test_the_catalogue_preserves_the_original_routes_and_commands(self):
-        for anchor in (
-            "## Choose a path",
-            "Engage",
-            "Adopt",
-            "Verify",
-            "claude mcp add aus-accounting -- uvx aus-accounting-mcp",
-            "npx skills add ryanduguid/australian-accounting-skills",
-            "https://ryanduguid.github.io/#engage",
-            "https://ryanduguid.github.io/#adopt",
-            "https://ryanduguid.github.io/evidence/",
-        ):
-            with self.subTest(anchor=anchor):
-                self.assertIn(anchor, self.projects)
-
-    def test_the_catalogue_preserves_the_original_attribution(self):
-        attribution = (
-            "Orchestrated with [Hermes Agent]"
-            "(https://github.com/NousResearch/hermes-agent)."
-        )
-        self.assertEqual(self.projects.count(attribution), 1)
-        self.assertTrue(self.projects.rstrip().endswith(attribution))
 
     def test_llms_names_the_same_three_routes_and_data_boundary(self):
         for text in (
@@ -279,11 +254,6 @@ class TestMasthead(unittest.TestCase):
 
     def test_the_masthead_closes_on_the_balance_line(self):
         self.assertIn("IN BALANCE", masthead().split("\n")[-2])
-
-    def test_the_projects_catalogue_carries_the_masthead_the_generator_renders(self):
-        # The preserved artefact remains gated against the generator.
-        projects = (ROOT / "PROJECTS.md").read_text(encoding="utf-8")
-        self.assertIn(masthead(), projects)
 
     def test_the_compact_masthead_drops_the_lettering_below_sixty(self):
         out = masthead_compact()
