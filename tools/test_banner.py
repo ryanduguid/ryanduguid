@@ -38,6 +38,11 @@ class TestProfileOpening(unittest.TestCase):
             with self.subTest(anchor=anchor):
                 self.assertIn(anchor, self.opening)
 
+    def test_the_opening_names_the_hunter_market_and_review_first_position(self):
+        for anchor in ("review-first computational accounting", "Hunter Valley"):
+            with self.subTest(anchor=anchor):
+                self.assertIn(anchor, self.opening)
+
     def test_the_first_section_heading_precedes_the_generated_masthead(self):
         self.assertLess(self.readme.index("\n## "), self.readme.index(masthead()))
 
@@ -50,6 +55,21 @@ class TestProfileOpening(unittest.TestCase):
             "https://ryanduguid.github.io/evidence/",
             "https://ryanduguid.github.io/tools/payday-super/",
             "https://ryanduguid.github.io/tools/xero-trial-balance/",
+        ):
+            with self.subTest(url=url):
+                self.assertIn(url, self.readme)
+
+    def test_the_profile_links_independent_records_and_upstream_work(self):
+        for url in (
+            "https://registry.modelcontextprotocol.io/v0.1/servers/"
+            "io.github.ryanduguid%2Faus-accounting/versions/latest",
+            "https://pypi.org/project/aus-accounting-mcp/",
+            "https://www.credly.com/badges/"
+            "750e7557-ab6d-4b28-a241-8252c263613a/public_url",
+            "https://www.credly.com/badges/"
+            "0f753c71-5f49-41be-8519-51e81030a8f1/public_url",
+            "https://github.com/meltano/sdk/pull/3727",
+            "https://github.com/OpenAccountants/openaccountants/pull/85",
         ):
             with self.subTest(url=url):
                 self.assertIn(url, self.readme)
