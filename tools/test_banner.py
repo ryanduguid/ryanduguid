@@ -27,37 +27,47 @@ class TestProfileOpening(unittest.TestCase):
         self.readme = (ROOT / "README.md").read_text(encoding="utf-8")
         self.opening = self.readme.split("\n## ", maxsplit=1)[0]
 
-    def test_the_opening_identifies_the_person_and_the_two_install_routes(self):
+    def test_the_opening_identifies_the_person_location_and_focus(self):
         for anchor in (
-            "Australian accountant",
-            "Newcastle, NSW",
-            "computational accounting",
-            "aus-accounting-mcp",
-            "australian-accounting-skills",
+            "# Ryan Duguid",
+            "accountant in Newcastle, Australia",
+            "Australian tax, payroll and financial reporting",
         ):
             with self.subTest(anchor=anchor):
                 self.assertIn(anchor, self.opening)
 
-    def test_the_opening_names_the_hunter_market_and_review_first_position(self):
-        for anchor in ("review-first computational accounting", "Hunter Valley"):
-            with self.subTest(anchor=anchor):
-                self.assertIn(anchor, self.opening)
+    def test_selected_work_precedes_background(self):
+        self.assertLess(
+            self.readme.index("## Selected work"),
+            self.readme.index("## Background"),
+        )
 
-    def test_the_first_section_heading_precedes_the_generated_masthead(self):
-        self.assertLess(self.readme.index("\n## "), self.readme.index(masthead()))
+    def test_selected_work_names_four_projects_once(self):
+        selected = self.readme.split("## Selected work\n", maxsplit=1)[1]
+        selected = selected.split("\n## Background", maxsplit=1)[0]
+        projects = (
+            "xero-trial-balance-export",
+            "Ozzit",
+            "accounting-excel-toolkit",
+            "payday-super-checker",
+        )
+        self.assertEqual(
+            sum(line.startswith("- [") for line in selected.splitlines()),
+            len(projects),
+        )
+        for project in projects:
+            url = f"https://github.com/ryanduguid/{project}"
+            with self.subTest(project=project):
+                self.assertEqual(selected.count(url), 1)
 
     def test_the_private_off_ledger_markers_are_absent(self):
         self.assertNotIn("off-ledger:", self.readme)
         self.assertNotIn("callsign:", self.readme)
 
-    def test_the_profile_links_to_the_three_canonical_proof_pages(self):
-        for url in (
-            "https://ryanduguid.github.io/evidence/",
-            "https://ryanduguid.github.io/tools/payday-super/",
-            "https://ryanduguid.github.io/tools/xero-trial-balance/",
-        ):
-            with self.subTest(url=url):
-                self.assertIn(url, self.readme)
+    def test_the_profile_states_the_data_and_review_boundary(self):
+        self.assertIn("synthetic public examples", self.readme)
+        self.assertIn("support professional review", self.readme)
+        self.assertIn("They do not lodge or write to ledgers", self.readme)
 
     def test_the_profile_links_independent_records_and_upstream_work(self):
         for url in (
@@ -74,49 +84,55 @@ class TestProfileOpening(unittest.TestCase):
             with self.subTest(url=url):
                 self.assertIn(url, self.readme)
 
-    def test_the_profile_has_the_approved_tooling_attribution_footer(self):
-        attribution = (
-            "Orchestrated with [Hermes Agent]"
-            "(https://github.com/NousResearch/hermes-agent)."
-        )
-        self.assertEqual(1, self.readme.count(attribution))
-        self.assertTrue(self.readme.rstrip().endswith(attribution))
-        self.assertNotRegex(
-            self.readme,
-            r"(?mi)^Built (?:by|using)\b.*Hermes Agent",
-        )
+    def test_the_profile_names_credentials_and_links_to_more_detail(self):
+        for anchor in (
+            "Provisional member of Chartered Accountants ANZ",
+            "Xero specialist certification (Level 3)",
+            "[More projects and technical notes](PROJECTS.md)",
+            "https://ryanduguid.github.io/evidence/",
+        ):
+            with self.subTest(anchor=anchor):
+                self.assertIn(anchor, self.readme)
+
+    def test_the_profile_remains_concise(self):
+        self.assertLessEqual(len(self.readme.splitlines()), 30)
 
 
 class TestAuthorityRoutes(unittest.TestCase):
     def setUp(self):
         self.readme = (ROOT / "README.md").read_text(encoding="utf-8")
+        self.projects = (ROOT / "PROJECTS.md").read_text(encoding="utf-8")
         self.llms = (ROOT / "llms.txt").read_text(encoding="utf-8")
 
-    def test_the_first_non_biographical_section_routes_three_audiences(self):
-        route_start = self.readme.index("## Choose a path")
-        first_install = self.readme.index("claude mcp add aus-accounting")
-        self.assertLess(route_start, first_install)
-        for label in ("Engage", "Adopt", "Verify"):
-            with self.subTest(label=label):
-                self.assertIn(label, self.readme[route_start:first_install])
-
-    def test_the_profile_has_one_supported_command_for_each_install_route(self):
-        self.assertEqual(self.readme.count("claude mcp add aus-accounting"), 1)
-        self.assertEqual(
-            self.readme.count(
-                "npx skills add ryanduguid/australian-accounting-skills"
-            ),
-            1,
+    def test_the_profile_links_to_the_full_catalogue(self):
+        self.assertIn(
+            "[See the full project catalogue and worked examples]"
+            "(https://ryanduguid.github.io/)",
+            self.readme,
         )
 
-    def test_the_three_routes_use_the_canonical_site_destinations(self):
-        for url in (
+    def test_the_catalogue_preserves_the_original_routes_and_commands(self):
+        for anchor in (
+            "## Choose a path",
+            "Engage",
+            "Adopt",
+            "Verify",
+            "claude mcp add aus-accounting -- uvx aus-accounting-mcp",
+            "npx skills add ryanduguid/australian-accounting-skills",
             "https://ryanduguid.github.io/#engage",
             "https://ryanduguid.github.io/#adopt",
             "https://ryanduguid.github.io/evidence/",
         ):
-            with self.subTest(url=url):
-                self.assertEqual(self.readme.count(url), 1)
+            with self.subTest(anchor=anchor):
+                self.assertIn(anchor, self.projects)
+
+    def test_the_catalogue_preserves_the_original_attribution(self):
+        attribution = (
+            "Orchestrated with [Hermes Agent]"
+            "(https://github.com/NousResearch/hermes-agent)."
+        )
+        self.assertEqual(self.projects.count(attribution), 1)
+        self.assertTrue(self.projects.rstrip().endswith(attribution))
 
     def test_llms_names_the_same_three_routes_and_data_boundary(self):
         for text in (
@@ -264,10 +280,10 @@ class TestMasthead(unittest.TestCase):
     def test_the_masthead_closes_on_the_balance_line(self):
         self.assertIn("IN BALANCE", masthead().split("\n")[-2])
 
-    def test_the_readme_carries_the_masthead_the_generator_renders(self):
-        # The pasted artefact is what ships, so gate it against the generator.
-        readme = (ROOT / "README.md").read_text(encoding="utf-8")
-        self.assertIn(masthead(), readme)
+    def test_the_projects_catalogue_carries_the_masthead_the_generator_renders(self):
+        # The preserved artefact remains gated against the generator.
+        projects = (ROOT / "PROJECTS.md").read_text(encoding="utf-8")
+        self.assertIn(masthead(), projects)
 
     def test_the_compact_masthead_drops_the_lettering_below_sixty(self):
         out = masthead_compact()
