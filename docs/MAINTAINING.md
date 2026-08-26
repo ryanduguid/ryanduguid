@@ -18,9 +18,9 @@ How to report a security concern is in [SECURITY.md](../SECURITY.md). Account-wi
 
 ## Updating the public README
 
-The profile is an index, not a second catalogue of every engine. Lead with the three paths, then the installable products and the engines those products call. Keep current repository names (`au-tax-mcp-server`, `payday-super-checker`, `TheExchequerTally`, `SolomonsSword`, `monthly-close-control-plane`).
+The profile is an index, not a second catalogue of every engine. After the identity sentence, name what a reviewer actually gets (Payday Super exceptions, incomplete packs, unbalanced trial balances), then the three paths, then the installable products and the engines those products call. Keep current repository names (`au-tax-mcp-server`, `payday-super-checker`, `TheExchequerTally`, `SolomonsSword`, `monthly-close-control-plane`).
 
-Do not use a redundant H1. Open with a first-person sentence identifying Ryan as an Australian accountant in Newcastle, NSW, then name the supported subject areas once. It must not imply current public-practice employment, registration, vendor affiliation or regulatory endorsement.
+Do not use a redundant H1. Open with a first-person sentence identifying Ryan as an Australian accountant in Newcastle, NSW, then the Hunter Valley market and the review-first position. It must not imply current public-practice employment, registration, vendor affiliation or regulatory endorsement. Keep the US namesake line off this README; it lives on the About page and in `llms.txt`.
 
 The credentials line is an assertion by the profile owner. Confirm it is current before changing or republishing it. Use **provisional member of Chartered Accountants ANZ**, not a vendor-style `CA ANZ` shorthand in prose.
 
@@ -38,16 +38,7 @@ The architecture table is a portfolio map, not a claim that every engine is expo
 
 Change pins in the GitHub UI (**Customize your pins**). After saving, check https://github.com/ryanduguid for the heading **Pinned** (not **Popular**).
 
-Live pin order as at 22 August 2026:
-
-1. `payday-super-checker`
-2. `Ozzit`
-3. `xero-trial-balance-export`
-4. `australian-accounting-skills`
-5. `DrDebits`
-6. `au-tax-mcp-server`
-
-Gated future pin order, only after Stage 2A passes:
+Live pin order as at 26 August 2026, after the manager-review evaluation pack shipped:
 
 1. `review-ready-gate`
 2. `xero-trial-balance-export`
@@ -56,7 +47,7 @@ Gated future pin order, only after Stage 2A passes:
 5. `payday-super-checker`
 6. `DrDebits`
 
-`au-tax-mcp-server` remains visible through Adopt and must not be duplicated as a pin after `review-ready-gate` is promoted. `ato-benchmark-compare` remains public and is called by `au-tax-mcp-server`; it does not need its own pin. Do not pin `.github`, contribution forks, or Resume-Matcher.
+`au-tax-mcp-server` remains visible through Adopt and must not be duplicated as a pin. `ato-benchmark-compare` remains public and is called by `au-tax-mcp-server`; it does not need its own pin. Do not pin `.github`, contribution forks, DiogenesLamp, or Resume-Matcher. GitHub About bio is set in the GitHub UI, not in this repository.
 
 GitHub About on the two flagship repositories (description, homepage, topics) is applied from each repo's `docs/DISCOVERY.md` via `scripts/publish-github-about.sh`.
 

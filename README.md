@@ -1,6 +1,6 @@
 I am an Australian accountant in Newcastle, NSW. I build open-source review-first computational accounting tools for accounting firms in Newcastle and the Hunter Valley, including aus-accounting-mcp and australian-accounting-skills.
 
-The tools cover Xero, payroll, tax workflows and AI-assisted review. They are local review aids, not advice. They do not lodge or write to ledgers, and consequential outputs require human professional sign-off. I am not the US software product executive of the same name.
+These tools put Payday Super exceptions, incomplete BAS packs and unbalanced Xero trial balances in front of a human reviewer. They are local review aids, not advice. They do not lodge or write to ledgers, and consequential outputs require human professional sign-off.
 
 ## Choose a path
 
@@ -20,15 +20,15 @@ claude mcp add aus-accounting -- uvx aus-accounting-mcp
 npx skills add ryanduguid/australian-accounting-skills
 ```
 
-Worked examples: [Payday Super](https://ryanduguid.github.io/tools/payday-super/) &bull; [Xero trial balance](https://ryanduguid.github.io/tools/xero-trial-balance/)
+Worked examples: [Payday Super](https://ryanduguid.github.io/tools/payday-super/) &bull; [manager review gate](https://ryanduguid.github.io/evaluate/manager-review-gate/) &bull; [Xero trial balance](https://ryanduguid.github.io/tools/xero-trial-balance/)
 
 > Provisional member of Chartered Accountants ANZ &bull; SAP S/4HANA Certified (FI & CO) &bull; Xero specialist certification (Level 3)
 
 Independent records: [MCP Registry](https://registry.modelcontextprotocol.io/v0.1/servers/io.github.ryanduguid%2Faus-accounting/versions/latest) &bull; [PyPI](https://pypi.org/project/aus-accounting-mcp/) &bull; [SAP FI](https://www.credly.com/badges/750e7557-ab6d-4b28-a241-8252c263613a/public_url) &bull; [SAP CO](https://www.credly.com/badges/0f753c71-5f49-41be-8519-51e81030a8f1/public_url) &bull; merged upstream work in [Meltano SDK](https://github.com/meltano/sdk/pull/3727) and [OpenAccountants](https://github.com/OpenAccountants/openaccountants/pull/85).
 
-## Browser tools
+## Start here
 
-I publish browser tools for the [Coal LSL levy](https://ryanduguid.github.io/tools/coal-lsl-levy/), [ATO small business benchmarks](https://ryanduguid.github.io/tools/ato-benchmarks/), [construction WIP schedules](https://ryanduguid.github.io/tools/wip-schedule/) and [review-ready checks](https://ryanduguid.github.io/tools/review-ready-gate/). The [site](https://ryanduguid.github.io/) has the full catalogue.
+The live work is [Payday Super](https://ryanduguid.github.io/tools/payday-super/), the [review-ready gate](https://ryanduguid.github.io/tools/review-ready-gate/) and a [Xero trial balance that has to balance](https://ryanduguid.github.io/tools/xero-trial-balance/). Browser-only tools, nothing to install: [Coal LSL levy](https://ryanduguid.github.io/tools/coal-lsl-levy/), [ATO small business benchmarks](https://ryanduguid.github.io/tools/ato-benchmarks/) and [construction WIP schedules](https://ryanduguid.github.io/tools/wip-schedule/). The [site](https://ryanduguid.github.io/) has the full catalogue.
 
 ## Computational accounting architecture
 
@@ -41,7 +41,7 @@ flowchart LR
 | Layer | Job | Representative repositories |
 | --- | --- | --- |
 | Data and ledgers | Extract and reconcile source records | [xero-trial-balance-export](https://github.com/ryanduguid/xero-trial-balance-export), [accounting-excel-toolkit](https://github.com/ryanduguid/accounting-excel-toolkit) |
-| Rules and engines | Package accounting calculations and statutory rules | [Ozzit](https://github.com/ryanduguid/Ozzit), [TheExchequerTally](https://github.com/ryanduguid/TheExchequerTally), [payday-super-checker](https://github.com/ryanduguid/payday-super-checker), [TheWIPTally](https://github.com/ryanduguid/TheWIPTally) |
+| Rules and engines | Package accounting calculations and statutory rules | [payday-super-checker](https://github.com/ryanduguid/payday-super-checker), [Ozzit](https://github.com/ryanduguid/Ozzit), [TheExchequerTally](https://github.com/ryanduguid/TheExchequerTally), [TheWIPTally](https://github.com/ryanduguid/TheWIPTally) |
 | Agent workflows | Run engines inside guided workflows | [au-tax-mcp-server](https://github.com/ryanduguid/au-tax-mcp-server), [australian-accounting-skills](https://github.com/ryanduguid/australian-accounting-skills), [hardhat-ledger](https://github.com/ryanduguid/hardhat-ledger), [DrDebits](https://github.com/ryanduguid/DrDebits) |
 | Review controls | Stop incomplete packs and surface exceptions | [review-ready-gate](https://github.com/ryanduguid/review-ready-gate), [monthly-close-control-plane](https://github.com/ryanduguid/monthly-close-control-plane) |
 
