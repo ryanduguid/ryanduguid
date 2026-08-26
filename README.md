@@ -21,4 +21,4 @@ The projects use synthetic public examples and support professional review. They
 
 The [Aus Accounting MCP](https://registry.modelcontextprotocol.io/v0.1/servers/io.github.ryanduguid%2Faus-accounting/versions/latest) is published on [PyPI](https://pypi.org/project/aus-accounting-mcp/). I have also contributed to the [Meltano SDK](https://github.com/meltano/sdk/pull/3727) and [OpenAccountants](https://github.com/OpenAccountants/openaccountants/pull/85).
 
-[Portfolio](https://ryanduguid.github.io/) · [More projects and technical notes](PROJECTS.md) · [Evidence and assurance](https://ryanduguid.github.io/evidence/) · [Email](mailto:ryan@duguid.com.au)
+[Portfolio](https://ryanduguid.github.io/) · [Evidence and assurance](https://ryanduguid.github.io/evidence/) · [Email](mailto:ryan@duguid.com.au)
