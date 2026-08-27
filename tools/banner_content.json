@@ -118,7 +118,7 @@
       "Federal Register API access"
     ]
   },
-  "au-tax-mcp-server": {
+  "aus-accounting-mcp": {
     "tagline": "MCP server for AU tax review engines",
     "gives": [
       "MCP tools for AU tax review",
@@ -164,7 +164,7 @@
       "standard CSV ledger exports"
     ]
   },
-  "monthly-close-control-plane": {
+  "monthly-close-controls": {
     "tagline": "Deterministic close controls for trial balances",
     "gives": [
       "close summary with exceptions",
@@ -201,7 +201,7 @@
       "a Python pyproject.toml"
     ]
   },
-  "xero-ai-review-gateway": {
+  "xero-ledger-review-gate": {
     "tagline": "Fixed policy zero network Xero review gateway",
     "gives": [
       "redacted variance review",
