@@ -34,14 +34,14 @@ TARGETS = (
     "accounting-excel-toolkit",
     "ato-benchmark-compare",
     "au-tax-legislation-corpus",
-    "au-tax-mcp-server",
+    "aus-accounting-mcp",
     "australian-accounting-skills",
     "awesome-australian-accounting-tech",
     "hardhat-ledger",
-    "monthly-close-control-plane",
+    "monthly-close-controls",
     "payday-super-checker",
     "release-policy",
-    "xero-ai-review-gateway",
+    "xero-ledger-review-gate",
     "xero-trial-balance-export",
 )
 

@@ -20,7 +20,7 @@ Canonical site index: https://ryanduguid.github.io/llms.txt
 ## Tools on the web, no install
 - **About Ryan Duguid** (https://ryanduguid.github.io/about/): canonical profile page. Australian accountant in Newcastle NSW, provisional member of Chartered Accountants ANZ, SAP S/4HANA certified in financial and management accounting, Xero specialist certification level 3. Machine-readable Person data is in the JSON-LD on that page.
 - **Payday super due dates** (https://ryanduguid.github.io/tools/payday-super/): seven business days to fund receipt since 1 July 2026, twenty for a first contribution to a new fund.
-- **Is this pack allowed into manager review** (https://ryanduguid.github.io/tools/review-ready-gate/): local readiness gate for BAS, month-end and year-end folders. READY is not sign-off.
+- **Workpaper Review Gate** (https://ryanduguid.github.io/tools/workpaper-review-gate/): answers whether a BAS, month-end or year-end folder is allowed into manager review. READY is not sign-off.
 - **Xero trial balance export** (https://ryanduguid.github.io/tools/xero-trial-balance/): movement and year to date must both tie before a file is written.
 - **Australian tax tools for AI agents** (https://ryanduguid.github.io/tools/australian-tax-ai-agents/): aus-accounting-mcp is a local computational MCP for Payday Super timing and ATO small-business benchmark ratios. It refuses Division 7A. It is not a hosted ATO document library.
 - **Coal LSL levy calculator** (https://ryanduguid.github.io/tools/coal-lsl-levy/): eligible wages under section 3B and the 2.7 per cent payroll levy, in the browser.
@@ -31,10 +31,13 @@ Canonical site index: https://ryanduguid.github.io/llms.txt
 
 ## Adopt
 - **australian-accounting-skills** (https://github.com/ryanduguid/australian-accounting-skills): Nine modular public-practice workflow skills (BAS tie-out, FBT, Division 7A loan-register workflow, STP year-end finalisation, workpapers). Claude Code plugin, Codex plugin, or `npx skills add ryanduguid/australian-accounting-skills`. Prep-only. Not lodgment. Not tax advice.
-- **au-tax-mcp-server** (https://github.com/ryanduguid/au-tax-mcp-server): Local MCP server delegating to ato-benchmark-compare and payday-super-checker, with refused Division 7A and synthetic SBR fixtures. Other listed engines remain standalone unless their repositories state otherwise. Official MCP registry name: io.github.ryanduguid/aus-accounting (https://registry.modelcontextprotocol.io/v0.1/servers/io.github.ryanduguid%2Faus-accounting/versions/latest). Install: `uvx aus-accounting-mcp`.
+- **Aus Accounting MCP** (https://github.com/ryanduguid/aus-accounting-mcp): Local MCP server delegating to ato-benchmark-compare and payday-super-checker, with refused Division 7A and synthetic SBR fixtures. Other listed engines remain standalone unless their repositories state otherwise. Official MCP registry name: io.github.ryanduguid/aus-accounting (https://registry.modelcontextprotocol.io/v0.1/servers/io.github.ryanduguid%2Faus-accounting/versions/latest). Install: `uvx aus-accounting-mcp`.
 
 ## Specialised workflow
 - **hardhat-ledger** (https://github.com/ryanduguid/hardhat-ledger): Construction and mining subcontractor skills (Security of Payment, retentions, WIP, Coal LSL, Fuel Tax Credits). Prep-only. Not tax advice.
+
+## Analytics and reporting
+- **Australian Accounting Power BI** (https://github.com/ryanduguid/australian-accounting-power-bi): Source-controlled Power BI project for Australian accounting analytics, consolidation, ATO benchmarks and Payday Super review.
 
 ## Engines those products call
 - **payday-super-checker** (https://github.com/ryanduguid/payday-super-checker): Payday Super contribution timelines and experimental SG-charge exposure. Not an ATO assessment.
@@ -44,10 +47,10 @@ Canonical site index: https://ryanduguid.github.io/llms.txt
 - **SolomonsSword** (https://github.com/ryanduguid/SolomonsSword): Trust income allocation under Division 6 ITAA 1936, s 100A, s 99B.
 - **xero-trial-balance-export** (https://github.com/ryanduguid/xero-trial-balance-export): Reconciled Xero trial balance exporter; movement and year-to-date must both tie before CSV write.
 - **accounting-excel-toolkit** (https://github.com/ryanduguid/accounting-excel-toolkit): Power Query (M) and VBA automation for Australian month-end reporting.
-- **review-ready-gate** (https://github.com/ryanduguid/review-ready-gate): Pack-readiness gate upstream of manager review and of monthly-close-control-plane. It does not approve a file.
-- **monthly-close-control-plane** (https://github.com/ryanduguid/monthly-close-control-plane): Local trial-balance review packs with exception surfacing; it does not approve or lock a close.
+- **Workpaper Review Gate** (https://github.com/ryanduguid/workpaper-review-gate): Pack-readiness gate upstream of manager review and Monthly Close Controls. The `review-ready-gate` distribution and `review-ready` command remain unchanged. It does not approve a file.
+- **Monthly Close Controls** (https://github.com/ryanduguid/monthly-close-controls): Local trial-balance review packs with exception surfacing. The distribution remains `monthly-close-control-plane`. It does not approve or lock a close.
 - **DrDebits** (https://github.com/ryanduguid/DrDebits): APES 110 and TPB-aligned operating boundaries for LLM-assisted taxation workflows.
-- **xero-ai-review-gateway** (https://github.com/ryanduguid/xero-ai-review-gateway): Synthetic-data demonstration of a fixed-policy trial-balance review boundary.
+- **Xero Ledger Review Gate** (https://github.com/ryanduguid/xero-ledger-review-gate): Synthetic-data demonstration of a fixed-policy trial-balance review boundary. The distribution and command remain `elizabeth-anne-alexander`.
 - **awesome-australian-accounting-tech** (https://github.com/ryanduguid/awesome-australian-accounting-tech): Curated index of AU accounting libraries, ATO datasets, and legislation APIs.
 
 ## Data and Decision Boundary
