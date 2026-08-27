@@ -18,19 +18,19 @@ How to report a security concern is in [SECURITY.md](../SECURITY.md). Account-wi
 
 ## Updating the public README
 
-The profile is an index, not a second catalogue of every engine. After the identity sentence, name what a reviewer actually gets (Payday Super exceptions, incomplete packs, unbalanced trial balances), then the three paths, then the installable products and the engines those products call. Keep current repository names (`au-tax-mcp-server`, `payday-super-checker`, `TheExchequerTally`, `SolomonsSword`, `monthly-close-control-plane`).
+The profile is an index, not a second catalogue of every engine. After the identity sentence, name what a reviewer actually gets (Payday Super exceptions, incomplete packs, unbalanced trial balances), then the three paths, then the installable products and the engines those products call. Keep current repository names (`aus-accounting-mcp`, `xero-ledger-review-gate`, `monthly-close-controls`, `workpaper-review-gate`, `australian-accounting-power-bi`, `payday-super-checker`, `TheExchequerTally`, `SolomonsSword`).
 
 Do not use a redundant H1. Open with a first-person sentence identifying Ryan as an Australian accountant in Newcastle, NSW, then the Hunter Valley market and the review-first position. It must not imply current public-practice employment, registration, vendor affiliation or regulatory endorsement. Keep the US namesake line off this README; it lives on the About page and in `llms.txt`.
 
 The credentials line is an assertion by the profile owner. Confirm it is current before changing or republishing it. Use **provisional member of Chartered Accountants ANZ**, not a vendor-style `CA ANZ` shorthand in prose.
 
-Before the install block, present the three paths: Engage for scoped enquiries, Adopt for supported installs and fabricated-data evaluation, and Verify for credentials, sources and boundaries. Keep one install block near the top with exactly one copy of each primary command: `claude mcp add aus-accounting -- uvx aus-accounting-mcp` for au-tax-mcp-server and `npx skills add ryanduguid/australian-accounting-skills` for australian-accounting-skills. The MCP package is published on PyPI; do not replace the package command with a GitHub source install. Link hardhat-ledger later as a specialised workflow without a second `npx` command.
+Before the install block, present the three paths: Engage for scoped enquiries, Adopt for supported installs and fabricated-data evaluation, and Verify for credentials, sources and boundaries. Keep one install block near the top with exactly one copy of each primary command: `claude mcp add aus-accounting -- uvx aus-accounting-mcp` for Aus Accounting MCP (`aus-accounting-mcp`) and `npx skills add ryanduguid/australian-accounting-skills` for australian-accounting-skills. The MCP package is published on PyPI; do not replace the package command with a GitHub source install. Link hardhat-ledger later as a specialised workflow without a second `npx` command.
 
 Pins live only in the GitHub UI; the README has no pinned section. The pin record below must match the live list. Keep achievements hidden.
 
 Use a compact architecture flow from ledger data through deterministic rules and agent workflows to human review, with readiness controls also feeding human review. Follow it with a four-row table of representative linked repositories. Keep the full catalogue on the website, not in this README. Do not add an upstream contributions section.
 
-The architecture table is a portfolio map, not a claim that every engine is exposed through au-tax-mcp-server. State its current delegated engines beside the table and verify that list against the server README before publication.
+The architecture table is a portfolio map, not a claim that every engine is exposed through Aus Accounting MCP. State its current delegated engines beside the table and verify that list against the server README before publication.
 
 **Engineering boundaries** holds the primary-source, currency-arithmetic, client-data and professional-judgement boundaries. The architecture table carries the reconciliation role; the Ozzit paragraph records provenance. Do not remove a boundary merely to shorten the profile. Put the generated ASCII Profile Ledger at the bottom, immediately before the Hermes attribution.
 
@@ -38,16 +38,14 @@ The architecture table is a portfolio map, not a claim that every engine is expo
 
 Change pins in the GitHub UI (**Customize your pins**). After saving, check https://github.com/ryanduguid for the heading **Pinned** (not **Popular**).
 
-Live pin order as at 26 August 2026, after the manager-review evaluation pack shipped:
+Live pin order read back on 27 August 2026 immediately before the repository identity cutover:
 
-1. `review-ready-gate`
-2. `xero-trial-balance-export`
-3. `australian-accounting-skills`
-4. `Ozzit`
-5. `payday-super-checker`
-6. `DrDebits`
+1. `xero-trial-balance-export`
+2. `payday-super-checker`
+3. `aus-accounting-mcp`
+4. `workpaper-review-gate`
 
-`au-tax-mcp-server` remains visible through Adopt and must not be duplicated as a pin. `ato-benchmark-compare` remains public and is called by `au-tax-mcp-server`; it does not need its own pin. Do not pin `.github`, contribution forks, DiogenesLamp, or Resume-Matcher. GitHub About bio is set in the GitHub UI, not in this repository.
+Preserve these four repository objects and their order during the rename. GitHub may update only their displayed names. Their repository node IDs in order are `R_kgDOTp5MxQ`, `R_kgDOTrBaqQ`, `R_kgDOT_n0mw`, and `R_kgDOUDhjgA`. Do not add, remove, save or reorder pins. Keep achievements hidden. `ato-benchmark-compare` remains public and is called by Aus Accounting MCP; it does not need its own pin. Do not pin `.github`, contribution forks, DiogenesLamp, or Resume-Matcher. GitHub About bio is set in the GitHub UI, not in this repository.
 
 GitHub About on the two flagship repositories (description, homepage, topics) is applied from each repo's `docs/DISCOVERY.md` via `scripts/publish-github-about.sh`.
 
@@ -57,7 +55,7 @@ GitHub About on the two flagship repositories (description, homepage, topics) is
 | --- | --- |
 | Identity, location and credentials | Profile-owner assertions. Confirm with the owner before changing or republishing them |
 | Nine public-practice workflow skills, plugin and `npx skills` install | `australian-accounting-skills/README.md` and `.claude/skills/*/SKILL.md` (nine folders) |
-| Local MCP facade; uvx from PyPI; delegated engines; Div 7A refused; SBR synthetic | `au-tax-mcp-server/README.md` and `DISCLAIMER.md` |
+| Local MCP facade; uvx from PyPI; delegated engines; Div 7A refused; SBR synthetic | `aus-accounting-mcp/README.md` and `DISCLAIMER.md` |
 | Experimental payday-super review, possible SG-charge exposure and no ATO-assessment determination | `payday-super-checker/README.md` and `paydaysuper/deadlines.py` |
 | 134 LAMBDA functions, native Excel only, no add-ins or macros | `Ozzit/README.md` |
 | Xero trial-balance export requires movement and year-to-date balance before writing | `xero-trial-balance-export/README.md`, the balance-check paragraph under Scope and disclaimer |
