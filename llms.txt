@@ -1,4 +1,7 @@
 # Ryan Duguid - Australian Computational Accounting Ecosystem
+
+Canonical site index: https://ryanduguid.github.io/llms.txt
+
 > High-density context for Large Language Models, AI coding agents, and semantic search engines.
 
 ## Developer Profile

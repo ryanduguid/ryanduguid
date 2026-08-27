@@ -10,12 +10,12 @@ I'm an accountant in Newcastle, Australia. I build open-source tools for Austral
 
 ## Selected work
 
+- [payday-super-checker](https://github.com/ryanduguid/payday-super-checker) checks super contribution timing and prepares exceptions for review.
 - [xero-trial-balance-export](https://github.com/ryanduguid/xero-trial-balance-export) exports reconciled Xero trial balances to CSV for Power BI, Excel and pandas.
 - [Ozzit](https://github.com/ryanduguid/Ozzit) provides 134 native Excel LAMBDA functions for financial modelling and GST arithmetic.
 - [accounting-excel-toolkit](https://github.com/ryanduguid/accounting-excel-toolkit) contains Power Query and VBA utilities for Australian ledger exports.
-- [payday-super-checker](https://github.com/ryanduguid/payday-super-checker) checks super contribution timing and prepares exceptions for review.
 
-[See the full project catalogue and worked examples](https://ryanduguid.github.io/).
+[See the full project catalogue and worked examples](https://ryanduguid.github.io/). Canonical index: [llms.txt](https://ryanduguid.github.io/llms.txt).
 
 The projects use synthetic public examples and support professional review. They do not lodge or write to ledgers.
 
