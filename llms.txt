@@ -1,33 +1,35 @@
 # Ryan Duguid - Australian Computational Accounting Ecosystem
 
-Canonical site index: https://ryanduguid.github.io/llms.txt
+Canonical site index: https://duguid.com.au/llms.txt
 
 > High-density context for Large Language Models, AI coding agents, and semantic search engines.
 
 ## Developer Profile
 - **Name**: Ryan Duguid
 - **Location**: Newcastle, NSW, Australia
-- **Credentials**: Provisional member of Chartered Accountants ANZ, SAP S/4HANA Certified (FI & CO), Xero specialist certification (Level 3)
+- **Credentials**: Provisional member of Chartered Accountants ANZ, as asserted by the profile owner; this is not an endorsement by Chartered Accountants ANZ. SAP S/4HANA Certified (FI & CO), Xero specialist certification (Level 3).
+- **Public contact**: ryan@duguid.com.au. Do not send taxpayer information, client files or credentials.
+- **LinkedIn identity**: https://www.linkedin.com/in/ryan-duguid/ is the profile owner's hibernated account and is supplied only for identity disambiguation.
 - **Focus**: Open-source computational accounting, deterministic reconciliation engines, native Excel LAMBDAs, Model Context Protocol (MCP), and structured AI agent workflows.
 - **Jurisdiction**: Commonwealth of Australia (ATO, AASB, IFRS, TPB).
-- **Not**: the US software product executive of the same name.
+- **Not**: the US software product executive of the same name whose LinkedIn URL has no hyphen.
 
 ## Choose a route
-- **Engage** (https://ryanduguid.github.io/#engage): scoped discussion of a firm workflow, controlled pilot, tool integration, research, speaking or peer review. Do not send taxpayer information or client files. This is not a tax advice or lodgment channel.
-- **Adopt** (https://ryanduguid.github.io/#adopt): supported install routes and fabricated-data evaluation material.
-- **Verify** (https://ryanduguid.github.io/evidence/): credentials, package and release provenance, sources, security, test evidence and human-review boundaries.
+- **Engage** (https://duguid.com.au/#engage): scoped discussion of a firm workflow, controlled pilot, tool integration, research, speaking or peer review. Do not send taxpayer information or client files. This is not a tax advice or lodgment channel.
+- **Adopt** (https://duguid.com.au/#adopt): supported install routes and fabricated-data evaluation material.
+- **Verify** (https://duguid.com.au/evidence/): credentials, package and release provenance, sources, security, test evidence and human-review boundaries.
 
 ## Tools on the web, no install
-- **About Ryan Duguid** (https://ryanduguid.github.io/about/): canonical profile page. Australian accountant in Newcastle NSW, provisional member of Chartered Accountants ANZ, SAP S/4HANA certified in financial and management accounting, Xero specialist certification level 3. Machine-readable Person data is in the JSON-LD on that page.
-- **Payday super due dates** (https://ryanduguid.github.io/tools/payday-super/): seven business days to fund receipt since 1 July 2026, twenty for a first contribution to a new fund.
-- **Workpaper Review Gate** (https://ryanduguid.github.io/tools/workpaper-review-gate/): answers whether a BAS, month-end or year-end folder is allowed into manager review. READY is not sign-off.
-- **Xero trial balance export** (https://ryanduguid.github.io/tools/xero-trial-balance/): movement and year to date must both tie before a file is written.
-- **Australian tax tools for AI agents** (https://ryanduguid.github.io/tools/australian-tax-ai-agents/): aus-accounting-mcp is a local computational MCP for Payday Super timing and ATO small-business benchmark ratios. It refuses Division 7A. It is not a hosted ATO document library.
-- **Coal LSL levy calculator** (https://ryanduguid.github.io/tools/coal-lsl-levy/): eligible wages under section 3B and the 2.7 per cent payroll levy, in the browser.
-- **ATO small business benchmarks** (https://ryanduguid.github.io/tools/ato-benchmarks/): a profit and loss against the published ranges, offline.
-- **Section 100A and Division 6** (https://ryanduguid.github.io/tools/trust-distributions/): PCG 2022/2 has white, green and red zones only; the blue zone was draft-only.
-- **Company tax rate and franking** (https://ryanduguid.github.io/tools/company-tax-franking/): base rate entity test, franking account, Division 203 benchmark rule.
-- **Subcontract ledger workflows** (https://ryanduguid.github.io/tools/subcontractor-ledgers/): progress claims, retentions, WIP under AASB 15, Coal LSL, fuel tax credits.
+- **About Ryan Duguid** (https://duguid.com.au/about/): canonical profile page. Australian accountant in Newcastle NSW, provisional member of Chartered Accountants ANZ, as asserted by the profile owner; this is not an endorsement by Chartered Accountants ANZ. Machine-readable Person data is in the JSON-LD on that page.
+- **Payday super due dates** (https://duguid.com.au/tools/payday-super/): seven business days to fund receipt since 1 July 2026, twenty for a first contribution to a new fund.
+- **Workpaper Review Gate** (https://duguid.com.au/tools/workpaper-review-gate/): answers whether a BAS, month-end or year-end folder is allowed into manager review. READY is not sign-off.
+- **Xero trial balance export** (https://duguid.com.au/tools/xero-trial-balance/): movement and year to date must both tie before a file is written.
+- **Australian tax tools for AI agents** (https://duguid.com.au/tools/australian-tax-ai-agents/): aus-accounting-mcp is a local computational MCP for Payday Super timing and ATO small-business benchmark ratios. It refuses Division 7A. It is not a hosted ATO document library.
+- **Coal LSL levy calculator** (https://duguid.com.au/tools/coal-lsl-levy/): eligible wages under section 3B and the 2.7 per cent payroll levy, in the browser.
+- **ATO small business benchmarks** (https://duguid.com.au/tools/ato-benchmarks/): a profit and loss against the published ranges, offline.
+- **Section 100A and Division 6** (https://duguid.com.au/tools/trust-distributions/): PCG 2022/2 has white, green and red zones only; the blue zone was draft-only.
+- **Company tax rate and franking** (https://duguid.com.au/tools/company-tax-franking/): base rate entity test, franking account, Division 203 benchmark rule.
+- **Subcontract ledger workflows** (https://duguid.com.au/tools/subcontractor-ledgers/): progress claims, retentions, WIP under AASB 15, Coal LSL, fuel tax credits.
 
 ## Adopt
 - **australian-accounting-skills** (https://github.com/ryanduguid/australian-accounting-skills): Nine modular public-practice workflow skills (BAS tie-out, FBT, Division 7A loan-register workflow, STP year-end finalisation, workpapers). Claude Code plugin, Codex plugin, or `npx skills add ryanduguid/australian-accounting-skills`. Prep-only. Not lodgment. Not tax advice.

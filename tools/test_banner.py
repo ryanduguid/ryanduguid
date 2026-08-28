@@ -86,9 +86,11 @@ class TestProfileOpening(unittest.TestCase):
 
     def test_the_profile_names_credentials_and_links_to_more_detail(self):
         for anchor in (
-            "Provisional member of Chartered Accountants ANZ",
+            "Provisional member of Chartered Accountants ANZ, as asserted by "
+            "the profile owner; this is not an endorsement by Chartered "
+            "Accountants ANZ",
             "Xero specialist certification (Level 3)",
-            "https://ryanduguid.github.io/evidence/",
+            "https://duguid.com.au/evidence/",
         ):
             with self.subTest(anchor=anchor):
                 self.assertIn(anchor, self.readme)
@@ -105,7 +107,7 @@ class TestAuthorityRoutes(unittest.TestCase):
     def test_the_profile_links_to_the_full_catalogue(self):
         self.assertIn(
             "[See the full project catalogue and worked examples]"
-            "(https://ryanduguid.github.io/)",
+            "(https://duguid.com.au/)",
             self.readme,
         )
 
