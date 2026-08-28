@@ -18,6 +18,7 @@ from __future__ import annotations
 
 import re
 import sys
+import urllib.error
 import urllib.request
 from pathlib import Path
 
@@ -45,6 +46,7 @@ RETIRED_NAMES = [
 RETIRED_NAME_ALLOWANCE = {"docs/MAINTAINING.md": 2}
 
 USER_AGENT = "ryanduguid-profile-link-check"
+LINKEDIN_IDENTITY_URL = "https://www.linkedin.com/in/ryan-duguid/"
 
 LINK_RES = [
     re.compile(r"\[[^\]]*\]\((https?://[^)\s]+)\)"),
@@ -59,6 +61,16 @@ def fetch_final_url(url: str) -> tuple[int, str]:
         return resp.status, resp.geturl()
 
 
+def normalise_url(url: str) -> str:
+    """Remove prose punctuation and Markdown code-span delimiters."""
+    return url.rstrip(".,;:`")
+
+
+def is_accepted_automation_denial(url: str, status: int) -> bool:
+    """Accept only LinkedIn's response for the exact identity URL."""
+    return url == LINKEDIN_IDENTITY_URL and status == 999
+
+
 def main() -> int:
     failures: list[str] = []
     urls: dict[str, str] = {}
@@ -67,7 +79,7 @@ def main() -> int:
         text = (ROOT / rel).read_text(encoding="utf-8")
         for pattern in LINK_RES:
             for url in pattern.findall(text):
-                url = url.rstrip(".,;:")
+                url = normalise_url(url)
                 urls.setdefault(url, rel)
         hits = sum(text.count(name) for name in RETIRED_NAMES)
         allowed_lines = RETIRED_NAME_ALLOWANCE.get(rel.replace("\\", "/"), 0)
@@ -97,6 +109,15 @@ def main() -> int:
         checked += 1
         try:
             status, final = fetch_final_url(url)
+        except urllib.error.HTTPError as exc:
+            if is_accepted_automation_denial(url, exc.code):
+                print(
+                    f"accepted automation denial {url} -> HTTP {exc.code} "
+                    "(exact hibernated LinkedIn identity URL)"
+                )
+            else:
+                failures.append(f"{src}: {url} -> HTTP {exc.code}")
+            continue
         except Exception as exc:  # noqa: BLE001 - report every failure mode
             failures.append(f"{src}: {url} -> {exc}")
             continue
