@@ -4,7 +4,7 @@ This repository is the GitHub profile README for [@ryanduguid](https://github.co
 
 The canonical website host is `https://duguid.com.au/`. Use that host for public website links in `README.md` and `llms.txt`; do not publish the GitHub Pages deployment address as a competing canonical URL.
 
-How to report a security concern is in [SECURITY.md](../SECURITY.md). Account-wide contribution, support and issue-form defaults live in [ryanduguid/.github](https://github.com/ryanduguid/.github). Do not add a `CONTRIBUTING.md` here; it would override that default for this repository only.
+How to report a security concern is in [SECURITY.md](../SECURITY.md). Account-wide contribution, support and issue-form defaults live in `ryanduguid/.github` (private repository, so a public link would 404). Do not add a `CONTRIBUTING.md` here; it would override that default for this repository only.
 
 ## Files
 
@@ -79,7 +79,7 @@ The index is accounting automation for Australian practice. Leave off:
 
 - [DiogenesLamp](https://github.com/ryanduguid/DiogenesLamp), a Yupoo catalogue viewer
 - `claude-export`, a private settings snapshot (private repository, so a link would 404 for every visitor)
-- [ryanduguid/.github](https://github.com/ryanduguid/.github), account-level community health files
+- `ryanduguid/.github`, account-level community health files (private repository, so a link would 404 for every visitor)
 
 Forks used only to send upstream pull requests stay out of the product list.
 
