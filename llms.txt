@@ -1,4 +1,4 @@
-# Ryan Duguid - Australian Computational Accounting Ecosystem
+# Ryan Duguid - Australian computational accounting
 
 Canonical site index: https://duguid.com.au/llms.txt
 
