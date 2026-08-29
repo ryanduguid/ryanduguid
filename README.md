@@ -15,13 +15,13 @@ I'm an accountant in Newcastle, Australia. I build open-source tools for Austral
 - [Ozzit](https://github.com/ryanduguid/Ozzit) provides 134 native Excel LAMBDA functions for financial modelling and GST arithmetic.
 - [accounting-excel-toolkit](https://github.com/ryanduguid/accounting-excel-toolkit) contains Power Query and VBA utilities for Australian ledger exports.
 
-[See the full project catalogue and worked examples](https://duguid.com.au/). Canonical index: [llms.txt](https://duguid.com.au/llms.txt).
+[See the full project catalogue and worked examples](https://duguid.com.au/).
 
 The projects use synthetic public examples and support professional review. They do not lodge or write to ledgers.
 
 ## Background
 
-- Provisional member of Chartered Accountants ANZ, as asserted by the profile owner; this is not an endorsement by Chartered Accountants ANZ
+- Provisional member of Chartered Accountants ANZ
 - SAP S/4HANA certified in [FI](https://www.credly.com/badges/750e7557-ab6d-4b28-a241-8252c263613a/public_url) and [CO](https://www.credly.com/badges/0f753c71-5f49-41be-8519-51e81030a8f1/public_url)
 - Xero specialist certification (Level 3)
 

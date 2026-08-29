@@ -86,9 +86,7 @@ class TestProfileOpening(unittest.TestCase):
 
     def test_the_profile_names_credentials_and_links_to_more_detail(self):
         for anchor in (
-            "Provisional member of Chartered Accountants ANZ, as asserted by "
-            "the profile owner; this is not an endorsement by Chartered "
-            "Accountants ANZ",
+            "Provisional member of Chartered Accountants ANZ",
             "Xero specialist certification (Level 3)",
             "https://duguid.com.au/evidence/",
         ):
