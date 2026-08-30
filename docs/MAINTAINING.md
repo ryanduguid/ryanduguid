@@ -15,26 +15,23 @@ How to report a security concern is in [SECURITY.md](../SECURITY.md). Account-wi
 | `SECURITY.md` | Reporting policy for this documentation-only repository |
 | `LICENSE` | CC BY 4.0 for the profile prose |
 | `docs/MAINTAINING.md` | This runbook |
-| `tools/apply-topics.ps1` | Applies the topic sets to the public repositories via `gh api` |
+| `tools/apply-topics.ps1` | Applies the topic sets to the public repositories via `gh repo edit` |
+| `tools/banner.py` | Renders and gates the ASCII ledger banner system |
+| `tools/banner_content.json` | Per-repository banner content; claims must match that repository's README |
+| `tools/check_links.py` | Link resolver behind `link-check.yml` |
+| `tools/test_*.py` | Unit tests for the banners, link policy and repository identity |
 | `.github/workflows/link-check.yml` | CI: resolves profile links and fails on rename redirects |
+| `.github/workflows/banner-check.yml` | CI: unit tests plus the rendered-banner gate |
 
 ## Updating the public README
 
-The profile is an index, not a second catalogue of every engine. After the identity sentence, name what a reviewer actually gets (Payday Super exceptions, incomplete packs, unbalanced trial balances), then the three paths, then the installable products and the engines those products call. Keep current repository names (`aus-accounting-mcp`, `xero-ledger-review-gate`, `monthly-close-controls`, `workpaper-review-gate`, `australian-accounting-power-bi`, `payday-super-checker`, `TheExchequerTally`, `SolomonsSword`).
+The profile is a concise index, not a second catalogue of every engine ([#78](https://github.com/ryanduguid/ryanduguid/pull/78) and [#79](https://github.com/ryanduguid/ryanduguid/pull/79) removed the catalogue; the full catalogue lives on the website). `tools/test_banner.py` locks the current shape: the `# Ryan Duguid` heading, an opening that identifies Ryan as an accountant in Newcastle, Australia building open-source tools for Australian tax, payroll and financial reporting, a Selected work list naming exactly four projects once each, the catalogue link to `https://duguid.com.au/`, the synthetic-data and review-boundary sentences, the registry, PyPI, Credly and upstream-contribution links, and a 30-line ceiling. Change those tests and the README in the same pull request or `banner-check` fails.
 
-Do not use a redundant H1. Open with a first-person sentence identifying Ryan as an Australian accountant in Newcastle, NSW, then the Hunter Valley market and the review-first position. It must not imply current public-practice employment, registration, vendor affiliation or regulatory endorsement. Keep the US namesake line off this README; it lives on the About page and in `llms.txt`.
+The opening must not imply current public-practice employment, registration, vendor affiliation or regulatory endorsement. Keep the US namesake line off this README; it lives on the About page and in `llms.txt`.
 
 The credentials line is an assertion by the profile owner. Confirm it is current before changing or republishing it. Use **provisional member of Chartered Accountants ANZ**, not a vendor-style `CA ANZ` shorthand in prose.
 
-Before the install block, present the three paths: Engage for scoped enquiries, Adopt for supported installs and fabricated-data evaluation, and Verify for credentials, sources and boundaries. Keep one install block near the top with exactly one copy of each primary command: `claude mcp add aus-accounting -- uvx aus-accounting-mcp` for Aus Accounting MCP (`aus-accounting-mcp`) and `npx skills add ryanduguid/australian-accounting-skills` for australian-accounting-skills. The MCP package is published on PyPI; do not replace the package command with a GitHub source install. Link hardhat-ledger later as a specialised workflow without a second `npx` command.
-
 Pins live only in the GitHub UI; the README has no pinned section. The pin record below must match the live list. Keep achievements hidden.
-
-Use a compact architecture flow from ledger data through deterministic rules and agent workflows to human review, with readiness controls also feeding human review. Follow it with a four-row table of representative linked repositories. Keep the full catalogue on the website, not in this README. Do not add an upstream contributions section.
-
-The architecture table is a portfolio map, not a claim that every engine is exposed through Aus Accounting MCP. State its current delegated engines beside the table and verify that list against the server README before publication.
-
-**Engineering boundaries** holds the primary-source, currency-arithmetic, client-data and professional-judgement boundaries. The architecture table carries the reconciliation role; the Ozzit paragraph records provenance. Do not remove a boundary merely to shorten the profile. Put the generated ASCII Profile Ledger at the bottom, immediately before the Hermes attribution.
 
 ## Pinned repositories
 
@@ -71,7 +68,7 @@ GitHub About on the two flagship repositories (description, homepage, topics) is
 - Do not claim current public-practice employment. [#2](https://github.com/ryanduguid/ryanduguid/pull/2) dropped that wording. The tools are for that domain; that is not the same sentence.
 - Do not add a visible LinkedIn link while the profile is inactive. [#16](https://github.com/ryanduguid/ryanduguid/pull/16). That includes the GitHub social-account slot (`gh api user/social_accounts`), not only the README. The canonical website JSON-LD and `llms.txt` may identify the hibernated Australian profile at `https://www.linkedin.com/in/ryan-duguid/` solely to distinguish it from the US namesake's unhyphenated profile.
 - Narrow provenance: original work vs forks. [#5](https://github.com/ryanduguid/ryanduguid/pull/5), then [#18](https://github.com/ryanduguid/ryanduguid/pull/18).
-- Counts of skills and functions are part of the prose. Recheck them before publication. A renamed project (Nabla to Ozzit, [#14](https://github.com/ryanduguid/ryanduguid/pull/14); CharlesHenryWickens back to payday-super-checker; JohnKenley to au-tax-mcp-server) is a README change in the same breath as the repository rename.
+- Counts of skills and functions are part of the prose. Recheck them before publication. A renamed project (Nabla to Ozzit, [#14](https://github.com/ryanduguid/ryanduguid/pull/14); CharlesHenryWickens back to payday-super-checker; JohnKenley to au-tax-mcp-server, since renamed aus-accounting-mcp) is a README change in the same breath as the repository rename.
 
 ## What stays off the profile
 

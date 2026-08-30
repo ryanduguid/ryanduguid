@@ -16,7 +16,6 @@ $repoTopics = @{
     "ryanduguid/hardhat-ledger" = @("claude-code", "construction-accounting", "mining-subcontractor", "australian-tax")
     "ryanduguid/xero-ledger-review-gate" = @("zero-network", "safety-boundary", "trial-balance", "accounting-ai", "xero", "ledger-review")
     "ryanduguid/au-tax-legislation-corpus" = @("legislation-corpus", "tax-law", "australian-taxation", "python")
-    "ryanduguid/tax-radar-au" = @("synthetic-demo", "review-queue", "statutory-changes", "python")
     "ryanduguid/awesome-australian-accounting-tech" = @("awesome-list", "australian-accounting", "tax-tech", "open-source")
     "ryanduguid/ato-benchmark-compare" = @("ato-benchmarks", "small-business", "variance-analysis", "python", "cli")
     "ryanduguid/monthly-close-controls" = @("trial-balance", "close-controls", "financial-reporting", "reconciliation", "python", "monthly-close")
