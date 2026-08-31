@@ -74,7 +74,7 @@ GitHub About on the two flagship repositories (description, homepage, topics) is
 
 The index is accounting automation for Australian practice. Leave off:
 
-- [DiogenesLamp](https://github.com/ryanduguid/DiogenesLamp), a Yupoo catalogue viewer
+- `DiogenesLamp`, a Yupoo catalogue viewer
 - `claude-export`, a private settings snapshot (private repository, so a link would 404 for every visitor)
 - `ryanduguid/.github`, account-level community health files (private repository, so a link would 404 for every visitor)
 
