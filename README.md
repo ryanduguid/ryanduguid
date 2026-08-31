@@ -1,6 +1,6 @@
 # Ryan Duguid
 
-I'm an accountant in Newcastle, Australia. I build open-source tools for Australian tax, payroll and financial reporting.
+I'm an accountant in Newcastle, Australia. I build open-source controls for Australian tax, payroll and financial reporting.
 
 <p align="center"><a href="https://github.com/ryanduguid/DrDebits"><img src="https://img.shields.io/badge/APES%20110-Aligned%20Guardrails-4F485E?labelColor=04001F" alt="DrDebits APES 110 aligned guardrails" /></a>
   <a href="https://duguid.com.au/"><img src="https://img.shields.io/badge/Australian%20Accounting-Open%20Source-5C2D91?labelColor=04001F" alt="Open-source Australian accounting tools" /></a>
@@ -10,8 +10,8 @@ I'm an accountant in Newcastle, Australia. I build open-source tools for Austral
 
 ## Selected work
 
-- [payday-super-checker](https://github.com/ryanduguid/payday-super-checker) checks super contribution timing and prepares exceptions for review.
-- [xero-trial-balance-export](https://github.com/ryanduguid/xero-trial-balance-export) exports reconciled Xero trial balances to CSV for Power BI, Excel and pandas.
+- [xero-trial-balance-export](https://github.com/ryanduguid/xero-trial-balance-export) exports balanced Xero trial balances to CSV for Power BI, Excel and pandas.
+- [payday-super-checker](https://github.com/ryanduguid/payday-super-checker) checks fund receipt dates against Payday Super deadlines and prepares exceptions for review.
 - [Ozzit](https://github.com/ryanduguid/Ozzit) provides 134 native Excel LAMBDA functions for financial modelling and GST arithmetic.
 - [accounting-excel-toolkit](https://github.com/ryanduguid/accounting-excel-toolkit) contains Power Query and VBA utilities for Australian ledger exports.
 
@@ -25,6 +25,6 @@ The projects use synthetic public examples and support professional review. They
 - SAP S/4HANA certified in [FI](https://www.credly.com/badges/750e7557-ab6d-4b28-a241-8252c263613a/public_url) and [CO](https://www.credly.com/badges/0f753c71-5f49-41be-8519-51e81030a8f1/public_url)
 - Xero specialist certification (Level 3)
 
-The [Aus Accounting MCP](https://registry.modelcontextprotocol.io/v0.1/servers/io.github.ryanduguid%2Faus-accounting/versions/latest) is published on [PyPI](https://pypi.org/project/aus-accounting-mcp/). I have also contributed to the [Meltano SDK](https://github.com/meltano/sdk/pull/3727) and [OpenAccountants](https://github.com/OpenAccountants/openaccountants/pull/85).
+I publish [Aus Accounting MCP](https://registry.modelcontextprotocol.io/v0.1/servers/io.github.ryanduguid%2Faus-accounting/versions/latest) on [PyPI](https://pypi.org/project/aus-accounting-mcp/). I contribute to the [Meltano SDK](https://github.com/meltano/sdk/pull/3727) and [OpenAccountants](https://github.com/OpenAccountants/openaccountants/pull/85).
 
 [Portfolio](https://duguid.com.au/) · [Evidence and assurance](https://duguid.com.au/evidence/) · [Email](mailto:ryan@duguid.com.au)
