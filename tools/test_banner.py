@@ -46,9 +46,9 @@ class TestProfileOpening(unittest.TestCase):
         selected = self.readme.split("## Selected work\n", maxsplit=1)[1]
         selected = selected.split("\n## Background", maxsplit=1)[0]
         projects = (
+            "aus-accounting-mcp",
             "xero-trial-balance-export",
             "Ozzit",
-            "accounting-excel-toolkit",
             "payday-super-checker",
         )
         self.assertEqual(
@@ -391,3 +391,4 @@ class TestCommandLine(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
