@@ -17,8 +17,7 @@ I'm an accountant in Newcastle, Australia. I build open-source controls for Aust
 
 [See the full project catalogue and worked examples](https://duguid.com.au/).
 
-The projects use synthetic public examples and support professional review. They do not lodge or write to ledgers.
-OpenHands runs on my old uni laptop with CachyOS. Hermes Agent runs on my Windows 11 IoT Enterprise LTSC desktop.
+The projects use synthetic public examples and support professional review. They do not lodge or write to ledgers. OpenHands runs on my old uni laptop with CachyOS. Hermes Agent runs on my Windows 11 IoT Enterprise LTSC desktop.
 
 ## Background
 
