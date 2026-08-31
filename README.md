@@ -18,7 +18,6 @@ I'm an accountant in Newcastle, Australia. I build open-source controls for Aust
 [See the full project catalogue and worked examples](https://duguid.com.au/).
 
 The projects use synthetic public examples and support professional review. They do not lodge or write to ledgers.
-OpenHands runs on my old uni laptop with CachyOS. Hermes Agent runs on my Windows 11 IoT Enterprise LTSC desktop.
 
 ## Background
 
@@ -28,4 +27,6 @@ OpenHands runs on my old uni laptop with CachyOS. Hermes Agent runs on my Window
 
 I publish [Aus Accounting MCP](https://registry.modelcontextprotocol.io/v0.1/servers/io.github.ryanduguid%2Faus-accounting/versions/latest) on [PyPI](https://pypi.org/project/aus-accounting-mcp/). I contribute to the [Meltano SDK](https://github.com/meltano/sdk/pull/3727) and [OpenAccountants](https://github.com/OpenAccountants/openaccountants/pull/85).
 
-[Portfolio](https://duguid.com.au/) · [Evidence and assurance](https://duguid.com.au/evidence/) · [Email](mailto:ryan@duguid.com.au)
+## Setup
+
+OpenHands runs on my old uni laptop with CachyOS. I use Hermes Agent on my Windows 11 IoT Enterprise LTSC desktop and supplement my vitamin D.
