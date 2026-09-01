@@ -3,8 +3,9 @@
 ## Scope
 
 This repository is the GitHub profile repository for `@ryanduguid`. It contains
-profile documentation only: it does not distribute application code, packages,
-automated workflows, deployed services, or credentials.
+profile documentation and the two checks that test it (banner-check and
+link-check): it does not distribute application code, packages, deployed
+services or credentials.
 
 Security reports about a project linked from this profile belong in that
 project's own repository. Use its `SECURITY.md` or GitHub private vulnerability
