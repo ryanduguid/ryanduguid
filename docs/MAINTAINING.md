@@ -4,7 +4,7 @@ This repository is the GitHub profile README for [@ryanduguid](https://github.co
 
 The canonical website host is `https://duguid.com.au/`. Use that host for public website links in `README.md` and `llms.txt`; do not publish the GitHub Pages deployment address as a competing canonical URL.
 
-How to report a security concern is in [SECURITY.md](../SECURITY.md). Account-wide contribution, support and issue-form defaults live in `ryanduguid/.github` (private repository, so a public link would 404). Do not add a `CONTRIBUTING.md` here; it would override that default for this repository only.
+How to report a security concern is in [SECURITY.md](../SECURITY.md). Account-wide contribution, support and issue-form defaults live in [ryanduguid/.github](https://github.com/ryanduguid/.github), which has been public since 31 August 2026. Do not add a `CONTRIBUTING.md` here; it would override that default for this repository only.
 
 ## Files
 
@@ -37,14 +37,16 @@ Pins live only in the GitHub UI; the README has no pinned section. The pin recor
 
 Change pins in the GitHub UI (**Customize your pins**). After saving, check https://github.com/ryanduguid for the heading **Pinned** (not **Popular**).
 
-Live pin order read back on 27 August 2026 immediately before the repository identity cutover:
+Live pin order read back on 2 September 2026 AEST (1 September 2026 UTC):
 
 1. `xero-trial-balance-export`
 2. `payday-super-checker`
 3. `aus-accounting-mcp`
-4. `workpaper-review-gate`
+4. `DrDebits`
+5. `Ozzit`
+6. `awesome-australian-accounting-tech`
 
-Preserve these four repository objects and their order during the rename. GitHub may update only their displayed names. Their repository node IDs in order are `R_kgDOTp5MxQ`, `R_kgDOTrBaqQ`, `R_kgDOT_n0mw`, and `R_kgDOUDhjgA`. Do not add, remove, save or reorder pins. Keep achievements hidden. `ato-benchmark-compare` remains public and is called by Aus Accounting MCP; it does not need its own pin. Do not pin `.github`, contribution forks, DiogenesLamp, or Resume-Matcher. GitHub About bio is set in the GitHub UI, not in this repository.
+Their repository node IDs in order are `R_kgDOTp5MxQ`, `R_kgDOTrBaqQ`, `R_kgDOT_n0mw`, `R_kgDOT5p-Qw`, `R_kgDOT7ix8g` and `R_kgDOT_mOWg`. Pins survive a repository rename because GitHub tracks the node ID, not the name. Change pins only on purpose, and update this list in the same change so the record and the profile never disagree (`workpaper-review-gate` was pinned until late August 2026 and is now reachable through the catalogue instead). Keep achievements hidden. `ato-benchmark-compare` remains public and is called by Aus Accounting MCP; it does not need its own pin. Do not pin `.github`, contribution forks, DiogenesLamp, or Resume-Matcher. GitHub About bio is set in the GitHub UI, not in this repository.
 
 GitHub About on the two flagship repositories (description, homepage, topics) is applied from each repo's `docs/DISCOVERY.md` via `scripts/publish-github-about.sh`.
 
@@ -53,7 +55,7 @@ GitHub About on the two flagship repositories (description, homepage, topics) is
 | Claim | Source of truth |
 | --- | --- |
 | Identity, location and credentials | Profile-owner assertions. Confirm with the owner before changing or republishing them |
-| Nine public-practice workflow skills, plugin and `npx skills` install | `australian-accounting-skills/README.md` and `.claude/skills/*/SKILL.md` (nine folders) |
+| Nine released public-practice workflow skills (v0.1.5), 19 on `main`, plugin and `npx skills` install | `australian-accounting-skills/README.md` (the release paragraph names both counts) and `.claude/skills/*/SKILL.md` (19 folders on `main`) |
 | Local MCP facade; uvx from PyPI; delegated engines; Div 7A refused; SBR synthetic | `aus-accounting-mcp/README.md` and `DISCLAIMER.md` |
 | Experimental payday-super review, possible SG-charge exposure and no ATO-assessment determination | `payday-super-checker/README.md` and `paydaysuper/deadlines.py` |
 | 134 LAMBDA functions, native Excel only, no add-ins or macros | `Ozzit/README.md` |
@@ -76,7 +78,7 @@ The index is accounting automation for Australian practice. Leave off:
 
 - `DiogenesLamp`, a Yupoo catalogue viewer
 - `claude-export`, a private settings snapshot (private repository, so a link would 404 for every visitor)
-- `ryanduguid/.github`, account-level community health files (private repository, so a link would 404 for every visitor)
+- `ryanduguid/.github`, account-level community health files (public since 31 August 2026, but infrastructure rather than a product)
 
 Forks used only to send upstream pull requests stay out of the product list.
 
@@ -85,7 +87,7 @@ Forks used only to send upstream pull requests stay out of the product list.
 - Describing payday-super output as a compliance, liability or ATO determination. It is an experimental review aid with stated factual limits.
 - Calling Ozzit macro-free while dropping the native-Excel or compatibility context from its own README.
 - Saying the Xero exporter writes any trial balance. Both movement and year-to-date balances must reconcile before it writes the CSV.
-- Listing six of the nine skills and calling it nine. The named set is BAS, FBT, Division 7A, STP, month-end close, year-end workpapers and 13-week cashflow; `xero-exports` and `workpaper-tie-out` are the other two.
+- Listing six of the nine skills and calling it nine. The named set is BAS, FBT, Division 7A, STP, month-end close, year-end workpapers and 13-week cashflow; `xero-exports` and `workpaper-tie-out` are the other two. Since the Hardhat consolidation on 29 August 2026 the `main` branch holds 19 skill folders while the tagged v0.1.5 release still ships nine, so say which count you mean.
 - Treating mentions of Xero, the ATO, CA ANZ or SAP as proof of employment, partnership, approval, registration or endorsement.
 - Using retired repository names (`CharlesHenryWickens`, `JohnKenley`, `JohnSpenceOgilvy`, `MaryAddisonHamilton`, `ElizabethAnneAlexander`, `RaymondChambers`, `RussellMathews`, `SirArthurFadden`, `SirAlexanderFitzgerald`, `EdwinNixon`, `LouisGoldberg`) in new copy.
 
