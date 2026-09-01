@@ -37,7 +37,7 @@ Pins live only in the GitHub UI; the README has no pinned section. The pin recor
 
 Change pins in the GitHub UI (**Customize your pins**). After saving, check https://github.com/ryanduguid for the heading **Pinned** (not **Popular**).
 
-Live pin order read back on 2 September 2026:
+Live pin order read back on 2 September 2026 AEST (1 September 2026 UTC):
 
 1. `xero-trial-balance-export`
 2. `payday-super-checker`
