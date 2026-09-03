@@ -1,16 +1,22 @@
 from __future__ import annotations
 
+import json
+import os
 import re
+import shutil
+import subprocess
 import unittest
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 TOPIC_REPOSITORIES = (
     "australian-accounting",
-    "xero-ledger-review-gate",
     "accounting-review-pipeline",
-    "workpaper-review-gate",
-    "australian-accounting-power-bi",
+    "australian-accounting-skills",
+    "Ozzit",
+    "DrDebits",
+    "au-tax-legislation-corpus",
+    "awesome-australian-accounting-tech",
 )
 BANNER_REPOSITORIES = (
     "australian-accounting",
@@ -27,6 +33,37 @@ OLD_GITHUB_URLS = (
 
 
 class RepositoryIdentityTests(unittest.TestCase):
+    def test_topic_updates_only_address_maintained_writable_repositories(self) -> None:
+        powershell = shutil.which("pwsh") or shutil.which("powershell")
+        self.assertIsNotNone(powershell, "PowerShell is required to test the topic script")
+        # Stub only the external write boundary, never call GitHub from this test.
+        command = r"""
+$ErrorActionPreference = 'Stop'
+$global:topicCalls = [System.Collections.Generic.List[object]]::new()
+function gh { $global:topicCalls.Add(@($args)) }
+& $env:TOPIC_SCRIPT_UNDER_TEST
+'TOPIC_CALLS_JSON=' + (ConvertTo-Json -InputObject $global:topicCalls.ToArray() -Depth 4 -Compress)
+"""
+        result = subprocess.run(
+            [powershell, "-NoLogo", "-NoProfile", "-NonInteractive", "-Command", command],
+            env={**os.environ, "TOPIC_SCRIPT_UNDER_TEST": str(ROOT / "tools" / "apply-topics.ps1")},
+            capture_output=True,
+            text=True,
+            timeout=30,
+            check=False,
+        )
+        self.assertEqual(result.returncode, 0, result.stderr)
+        records = [line for line in result.stdout.splitlines() if line.startswith("TOPIC_CALLS_JSON=")]
+        self.assertEqual(len(records), 1, result.stdout)
+        calls = json.loads(records[0].split("=", 1)[1])
+        self.assertEqual(len(calls), len(TOPIC_REPOSITORIES))
+        self.assertEqual({call[2] for call in calls}, {f"ryanduguid/{name}" for name in TOPIC_REPOSITORIES})
+        for call in calls:
+            with self.subTest(repository=call[2]):
+                self.assertEqual(call[:2], ["repo", "edit"])
+                self.assertGreater(len(call), 3)
+                self.assertEqual(call[3::2], ["--add-topic"] * len(call[4::2]))
+
     def test_active_profile_surfaces_use_canonical_repositories(self) -> None:
         topics = (ROOT / "tools" / "apply-topics.ps1").read_text(encoding="utf-8")
         banners = "\n".join(
