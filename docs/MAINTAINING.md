@@ -55,12 +55,12 @@ GitHub About on the two flagship repositories (description, homepage, topics) is
 | Claim | Source of truth |
 | --- | --- |
 | Identity, location and credentials | Profile-owner assertions. Confirm with the owner before changing or republishing them |
-| Nine released public-practice workflow skills (v0.1.5), 19 on `main`, plugin and `npx skills` install | `australian-accounting-skills/README.md` (the release paragraph names both counts) and `.claude/skills/*/SKILL.md` (19 folders on `main`) |
-| Local MCP facade; uvx from PyPI; delegated engines; Div 7A refused; SBR synthetic | `aus-accounting-mcp/README.md` and `DISCLAIMER.md` |
-| Experimental payday-super review, possible SG-charge exposure and no ATO-assessment determination | `payday-super-checker/README.md` and `paydaysuper/deadlines.py` |
+| Nineteen released workflows (v0.2.0), plugin and `npx skills` install | `australian-accounting-skills/README.md` and the 19 `.claude/skills/*/SKILL.md` folders at tag `v0.2.0`: nine public-practice and ten subcontractor workflows |
+| Local MCP facade; uvx from PyPI; delegated engines; Div 7A refused; SBR synthetic | `australian-accounting/apps/aus-accounting-mcp/README.md` and its `DISCLAIMER.md` |
+| Experimental payday-super review, possible SG-charge exposure and no ATO-assessment determination | `australian-accounting/packages/payday-super-checker/README.md` and its `paydaysuper/deadlines.py` |
 | 134 LAMBDA functions, native Excel only, no add-ins or macros | `Ozzit/README.md` |
-| Xero trial-balance export requires movement and year-to-date balance before writing | `xero-trial-balance-export/README.md`, the balance-check paragraph under Scope and disclaimer |
-| Local profit-and-loss comparison against ATO benchmarks, with working shown | `ato-benchmark-compare/README.md`; do not imply ATO endorsement |
+| Xero trial-balance export requires movement and year-to-date balance before writing | `accounting-review-pipeline/packages/xero-trial-balance-export/README.md`, the balance-check paragraph under Scope and disclaimer |
+| Local profit-and-loss comparison against ATO benchmarks, with working shown | `australian-accounting/packages/ato-benchmark-compare/README.md`; do not imply ATO endorsement |
 | Source-linked LLM operating guide for Australian accounting, tax and BAS work | `DrDebits/README.md`; do not imply certification or endorsement |
 
 ## Style
@@ -87,7 +87,7 @@ Forks used only to send upstream pull requests stay out of the product list.
 - Describing payday-super output as a compliance, liability or ATO determination. It is an experimental review aid with stated factual limits.
 - Calling Ozzit macro-free while dropping the native-Excel or compatibility context from its own README.
 - Saying the Xero exporter writes any trial balance. Both movement and year-to-date balances must reconcile before it writes the CSV.
-- Listing six of the nine skills and calling it nine. The named set is BAS, FBT, Division 7A, STP, month-end close, year-end workpapers and 13-week cashflow; `xero-exports` and `workpaper-tie-out` are the other two. Since the Hardhat consolidation on 29 August 2026 the `main` branch holds 19 skill folders while the tagged v0.1.5 release still ships nine, so say which count you mean.
+- Conflating releases. Historical v0.1.5 shipped nine public-practice skills. The unified v0.2.0 release ships those nine plus ten construction and mining workflows. Use the released nineteen-skill count for adoption; retain the nine-skill count only when describing v0.1.5.
 - Treating mentions of Xero, the ATO, CA ANZ or SAP as proof of employment, partnership, approval, registration or endorsement.
 - Using retired repository names (`CharlesHenryWickens`, `JohnKenley`, `JohnSpenceOgilvy`, `MaryAddisonHamilton`, `ElizabethAnneAlexander`, `RaymondChambers`, `RussellMathews`, `SirArthurFadden`, `SirAlexanderFitzgerald`, `EdwinNixon`, `LouisGoldberg`) in new copy.
 

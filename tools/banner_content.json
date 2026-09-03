@@ -118,10 +118,10 @@
       "Federal Register API access"
     ]
   },
-  "aus-accounting-mcp": {
-    "tagline": "MCP server for AU tax review engines",
+  "australian-accounting": {
+    "tagline": "Australian accounting engines and local MCP review tools",
     "gives": [
-      "MCP tools for AU tax review",
+      "local engines and MCP tools",
       "delegates to reviewed engines",
       "synthetic SBR test fixtures"
     ],
@@ -133,7 +133,7 @@
   "australian-accounting-skills": {
     "tagline": "Claude Code and Codex skills for AU practice",
     "gives": [
-      "nine released AU workflows",
+      "nineteen released AU workflows",
       "BAS FBT and STP workflows",
       "month end close checklists"
     ],
@@ -164,16 +164,16 @@
       "standard CSV ledger exports"
     ]
   },
-  "monthly-close-controls": {
-    "tagline": "Deterministic close controls for trial balances",
+  "accounting-review-pipeline": {
+    "tagline": "Xero exports, close controls and review packs",
     "gives": [
-      "close summary with exceptions",
-      "exceptions CSV for review",
-      "PASS REVIEW BLOCKED states"
+      "validated exports, review packs",
+      "Excel and Power BI adapters",
+      "human-controlled review decisions"
     ],
     "needs": [
-      "current and prior TB CSV",
-      "an account mapping CSV"
+      "local trial-balance and pack files",
+      "Python; Excel or Power BI as used"
     ]
   },
   "payday-super-checker": {
