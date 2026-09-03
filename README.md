@@ -8,10 +8,10 @@ I'm an accountant in Newcastle, Australia. I build open-source controls for Aust
 
 ## Selected work
 
-- [xero-trial-balance-export](https://github.com/ryanduguid/xero-trial-balance-export) exports balanced Xero trial balances to CSV for Power BI, Excel and pandas.
-- [payday-super-checker](https://github.com/ryanduguid/payday-super-checker) checks fund receipt dates against Payday Super deadlines and prepares exceptions for review.
+- [australian-accounting](https://github.com/ryanduguid/australian-accounting) brings the Australian tax and payroll engines together with the local MCP server.
+- [accounting-review-pipeline](https://github.com/ryanduguid/accounting-review-pipeline) connects Xero exports, close controls and review packs with Excel and Power BI.
+- [australian-accounting-skills](https://github.com/ryanduguid/australian-accounting-skills) provides 19 preparation workflows for public practice and subcontractor accounting.
 - [Ozzit](https://github.com/ryanduguid/Ozzit) provides 134 native Excel LAMBDA functions for financial modelling and GST arithmetic.
-- [accounting-excel-toolkit](https://github.com/ryanduguid/accounting-excel-toolkit) contains Power Query and VBA utilities for Australian ledger exports.
 
 [See the full project catalogue and worked examples](https://duguid.com.au/).
 

@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import contextlib
 import io
+import re
 import unittest
 
 from banner import (
@@ -46,11 +47,12 @@ class TestProfileOpening(unittest.TestCase):
         selected = self.readme.split("## Selected work\n", maxsplit=1)[1]
         selected = selected.split("\n## Background", maxsplit=1)[0]
         projects = (
-            "xero-trial-balance-export",
+            "australian-accounting",
+            "accounting-review-pipeline",
+            "australian-accounting-skills",
             "Ozzit",
-            "accounting-excel-toolkit",
-            "payday-super-checker",
         )
+        links = re.findall(r"^- \[[^\]]+\]\((https://[^)]+)\)", selected, re.MULTILINE)
         self.assertEqual(
             sum(line.startswith("- [") for line in selected.splitlines()),
             len(projects),
@@ -58,7 +60,7 @@ class TestProfileOpening(unittest.TestCase):
         for project in projects:
             url = f"https://github.com/ryanduguid/{project}"
             with self.subTest(project=project):
-                self.assertEqual(selected.count(url), 1)
+                self.assertEqual(links.count(url), 1)
 
     def test_the_private_off_ledger_markers_are_absent(self):
         self.assertNotIn("off-ledger:", self.readme)
