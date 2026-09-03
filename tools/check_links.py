@@ -50,6 +50,7 @@ LINKEDIN_IDENTITY_URL = "https://www.linkedin.com/in/ryan-duguid/"
 
 LINK_RES = [
     re.compile(r"\[[^\]]*\]\((https?://[^)\s]+)\)"),
+    re.compile(r"\((https?://[^)\s]+)\)"),
     re.compile(r"(?:href|src)=\"(https?://[^\"]+)\""),
     re.compile(r"(?<![(\"=\]])(https?://[^\s)\">\]]+)"),
 ]

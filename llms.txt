@@ -32,27 +32,27 @@ Canonical site index: https://duguid.com.au/llms.txt
 - **Subcontract ledger workflows** (https://duguid.com.au/tools/subcontractor-ledgers/): progress claims, retentions, WIP under AASB 15, Coal LSL, fuel tax credits.
 
 ## Adopt
-- **australian-accounting-skills** (https://github.com/ryanduguid/australian-accounting-skills): Nine public-practice workflow skills in the tagged v0.1.5 release (BAS tie-out, FBT, Division 7A loan-register workflow, STP year-end finalisation, workpapers); the main branch carries 19 after the Hardhat consolidation, pending the next release. Claude Code plugin, Codex plugin, or `npx skills add ryanduguid/australian-accounting-skills`. Prep-only. Not lodgment. Not tax advice.
-- **Aus Accounting MCP** (https://github.com/ryanduguid/aus-accounting-mcp): Local MCP server delegating to ato-benchmark-compare and payday-super-checker, with refused Division 7A and synthetic SBR fixtures. Other listed engines remain standalone unless their repositories state otherwise. Official MCP registry name: io.github.ryanduguid/aus-accounting (https://registry.modelcontextprotocol.io/v0.1/servers/io.github.ryanduguid%2Faus-accounting/versions/latest). Install: `uvx aus-accounting-mcp`.
+- **australian-accounting-skills** (https://github.com/ryanduguid/australian-accounting-skills): Nineteen workflow skills in the tagged v0.2.0 release: nine public-practice workflows and ten construction and mining subcontractor workflows, including the former Hardhat skills. Claude Code plugin, Codex plugin, or `npx skills add ryanduguid/australian-accounting-skills`. Prep-only. Not lodgment. Not tax advice.
+- **Aus Accounting MCP** (https://github.com/ryanduguid/australian-accounting/tree/main/apps/aus-accounting-mcp): Local MCP server delegating to ato-benchmark-compare and payday-super-checker, with refused Division 7A and synthetic SBR fixtures. Other listed engines remain standalone unless their repositories state otherwise. Official MCP registry name: io.github.ryanduguid/aus-accounting (https://registry.modelcontextprotocol.io/v0.1/servers/io.github.ryanduguid%2Faus-accounting/versions/latest). Install: `uvx aus-accounting-mcp`.
 
 ## Specialised workflow
-- **hardhat-ledger** (https://github.com/ryanduguid/hardhat-ledger): Construction and mining subcontractor skills (Security of Payment, retentions, WIP, Coal LSL, Fuel Tax Credits). Prep-only. Not tax advice.
+- **Hardhat Ledger workflows** (https://github.com/ryanduguid/australian-accounting-skills): The ten construction and mining subcontractor workflows now ship in Australian Accounting Skills (Security of Payment, retentions, WIP, Coal LSL, Fuel Tax Credits). Install the unified pack only; do not install a second Hardhat pack. Prep-only. Not tax advice.
 
 ## Analytics and reporting
-- **Australian Accounting Power BI** (https://github.com/ryanduguid/australian-accounting-power-bi): Source-controlled Power BI project for Australian accounting analytics, consolidation, ATO benchmarks and Payday Super review.
+- **Australian Accounting Power BI** (https://github.com/ryanduguid/accounting-review-pipeline/tree/main/apps/australian-accounting-power-bi): Source-controlled Power BI project for Australian accounting analytics, consolidation, ATO benchmarks and Payday Super review.
 
 ## Engines those products call
-- **payday-super-checker** (https://github.com/ryanduguid/payday-super-checker): Payday Super contribution timelines and experimental SG-charge exposure. Not an ATO assessment.
-- **ato-benchmark-compare** (https://github.com/ryanduguid/ato-benchmark-compare): Offline P&L variance against ATO small-business benchmarks.
+- **payday-super-checker** (https://github.com/ryanduguid/australian-accounting/tree/main/packages/payday-super-checker): Payday Super contribution timelines and experimental SG-charge exposure. Not an ATO assessment.
+- **ato-benchmark-compare** (https://github.com/ryanduguid/australian-accounting/tree/main/packages/ato-benchmark-compare): Offline P&L variance against ATO small-business benchmarks.
 - **Ozzit** (https://github.com/ryanduguid/Ozzit): 134 native Excel LAMBDA functions for dynamic-array financial modelling without VBA or add-ins. Derivative of a third-party Excel LAMBDA workbook republished under written permission with attribution waived; Australian helpers are GST, financial-year labels and two modelling depreciation schedules. See ATTRIBUTION.md.
-- **TheExchequerTally** (https://github.com/ryanduguid/TheExchequerTally): Corporate tax rate determination (Base Rate Entity under s 23AA ITRA 1986), franking account balance, Division 203.
-- **SolomonsSword** (https://github.com/ryanduguid/SolomonsSword): Trust income allocation under Division 6 ITAA 1936, s 100A, s 99B.
-- **xero-trial-balance-export** (https://github.com/ryanduguid/xero-trial-balance-export): Reconciled Xero trial balance exporter; movement and year-to-date must both tie before CSV write.
-- **accounting-excel-toolkit** (https://github.com/ryanduguid/accounting-excel-toolkit): Power Query (M) and VBA automation for Australian month-end reporting.
-- **Workpaper Review Gate** (https://github.com/ryanduguid/workpaper-review-gate): Pack-readiness gate upstream of manager review and Monthly Close Controls. The `review-ready-gate` distribution and `review-ready` command remain unchanged. It does not approve a file.
-- **Monthly Close Controls** (https://github.com/ryanduguid/monthly-close-controls): Local trial-balance review packs with exception surfacing. The distribution remains `monthly-close-control-plane`. It does not approve or lock a close.
+- **TheExchequerTally** (https://github.com/ryanduguid/australian-accounting/tree/main/packages/the-exchequer-tally): Corporate tax rate determination (Base Rate Entity under s 23AA ITRA 1986), franking account balance, Division 203.
+- **SolomonsSword** (https://github.com/ryanduguid/australian-accounting/tree/main/packages/solomons-sword): Trust income allocation under Division 6 ITAA 1936, s 100A, s 99B.
+- **xero-trial-balance-export** (https://github.com/ryanduguid/accounting-review-pipeline/tree/main/packages/xero-trial-balance-export): Reconciled Xero trial balance exporter; movement and year-to-date must both tie before CSV write.
+- **accounting-excel-toolkit** (https://github.com/ryanduguid/accounting-review-pipeline/tree/main/adapters/accounting-excel-toolkit): Power Query (M) and VBA automation for Australian month-end reporting.
+- **Workpaper Review Gate** (https://github.com/ryanduguid/accounting-review-pipeline/tree/main/packages/review-ready-gate): Pack-readiness gate upstream of manager review and Monthly Close Controls. The `review-ready-gate` distribution and `review-ready` command remain unchanged. It does not approve a file.
+- **Monthly Close Controls** (https://github.com/ryanduguid/accounting-review-pipeline/tree/main/packages/monthly-close-control-plane): Local trial-balance review packs with exception surfacing. The distribution remains `monthly-close-control-plane`. It does not approve or lock a close.
 - **DrDebits** (https://github.com/ryanduguid/DrDebits): APES 110 and TPB-aligned operating boundaries for LLM-assisted taxation workflows.
-- **Xero Ledger Review Gate** (https://github.com/ryanduguid/xero-ledger-review-gate): Synthetic-data demonstration of a fixed-policy trial-balance review boundary. The distribution and command remain `elizabeth-anne-alexander`.
+- **Xero Ledger Review Gate** (https://github.com/ryanduguid/accounting-review-pipeline/tree/main/packages/elizabeth-anne-alexander): Synthetic-data demonstration of a fixed-policy trial-balance review boundary. The distribution and command remain `elizabeth-anne-alexander`.
 - **awesome-australian-accounting-tech** (https://github.com/ryanduguid/awesome-australian-accounting-tech): Curated index of AU accounting libraries, ATO datasets, and legislation APIs.
 
 ## Data and Decision Boundary
