@@ -61,7 +61,9 @@ RETIRED_NAME_ALLOWANCE = {"docs/MAINTAINING.md": 2}
 
 USER_AGENT = "ryanduguid-profile-link-check"
 LINKEDIN_IDENTITY_URL = "https://www.linkedin.com/in/ryan-duguid/"
-OWN_REPO = re.compile(r"^https://github\.com/ryanduguid/([A-Za-z0-9._-]+)")
+# GitHub owner and repository names are case-insensitive; names are
+# lower-cased so the cache, the allowlist and the redirect check agree.
+OWN_REPO = re.compile(r"^https://github\.com/ryanduguid/([A-Za-z0-9._-]+)", re.I)
 GITHUB_API = "https://api.github.com/repos/ryanduguid/"
 
 MAX_FETCH_ATTEMPTS = 5
@@ -76,7 +78,7 @@ ARCHIVED_TARGET_ALLOWLIST: dict[str, frozenset[str]] = {
             # already archived on GitHub
             "pyxero",
             "requests-cache",
-            "LedgerSMB",
+            "ledgersmb",
             "beancount",
             "fava",
             "bank-statement-import",
@@ -121,7 +123,7 @@ def is_accepted_automation_denial(url: str, status: int) -> bool:
 def own_repository(url: str) -> str | None:
     """Return the ryanduguid repository name a URL points at, if any."""
     match = OWN_REPO.match(url)
-    return match.group(1) if match else None
+    return match.group(1).lower() if match else None
 
 
 def fetch_repository_archived(
@@ -171,41 +173,42 @@ def repository_is_archived(name: str) -> bool:
 
 
 def archived_target_failures(
-    urls: dict[str, str], *, lookup=None
+    urls: dict[str, set[str]], *, lookup=None
 ) -> list[str]:
     """Fail every own-repository link whose target is archived.
 
-    ``urls`` maps each resolved own-repository URL to the file it was found
+    ``urls`` maps each resolved own-repository URL to every file it was found
     in; callers pass only links that already resolved and passed the rename
     check, so a broken link is reported once. The allowlist is applied per
-    file and repository.
+    file and repository, so an exemption in one file never covers another.
     """
     if lookup is None:
         lookup = repository_is_archived
     failures: list[str] = []
-    for url, src in sorted(urls.items()):
+    for url, sources in sorted(urls.items()):
         name = own_repository(url)
         if name is None:
             continue
-        allowed = ARCHIVED_TARGET_ALLOWLIST.get(src.replace("\\", "/"), frozenset())
-        if name in allowed:
-            continue
-        try:
-            archived = lookup(name)
-        except Exception as exc:  # noqa: BLE001 - report every failure mode
-            failures.append(f"{src}: {url} -> archived lookup failed: {exc}")
-            continue
-        if archived:
-            failures.append(
-                f"{src}: {url} -> ryanduguid/{name} is archived "
-                "(repoint the link to the maintained repository)"
-            )
+        for src in sorted(sources):
+            if name in ARCHIVED_TARGET_ALLOWLIST.get(src.replace("\\", "/"), frozenset()):
+                continue
+            try:
+                archived = lookup(name)
+            except Exception as exc:  # noqa: BLE001 - report every failure mode
+                failures.append(f"{src}: {url} -> archived lookup failed: {exc}")
+                continue
+            if archived:
+                failures.append(
+                    f"{src}: {url} -> ryanduguid/{name} is archived "
+                    "(repoint the link to the maintained repository)"
+                )
     return failures
 
 
 def main() -> int:
     failures: list[str] = []
     urls: dict[str, str] = {}
+    sources: dict[str, set[str]] = {}
 
     for rel in FILES:
         text = (ROOT / rel).read_text(encoding="utf-8")
@@ -213,6 +216,7 @@ def main() -> int:
             for url in pattern.findall(text):
                 url = normalise_url(url)
                 urls.setdefault(url, rel)
+                sources.setdefault(url, set()).add(rel)
         hits = sum(text.count(name) for name in RETIRED_NAMES)
         allowed_lines = RETIRED_NAME_ALLOWANCE.get(rel.replace("\\", "/"), 0)
         if allowed_lines:
@@ -230,7 +234,7 @@ def main() -> int:
                 failures.append(f"{rel}: {label} present")
 
     checked = 0
-    resolved_own_urls: dict[str, str] = {}
+    resolved_own_urls: dict[str, set[str]] = {}
     for url, src in sorted(urls.items()):
         if url.startswith("http:"):
             failures.append(f"{src}: insecure link {url}")
@@ -264,7 +268,7 @@ def main() -> int:
                     f"{src}: {url} redirected to {final} (rename redirect, repoint the link)"
                 )
                 continue
-            resolved_own_urls[url] = src
+            resolved_own_urls[url] = sources[url]
         print(f"ok {url}")
 
     failures.extend(archived_target_failures(resolved_own_urls))

@@ -38,29 +38,30 @@ class UrlPolicyTests(unittest.TestCase):
     def test_archived_repository_links_fail_outside_the_allowlist(self) -> None:
         archived = {"payday-super-checker": True, "australian-accounting": False, "pyxero": True}
         urls = {
-            "https://github.com/ryanduguid/payday-super-checker": "README.md",
-            "https://github.com/ryanduguid/australian-accounting/tree/main/packages/x": "llms.txt",
-            "https://github.com/ryanduguid/pyxero": "FORKS.md",
-            "https://github.com/ryanduguid/payday-super-checker/releases": "FORKS.md",
+            "https://github.com/ryanduguid/payday-super-checker": {"README.md"},
+            "https://github.com/ryanduguid/australian-accounting/tree/main/packages/x": {"llms.txt"},
+            "https://github.com/ryanduguid/pyxero": {"FORKS.md"},
+            # the same archived URL in FORKS.md and a docs file: FORKS.md is
+            # exempt, the docs file is not
+            "https://GitHub.com/RyanDuguid/PyXero/releases": {"FORKS.md", "docs/MAINTAINING.md"},
         }
 
         failures = check_links.archived_target_failures(
             urls, lookup=archived.__getitem__
         )
 
-        self.assertEqual(len(failures), 2)
         self.assertEqual(
             sorted(failure.split(":", 1)[0] for failure in failures),
-            ["FORKS.md", "README.md"],
+            ["README.md", "docs/MAINTAINING.md"],
         )
-        self.assertTrue(all("payday-super-checker is archived" in f for f in failures))
+        self.assertTrue(any("ryanduguid/pyxero is archived" in f for f in failures))
 
     def test_archived_lookup_failure_is_a_failure(self) -> None:
         def lookup(name: str) -> bool:
             raise urllib.error.URLError("rate limited")
 
         failures = check_links.archived_target_failures(
-            {"https://github.com/ryanduguid/Ozzit": "README.md"}, lookup=lookup
+            {"https://github.com/ryanduguid/Ozzit": {"README.md"}}, lookup=lookup
         )
 
         self.assertEqual(len(failures), 1)
