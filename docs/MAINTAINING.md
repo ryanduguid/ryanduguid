@@ -20,7 +20,7 @@ How to report a security concern is in [SECURITY.md](../SECURITY.md). Account-wi
 | `tools/banner_content.json` | Per-repository banner content; claims must match that repository's README |
 | `tools/check_links.py` | Link resolver behind `link-check.yml` |
 | `tools/test_*.py` | Unit tests for the banners, link policy and repository identity |
-| `.github/workflows/link-check.yml` | CI: resolves profile links and fails on rename redirects |
+| `.github/workflows/link-check.yml` | CI: resolves profile links and fails on rename redirects and on links to archived repositories (needs the workflow token for the GitHub API lookups) |
 | `.github/workflows/banner-check.yml` | CI: unit tests plus the rendered-banner gate |
 
 ## Updating the public README
@@ -37,16 +37,18 @@ Pins live only in the GitHub UI; the README has no pinned section. The pin recor
 
 Change pins in the GitHub UI (**Customize your pins**). After saving, check https://github.com/ryanduguid for the heading **Pinned** (not **Popular**).
 
-Live pin order read back on 2 September 2026 AEST (1 September 2026 UTC):
+Intended pin order after the September 2026 consolidation. Apply it in the GitHub UI in exactly this order, then read the profile back and confirm the heading reads **Pinned**:
 
-1. `xero-trial-balance-export`
-2. `payday-super-checker`
-3. `aus-accounting-mcp`
+1. `australian-accounting`
+2. `accounting-review-pipeline`
+3. `australian-accounting-skills`
 4. `DrDebits`
 5. `Ozzit`
-6. `awesome-australian-accounting-tech`
+6. `PaciolisCube`
 
-Their repository node IDs in order are `R_kgDOTp5MxQ`, `R_kgDOTrBaqQ`, `R_kgDOT_n0mw`, `R_kgDOT5p-Qw`, `R_kgDOT7ix8g` and `R_kgDOT_mOWg`. Pins survive a repository rename because GitHub tracks the node ID, not the name. Change pins only on purpose, and update this list in the same change so the record and the profile never disagree (`workpaper-review-gate` was pinned until late August 2026 and is now reachable through the catalogue instead). Keep achievements hidden. `ato-benchmark-compare` remains public and is called by Aus Accounting MCP; it does not need its own pin. Do not pin `.github`, contribution forks, DiogenesLamp, or Resume-Matcher. GitHub About bio is set in the GitHub UI, not in this repository.
+Their repository node IDs in order are `R_kgDOT_n0mw`, `R_kgDOTx2jTQ`, `R_kgDOTp5LaQ`, `R_kgDOT5p-Qw`, `R_kgDOT7ix8g` and `R_kgDOUBP9OA`. Pins survive a repository rename because GitHub tracks the node ID, not the name. Change pins only on purpose, and update this list in the same change so the record and the profile never disagree; `tools/test_repository_identity.py` fails if this list names an archived repository or drifts from the six above.
+
+The previous set, read back on 2 September 2026 AEST, was `xero-trial-balance-export`, `payday-super-checker`, `aus-accounting-mcp`, `DrDebits`, `Ozzit` and `awesome-australian-accounting-tech`. The first two were archived on 3 September 2026 after their code moved into `accounting-review-pipeline` and `australian-accounting`, so those pins now advertise read-only archives. `aus-accounting-mcp` was renamed to `australian-accounting` (same node ID, `R_kgDOT_n0mw`), so that pin already displays the monorepo and only moves from third to first. `accounting-review-pipeline` takes the exporter's place, `australian-accounting-skills` carries the nineteen released workflows, and `PaciolisCube` replaces the awesome list, which is linked from the README and the website and does not need a pin. `workpaper-review-gate` was pinned until late August 2026 and is reachable through the catalogue instead. `ato-benchmark-compare` is called by Aus Accounting MCP from inside `australian-accounting` and does not need its own pin. Keep achievements hidden. Do not pin `.github`, contribution forks, DiogenesLamp, or Resume-Matcher. GitHub About bio is set in the GitHub UI, not in this repository.
 
 GitHub About on the two flagship repositories (description, homepage, topics) is applied from each repo's `docs/DISCOVERY.md` via `scripts/publish-github-about.sh`.
 
@@ -91,4 +93,4 @@ Forks used only to send upstream pull requests stay out of the product list.
 - Treating mentions of Xero, the ATO, CA ANZ or SAP as proof of employment, partnership, approval, registration or endorsement.
 - Using retired repository names (`CharlesHenryWickens`, `JohnKenley`, `JohnSpenceOgilvy`, `MaryAddisonHamilton`, `ElizabethAnneAlexander`, `RaymondChambers`, `RussellMathews`, `SirArthurFadden`, `SirAlexanderFitzgerald`, `EdwinNixon`, `LouisGoldberg`) in new copy.
 
-CI runs `.github/workflows/link-check.yml`: every link in README.md, llms.txt, SECURITY.md and docs/ must resolve, links must be https, and a `github.com/ryanduguid/...` link that only works through a rename redirect fails the build.
+CI runs `.github/workflows/link-check.yml`: every link in README.md, llms.txt, SECURITY.md and docs/ must resolve, links must be https, a `github.com/ryanduguid/...` link that only works through a rename redirect fails the build, and a `github.com/ryanduguid/...` link whose repository is archived fails the build (one GitHub REST API lookup per repository, fail-closed when the lookup cannot complete). `FORKS.md` is also checked; its archived forks are allow-listed by name in `tools/check_links.py`, because its tables record them on purpose.

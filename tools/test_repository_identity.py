@@ -30,6 +30,37 @@ OLD_GITHUB_URLS = (
     "github.com/ryanduguid/review-ready-gate",
     "github.com/ryanduguid/au-financial-analytics-pbip",
 )
+# The intended profile pins, in display order. docs/MAINTAINING.md is the
+# record the owner applies in the GitHub UI, so the two must agree.
+INTENDED_PINS = (
+    "australian-accounting",
+    "accounting-review-pipeline",
+    "australian-accounting-skills",
+    "DrDebits",
+    "Ozzit",
+    "PaciolisCube",
+)
+# Repositories archived on 2 and 3 September 2026 after the subtree imports.
+# aus-accounting-mcp and monthly-close-controls are not here: they were renamed
+# to australian-accounting and accounting-review-pipeline, so their node IDs
+# carried across and a link to the old name is a rename redirect instead.
+ARCHIVED_REPOSITORIES = frozenset(
+    {
+        "payday-super-checker",
+        "ato-benchmark-compare",
+        "div7a-loan-review",
+        "TheExchequerTally",
+        "SolomonsSword",
+        "TheWIPTally",
+        "xero-trial-balance-export",
+        "workpaper-review-gate",
+        "xero-ledger-review-gate",
+        "accounting-excel-toolkit",
+        "australian-accounting-power-bi",
+        "hardhat-ledger",
+        "tax-radar-au",
+    }
+)
 
 
 class RepositoryIdentityTests(unittest.TestCase):
@@ -88,6 +119,16 @@ function gh { $global:topicCalls.Add(@($args)) }
             self.assertIn(f'"{repository}"', banners)
         for old_url in OLD_GITHUB_URLS:
             self.assertNotIn(old_url, active)
+
+    def test_pin_record_names_six_maintained_repositories_in_order(self) -> None:
+        text = (ROOT / "docs" / "MAINTAINING.md").read_text(encoding="utf-8")
+        section = text.split("## Pinned repositories", 1)[1].split("## ", 1)[0]
+        recorded = tuple(re.findall(r"^\d+\. `([A-Za-z0-9._-]+)`$", section, re.MULTILINE))
+
+        self.assertEqual(recorded, INTENDED_PINS)
+        self.assertEqual(len(set(recorded)), 6)
+        self.assertFalse(set(recorded) & ARCHIVED_REPOSITORIES)
+        self.assertTrue(set(recorded) <= set(TOPIC_REPOSITORIES) | {"PaciolisCube"})
 
     def test_profile_component_links_point_to_the_maintained_directories(self) -> None:
         text = (ROOT / "llms.txt").read_text(encoding="utf-8")
