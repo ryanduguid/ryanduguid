@@ -14,7 +14,7 @@ TOPIC_REPOSITORIES = (
     "accounting-review-pipeline",
     "australian-accounting-skills",
     "Ozzit",
-    "DrDebits",
+    "llm-tax-guardrails",
     "au-tax-legislation-corpus",
     "awesome-australian-accounting-tech",
 )
@@ -34,7 +34,7 @@ OLD_GITHUB_URLS = (
 # record the owner applies in the GitHub UI, so the two must agree.
 INTENDED_PINS = (
     "australian-accounting",
-    "DrDebits",
+    "llm-tax-guardrails",
     "Ozzit",
     "australian-accounting-skills",
     "accounting-review-pipeline",

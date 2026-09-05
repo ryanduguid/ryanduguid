@@ -14,7 +14,7 @@ I'm an accountant in Newcastle, Australia. I build open-source review tools for 
 - [australian-accounting-skills](https://github.com/ryanduguid/australian-accounting-skills): 19 Claude Code and Codex skills for public-practice and subcontractor work, from BAS preparation to WIP over/under billing.
 - [accounting-review-pipeline](https://github.com/ryanduguid/accounting-review-pipeline): month-end close controls over Xero trial-balance exports, with exception packs for human review.
 - [Ozzit](https://github.com/ryanduguid/Ozzit): 134 native Excel LAMBDA functions for financial modelling and GST arithmetic.
-- [DrDebits](https://github.com/ryanduguid/DrDebits): APES 110 and TPB Code guardrails for LLM-assisted tax work.
+- [llm-tax-guardrails](https://github.com/ryanduguid/llm-tax-guardrails): DrDebits, APES 110 and TPB Code guardrails for LLM-assisted tax work.
 
 Upstream: 28 merged pull requests to [OpenAccountants](https://github.com/OpenAccountants/openaccountants/pulls?q=is%3Apr+author%3Aryanduguid+is%3Amerged), including the Australian super, FBT, Division 7A and [BAS](https://github.com/OpenAccountants/openaccountants/pull/85) guides, and a merged [Meltano SDK](https://github.com/meltano/sdk/pull/3727) change.
 
