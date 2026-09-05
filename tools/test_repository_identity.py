@@ -34,11 +34,11 @@ OLD_GITHUB_URLS = (
 # record the owner applies in the GitHub UI, so the two must agree.
 INTENDED_PINS = (
     "australian-accounting",
-    "accounting-review-pipeline",
-    "australian-accounting-skills",
     "DrDebits",
     "Ozzit",
-    "PaciolisCube",
+    "australian-accounting-skills",
+    "accounting-review-pipeline",
+    "au-tax-legislation-corpus",
 )
 # Repositories archived on 2 and 3 September 2026 after the subtree imports.
 # aus-accounting-mcp and monthly-close-controls are not here: they were renamed
@@ -128,7 +128,7 @@ function gh { $global:topicCalls.Add(@($args)) }
         self.assertEqual(recorded, INTENDED_PINS)
         self.assertEqual(len(set(recorded)), 6)
         self.assertFalse(set(recorded) & ARCHIVED_REPOSITORIES)
-        self.assertTrue(set(recorded) <= set(TOPIC_REPOSITORIES) | {"PaciolisCube"})
+        self.assertTrue(set(recorded) <= set(TOPIC_REPOSITORIES))
 
     def test_profile_component_links_point_to_the_maintained_directories(self) -> None:
         text = (ROOT / "llms.txt").read_text(encoding="utf-8")
