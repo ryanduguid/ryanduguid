@@ -37,18 +37,18 @@ Pins live only in the GitHub UI; the README has no pinned section. The pin recor
 
 Change pins in the GitHub UI (**Customize your pins**). After saving, check https://github.com/ryanduguid for the heading **Pinned** (not **Popular**).
 
-Intended pin order after the September 2026 consolidation. Apply it in the GitHub UI in exactly this order, then read the profile back and confirm the heading reads **Pinned**:
+The live pin set after the September 2026 consolidation, in the display order GitHub returned on 5 September 2026 AEST. Keep this list identical to the profile, and read the profile back after any change to confirm the heading reads **Pinned**:
 
 1. `australian-accounting`
-2. `accounting-review-pipeline`
-3. `australian-accounting-skills`
-4. `DrDebits`
-5. `Ozzit`
-6. `PaciolisCube`
+2. `DrDebits`
+3. `Ozzit`
+4. `australian-accounting-skills`
+5. `accounting-review-pipeline`
+6. `au-tax-legislation-corpus`
 
-Their repository node IDs in order are `R_kgDOT_n0mw`, `R_kgDOTx2jTQ`, `R_kgDOTp5LaQ`, `R_kgDOT5p-Qw`, `R_kgDOT7ix8g` and `R_kgDOUBP9OA`. Pins survive a repository rename because GitHub tracks the node ID, not the name. Change pins only on purpose, and update this list in the same change so the record and the profile never disagree; `tools/test_repository_identity.py` fails if this list names an archived repository or drifts from the six above.
+Their repository node IDs in order are `R_kgDOT_n0mw`, `R_kgDOT5p-Qw`, `R_kgDOT7ix8g`, `R_kgDOTp5LaQ`, `R_kgDOTx2jTQ` and `R_kgDOTuGPgA`. The preferred display order is `australian-accounting`, `accounting-review-pipeline`, `australian-accounting-skills`, `Ozzit`, `DrDebits`, `au-tax-legislation-corpus`; GitHub's drag reorder has not persisted in the past, while the pin selector applies pins in the order they are ticked, so reordering means unpinning and re-ticking in that sequence. Pins survive a repository rename because GitHub tracks the node ID, not the name. Change pins only on purpose, and update this list in the same change so the record and the profile never disagree; `tools/test_repository_identity.py` fails if this list names an archived repository or drifts from the six above.
 
-The previous set, read back on 2 September 2026 AEST, was `xero-trial-balance-export`, `payday-super-checker`, `aus-accounting-mcp`, `DrDebits`, `Ozzit` and `awesome-australian-accounting-tech`. The first two were archived on 3 September 2026 after their code moved into `accounting-review-pipeline` and `australian-accounting`, so those pins now advertise read-only archives. `aus-accounting-mcp` was renamed to `australian-accounting` (same node ID, `R_kgDOT_n0mw`), so that pin already displays the monorepo and only moves from third to first. `accounting-review-pipeline` takes the exporter's place, `australian-accounting-skills` carries the nineteen released workflows, and `PaciolisCube` replaces the awesome list, which is linked from the README and the website and does not need a pin. `workpaper-review-gate` was pinned until late August 2026 and is reachable through the catalogue instead. `ato-benchmark-compare` is called by Aus Accounting MCP from inside `australian-accounting` and does not need its own pin. Keep achievements hidden. Do not pin `.github`, contribution forks, DiogenesLamp, or Resume-Matcher. GitHub About bio is set in the GitHub UI, not in this repository.
+The previous set, read back on 2 September 2026 AEST, was `xero-trial-balance-export`, `payday-super-checker`, `aus-accounting-mcp`, `DrDebits`, `Ozzit` and `awesome-australian-accounting-tech`. The first two were archived on 3 September 2026 after their code moved into `accounting-review-pipeline` and `australian-accounting`, so those pins now advertise read-only archives. `aus-accounting-mcp` was renamed to `australian-accounting` (same node ID, `R_kgDOT_n0mw`), so that pin already displays the monorepo and only moves from third to first. `accounting-review-pipeline` takes the exporter's place, `australian-accounting-skills` carries the nineteen released workflows, and `au-tax-legislation-corpus` replaces the awesome list, which is linked from the README and the website and does not need a pin. The corpus is the provenance-rich data asset behind the evidence-first claims the MCP server and the skills make. `PaciolisCube` is reachable through the catalogue instead. `workpaper-review-gate` was pinned until late August 2026 and is reachable through the catalogue instead. `ato-benchmark-compare` is called by Aus Accounting MCP from inside `australian-accounting` and does not need its own pin. Keep achievements hidden. Do not pin `.github`, contribution forks, DiogenesLamp, or Resume-Matcher. GitHub About bio is set in the GitHub UI, not in this repository.
 
 GitHub About on the two flagship repositories (description, homepage, topics) is applied from each repo's `docs/DISCOVERY.md` via `scripts/publish-github-about.sh`.
 
