@@ -6,7 +6,7 @@ File issues and PRs upstream, not here. Do not copy fork code into `ryanduguid` 
 
 Active Australian work lives in originals, notably `australian-accounting`, `accounting-review-pipeline`, `FireFalcon` (AU layer on `openfpa`), `PaciolisCube`, and the skill packs. Forks below exist only to track upstreams or to hold a contribution branch.
 
-Reviewed 4 September 2026 against each fork's last commit date and its GitHub archived flag. `tools/check_links.py` checks every link here and allow-lists, by name, the forks the two archive tables record.
+Reviewed 4 September 2026 against each fork's last commit date and its GitHub archived flag; the `l10n-australia` row was re-read on 5 September 2026 for the Odoo decision. `tools/check_links.py` checks every link here and allow-lists, by name, the forks the two archive tables record.
 
 ## Keep, active contribution
 
@@ -50,11 +50,11 @@ Forks with no Australian work and no reason to track. The owner archives each in
 | Fork | Upstream | Reason | When |
 |------|----------|--------|------|
 | [django-money](https://github.com/ryanduguid/django-money) | [django-money/django-money](https://github.com/django-money/django-money) | Upstream migrated to Codeberg; the GitHub fork tracks a repository that no longer moves. Last fork commit 15 June 2026 records the migration. | Now. |
-| [l10n-australia](https://github.com/ryanduguid/l10n-australia) | [OCA/l10n-australia](https://github.com/OCA/l10n-australia) | One empty initial commit (23 July 2026), no upstream history and no AU changes. | After the Odoo decision. |
-| [account-reconcile](https://github.com/ryanduguid/account-reconcile) | [OCA/account-reconcile](https://github.com/OCA/account-reconcile) | Zero AU changes; only OCA bot post-merge updates. | After the Odoo decision. |
-| [account-financial-reporting](https://github.com/ryanduguid/account-financial-reporting) | [OCA/account-financial-reporting](https://github.com/OCA/account-financial-reporting) | Zero AU changes; only OCA bot post-merge updates. | After the Odoo decision. |
+| [l10n-australia](https://github.com/ryanduguid/l10n-australia) | [OCA/l10n-australia](https://github.com/OCA/l10n-australia) | `18.0` is the OCA scaffold (one commit, 23 July 2026). Branch `cursor/18.0-l10n-au-base-3c18` is the head of [OCA/l10n-australia#1](https://github.com/OCA/l10n-australia/pull/1), so archiving freezes that pull request. | After the Odoo decision. |
+| [account-reconcile](https://github.com/ryanduguid/account-reconcile) | [OCA/account-reconcile](https://github.com/OCA/account-reconcile) | Zero AU changes; only OCA bot post-merge updates. Archived under either Odoo option. | Now. |
+| [account-financial-reporting](https://github.com/ryanduguid/account-financial-reporting) | [OCA/account-financial-reporting](https://github.com/OCA/account-financial-reporting) | Zero AU changes; only OCA bot post-merge updates. Archived under either Odoo option. | Now. |
 
-The Odoo decision (ship one real module, or archive every OCA and Odoo fork: the three rows above plus the already-archived `bank-statement-import`) is a separate proposal. Hold the three OCA rows until it is made; `django-money` does not depend on it.
+The Odoo decision (ship one real module, or archive every OCA and Odoo fork: the three rows above plus the already-archived `bank-statement-import`) is proposed in [docs/odoo-decision.md](docs/odoo-decision.md). Hold the `l10n-australia` row until it is made; the other two OCA rows and `django-money` do not depend on it.
 
 ## Delete, off-topic
 
