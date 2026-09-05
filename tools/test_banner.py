@@ -43,7 +43,7 @@ class TestProfileOpening(unittest.TestCase):
             self.readme.index("## Background"),
         )
 
-    def test_selected_work_names_four_projects_once(self):
+    def test_selected_work_names_five_projects_once(self):
         selected = self.readme.split("## Selected work\n", maxsplit=1)[1]
         selected = selected.split("\n## Background", maxsplit=1)[0]
         projects = (
@@ -51,6 +51,7 @@ class TestProfileOpening(unittest.TestCase):
             "accounting-review-pipeline",
             "australian-accounting-skills",
             "Ozzit",
+            "DrDebits",
         )
         links = re.findall(r"^- \[[^\]]+\]\((https://[^)]+)\)", selected, re.MULTILINE)
         self.assertEqual(
