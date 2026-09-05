@@ -11,7 +11,7 @@
       "lamp scrape to fetch listings"
     ]
   },
-  "DrDebits": {
+  "llm-tax-guardrails": {
     "tagline": "APES 110 and TPB Code guardrails for LLM tax work",
     "gives": [
       "APES 110 mapped guardrails",
@@ -23,7 +23,7 @@
       "Claude Code, Antigravity, Cursor"
     ]
   },
-  "FireFalcon": {
+  "au-fpa-pack": {
     "tagline": "Australian FP&A pack on openfpa: 30 June, Xero AU",
     "gives": [
       "30 June year adjustments",
@@ -46,7 +46,7 @@
       "Excel 365 or 2024 or newer"
     ]
   },
-  "PaciolisCube": {
+  "planning-analytics-model": {
     "tagline": "IBM Planning Analytics budget model as source",
     "gives": [
       "runs TM1 rules with no server",
