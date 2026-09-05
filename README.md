@@ -1,10 +1,10 @@
 # Ryan Duguid
 
-Accountant in Newcastle, Australia. I build open-source review tools for Australian tax, payroll and financial reporting. Everything here runs on fabricated inputs, supports professional review, and never lodges or writes to a ledger.
+I'm an accountant in Newcastle, Australia. I build open-source review tools for Australian tax, payroll and financial reporting. The projects use synthetic public examples and support professional review. They do not lodge or write to ledgers.
 
 ## Start here
 
-- **Accountants:** [worked examples on duguid.com.au](https://duguid.com.au/tools/), nothing to install.
+- **Accountants:** [See the full project catalogue and worked examples](https://duguid.com.au/), or go straight to the [browser tools](https://duguid.com.au/tools/), nothing to install.
 - **Developers:** `pip install aus-accounting-mcp`, a local MCP server for ATO benchmarks, Payday Super timing and Division 7A loan review ([source](https://github.com/ryanduguid/australian-accounting/tree/main/apps/aus-accounting-mcp), [PyPI](https://pypi.org/project/aus-accounting-mcp/), [MCP registry](https://registry.modelcontextprotocol.io/v0.1/servers/io.github.ryanduguid%2Faus-accounting/versions/latest)).
 - **Evaluators:** [public evaluations](https://duguid.com.au/evaluate/), plus credentials, release provenance and test evidence on the [evidence page](https://duguid.com.au/evidence/).
 
@@ -16,7 +16,7 @@ Accountant in Newcastle, Australia. I build open-source review tools for Austral
 - [Ozzit](https://github.com/ryanduguid/Ozzit): 134 native Excel LAMBDA functions for financial modelling and GST arithmetic.
 - [DrDebits](https://github.com/ryanduguid/DrDebits): APES 110 and TPB Code guardrails for LLM-assisted tax work.
 
-Upstream: 28 merged pull requests to [OpenAccountants](https://github.com/OpenAccountants/openaccountants/pulls?q=is%3Apr+author%3Aryanduguid+is%3Amerged), including the Australian super, FBT, Division 7A and BAS guides, and a merged [Meltano SDK](https://github.com/meltano/sdk/pull/3727) change.
+Upstream: 28 merged pull requests to [OpenAccountants](https://github.com/OpenAccountants/openaccountants/pulls?q=is%3Apr+author%3Aryanduguid+is%3Amerged), including the Australian super, FBT, Division 7A and [BAS](https://github.com/OpenAccountants/openaccountants/pull/85) guides, and a merged [Meltano SDK](https://github.com/meltano/sdk/pull/3727) change.
 
 ## Background
 
