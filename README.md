@@ -13,7 +13,7 @@ I'm an accountant in Newcastle, Australia. I build open-source controls for Aust
 - [australian-accounting-skills](https://github.com/ryanduguid/australian-accounting-skills) provides 19 preparation workflows for public practice and subcontractor accounting.
 - [Ozzit](https://github.com/ryanduguid/Ozzit) provides 134 native Excel LAMBDA functions for financial modelling and GST arithmetic.
 
-[See the full project catalogue and worked examples](https://duguid.com.au/).
+[See the full project catalogue and worked examples](https://duguid.com.au/). Accountants start with the [tools and worked examples](https://duguid.com.au/tools/), developers with the [local MCP server](https://github.com/ryanduguid/australian-accounting/tree/main/apps/aus-accounting-mcp), evaluators with the [public evaluations](https://duguid.com.au/evaluate/) run on fabricated inputs.
 
 The projects use synthetic public examples and support professional review. They do not lodge or write to ledgers.
 

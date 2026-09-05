@@ -122,6 +122,15 @@ class TestAuthorityRoutes(unittest.TestCase):
             with self.subTest(text=text):
                 self.assertIn(text, self.llms)
 
+    def test_the_profile_routes_accountants_developers_and_evaluators(self):
+        for url in (
+            "https://duguid.com.au/tools/",
+            "https://github.com/ryanduguid/australian-accounting/tree/main/apps/aus-accounting-mcp",
+            "https://duguid.com.au/evaluate/",
+        ):
+            with self.subTest(url=url):
+                self.assertIn(url, self.readme)
+
 
 class TestGeometry(unittest.TestCase):
     def test_divider_column_at_72(self):
