@@ -51,7 +51,7 @@ class TestProfileOpening(unittest.TestCase):
             "accounting-review-pipeline",
             "australian-accounting-skills",
             "Ozzit",
-            "DrDebits",
+            "llm-tax-guardrails",
         )
         links = re.findall(r"^- \[[^\]]+\]\((https://[^)]+)\)", selected, re.MULTILINE)
         self.assertEqual(

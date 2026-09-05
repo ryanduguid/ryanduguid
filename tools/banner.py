@@ -25,10 +25,10 @@ CONTENT = ROOT / "tools" / "banner_content.json"
 
 TARGETS = (
     "DiogenesLamp",
-    "DrDebits",
-    "FireFalcon",
+    "llm-tax-guardrails",
+    "au-fpa-pack",
     "Ozzit",
-    "PaciolisCube",
+    "planning-analytics-model",
     "SolomonsSword",
     "TheExchequerTally",
     "accounting-excel-toolkit",

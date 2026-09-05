@@ -4,7 +4,7 @@ Tracking-only forks. No Australian accounting changes are made in these reposito
 
 File issues and PRs upstream, not here. Do not copy fork code into `ryanduguid` MIT / CC-BY-4.0 / AGPL repositories without an attribution and licence-compatibility check (see Ozzit `ATTRIBUTION.md` pattern).
 
-Active Australian work lives in originals, notably `australian-accounting`, `accounting-review-pipeline`, `FireFalcon` (AU layer on `openfpa`), `PaciolisCube`, and the skill packs. Forks below exist only to track upstreams or to hold a contribution branch.
+Active Australian work lives in originals, notably `australian-accounting`, `accounting-review-pipeline`, `au-fpa-pack` (AU layer on `openfpa`), `planning-analytics-model`, and the skill packs. Forks below exist only to track upstreams or to hold a contribution branch.
 
 Reviewed 4 September 2026 against each fork's last commit date and its GitHub archived flag; the `l10n-australia` row was re-read on 5 September 2026 for the Odoo decision. `tools/check_links.py` checks every link here and allow-lists, by name, the forks the two archive tables record.
 
@@ -12,7 +12,7 @@ Reviewed 4 September 2026 against each fork's last commit date and its GitHub ar
 
 | Fork | Upstream | Why keep |
 |------|----------|----------|
-| [openfpa](https://github.com/ryanduguid/openfpa) | [JeffBrines/openfpa](https://github.com/JeffBrines/openfpa) | AU FP&A pack in `FireFalcon`; upstream proposal [JeffBrines/openfpa#14](https://github.com/JeffBrines/openfpa/pull/14) |
+| [openfpa](https://github.com/ryanduguid/openfpa) | [JeffBrines/openfpa](https://github.com/JeffBrines/openfpa) | AU FP&A pack in `au-fpa-pack`; upstream proposal [JeffBrines/openfpa#14](https://github.com/JeffBrines/openfpa/pull/14) |
 | [openaccountants](https://github.com/ryanduguid/openaccountants) | [openaccountants/openaccountants](https://github.com/openaccountants/openaccountants) | Contribution [openaccountants/openaccountants#85](https://github.com/openaccountants/openaccountants/pull/85); historical reference only |
 | [sdk](https://github.com/ryanduguid/sdk) | [meltano/sdk](https://github.com/meltano/sdk) | Contribution [meltano/sdk#3727](https://github.com/meltano/sdk/pull/3727) |
 | [xero-mcp-server](https://github.com/ryanduguid/xero-mcp-server) | [XeroAPI/xero-mcp-server](https://github.com/XeroAPI/xero-mcp-server) | Holds the bearer-token fix to `ensureError` (fork PR #1, 30 August 2026). Upstream merged the matching `formatError` fix as XeroAPI/xero-mcp-server#173 but `ensureError` still stringifies the thrown value, so no upstream PR covers it yet. The prepared upstream PR body is in [docs/xero-mcp-server-upstream-pr.md](docs/xero-mcp-server-upstream-pr.md); open it from the fork branch, then move this row to tracking only once it lands. |
@@ -41,7 +41,7 @@ Read-only on GitHub as at 4 September 2026. They stay listed so nobody treats th
 | [bank-statement-import](https://github.com/ryanduguid/bank-statement-import) | [OCA/bank-statement-import](https://github.com/OCA/bank-statement-import) | Odoo stack; an input to the Odoo decision below. |
 | [rest-application](https://github.com/ryanduguid/rest-application) | [pledger-io/rest-application](https://github.com/pledger-io/rest-application) | |
 
-Do not mirror further to build AU packs; use a small AU layer plus an upstream link, as in `FireFalcon` / `PaciolisCube`.
+Do not mirror further to build AU packs; use a small AU layer plus an upstream link, as in `au-fpa-pack` / `planning-analytics-model`.
 
 ## Archive
 
@@ -64,7 +64,7 @@ The Odoo decision (ship one real module, or archive every OCA and Odoo fork: the
 
 ## Policy
 
-1. One tracking fork per upstream. `openfpa` fork vs `FireFalcon` is the deliberate exception (one pure-tracking, one AU layer).
+1. One tracking fork per upstream. `openfpa` fork vs `au-fpa-pack` is the deliberate exception (one pure-tracking, one AU layer).
 2. Keep fork descriptions as `Fork, upstream <link>, no AU changes` where GitHub allows editing.
 3. Never lodge client data, credentials, or payroll exports in forks or originals. Examples are fabricated.
 4. A fork more than six months behind its upstream with no open PR is synced or deleted; a fork whose upstream has moved or whose history is empty is archived.
