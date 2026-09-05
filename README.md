@@ -18,12 +18,13 @@ I'm an accountant in Newcastle, Australia. I build open-source review tools for 
 
 Upstream: 28 merged pull requests to [OpenAccountants](https://github.com/OpenAccountants/openaccountants/pulls?q=is%3Apr+author%3Aryanduguid+is%3Amerged), including the Australian super, FBT, Division 7A and [BAS](https://github.com/OpenAccountants/openaccountants/pull/85) guides, and a merged [Meltano SDK](https://github.com/meltano/sdk/pull/3727) change.
 
+**September 2026:** the openfpa FP&A pack now ships as [au-fpa-pack](https://github.com/ryanduguid/au-fpa-pack) (renamed 6 September). A [fix to OCA's account_financial_report module](https://github.com/OCA/account-financial-reporting/pull/1565) is approved and waiting on the maintainer. [TaxJarvis](https://github.com/ryanduguid/TaxJarvis) pages now advertise their feeds and carry Open Graph previews. Trying a tool? Open an issue with the first false positive you hit.
+
 ## Background
 
 - Provisional member of Chartered Accountants ANZ
 - SAP S/4HANA certified in [FI](https://www.credly.com/badges/750e7557-ab6d-4b28-a241-8252c263613a/public_url) and [CO](https://www.credly.com/badges/0f753c71-5f49-41be-8519-51e81030a8f1/public_url)
 - Xero specialist certification (Level 3)
-
-Tooling: OpenHands on an old uni laptop running CachyOS, Hermes Agent on a Windows 11 desktop, and vitamin D.
+- Tooling: OpenHands on an old uni laptop running CachyOS, Hermes Agent on a Windows 11 desktop, and vitamin D.
 
 Written independently, in my own time and on my own equipment. Not advice.
