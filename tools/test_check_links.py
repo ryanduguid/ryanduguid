@@ -6,6 +6,7 @@ import contextlib
 import io
 import tempfile
 import unittest
+import urllib.error
 from pathlib import Path
 from unittest.mock import patch
 
@@ -27,10 +28,117 @@ class UrlPolicyTests(unittest.TestCase):
                 patch.object(check_links, "fetch_final_url", return_value=(
                     200, "https://github.com/ryanduguid/australian-accounting"
                 )),
+                patch.object(check_links, "repository_is_archived", lambda name: False),
                 contextlib.redirect_stdout(output),
             ):
                 self.assertEqual(check_links.main(), 1)
             self.assertIn("rename redirect, repoint the link", output.getvalue())
+            self.assertNotIn("archived", output.getvalue())
+
+    def test_archived_repository_links_fail_outside_the_allowlist(self) -> None:
+        archived = {"payday-super-checker": True, "australian-accounting": False, "pyxero": True}
+        urls = {
+            "https://github.com/ryanduguid/payday-super-checker": {"README.md"},
+            "https://github.com/ryanduguid/australian-accounting/tree/main/packages/x": {"llms.txt"},
+            "https://github.com/ryanduguid/pyxero": {"FORKS.md"},
+            # the same archived URL in FORKS.md and a docs file: FORKS.md is
+            # exempt, the docs file is not
+            "https://GitHub.com/RyanDuguid/PyXero/releases": {"FORKS.md", "docs/MAINTAINING.md"},
+        }
+
+        failures = check_links.archived_target_failures(
+            urls, lookup=archived.__getitem__
+        )
+
+        self.assertEqual(
+            sorted(failure.split(":", 1)[0] for failure in failures),
+            ["README.md", "docs/MAINTAINING.md"],
+        )
+        self.assertTrue(any("ryanduguid/pyxero is archived" in f for f in failures))
+
+    def test_archived_lookup_failure_is_a_failure(self) -> None:
+        def lookup(name: str) -> bool:
+            raise urllib.error.URLError("rate limited")
+
+        failures = check_links.archived_target_failures(
+            {"https://github.com/ryanduguid/Ozzit": {"README.md"}}, lookup=lookup
+        )
+
+        self.assertEqual(len(failures), 1)
+        self.assertIn("archived lookup failed", failures[0])
+
+    def test_repository_verdicts_are_cached_including_failures(self) -> None:
+        attempts: list[str] = []
+
+        def fetch(name: str) -> bool:
+            attempts.append(name)
+            if name == "broken":
+                raise urllib.error.URLError("rate limited")
+            return name == "hardhat-ledger"
+
+        with (
+            patch.object(check_links, "fetch_repository_archived", fetch),
+            patch.object(check_links, "_ARCHIVED_VERDICTS", {}),
+        ):
+            self.assertTrue(check_links.repository_is_archived("hardhat-ledger"))
+            self.assertTrue(check_links.repository_is_archived("hardhat-ledger"))
+            self.assertFalse(check_links.repository_is_archived("Ozzit"))
+            for _ in range(2):
+                with self.assertRaises(urllib.error.URLError):
+                    check_links.repository_is_archived("broken")
+
+        self.assertEqual(attempts, ["hardhat-ledger", "Ozzit", "broken"])
+
+    def test_fetch_repository_archived_retries_server_errors(self) -> None:
+        class ApiResponse:
+            def __enter__(self) -> "ApiResponse":
+                return self
+
+            def __exit__(self, *args: object) -> None:
+                return None
+
+            def read(self) -> bytes:
+                return b'{"full_name": "ryanduguid/hardhat-ledger", "archived": true}'
+
+        attempts = 0
+
+        def opener(request: object, timeout: int) -> ApiResponse:
+            nonlocal attempts
+            attempts += 1
+            if attempts == 1:
+                raise urllib.error.HTTPError(
+                    "https://api.github.com/repos/ryanduguid/hardhat-ledger",
+                    502,
+                    "Bad Gateway",
+                    {},
+                    None,
+                )
+            return ApiResponse()
+
+        self.assertTrue(
+            check_links.fetch_repository_archived("hardhat-ledger", opener=opener)
+        )
+        self.assertEqual(attempts, 2)
+
+    def test_main_reports_an_archived_target_once_per_link(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            (root / "README.md").write_text(
+                "[Payday](https://github.com/ryanduguid/payday-super-checker)\n",
+                encoding="utf-8",
+            )
+            output = io.StringIO()
+            with (
+                patch.object(check_links, "ROOT", root),
+                patch.object(check_links, "FILES", ["README.md"]),
+                patch.object(check_links, "fetch_final_url", return_value=(
+                    200, "https://github.com/ryanduguid/payday-super-checker"
+                )),
+                patch.object(check_links, "repository_is_archived", lambda name: True),
+                contextlib.redirect_stdout(output),
+            ):
+                self.assertEqual(check_links.main(), 1)
+            self.assertEqual(output.getvalue().count("is archived"), 1)
 
     def test_normalises_markdown_code_span_url(self) -> None:
         self.assertEqual(
