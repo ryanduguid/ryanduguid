@@ -33,11 +33,11 @@ OLD_GITHUB_URLS = (
 # The intended profile pins, in display order. docs/MAINTAINING.md is the
 # record the owner applies in the GitHub UI, so the two must agree.
 INTENDED_PINS = (
-    "australian-accounting",
-    "llm-tax-guardrails",
-    "Ozzit",
-    "australian-accounting-skills",
     "accounting-review-pipeline",
+    "Ozzit",
+    "australian-accounting",
+    "australian-accounting-skills",
+    "llm-tax-guardrails",
     "au-tax-legislation-corpus",
 )
 # Repositories archived on 2 and 3 September 2026 after the subtree imports.
