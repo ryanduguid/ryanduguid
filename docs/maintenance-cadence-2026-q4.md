@@ -4,6 +4,8 @@ The README cuts, native release example and static Payday page were brought forw
 
 At most one new PR per week across the estate, with zero on investigation-only or maintainer-waiting weeks. One accounting or evaluator problem per PR, normally 1 to 3 edited files and roughly 20 to 150 authored lines; documentation moves may be larger. Do not split a coherent change or combine unrelated repositories to hit a count. Updates to an existing upstream PR are not a reason to open another one.
 
+Dependabot pull requests sit outside that count: they are not authored work. Fifteen repositories run weekly dependency checks, so they arrive in batches. Merge the ones whose checks pass in a single pass on the first Monday after they open, close a bump that would move a pin the tests hold (the release-policy commit pins are already excluded in each Dependabot configuration), and record a week in which only Dependabot merges happened as a zero-PR week. A dependency bump that needs an authored change to pass, such as a test that pins a version string, counts as that week's one PR.
+
 - Week 1, 7 to 13 September: check that Ozzit's published image, v3.2.0 hash and capture recipe remain consistent. Record any actual reproduction failure and retain the distinction from native verification of main.
 - Week 2, 14 to 20 September: check the Payday page against its pinned reproduction record and any actual reader question about remittance versus receipt.
 - Week 3, 21 to 27 September: check whether the Harbour Light example makes the positive 13-week cash balance and negative year-end cash balance understandable. Record the specific assumption or explanation a reader questions.
