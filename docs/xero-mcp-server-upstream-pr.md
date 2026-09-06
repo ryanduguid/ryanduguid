@@ -1,5 +1,13 @@
 # Prepared upstream pull request: XeroAPI/xero-mcp-server
 
+Status on 6 September 2026: opened as
+[XeroAPI/xero-mcp-server#305](https://github.com/XeroAPI/xero-mcp-server/pull/305)
+from branch `fix/ensure-error-token-leak`, the fork commit rebased onto
+upstream `main` at `f24583c`. Verified before opening: the two credential
+cases fail against the unchanged `ensureError` and pass with the fix, the
+full `vitest` suite passes (18 tests) and `npm run lint` is clean. The record
+below is the state before it was opened.
+
 Status on 4 September 2026: not yet opened. Upstream `main` still carries an
 `ensureError` that serialises any non-`Error` thrown value straight into the
 message, and no open or merged upstream pull request touches
