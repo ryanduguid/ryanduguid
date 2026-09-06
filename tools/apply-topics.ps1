@@ -10,7 +10,6 @@ $repoTopics = @{
     "ryanduguid/australian-accounting-skills" = @("claude-code", "agent-skills", "public-practice", "australian-accounting")
     "ryanduguid/llm-tax-guardrails" = @("ai-guardrails", "ethics", "apes-110", "tpb", "tax-agents")
     "ryanduguid/au-tax-legislation-corpus" = @("legislation-corpus", "tax-law", "australian-taxation", "python")
-    "ryanduguid/awesome-australian-accounting-tech" = @("awesome-list", "australian-accounting", "tax-tech", "open-source")
     "ryanduguid/accounting-review-pipeline" = @("trial-balance", "close-controls", "financial-reporting", "reconciliation", "python", "monthly-close")
 }
 
