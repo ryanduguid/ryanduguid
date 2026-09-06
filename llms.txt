@@ -53,7 +53,7 @@ Canonical site index: https://duguid.com.au/llms.txt
 - **Monthly Close Controls** (https://github.com/ryanduguid/accounting-review-pipeline/tree/main/packages/monthly-close-control-plane): Local trial-balance review packs with exception surfacing. The distribution remains `monthly-close-control-plane`. It does not approve or lock a close.
 - **llm-tax-guardrails** (https://github.com/ryanduguid/llm-tax-guardrails): DrDebits, APES 110 and TPB-aligned operating boundaries for LLM-assisted taxation workflows.
 - **Xero Ledger Review Gate** (https://github.com/ryanduguid/accounting-review-pipeline/tree/main/packages/elizabeth-anne-alexander): Synthetic-data demonstration of a fixed-policy trial-balance review boundary. The distribution and command remain `elizabeth-anne-alexander`.
-- **awesome-australian-accounting-tech** (https://github.com/ryanduguid/awesome-australian-accounting-tech): Curated index of AU accounting libraries, ATO datasets, and legislation APIs.
+- **Related resources** (https://duguid.com.au/tools/#related-resources): third-party libraries, ATO guidance and Commonwealth legislation sources, kept on the site since the separate index repository was archived on 6 September 2026.
 
 ## Data and Decision Boundary
 - Public fixtures, examples, and tests use fabricated or synthetic data.
