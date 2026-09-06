@@ -16,7 +16,6 @@ TOPIC_REPOSITORIES = (
     "Ozzit",
     "llm-tax-guardrails",
     "au-tax-legislation-corpus",
-    "awesome-australian-accounting-tech",
 )
 BANNER_REPOSITORIES = (
     "australian-accounting",
