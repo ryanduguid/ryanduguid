@@ -84,7 +84,6 @@ ARCHIVED_TARGET_ALLOWLIST: dict[str, frozenset[str]] = {
             "bank-statement-import",
             "rest-application",
             # awaiting the owner's archive action
-            "django-money",
             "l10n-australia",
             "account-reconcile",
             "account-financial-reporting",

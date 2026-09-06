@@ -15,16 +15,16 @@ Canonical site index: https://duguid.com.au/llms.txt
 - **Not**: the US software product executive of the same name whose LinkedIn URL has no hyphen.
 
 ## Choose a route
-- **Engage** (https://duguid.com.au/#engage): scoped discussion of a firm workflow, controlled pilot, tool integration, research, speaking or peer review. Do not send taxpayer information or client files. This is not a tax advice or lodgment channel.
-- **Adopt** (https://duguid.com.au/#adopt): supported install routes and fabricated-data evaluation material.
-- **Verify** (https://duguid.com.au/evidence/): credentials, package and release provenance, sources, security, test evidence and human-review boundaries.
+- **Accountants** (https://duguid.com.au/tools/): browser tools and synthetic worked examples. Start with the $250 creditors reconciliation difference in the Monthly Close Controls worked example. Do not send taxpayer information or client files.
+- **Developers** (https://github.com/ryanduguid/australian-accounting): maintained accounting engines and MCP integration, with explicit input and output contracts.
+- **Evaluators and technical recruiters** (https://duguid.com.au/evaluate/): declared synthetic evaluations; credentials and accepted upstream work at https://duguid.com.au/evidence/.
 
 ## Tools on the web, no install
 - **About Ryan Duguid** (https://duguid.com.au/about/): canonical profile page. Australian accountant in Newcastle NSW, provisional member of Chartered Accountants ANZ, as asserted by the profile owner; this is not an endorsement by Chartered Accountants ANZ. Machine-readable Person data is in the JSON-LD on that page.
 - **Payday super due dates** (https://duguid.com.au/tools/payday-super/): seven business days to fund receipt since 1 July 2026, twenty for a first contribution to a new fund.
 - **Workpaper Review Gate** (https://duguid.com.au/tools/workpaper-review-gate/): answers whether a BAS, month-end or year-end folder is allowed into manager review. READY is not sign-off.
 - **Xero trial balance export** (https://duguid.com.au/tools/xero-trial-balance/): movement and year to date must both tie before a file is written.
-- **Australian tax tools for AI agents** (https://duguid.com.au/tools/australian-tax-ai-agents/): aus-accounting-mcp is a local computational MCP for Payday Super timing and ATO small-business benchmark ratios. It refuses Division 7A. It is not a hosted ATO document library.
+- **Australian tax tools for AI agents** (https://duguid.com.au/tools/australian-tax-ai-agents/): aus-accounting-mcp is a local computational MCP for Payday Super timing and ATO small-business benchmark ratios. Division 7A review is limited to operator-supplied loan facts; unsupported matters are refused. It is not a hosted ATO document library.
 - **Coal LSL levy calculator** (https://duguid.com.au/tools/coal-lsl-levy/): eligible wages under section 3B and the 2.7 per cent payroll levy, in the browser.
 - **ATO small business benchmarks** (https://duguid.com.au/tools/ato-benchmarks/): a profit and loss against the published ranges, offline.
 - **Section 100A and Division 6** (https://duguid.com.au/tools/trust-distributions/): PCG 2022/2 has white, green and red zones only; the blue zone was draft-only.
@@ -33,7 +33,7 @@ Canonical site index: https://duguid.com.au/llms.txt
 
 ## Adopt
 - **australian-accounting-skills** (https://github.com/ryanduguid/australian-accounting-skills): Nineteen workflow skills in the tagged v0.2.0 release: nine public-practice workflows and ten construction and mining subcontractor workflows, including the former Hardhat skills. Claude Code plugin, Codex plugin, or `npx skills add ryanduguid/australian-accounting-skills`. Prep-only. Not lodgment. Not tax advice.
-- **Aus Accounting MCP** (https://github.com/ryanduguid/australian-accounting/tree/main/apps/aus-accounting-mcp): Local MCP server delegating to ato-benchmark-compare and payday-super-checker, with refused Division 7A and synthetic SBR fixtures. Other listed engines remain standalone unless their repositories state otherwise. Official MCP registry name: io.github.ryanduguid/aus-accounting (https://registry.modelcontextprotocol.io/v0.1/servers/io.github.ryanduguid%2Faus-accounting/versions/latest). Install: `uvx aus-accounting-mcp`.
+- **Aus Accounting MCP** (https://github.com/ryanduguid/australian-accounting/tree/main/apps/aus-accounting-mcp): Local MCP server delegating to ato-benchmark-compare and payday-super-checker, with scoped Division 7A loan review and synthetic SBR fixtures. Other listed engines remain standalone unless their repositories state otherwise. Official MCP registry name: io.github.ryanduguid/aus-accounting (https://registry.modelcontextprotocol.io/v0.1/servers/io.github.ryanduguid%2Faus-accounting/versions/latest). Install: `uvx aus-accounting-mcp`.
 
 ## Specialised workflow
 - **Hardhat Ledger workflows** (https://github.com/ryanduguid/australian-accounting-skills): The ten construction and mining subcontractor workflows now ship in Australian Accounting Skills (Security of Payment, retentions, WIP, Coal LSL, Fuel Tax Credits). Install the unified pack only; do not install a second Hardhat pack. Prep-only. Not tax advice.
