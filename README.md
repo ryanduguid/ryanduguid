@@ -10,7 +10,7 @@ Start with the [fictional Newcastle cash-flow case](https://duguid.com.au/evalua
 
 ## Selected work
 
-- [au-fpa-pack](https://github.com/ryanduguid/au-fpa-pack) explains profit and cash through a fictional Newcastle maintenance business, with an Excel forecast, a management briefing and a receipt-delay scenario.
+- [au-fpa-pack](https://github.com/ryanduguid/au-fpa-pack) explains profit and cash through a fictional Newcastle maintenance business, with an Excel forecast, a management briefing and a scenario where a customer pays late.
 - [australian-accounting](https://github.com/ryanduguid/australian-accounting) brings the Australian tax and payroll engines together with the local MCP server.
 - [accounting-review-pipeline](https://github.com/ryanduguid/accounting-review-pipeline) connects Xero exports, close controls and review packs with Excel and Power BI.
 - [australian-accounting-skills](https://github.com/ryanduguid/australian-accounting-skills) provides preparation workflows for public practice and subcontractor accounting: 19 in release v0.2.1 and 50 on the default branch preparing v0.3.0.
@@ -31,7 +31,7 @@ I publish [Aus Accounting MCP](https://registry.modelcontextprotocol.io/v0.1/ser
 ## Contributions
 
 - **Meltano SDK:** I fixed OAuth refresh-token handling so the authenticator keeps a replacement token and preserves the existing token when no replacement arrives. The change includes regression tests and updates the in-memory authenticator. Persistent configuration write-back is outside its scope. [Merged 8 August 2026](https://github.com/meltano/sdk/pull/3727).
-- **OpenAccountants:** I restored Australian BAS guide corrections after an older platform export overwrote them, and added checks for stale source changes. The repository checks detect the observed overwrite pattern; prevention in the private exporter remains a separate integration boundary. [Merged 11 August 2026](https://github.com/OpenAccountants/openaccountants/pull/85).
+- **OpenAccountants:** I restored Australian BAS guide corrections after an older platform export overwrote them, and added checks for stale source changes. The repository checks detect this overwrite pattern. Preventing it also requires changes to the private exporter. [Merged 11 August 2026](https://github.com/OpenAccountants/openaccountants/pull/85).
 
 ## Setup
 
