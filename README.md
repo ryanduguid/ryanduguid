@@ -37,4 +37,4 @@ Across 15 upstream projects I have [47 merged pull requests](https://github.com/
 
 ## Setup
 
-OpenHands runs on my old uni laptop with CachyOS. I use Hermes Agent on my Windows 11 IoT Enterprise LTSC desktop and supplement my vitamin D.
+OpenHands runs on my old uni laptop with CachyOS, unattended, so its commit timestamps show when a job finished rather than when I was at a keyboard. I use Hermes Agent on my Windows 11 IoT Enterprise LTSC desktop and supplement my vitamin D. Both machines are my own and everything here is built in my own time.
