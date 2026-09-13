@@ -30,6 +30,8 @@ I publish [Aus Accounting MCP](https://registry.modelcontextprotocol.io/v0.1/ser
 
 ## Contributions
 
+Across 15 upstream projects I have [47 merged pull requests](https://github.com/search?q=is%3Apr+author%3Aryanduguid+is%3Amerged+merged%3A%3C%3D2026-09-13+-user%3Aryanduguid&type=pullrequests) as at 13 September 2026, 31 of them in [OpenAccountants](https://github.com/OpenAccountants/openaccountants/pulls?q=is%3Apr+author%3Aryanduguid+is%3Amerged+merged%3A%3C%3D2026-09-13). Two examples:
+
 - **Meltano SDK:** I fixed OAuth refresh-token handling so the authenticator keeps a replacement token and preserves the existing token when no replacement arrives. The change includes regression tests and updates the in-memory authenticator. Persistent configuration write-back is outside its scope. [Merged 8 August 2026](https://github.com/meltano/sdk/pull/3727).
 - **OpenAccountants:** I restored Australian BAS guide corrections after an older platform export overwrote them, and added checks for stale source changes. The repository checks detect this overwrite pattern. Preventing it also requires changes to the private exporter. [Merged 11 August 2026](https://github.com/OpenAccountants/openaccountants/pull/85).
 
