@@ -36,7 +36,7 @@ Every fork here is due for review under the retention rule below; none holds an 
 
 ## Preserved for retirement
 
-Ryan selected these three forks for deletion. On 10 September 2026, checks by author and fork head found no open upstream PRs. Complete advertised Git histories were backed up and restored into fresh repositories, with matching refs and reachable objects. Upstream links retain the contribution record after the forks are deleted.
+Ryan selected these 3 forks for deletion. On 10 September 2026, checks by author and fork head found no open upstream PRs. Complete advertised Git histories were backed up and restored into fresh repositories, with matching refs and reachable objects. Upstream links retain the contribution record after the forks are deleted.
 
 | Fork | Upstream | Merged contributions |
 | --- | --- | --- |
