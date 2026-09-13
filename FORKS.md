@@ -1,6 +1,8 @@
 # Contribution forks
 
-Reviewed 10 September 2026. These are contribution forks, not original Australian accounting products. File product issues upstream. Each section states whether its forks still hold an open upstream contribution.
+Reviewed 13 September 2026. These are contribution forks, not original Australian accounting products. File product issues upstream. Each section states whether its forks still hold an open upstream contribution.
+
+Open, merged and closed are different states. The Open contributions column lists only pull requests open at the review date; a merged or closed one moves to the fork's Recent contributions note and keeps its link, because the upstream record is what shows the work.
 
 ## Active forks
 
@@ -11,12 +13,18 @@ Reviewed 10 September 2026. These are contribution forks, not original Australia
 | [account-reconcile](https://github.com/ryanduguid/account-reconcile) | [OCA/account-reconcile](https://github.com/OCA/account-reconcile) | [#1034](https://github.com/OCA/account-reconcile/pull/1034), [#1030](https://github.com/OCA/account-reconcile/pull/1030) |
 | [xero-python](https://github.com/ryanduguid/xero-python) | [XeroAPI/xero-python](https://github.com/XeroAPI/xero-python) | [#243](https://github.com/XeroAPI/xero-python/pull/243) |
 | [l10n-australia](https://github.com/ryanduguid/l10n-australia) | [OCA/l10n-australia](https://github.com/OCA/l10n-australia) | [#1](https://github.com/OCA/l10n-australia/pull/1) |
-| [openaccountants](https://github.com/ryanduguid/openaccountants) | [openaccountants/openaccountants](https://github.com/openaccountants/openaccountants) | [#151](https://github.com/openaccountants/openaccountants/pull/151), [#150](https://github.com/openaccountants/openaccountants/pull/150), [#131](https://github.com/openaccountants/openaccountants/pull/131) |
+| [openaccountants](https://github.com/ryanduguid/openaccountants) | [openaccountants/openaccountants](https://github.com/openaccountants/openaccountants) | [#131](https://github.com/openaccountants/openaccountants/pull/131) |
 | [xero-mcp-server](https://github.com/ryanduguid/xero-mcp-server) | [XeroAPI/xero-mcp-server](https://github.com/XeroAPI/xero-mcp-server) | [#305](https://github.com/XeroAPI/xero-mcp-server/pull/305), [#304](https://github.com/XeroAPI/xero-mcp-server/pull/304), [#303](https://github.com/XeroAPI/xero-mcp-server/pull/303), [#302](https://github.com/XeroAPI/xero-mcp-server/pull/302), [#301](https://github.com/XeroAPI/xero-mcp-server/pull/301), [#300](https://github.com/XeroAPI/xero-mcp-server/pull/300), [#299](https://github.com/XeroAPI/xero-mcp-server/pull/299), [#298](https://github.com/XeroAPI/xero-mcp-server/pull/298), [#297](https://github.com/XeroAPI/xero-mcp-server/pull/297) |
 | [xero-command-line](https://github.com/ryanduguid/xero-command-line) | [XeroAPI/xero-command-line](https://github.com/XeroAPI/xero-command-line) | [#44](https://github.com/XeroAPI/xero-command-line/pull/44), [#42](https://github.com/XeroAPI/xero-command-line/pull/42) |
 | [openfpa](https://github.com/ryanduguid/openfpa) | [JeffBrines/openfpa](https://github.com/JeffBrines/openfpa) | [#17](https://github.com/JeffBrines/openfpa/pull/17) |
 | [fava](https://github.com/ryanduguid/fava) | [beancount/fava](https://github.com/beancount/fava) | [#2353](https://github.com/beancount/fava/pull/2353), [#2350](https://github.com/beancount/fava/pull/2350) |
 | [xero-mcp](https://github.com/ryanduguid/xero-mcp) | [john-zhang-dev/xero-mcp](https://github.com/john-zhang-dev/xero-mcp) | [#131](https://github.com/john-zhang-dev/xero-mcp/pull/131) |
+| [ERPNext-Australian-Localisation](https://github.com/ryanduguid/ERPNext-Australian-Localisation) | [Arus-Info/ERPNext-Australian-Localisation](https://github.com/Arus-Info/ERPNext-Australian-Localisation) | [#198](https://github.com/Arus-Info/ERPNext-Australian-Localisation/pull/198) |
+
+Recent contributions no longer open:
+
+- openaccountants: [#151](https://github.com/openaccountants/openaccountants/pull/151) and [#150](https://github.com/openaccountants/openaccountants/pull/150), both merged 10 September 2026.
+- ERPNext-Australian-Localisation: [#194](https://github.com/Arus-Info/ERPNext-Australian-Localisation/pull/194), merged 7 September 2026.
 
 ## Archived forks retained for open PRs
 
@@ -28,11 +36,7 @@ Reviewed 10 September 2026. These are contribution forks, not original Australia
 
 ## Forks with no open contribution
 
-Every fork here is due for review under the retention rule below; none holds an open upstream pull request. Listing one is a record of that state, not a decision to delete it.
-
-| Fork | Upstream | Fork state | Last contribution |
-| --- | --- | --- | --- |
-| [ERPNext-Australian-Localisation](https://github.com/ryanduguid/ERPNext-Australian-Localisation) | [Arus-Info/ERPNext-Australian-Localisation](https://github.com/Arus-Info/ERPNext-Australian-Localisation) | active | none opened |
+A fork here is due for review under the retention rule below because it holds no open upstream pull request. Listing one is a record of that state, not a decision to delete it. No fork was in that state at the 13 September 2026 review.
 
 ## Preserved for retirement
 
