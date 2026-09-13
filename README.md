@@ -14,7 +14,7 @@ Start with the [fictional Newcastle cash-flow case](https://duguid.com.au/evalua
 - [australian-accounting](https://github.com/ryanduguid/australian-accounting) brings the Australian tax and payroll engines together with the local MCP server.
 - [accounting-review-pipeline](https://github.com/ryanduguid/accounting-review-pipeline) connects Xero exports, close controls and review packs with Excel and Power BI.
 - [australian-accounting-skills](https://github.com/ryanduguid/australian-accounting-skills) provides preparation workflows for public practice and subcontractor accounting: 19 in release v0.2.1 and 50 on the default branch preparing v0.3.0.
-- [Ozzit](https://github.com/ryanduguid/Ozzit) provides 133 native Excel LAMBDA functions plus five help tables for financial modelling and GST arithmetic.
+- [Ozzit](https://github.com/ryanduguid/Ozzit) provides 133 native Excel LAMBDA functions plus 5 help tables for financial modelling and GST arithmetic.
 
 Accountants can [browse the tools](https://duguid.com.au/tools/), developers can inspect the [local MCP server](https://github.com/ryanduguid/australian-accounting/tree/main/apps/aus-accounting-mcp), and reviewers can [reproduce the public evaluations](https://duguid.com.au/evaluate/) using fabricated inputs.
 
