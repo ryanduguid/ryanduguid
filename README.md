@@ -20,6 +20,27 @@ Accountants can [browse the tools](https://duguid.com.au/tools/), developers can
 
 The projects use synthetic public examples and support professional review. They do not lodge or write to ledgers.
 
+## How the accounting tools fit together
+
+Skills guide preparation. A configured assistant can call the local MCP server,
+which delegates calculations to independently released packages. Workpapers and
+unresolved exceptions go to an authorised human for review.
+
+```mermaid
+flowchart TB
+    assistant["Assistant using<br/>accounting skills"] <--> mcp["Aus Accounting MCP"]
+    mcp -->|Calculations| engines["Calculation packages"]
+    assistant -->|Workpapers and exceptions| reviewer["Authorised human review"]
+    official["Federal Register"] -->|Corpus build| corpus["Legislation corpus<br/>Finding aid"]
+    corpus -. Locate provisions .-> reviewer
+    official -. Check authority .-> reviewer
+```
+
+The [corpus](https://github.com/ryanduguid/au-tax-legislation-corpus) is a separate
+finding aid derived from the Register's EPUB reading view. It is not authorised
+legislation or an automatic source feed into the calculation engines. Dashed
+arrows show reference use, which still requires checking the applicable authority.
+
 ## Background
 
 - Provisional member of Chartered Accountants ANZ
