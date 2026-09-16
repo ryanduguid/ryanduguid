@@ -29,7 +29,7 @@ VENDOR='claude|anthropic|codex|openai|cursor|copilot|chatgpt|gemini|devin|codeiu
 DOMAIN='claude\.ai|claude\.com|anthropic\.com|openai\.com|chatgpt\.com|cursor\.(com|sh)|codeium\.com|windsurf\.com|cognition\.ai|devin\.ai|nousresearch\.com|qodo\.ai|openhands\.dev|all-hands\.dev'
 
 # Vendor words that are not plausible human names, so they can be matched alone.
-SOLE='claude|anthropic|openai|chatgpt|copilot|codex|cursor|codeium|windsurf|antigravity|qodo|openhands|nousresearch'
+SOLE='claude|anthropic|openai|chatgpt|copilot|codex|cursor|codeium|windsurf|antigravity|aider|qodo|openhands|nousresearch|review bot|review agent|review fixes'
 
 status=0
 
@@ -52,9 +52,7 @@ check_identity() {
 	email=${rest%%>*}
 
 	hit=''
-	if printf '%s' "$email" | grep -Eqi "^($DOMAIN)\$|@($DOMAIN)\$"; then
-		hit="vendor email domain"
-	elif ai_name "$name"; then
+	if ai_name "$name"; then
 		hit="vendor name"
 	else
 		# GitHub noreply addresses carry the account name: 123+claude[bot]@...
@@ -75,14 +73,15 @@ check_identity author "$(git var GIT_AUTHOR_IDENT)"
 check_identity committer "$(git var GIT_COMMITTER_IDENT)"
 
 # --- message ---------------------------------------------------------------
-# Comment lines are stripped by git after this hook, so drop them here too, and
+# Scan all lines, including comments, because cleanup=verbatim can retain them;
 # skip fenced code blocks so a quoted example is not read as a credit.
-awk -v vendor="$VENDOR" -v domain="$DOMAIN" -v hook="$hook" '
+# Remove combining marks and invisible format characters before matching, as
+# the shared release-policy scanner does.
+perl -CS -pe 's/[\p{M}\p{Cf}]//g' "$msg_file" | awk -v vendor="$VENDOR" -v domain="$DOMAIN" -v hook="$hook" '
 	function flag(why) {
 		printf "%s: %s line %d: %s\n", hook, why, NR, $0 > "/dev/stderr"
 		bad = 1
 	}
-	/^#/ { next }
 	{
 		line = tolower($0)
 		if (line ~ /^[ \t]*(```|~~~)/) { fence = !fence; next }
