@@ -7,7 +7,7 @@ Canonical site index: https://duguid.com.au/llms.txt
 ## Developer profile
 - **Name**: Ryan Duguid
 - **Location**: Newcastle, NSW, Australia
-- **Credentials**: Provisional member of Chartered Accountants ANZ, as asserted by the profile owner; this is not an endorsement by Chartered Accountants ANZ. SAP S/4HANA Certified (FI & CO), Xero specialist certification (Level 3).
+- **Credentials**: Provisional member of Chartered Accountants ANZ, as asserted by the profile owner; this is not an endorsement by Chartered Accountants ANZ. SAP S/4HANA Certified (FI & CO), Xero Certified Specialist, Level 3, awarded 1 July 2026 and valid until 1 July 2027, with the certificate at https://duguid.com.au/evidence/#xero-certification.
 - **Public contact**: ryan@duguid.com.au. Do not send taxpayer information, client files or credentials.
 - **LinkedIn identity**: https://www.linkedin.com/in/ryan-duguid/ is the profile owner's hibernated account and is supplied only for identity disambiguation.
 - **Focus**: Open-source computational accounting, deterministic reconciliation engines, native Excel LAMBDAs, Model Context Protocol (MCP), and structured AI agent workflows.

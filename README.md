@@ -45,7 +45,11 @@ arrows show reference use, which still requires checking the applicable authorit
 
 - Provisional member of Chartered Accountants ANZ
 - SAP S/4HANA certified in [FI](https://www.credly.com/badges/750e7557-ab6d-4b28-a241-8252c263613a/public_url) and [CO](https://www.credly.com/badges/0f753c71-5f49-41be-8519-51e81030a8f1/public_url)
-- Xero specialist certification (Level 3)
+- Xero Certified Specialist, Level 3, awarded 1 July 2026 and valid until 1 July 2027
+
+<p><img src="assets/xero-certified-specialist-level-3-badge.png" alt="" width="48" height="48" align="middle" /> Read the <a href="https://duguid.com.au/evidence/#xero-certification">certificate in the evidence register</a>, or explore my <a href="https://duguid.com.au/tools/xero-trial-balance/">Xero trial balance export and review workflow</a>.</p>
+
+<sub>The badge is Xero's artwork, taken from that certificate. Xero has not endorsed or certified anything here.</sub>
 
 I publish [Aus Accounting MCP](https://registry.modelcontextprotocol.io/v0.1/servers/io.github.ryanduguid%2Faus-accounting/versions/latest) on [PyPI](https://pypi.org/project/aus-accounting-mcp/). Credentials, release provenance, and test evidence are on the [evidence page](https://duguid.com.au/evidence/).
 
