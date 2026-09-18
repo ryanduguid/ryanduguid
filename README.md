@@ -1,26 +1,25 @@
 # Ryan Duguid
 
-I'm an accountant in Newcastle, Australia. I build open-source controls for Australian tax, payroll and financial reporting.
+I'm a Senior Accountant in Newcastle, Australia. I build open-source tools for cash-flow modelling, month-end review and Australian tax and payroll calculations.
 
-Start with the [fictional Newcastle cash-flow case](https://duguid.com.au/evaluate/#profit-and-cash): an Excel forecast, a management briefing, and a late-payment scenario.
+[Website](https://duguid.com.au/) · [Worked examples](https://duguid.com.au/evaluate/) · [Credentials and evidence](https://duguid.com.au/evidence/)
 
-<p align="center"><a href="https://github.com/ryanduguid/llm-tax-guardrails"><img src="https://img.shields.io/badge/APES%20110-Aligned%20Guardrails-4F485E?labelColor=04001F" alt="llm-tax-guardrails: APES 110 aligned guardrails" /></a> <a href="https://duguid.com.au/"><img src="https://img.shields.io/badge/Australian%20Accounting-Open%20Source-5C2D91?labelColor=04001F" alt="Open-source Australian accounting tools" /></a>
-  <a href="https://github.com/ryanduguid/Ozzit"><img src="https://img.shields.io/badge/Excel-133%20Native%20LAMBDAs-5C2D91?labelColor=04001F" alt="Ozzit: 133 native Excel LAMBDAs" /></a> <a href="https://www.python.org/"><img src="https://img.shields.io/badge/Python-3.10+-5C2D91?logo=python&logoColor=white&labelColor=04001F" alt="Python 3.10 or later" /></a>
-  <a href="https://modelcontextprotocol.io/"><img src="https://img.shields.io/badge/MCP-Standard%20Protocol-5C2D91?labelColor=04001F" alt="Model Context Protocol" /></a></p>
+Start with the [Newcastle cash-flow example](https://duguid.com.au/evaluate/#profit-and-cash). It follows a fictional maintenance business through an Excel forecast and management briefing, showing how a late customer payment changes cash without changing profit.
 
 ## Selected work
 
-- [au-fpa-pack](https://github.com/ryanduguid/au-fpa-pack) explains profit and cash through a fictional Newcastle maintenance business, with an Excel forecast, a management briefing and a scenario where a customer pays late.
-- [australian-accounting](https://github.com/ryanduguid/australian-accounting) brings the Australian tax and payroll engines together with the local MCP server.
-- [accounting-review-pipeline](https://github.com/ryanduguid/accounting-review-pipeline) connects Xero exports, close controls and review packs with Excel and Power BI.
-- [australian-accounting-skills](https://github.com/ryanduguid/australian-accounting-skills) provides preparation workflows for public practice and subcontractor accounting: 19 in release v0.2.1 and 50 on the default branch preparing v0.3.0.
-- [Ozzit](https://github.com/ryanduguid/Ozzit) provides 133 native Excel LAMBDA functions plus 5 help tables for financial modelling and GST arithmetic.
+- **[au-fpa-pack](https://github.com/ryanduguid/au-fpa-pack):** Australian cash-flow forecasts and management briefings using fictional businesses. Extends Guiderail's [openfpa](https://github.com/JeffBrines/openfpa).
+- **[Accounting Review Pipeline](https://github.com/ryanduguid/accounting-review-pipeline):** Xero exports, month-end exceptions and workpaper review packs, with Excel and Power BI components.
+- **[Ozzit](https://github.com/ryanduguid/Ozzit):** Native Excel LAMBDA functions for financial modelling and GST arithmetic, with editable examples. No macros or add-ins.
+- **[Australian Accounting](https://github.com/ryanduguid/australian-accounting):** Tax and payroll calculation packages, plus a local Model Context Protocol (MCP) server for supported tools.
+- **[Australian Accounting Skills](https://github.com/ryanduguid/australian-accounting-skills):** AI-assisted preparation workflows for public practice and subcontractor accounting. The repository distinguishes released workflows from development work.
 
-Accountants can [browse the tools](https://duguid.com.au/tools/), developers can inspect the [local MCP server](https://github.com/ryanduguid/australian-accounting/tree/main/apps/aus-accounting-mcp), and reviewers can [reproduce the public evaluations](https://duguid.com.au/evaluate/) using fabricated inputs.
+[Browse the tools](https://duguid.com.au/tools/) or [reproduce the public evaluations](https://duguid.com.au/evaluate/). Public examples use fabricated data; the forecasting example's independent accountant trial remains pending.
 
-The projects use synthetic public examples and support professional review. They do not lodge or write to ledgers.
+These are preparation and review aids. They do not lodge or write to ledgers; professional judgement and sign-off stay with the reviewer.
 
-## How the accounting tools fit together
+<details>
+<summary>How the accounting tools fit together</summary>
 
 Skills guide preparation. A configured assistant can call the local MCP server,
 which delegates calculations to independently released packages. Workpapers and
@@ -41,21 +40,23 @@ finding aid derived from the Register's EPUB reading view. It is not authorised
 legislation or an automatic source feed into the calculation engines. Dashed
 arrows show reference use, which still requires checking the applicable authority.
 
+Inspect the [local MCP server](https://github.com/ryanduguid/australian-accounting/tree/main/apps/aus-accounting-mcp), its [PyPI distribution](https://pypi.org/project/aus-accounting-mcp/) and its [MCP Registry listing](https://registry.modelcontextprotocol.io/v0.1/servers/io.github.ryanduguid%2Faus-accounting/versions/latest).
+
+</details>
+
 ## Background
 
 - Provisional member of Chartered Accountants ANZ
-- SAP S/4HANA certified in [FI](https://www.credly.com/badges/750e7557-ab6d-4b28-a241-8252c263613a/public_url) and [CO](https://www.credly.com/badges/0f753c71-5f49-41be-8519-51e81030a8f1/public_url)
+- SAP S/4HANA certified in [Financial Accounting (FI)](https://www.credly.com/badges/750e7557-ab6d-4b28-a241-8252c263613a/public_url) and [Management Accounting (CO)](https://www.credly.com/badges/0f753c71-5f49-41be-8519-51e81030a8f1/public_url)
 - Xero Certified Specialist, Level 3, awarded 1 July 2026 and valid until 1 July 2027
 
 <p><img src="assets/xero-certified-specialist-level-3-badge.png" alt="" width="48" height="48" align="middle" /> Read the <a href="https://duguid.com.au/evidence/#xero-certification">certificate in the evidence register</a>, or explore my <a href="https://duguid.com.au/tools/xero-trial-balance/">Xero trial balance export and review workflow</a>.</p>
 
 <sub>The badge is Xero's artwork, taken from that certificate. Xero has not endorsed or certified anything here.</sub>
 
-I publish [Aus Accounting MCP](https://registry.modelcontextprotocol.io/v0.1/servers/io.github.ryanduguid%2Faus-accounting/versions/latest) on [PyPI](https://pypi.org/project/aus-accounting-mcp/). Credentials, release provenance, and test evidence are on the [evidence page](https://duguid.com.au/evidence/).
-
 ## Contributions
 
-Across 15 upstream projects I have [49 merged pull requests](https://github.com/search?q=is%3Apr+author%3Aryanduguid+is%3Amerged+merged%3A%3C%3D2026-09-14+-user%3Aryanduguid&type=pullrequests) as at 14 September 2026, 33 of them in [OpenAccountants](https://github.com/OpenAccountants/openaccountants/pulls?q=is%3Apr+author%3Aryanduguid+is%3Amerged+merged%3A%3C%3D2026-09-14). Two examples:
+I also contribute fixes and tests to other open-source projects. [Browse my merged upstream pull requests](https://github.com/search?q=is%3Apr+author%3Aryanduguid+is%3Amerged+-user%3Aryanduguid&type=pullrequests), including:
 
 - **Meltano SDK:** I fixed OAuth refresh-token handling so the authenticator keeps a replacement token and preserves the existing token when no replacement arrives. The change includes regression tests and updates the in-memory authenticator. Persistent configuration write-back is outside its scope. [Merged 8 August 2026](https://github.com/meltano/sdk/pull/3727).
 - **OpenAccountants:** I restored Australian BAS guide corrections after an older platform export overwrote them, and added checks for stale source changes. The repository checks detect this overwrite pattern. Preventing it also requires changes to the private exporter. [Merged 11 August 2026](https://github.com/OpenAccountants/openaccountants/pull/85).
