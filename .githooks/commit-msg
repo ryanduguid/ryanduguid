@@ -1,0 +1,66 @@
+#!/usr/bin/env python3
+"""Reject AI attribution credits in commit messages.
+
+This local guard deliberately scans the stored message, including commented
+lines and folded trailer continuations, so it agrees with the repository policy.
+"""
+import re
+import subprocess
+import sys
+
+
+def comment_char():
+    try:
+        value = subprocess.check_output(
+            ["git", "config", "--get", "core.commentChar"],
+            text=True,
+            stderr=subprocess.DEVNULL,
+        ).strip()
+        return value or "#"
+    except subprocess.CalledProcessError:
+        return "#"
+
+
+def readings(path):
+    marker = comment_char()
+    candidates = []
+    folded = None
+    folded_at = 0
+    with open(path, encoding="utf-8") as message:
+        for number, raw in enumerate(message, 1):
+            line = raw.rstrip("\r\n")
+            # Git can retain commentary in messages created with -m/-F.
+            if line.startswith(marker):
+                line = line[len(marker):].lstrip(" \t")
+            if folded is not None and line[:1] in (" ", "\t"):
+                folded = folded + " " + line.strip()
+                candidates.append((folded, folded_at))
+                continue
+            folded = line
+            folded_at = number
+            candidates.append((line, number))
+    return candidates
+
+
+# Keep the patterns anchored: ordinary product/documentation references are
+# allowed, while explicit authorship trailers are not.
+CREDIT = re.compile(
+    r"^(?:co-authored-by|co- authored-by|generated-by|assisted-by|created-by)\s*:\s*"
+    r".*\b(?:claude|chatgpt|gpt(?:[- ]?\d+)?|openai|copilot|github copilot|"
+    r"gemini|anthropic|cursor|codewhisperer|amazon q)\b",
+    re.IGNORECASE,
+)
+
+
+def main():
+    if len(sys.argv) != 2:
+        return 2
+    for line, number in readings(sys.argv[1]):
+        if CREDIT.search(line):
+            print(f"commit-msg: AI attribution credit at line {number}", file=sys.stderr)
+            return 1
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())
