@@ -17,8 +17,9 @@ Start with the [fictional Newcastle cash-flow case](https://duguid.com.au/exampl
 - **[Ozzit](https://github.com/ryanduguid/Ozzit):** 133 native Excel LAMBDA functions plus 5 help tables for financial modelling and GST arithmetic, with editable examples. No macros or add-ins; needs Microsoft 365 or Excel 2024 and later. [What it covers and what it needs](https://duguid.com.au/tools/ozzit/).
 - **[Australian Accounting](https://github.com/ryanduguid/australian-accounting):** Tax and payroll calculation packages, plus a local Model Context Protocol (MCP) server for supported tools. Install it with `uvx aus-accounting-mcp`.
 - **[Australian Accounting Skills](https://github.com/ryanduguid/australian-accounting-skills):** AI-assisted preparation workflows for public practice and subcontractor accounting: 19 in release v0.2.1 and 50 on the default branch preparing v0.3.0.
+- **[llm-tax-guardrails](https://github.com/ryanduguid/llm-tax-guardrails):** APES 110 and TPB Code controls, refusal patterns and evaluation fixtures for firms using LLMs in tax work. Conclusions stay with the registered practitioner.
 
-[Browse the tools](https://duguid.com.au/tools/) or [reproduce the public evaluations](https://duguid.com.au/evaluate/). Public examples use fabricated data; the forecasting example's independent accountant trial remains pending.
+[Browse the tools](https://duguid.com.au/tools/) or [reproduce the public evaluations](https://duguid.com.au/evaluate/). Public examples use fabricated data; the forecasting example's [independent accountant trial](https://duguid.com.au/evaluate/) remains pending.
 
 These are preparation and review aids. They do not lodge or write to ledgers; professional judgement and sign-off stay with the reviewer.
 
@@ -65,6 +66,8 @@ Across 17 upstream projects I have [52 merged pull requests](https://github.com/
 - **Meltano SDK:** I fixed OAuth refresh-token handling so the authenticator keeps a replacement token and preserves the existing token when no replacement arrives. The change includes regression tests and updates the in-memory authenticator. Persistent configuration write-back is outside its scope. [Merged 8 August 2026](https://github.com/meltano/sdk/pull/3727).
 - **OpenAccountants:** I restored Australian BAS guide corrections after an older platform export overwrote them, and added checks for stale source changes. The repository checks detect this overwrite pattern. Preventing it also requires changes to the private exporter. [Merged 11 August 2026](https://github.com/OpenAccountants/openaccountants/pull/85).
 
+[FORKS.md](FORKS.md) lists the contribution forks and the upstream pull requests they back.
+
 ## Setup
 
-OpenHands runs on my old uni laptop with CachyOS, unattended, so its commit timestamps show when a job finished rather than when I was at a keyboard. I use Hermes Agent on my Windows 11 IoT Enterprise LTSC desktop and supplement my vitamin D. Both machines are my own and everything here is built in my own time.
+OpenHands runs on my old uni laptop with [CachyOS](https://cachyos.org/), unattended, so its commit timestamps show when a job finished rather than when I was at a keyboard. I use Hermes Agent on my [Windows 11 IoT Enterprise LTSC](https://www.microsoft.com/en-us/evalcenter/evaluate-windows-11-iot-enterprise-ltsc) desktop and supplement my vitamin D. Both machines are my own and everything here is built in my own time.
