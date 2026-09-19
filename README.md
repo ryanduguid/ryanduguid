@@ -4,13 +4,13 @@ I'm a Senior Accountant in Newcastle, Australia. I build open-source tools for c
 
 [Website](https://duguid.com.au/) · [Worked examples](https://duguid.com.au/evaluate/) · [Credentials and evidence](https://duguid.com.au/evidence/)
 
-Start with the [Newcastle cash-flow example](https://duguid.com.au/evaluate/#profit-and-cash). It follows a fictional maintenance business through an Excel forecast and management briefing, showing how a late customer payment changes cash without changing profit.
+Start with the [fictional Newcastle cash-flow case](https://duguid.com.au/examples/profit-vs-cash-flow/): how a quarter can show $35,957.55 of profit while the bank account runs $25,160 short, with the Excel forecast, the working and a management briefing.
 
 ## Selected work
 
-- **[au-fpa-pack](https://github.com/ryanduguid/au-fpa-pack):** Australian cash-flow forecasts and management briefings using fictional businesses. Extends Guiderail's [openfpa](https://github.com/JeffBrines/openfpa).
+- **[au-fpa-pack](https://github.com/ryanduguid/au-fpa-pack):** Australian cash-flow forecasts and management briefings using fictional businesses. Extends Guiderail's [openfpa](https://github.com/JeffBrines/openfpa). [Read the worked example](https://duguid.com.au/examples/profit-vs-cash-flow/).
 - **[Accounting Review Pipeline](https://github.com/ryanduguid/accounting-review-pipeline):** Xero exports, month-end exceptions and workpaper review packs, with Excel and Power BI components.
-- **[Ozzit](https://github.com/ryanduguid/Ozzit):** Native Excel LAMBDA functions for financial modelling and GST arithmetic, with editable examples. No macros or add-ins.
+- **[Ozzit](https://github.com/ryanduguid/Ozzit):** Native Excel LAMBDA functions for financial modelling and GST arithmetic, with editable examples. No macros or add-ins. [What it covers and what it needs](https://duguid.com.au/tools/ozzit/).
 - **[Australian Accounting](https://github.com/ryanduguid/australian-accounting):** Tax and payroll calculation packages, plus a local Model Context Protocol (MCP) server for supported tools.
 - **[Australian Accounting Skills](https://github.com/ryanduguid/australian-accounting-skills):** AI-assisted preparation workflows for public practice and subcontractor accounting. The repository distinguishes released workflows from development work.
 
@@ -56,7 +56,7 @@ Inspect the [local MCP server](https://github.com/ryanduguid/australian-accounti
 
 ## Contributions
 
-I also contribute fixes and tests to other open-source projects. [Browse my merged upstream pull requests](https://github.com/search?q=is%3Apr+author%3Aryanduguid+is%3Amerged+-user%3Aryanduguid&type=pullrequests), including:
+Across 16 upstream projects I have [50 merged pull requests](https://github.com/search?q=is%3Apr+author%3Aryanduguid+is%3Amerged+merged%3A%3C%3D2026-09-14+-user%3Aryanduguid&type=pullrequests) as at 14 September 2026, 33 of them in [OpenAccountants](https://github.com/OpenAccountants/openaccountants/pulls?q=is%3Apr+author%3Aryanduguid+is%3Amerged+merged%3A%3C%3D2026-09-14). Two examples:
 
 - **Meltano SDK:** I fixed OAuth refresh-token handling so the authenticator keeps a replacement token and preserves the existing token when no replacement arrives. The change includes regression tests and updates the in-memory authenticator. Persistent configuration write-back is outside its scope. [Merged 8 August 2026](https://github.com/meltano/sdk/pull/3727).
 - **OpenAccountants:** I restored Australian BAS guide corrections after an older platform export overwrote them, and added checks for stale source changes. The repository checks detect this overwrite pattern. Preventing it also requires changes to the private exporter. [Merged 11 August 2026](https://github.com/OpenAccountants/openaccountants/pull/85).
