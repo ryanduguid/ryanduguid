@@ -59,15 +59,6 @@ Inspect the [local MCP server](https://github.com/ryanduguid/australian-accounti
 
 <sub>The badge is Xero's artwork, taken from that certificate. Xero has not endorsed or certified anything here.</sub>
 
-## Contributions
-
-Across 17 upstream projects I have [52 merged pull requests](https://github.com/search?q=is%3Apr+author%3Aryanduguid+is%3Amerged+merged%3A%3C%3D2026-09-20+-user%3Aryanduguid&type=pullrequests) as at 20 September 2026, 34 of them in [OpenAccountants](https://github.com/OpenAccountants/openaccountants/pulls?q=is%3Apr+author%3Aryanduguid+is%3Amerged+merged%3A%3C%3D2026-09-20). Two examples:
-
-- **Meltano SDK:** I fixed OAuth refresh-token handling so the authenticator keeps a replacement token and preserves the existing token when no replacement arrives. The change includes regression tests and updates the in-memory authenticator. Persistent configuration write-back is outside its scope. [Merged 8 August 2026](https://github.com/meltano/sdk/pull/3727).
-- **OpenAccountants:** I restored Australian BAS guide corrections after an older platform export overwrote them, and added checks for stale source changes. The repository checks detect this overwrite pattern. Preventing it also requires changes to the private exporter. [Merged 11 August 2026](https://github.com/OpenAccountants/openaccountants/pull/85).
-
-[FORKS.md](FORKS.md) lists the contribution forks and the upstream pull requests they back.
-
 ## Setup
 
 [OpenHands](https://www.openhands.dev/) runs on my old uni laptop with [CachyOS](https://cachyos.org/), unattended, so its commit timestamps show when a job finished rather than when I was at a keyboard. I use [Hermes Agent](https://hermes-agent.nousresearch.com/) on my [Windows 11 IoT Enterprise LTSC](https://www.microsoft.com/en-us/evalcenter/evaluate-windows-11-iot-enterprise-ltsc) desktop and supplement my vitamin D. Both machines are my own and everything here is built in my own time.
