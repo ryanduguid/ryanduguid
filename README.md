@@ -4,6 +4,8 @@ I'm a Senior Accountant in Newcastle, Australia. I build open-source tools for c
 
 [Website](https://duguid.com.au/) · [Tools](https://duguid.com.au/tools/) · [Evaluations](https://duguid.com.au/evaluate/) · [Credentials and evidence](https://duguid.com.au/evidence/)
 
+I am not a registered tax agent or BAS agent. This is a free software portfolio. I do not accept advice, return-preparation, tax-treatment confirmation, or lodgement requests through it. Support covers software issues reproduced with fabricated data, so please do not send taxpayer information.
+
 Start with the [fictional Newcastle cash-flow case](https://duguid.com.au/examples/profit-vs-cash-flow/): how a quarter can show $35,957.55 of profit while the bank account runs $25,160 short, with the Excel forecast, the working and a management briefing.
 
 ## Selected work
