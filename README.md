@@ -58,7 +58,3 @@ Inspect the [local MCP server](https://github.com/ryanduguid/australian-accounti
 <p><img src="assets/xero-certified-specialist-level-3-badge.png" alt="" width="48" height="48" align="middle" /> Read the <a href="https://duguid.com.au/evidence/#xero-certification">certificate in the evidence register</a>, or explore my <a href="https://duguid.com.au/tools/xero-trial-balance/">Xero trial balance export and review workflow</a>.</p>
 
 <sub>The badge is Xero's artwork, taken from that certificate. Xero has not endorsed or certified anything here.</sub>
-
-## Setup
-
-[OpenHands](https://www.openhands.dev/) runs on my old uni laptop with [CachyOS](https://cachyos.org/), unattended, so its commit timestamps show when a job finished rather than when I was at a keyboard. I use [Hermes Agent](https://hermes-agent.nousresearch.com/) on my [Windows 11 IoT Enterprise LTSC](https://www.microsoft.com/en-us/evalcenter/evaluate-windows-11-iot-enterprise-ltsc) desktop and supplement my vitamin D. Both machines are my own and everything here is built in my own time.
