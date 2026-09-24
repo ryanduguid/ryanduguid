@@ -8,13 +8,18 @@ I am not a registered tax agent or BAS agent. This is a free software portfolio.
 
 Start with the [fictional Newcastle cash-flow case](https://duguid.com.au/examples/profit-vs-cash-flow/): how a quarter can show $35,957.55 of profit while the bank account runs $25,160 short, with the Excel forecast, the working and a management briefing.
 
+<p align="center"><a href="https://github.com/ryanduguid/llm-tax-guardrails"><img src="https://img.shields.io/badge/APES%20110-Aligned%20Guardrails-4F485E?labelColor=04001F" alt="llm-tax-guardrails: APES 110 aligned guardrails" /></a> <a href="https://duguid.com.au/"><img src="https://img.shields.io/badge/Australian%20Accounting-Open%20Source-5C2D91?labelColor=04001F" alt="Open-source Australian accounting tools" /></a>
+  <a href="https://github.com/ryanduguid/Ozzit"><img src="https://img.shields.io/badge/Excel-133%20Native%20LAMBDAs-5C2D91?labelColor=04001F" alt="Ozzit: 133 native Excel LAMBDAs" /></a> <a href="https://www.python.org/"><img src="https://img.shields.io/badge/Python-3.10+-5C2D91?logo=python&logoColor=white&labelColor=04001F" alt="Python 3.10 or later" /></a><br />
+  <a href="https://modelcontextprotocol.io/"><img src="https://img.shields.io/badge/MCP-Standard%20Protocol-5C2D91?labelColor=04001F" alt="Model Context Protocol" /></a>
+  <a href="https://pypi.org/project/aus-accounting-mcp/"><img src="https://img.shields.io/pypi/v/aus-accounting-mcp?label=PyPI&color=5C2D91&labelColor=04001F" alt="aus-accounting-mcp on PyPI" /></a> <a href="https://github.com/ryanduguid/Ozzit/releases/latest"><img src="https://img.shields.io/github/v/release/ryanduguid/Ozzit?label=Ozzit&color=5C2D91&labelColor=04001F" alt="Latest Ozzit release" /></a></p>
+
 ## Selected work
 
 - **[au-fpa-pack](https://github.com/ryanduguid/au-fpa-pack):** Australian cash-flow forecasts and management briefings using fictional businesses. Extends Guiderail's [openfpa](https://github.com/JeffBrines/openfpa).
 - **[Accounting Review Pipeline](https://github.com/ryanduguid/accounting-review-pipeline):** Xero exports, month-end exceptions and workpaper review packs, with Excel and Power BI components.
 - **[Ozzit](https://github.com/ryanduguid/Ozzit):** 133 native Excel LAMBDA functions plus 5 help tables for financial modelling and GST arithmetic, with editable examples. No macros or add-ins; needs Microsoft 365 or Excel 2024 and later. [What it covers and what it needs](https://duguid.com.au/tools/ozzit/).
 - **[Australian Accounting](https://github.com/ryanduguid/australian-accounting):** Tax and payroll calculation packages, plus a local Model Context Protocol (MCP) server for supported tools. Install it with `uvx aus-accounting-mcp`.
-- **[Australian Accounting Skills](https://github.com/ryanduguid/australian-accounting-skills):** AI-assisted preparation workflows for public practice and subcontractor accounting, with 50 on the default branch ahead of the v0.3.0 release.
+- **[Australian Accounting Skills](https://github.com/ryanduguid/australian-accounting-skills):** AI-assisted preparation workflows for public practice and subcontractor accounting: 51 workflows on the default branch ahead of v0.3.0, and 19 in the v0.2.1 release.
 - **[llm-tax-guardrails](https://github.com/ryanduguid/llm-tax-guardrails):** APES 110 and TPB Code controls, refusal patterns and evaluation fixtures for firms using LLMs in tax work. Conclusions stay with the registered practitioner.
 - **[au-tax-legislation-corpus](https://github.com/ryanduguid/au-tax-legislation-corpus):** Builds retrieval material from in-force Commonwealth tax legislation on the Federal Register of Legislation, with source and provenance records. It is a finding aid, not authorised legislation.
 
