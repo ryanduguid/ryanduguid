@@ -6,7 +6,7 @@ Open, merged and closed are different states. The Open contributions column list
 
 ## Active forks
 
-34 of 38 forks hold at least one open upstream pull request. None is archived.
+33 of 38 forks hold at least one open upstream pull request. None is archived.
 
 | Fork | Upstream | Open contributions |
 | --- | --- | --- |
@@ -33,7 +33,6 @@ Open, merged and closed are different states. The Open contributions column list
 | [l10n-australia](https://github.com/ryanduguid/l10n-australia) | [OCA/l10n-australia](https://github.com/OCA/l10n-australia) | [#1](https://github.com/OCA/l10n-australia/pull/1) |
 | [medusa-tax-demo](https://github.com/ryanduguid/medusa-tax-demo) | [openaccountants/medusa-tax-demo](https://github.com/openaccountants/medusa-tax-demo) | [#2](https://github.com/openaccountants/medusa-tax-demo/pull/2) |
 | [mock-data-holder-nodejs](https://github.com/ryanduguid/mock-data-holder-nodejs) | [ConsumerDataStandardsAustralia/mock-data-holder-nodejs](https://github.com/ConsumerDataStandardsAustralia/mock-data-holder-nodejs) | [#29](https://github.com/ConsumerDataStandardsAustralia/mock-data-holder-nodejs/pull/29) |
-| [openaccountants](https://github.com/ryanduguid/openaccountants) | [openaccountants/openaccountants](https://github.com/openaccountants/openaccountants) | [#168](https://github.com/openaccountants/openaccountants/pull/168) |
 | [openfpa](https://github.com/ryanduguid/openfpa) | [JeffBrines/openfpa](https://github.com/JeffBrines/openfpa) | [#17](https://github.com/JeffBrines/openfpa/pull/17) |
 | [python-stdnum](https://github.com/ryanduguid/python-stdnum) | [arthurdejong/python-stdnum](https://github.com/arthurdejong/python-stdnum) | [#513](https://github.com/arthurdejong/python-stdnum/pull/513) |
 | [pyxirr](https://github.com/ryanduguid/pyxirr) | [Anexen/pyxirr](https://github.com/Anexen/pyxirr) | [#79](https://github.com/Anexen/pyxirr/pull/79) |
@@ -51,13 +50,13 @@ Pull requests merged or closed since the previous review on 13 September 2026:
 
 - hledger: [#2741](https://github.com/hledgerorg/hledger/pull/2741) closed 23 September 2026; [#2740](https://github.com/hledgerorg/hledger/pull/2740) closed 23 September 2026.
 - moneymanagerex: [#8547](https://github.com/moneymanagerex/moneymanagerex/pull/8547) merged 24 September 2026.
-- openaccountants: [#167](https://github.com/openaccountants/openaccountants/pull/167) merged 24 September 2026; [#166](https://github.com/openaccountants/openaccountants/pull/166) merged 22 September 2026; [#162](https://github.com/openaccountants/openaccountants/pull/162) merged 20 September 2026; [#161](https://github.com/openaccountants/openaccountants/pull/161) merged 17 September 2026; [#158](https://github.com/openaccountants/openaccountants/pull/158) merged 14 September 2026; [#131](https://github.com/openaccountants/openaccountants/pull/131) merged 14 September 2026.
+- openaccountants: [#168](https://github.com/openaccountants/openaccountants/pull/168) merged 24 September 2026; [#167](https://github.com/openaccountants/openaccountants/pull/167) merged 24 September 2026; [#166](https://github.com/openaccountants/openaccountants/pull/166) merged 22 September 2026; [#162](https://github.com/openaccountants/openaccountants/pull/162) merged 20 September 2026; [#161](https://github.com/openaccountants/openaccountants/pull/161) merged 17 September 2026; [#158](https://github.com/openaccountants/openaccountants/pull/158) merged 14 September 2026; [#131](https://github.com/openaccountants/openaccountants/pull/131) merged 14 September 2026.
 - requests-cache: [#1187](https://github.com/requests-cache/requests-cache/pull/1187) merged 14 September 2026.
 - xero-command-line: [#44](https://github.com/XeroAPI/xero-command-line/pull/44) merged 17 September 2026.
 
 ## Forks with no open contribution
 
-A fork here is due for review under the retention rule below because it holds no open upstream pull request. Listing one is a record of that state, not a decision to delete it. At the 25 September 2026 review: hledger, moneymanagerex, requests-cache, tax-doc-classifier-au.
+A fork here is due for review under the retention rule below because it holds no open upstream pull request. Listing one is a record of that state, not a decision to delete it. At the 25 September 2026 review: hledger, moneymanagerex, openaccountants, requests-cache, tax-doc-classifier-au.
 
 ## Preserved for retirement
 
