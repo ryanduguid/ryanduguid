@@ -6,7 +6,15 @@ I'm a Senior Accountant in Newcastle, Australia. I build open-source tools for c
 
 I am not a registered tax agent or BAS agent. This is a free software portfolio. I do not accept advice, return-preparation, tax-treatment confirmation, or lodgement requests through it. Support covers software issues reproduced with fabricated data, so please do not send taxpayer information.
 
-Start with the [fictional Newcastle cash-flow case](https://duguid.com.au/examples/profit-vs-cash-flow/): how a quarter can show $35,957.55 of profit while the bank account runs $25,160 short, with the Excel forecast, the working and a management briefing.
+## Try an accounting task
+
+| Your task | Example and expected result | What you need |
+| --- | --- | --- |
+| Explain profit and cash differences | [Fictional Newcastle cash-flow case](https://duguid.com.au/examples/profit-vs-cash-flow/): $35,957.55 quarterly profit and a $25,160 cash shortfall | Read in your browser; desktop Excel to change the receipt delay |
+| Calculate in Excel | [Ozzit formula and workbook](https://duguid.com.au/tools/ozzit/#worked-example): extract $100 GST from a wholly taxable $1,100 amount | Microsoft 365 or Excel 2024 or later |
+| Review a month-end close | [Monthly Close Controls](https://duguid.com.au/tools/monthly-close-controls/#worked-example): eight exceptions, including a $250 creditors difference | Read in your browser; Git and Python 3.10 or later to reproduce the pack |
+
+Each example includes its working, version and review boundary.
 
 <p align="center"><a href="https://github.com/ryanduguid/llm-tax-guardrails"><img src="https://img.shields.io/badge/APES%20110-Aligned%20Guardrails-4F485E?labelColor=04001F" alt="llm-tax-guardrails: APES 110 aligned guardrails" /></a> <a href="https://duguid.com.au/"><img src="https://img.shields.io/badge/Australian%20Accounting-Open%20Source-5C2D91?labelColor=04001F" alt="Open-source Australian accounting tools" /></a>
   <a href="https://github.com/ryanduguid/Ozzit"><img src="https://img.shields.io/badge/Excel-133%20Native%20LAMBDAs-5C2D91?labelColor=04001F" alt="Ozzit: 133 native Excel LAMBDAs" /></a> <a href="https://www.python.org/"><img src="https://img.shields.io/badge/Python-3.10+-5C2D91?logo=python&logoColor=white&labelColor=04001F" alt="Python 3.10 or later" /></a><br />
