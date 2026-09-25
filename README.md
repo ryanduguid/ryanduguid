@@ -12,7 +12,7 @@ I am not a registered tax agent or BAS agent. This is a free software portfolio.
 | --- | --- | --- |
 | Explain profit and cash differences | [Fictional Newcastle cash-flow case](https://duguid.com.au/examples/profit-vs-cash-flow/): $35,957.55 quarterly profit and a $25,160 cash shortfall | Read in your browser; desktop Excel to change the receipt delay |
 | Calculate in Excel | [Ozzit formula and workbook](https://duguid.com.au/tools/ozzit/#worked-example): extract $100 GST from a wholly taxable $1,100 amount | Microsoft 365 or Excel 2024 or later |
-| Review a month-end close | [Monthly Close Controls](https://duguid.com.au/tools/monthly-close-controls/#worked-example): eight exceptions, including a $250 creditors difference | Read in your browser; Python and uv to reproduce the pack |
+| Review a month-end close | [Monthly Close Controls](https://duguid.com.au/tools/monthly-close-controls/#worked-example): eight exceptions, including a $250 creditors difference | Read in your browser; Git and Python 3.10 or later to reproduce the pack |
 
 Each example includes its working, version and review boundary.
 
