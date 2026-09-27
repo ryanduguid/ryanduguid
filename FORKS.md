@@ -66,6 +66,8 @@ Pull requests merged or closed since the previous review on 13 September 2026:
 
 A fork here is due for review under the retention rule below because it holds no open upstream pull request. Listing one is a record of that state, not a decision to delete it. At the 27 September 2026 review: erpnext, hledger, moneymanagerex, oracle, requests-cache, tax-doc-classifier-au.
 
+The hledger fork was archived on 27 September 2026, after upstream closed [#2740](https://github.com/hledgerorg/hledger/pull/2740) and [#2741](https://github.com/hledgerorg/hledger/pull/2741). Archiving keeps its history and can be reversed.
+
 ## Preserved for retirement
 
 Ryan selected these 3 forks for deletion. On 10 September 2026, checks by author and fork head found no open upstream PRs. Complete advertised Git histories were backed up and restored into fresh repositories, with matching refs and reachable objects. Upstream links retain the contribution record after the forks are deleted.
