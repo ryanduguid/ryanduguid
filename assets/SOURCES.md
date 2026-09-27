@@ -30,9 +30,3 @@ The certification runs from 1 July 2026 to 1 July 2027. On renewal, replace this
 file and refresh the hash above, then update the Background section in
 `README.md` and the Credentials line in `llms.txt`. The website repository has
 its own list of places to update.
-
-## Payroll and Migration specialist badges
-
-Xero's Payroll Specialist and Migration Specialist badges are partner-practice
-badges and are not published here. Neither appears in the public credential
-wallets linked from this profile, checked on 16 September 2026.
