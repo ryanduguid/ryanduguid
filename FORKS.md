@@ -6,7 +6,7 @@ Open, merged and closed are different states. The Open contributions column list
 
 ## Active forks
 
-41 of 47 forks hold at least one open upstream pull request. None is archived.
+42 of 47 forks hold at least one open upstream pull request. None is archived.
 
 | Fork | Upstream | Open contributions |
 | --- | --- | --- |
@@ -38,6 +38,7 @@ Open, merged and closed are different states. The Open contributions column list
 | [l10n-australia](https://github.com/ryanduguid/l10n-australia) | [OCA/l10n-australia](https://github.com/OCA/l10n-australia) | [#1](https://github.com/OCA/l10n-australia/pull/1) |
 | [medusa-tax-demo](https://github.com/ryanduguid/medusa-tax-demo) | [openaccountants/medusa-tax-demo](https://github.com/openaccountants/medusa-tax-demo) | [#2](https://github.com/openaccountants/medusa-tax-demo/pull/2) |
 | [mock-data-holder-nodejs](https://github.com/ryanduguid/mock-data-holder-nodejs) | [ConsumerDataStandardsAustralia/mock-data-holder-nodejs](https://github.com/ConsumerDataStandardsAustralia/mock-data-holder-nodejs) | [#29](https://github.com/ConsumerDataStandardsAustralia/mock-data-holder-nodejs/pull/29) |
+| [moneymanagerex](https://github.com/ryanduguid/moneymanagerex) | [moneymanagerex/moneymanagerex](https://github.com/moneymanagerex/moneymanagerex) | [#8557](https://github.com/moneymanagerex/moneymanagerex/pull/8557), [#8556](https://github.com/moneymanagerex/moneymanagerex/pull/8556) |
 | [openaccountants](https://github.com/ryanduguid/openaccountants) | [openaccountants/openaccountants](https://github.com/openaccountants/openaccountants) | [#182](https://github.com/openaccountants/openaccountants/pull/182), [#181](https://github.com/openaccountants/openaccountants/pull/181), [#180](https://github.com/openaccountants/openaccountants/pull/180), [#179](https://github.com/openaccountants/openaccountants/pull/179), [#177](https://github.com/openaccountants/openaccountants/pull/177), [#175](https://github.com/openaccountants/openaccountants/pull/175), [#174](https://github.com/openaccountants/openaccountants/pull/174), [#173](https://github.com/openaccountants/openaccountants/pull/173) |
 | [openfpa](https://github.com/ryanduguid/openfpa) | [JeffBrines/openfpa](https://github.com/JeffBrines/openfpa) | [#17](https://github.com/JeffBrines/openfpa/pull/17) |
 | [python-stdnum](https://github.com/ryanduguid/python-stdnum) | [arthurdejong/python-stdnum](https://github.com/arthurdejong/python-stdnum) | [#513](https://github.com/arthurdejong/python-stdnum/pull/513) |
@@ -64,7 +65,7 @@ Pull requests merged or closed since the previous review on 13 September 2026:
 
 ## Forks with no open contribution
 
-A fork here is due for review under the retention rule below because it holds no open upstream pull request. Listing one is a record of that state, not a decision to delete it. At the 27 September 2026 review: erpnext, hledger, moneymanagerex, oracle, requests-cache, tax-doc-classifier-au.
+A fork here is due for review under the retention rule below because it holds no open upstream pull request. Listing one is a record of that state, not a decision to delete it. At the 27 September 2026 review: erpnext, hledger, oracle, requests-cache, tax-doc-classifier-au.
 
 The hledger fork was archived on 27 September 2026, after upstream closed [#2740](https://github.com/hledgerorg/hledger/pull/2740) and [#2741](https://github.com/hledgerorg/hledger/pull/2741). Archiving keeps its history and can be reversed.
 
