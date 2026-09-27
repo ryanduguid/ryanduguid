@@ -3,16 +3,5 @@
 Thumbs.db
 desktop.ini
 
-# Editors
-.idea/
-.vscode/
-*.swp
-*.swo
-*~
-
 # Env / secrets
 .env
-*.local
-
-# Python
-__pycache__/
