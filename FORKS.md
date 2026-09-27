@@ -6,7 +6,7 @@ Open, merged and closed are different states. The Open contributions column list
 
 ## Active forks
 
-39 of 45 forks hold at least one open upstream pull request. None is archived.
+41 of 47 forks hold at least one open upstream pull request. None is archived.
 
 | Fork | Upstream | Open contributions |
 | --- | --- | --- |
@@ -32,6 +32,8 @@ Open, merged and closed are different states. The Open contributions column list
 | [fava](https://github.com/ryanduguid/fava) | [beancount/fava](https://github.com/beancount/fava) | [#2362](https://github.com/beancount/fava/pull/2362), [#2353](https://github.com/beancount/fava/pull/2353), [#2350](https://github.com/beancount/fava/pull/2350) |
 | [Furtim](https://github.com/ryanduguid/Furtim) | [jo-inc/camofox-browser](https://github.com/jo-inc/camofox-browser) | [#11166](https://github.com/jo-inc/camofox-browser/pull/11166) |
 | [gnucash](https://github.com/ryanduguid/gnucash) | [Gnucash/gnucash](https://github.com/Gnucash/gnucash) | [#2321](https://github.com/Gnucash/gnucash/pull/2321) |
+| [gobl](https://github.com/ryanduguid/gobl) | [invopop/gobl](https://github.com/invopop/gobl) | [#987](https://github.com/invopop/gobl/pull/987) |
+| [holidays](https://github.com/ryanduguid/holidays) | [vacanza/holidays](https://github.com/vacanza/holidays) | [#3846](https://github.com/vacanza/holidays/pull/3846) |
 | [invoice2data](https://github.com/ryanduguid/invoice2data) | [invoice-x/invoice2data](https://github.com/invoice-x/invoice2data) | [#771](https://github.com/invoice-x/invoice2data/pull/771), [#770](https://github.com/invoice-x/invoice2data/pull/770), [#768](https://github.com/invoice-x/invoice2data/pull/768) |
 | [l10n-australia](https://github.com/ryanduguid/l10n-australia) | [OCA/l10n-australia](https://github.com/OCA/l10n-australia) | [#1](https://github.com/OCA/l10n-australia/pull/1) |
 | [medusa-tax-demo](https://github.com/ryanduguid/medusa-tax-demo) | [openaccountants/medusa-tax-demo](https://github.com/openaccountants/medusa-tax-demo) | [#2](https://github.com/openaccountants/medusa-tax-demo/pull/2) |
