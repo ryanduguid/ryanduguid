@@ -1,12 +1,12 @@
 # Contribution forks
 
-Reviewed 27 September 2026 from the GitHub API (fork list and pull requests by author). These are contribution forks, not original Australian accounting products. File product issues upstream. Each section states whether its forks still hold an open upstream contribution.
+Reviewed 28 September 2026 from the GitHub API (fork list and pull requests by author). These are contribution forks, not original Australian accounting products. File product issues upstream. Each section states whether its forks still hold an open upstream contribution.
 
 Open, merged and closed are different states. The Open contributions column lists only pull requests open at the review date; a merged or closed one moves to Recent contributions and keeps its link, because the upstream record is what shows the work.
 
 ## Active forks
 
-42 of 47 forks hold at least one open upstream pull request. None is archived.
+43 of 49 forks hold at least one open upstream pull request. Archived: hledger.
 
 | Fork | Upstream | Open contributions |
 | --- | --- | --- |
@@ -30,20 +30,21 @@ Open, merged and closed are different states. The Open contributions column list
 | [exchange_calendars](https://github.com/ryanduguid/exchange_calendars) | [gerrymanoim/exchange_calendars](https://github.com/gerrymanoim/exchange_calendars) | [#609](https://github.com/gerrymanoim/exchange_calendars/pull/609) |
 | [fano-classifier-integration-kit](https://github.com/ryanduguid/fano-classifier-integration-kit) | [lodgeit-labs/fano-classifier-integration-kit](https://github.com/lodgeit-labs/fano-classifier-integration-kit) | [#8](https://github.com/lodgeit-labs/fano-classifier-integration-kit/pull/8), [#7](https://github.com/lodgeit-labs/fano-classifier-integration-kit/pull/7) |
 | [fava](https://github.com/ryanduguid/fava) | [beancount/fava](https://github.com/beancount/fava) | [#2362](https://github.com/beancount/fava/pull/2362), [#2353](https://github.com/beancount/fava/pull/2353), [#2350](https://github.com/beancount/fava/pull/2350) |
-| [Furtim](https://github.com/ryanduguid/Furtim) | [jo-inc/camofox-browser](https://github.com/jo-inc/camofox-browser) | [#11166](https://github.com/jo-inc/camofox-browser/pull/11166) |
+| [Furtim](https://github.com/ryanduguid/Furtim) | [jo-inc/camofox-browser](https://github.com/jo-inc/camofox-browser) | [#11626](https://github.com/jo-inc/camofox-browser/pull/11626), [#11625](https://github.com/jo-inc/camofox-browser/pull/11625), [#11624](https://github.com/jo-inc/camofox-browser/pull/11624), [#11614](https://github.com/jo-inc/camofox-browser/pull/11614), [#11613](https://github.com/jo-inc/camofox-browser/pull/11613), [#11612](https://github.com/jo-inc/camofox-browser/pull/11612), [#11166](https://github.com/jo-inc/camofox-browser/pull/11166) |
 | [gnucash](https://github.com/ryanduguid/gnucash) | [Gnucash/gnucash](https://github.com/Gnucash/gnucash) | [#2321](https://github.com/Gnucash/gnucash/pull/2321) |
 | [gobl](https://github.com/ryanduguid/gobl) | [invopop/gobl](https://github.com/invopop/gobl) | [#987](https://github.com/invopop/gobl/pull/987) |
+| [Graft](https://github.com/ryanduguid/Graft) | [trailhq/Graft](https://github.com/trailhq/Graft) | [#490](https://github.com/trailhq/Graft/pull/490) |
 | [holidays](https://github.com/ryanduguid/holidays) | [vacanza/holidays](https://github.com/vacanza/holidays) | [#3846](https://github.com/vacanza/holidays/pull/3846) |
 | [invoice2data](https://github.com/ryanduguid/invoice2data) | [invoice-x/invoice2data](https://github.com/invoice-x/invoice2data) | [#771](https://github.com/invoice-x/invoice2data/pull/771), [#770](https://github.com/invoice-x/invoice2data/pull/770), [#768](https://github.com/invoice-x/invoice2data/pull/768) |
 | [l10n-australia](https://github.com/ryanduguid/l10n-australia) | [OCA/l10n-australia](https://github.com/OCA/l10n-australia) | [#1](https://github.com/OCA/l10n-australia/pull/1) |
 | [medusa-tax-demo](https://github.com/ryanduguid/medusa-tax-demo) | [openaccountants/medusa-tax-demo](https://github.com/openaccountants/medusa-tax-demo) | [#2](https://github.com/openaccountants/medusa-tax-demo/pull/2) |
 | [mock-data-holder-nodejs](https://github.com/ryanduguid/mock-data-holder-nodejs) | [ConsumerDataStandardsAustralia/mock-data-holder-nodejs](https://github.com/ConsumerDataStandardsAustralia/mock-data-holder-nodejs) | [#29](https://github.com/ConsumerDataStandardsAustralia/mock-data-holder-nodejs/pull/29) |
 | [moneymanagerex](https://github.com/ryanduguid/moneymanagerex) | [moneymanagerex/moneymanagerex](https://github.com/moneymanagerex/moneymanagerex) | [#8557](https://github.com/moneymanagerex/moneymanagerex/pull/8557), [#8556](https://github.com/moneymanagerex/moneymanagerex/pull/8556) |
-| [openaccountants](https://github.com/ryanduguid/openaccountants) | [openaccountants/openaccountants](https://github.com/openaccountants/openaccountants) | [#182](https://github.com/openaccountants/openaccountants/pull/182), [#181](https://github.com/openaccountants/openaccountants/pull/181), [#180](https://github.com/openaccountants/openaccountants/pull/180), [#179](https://github.com/openaccountants/openaccountants/pull/179), [#177](https://github.com/openaccountants/openaccountants/pull/177), [#175](https://github.com/openaccountants/openaccountants/pull/175), [#174](https://github.com/openaccountants/openaccountants/pull/174), [#173](https://github.com/openaccountants/openaccountants/pull/173) |
 | [openfpa](https://github.com/ryanduguid/openfpa) | [JeffBrines/openfpa](https://github.com/JeffBrines/openfpa) | [#17](https://github.com/JeffBrines/openfpa/pull/17) |
 | [python-stdnum](https://github.com/ryanduguid/python-stdnum) | [arthurdejong/python-stdnum](https://github.com/arthurdejong/python-stdnum) | [#513](https://github.com/arthurdejong/python-stdnum/pull/513) |
 | [pyxero](https://github.com/ryanduguid/pyxero) | [freakboy3742/pyxero](https://github.com/freakboy3742/pyxero) | [#446](https://github.com/freakboy3742/pyxero/pull/446), [#445](https://github.com/freakboy3742/pyxero/pull/445) |
 | [pyxirr](https://github.com/ryanduguid/pyxirr) | [Anexen/pyxirr](https://github.com/Anexen/pyxirr) | [#79](https://github.com/Anexen/pyxirr/pull/79) |
+| [qmd](https://github.com/ryanduguid/qmd) | [tobi/qmd](https://github.com/tobi/qmd) | [#1006](https://github.com/tobi/qmd/pull/1006) |
 | [rtk](https://github.com/ryanduguid/rtk) | [rtk-ai/rtk](https://github.com/rtk-ai/rtk) | [#4254](https://github.com/rtk-ai/rtk/pull/4254) |
 | [shopify-salestax-demo](https://github.com/ryanduguid/shopify-salestax-demo) | [openaccountants/shopify-salestax-demo](https://github.com/openaccountants/shopify-salestax-demo) | [#2](https://github.com/openaccountants/shopify-salestax-demo/pull/2) |
 | [standards-testing](https://github.com/ryanduguid/standards-testing) | [ConsumerDataStandardsAustralia/standards-testing](https://github.com/ConsumerDataStandardsAustralia/standards-testing) | [#79](https://github.com/ConsumerDataStandardsAustralia/standards-testing/pull/79), [#78](https://github.com/ConsumerDataStandardsAustralia/standards-testing/pull/78), [#77](https://github.com/ConsumerDataStandardsAustralia/standards-testing/pull/77) |
@@ -55,17 +56,18 @@ Open, merged and closed are different states. The Open contributions column list
 
 ## Recent contributions no longer open
 
-Pull requests merged or closed since the previous review on 13 September 2026:
+Pull requests merged or closed since 13 September 2026:
 
+- erpnext: [#59499](https://github.com/frappe/erpnext/pull/59499) merged 27 September 2026, opened by a maintainer from this fork's commit.
 - hledger: [#2741](https://github.com/hledgerorg/hledger/pull/2741) closed 23 September 2026; [#2740](https://github.com/hledgerorg/hledger/pull/2740) closed 23 September 2026.
 - moneymanagerex: [#8547](https://github.com/moneymanagerex/moneymanagerex/pull/8547) merged 24 September 2026.
-- openaccountants: [#168](https://github.com/openaccountants/openaccountants/pull/168) merged 24 September 2026; [#167](https://github.com/openaccountants/openaccountants/pull/167) merged 24 September 2026; [#166](https://github.com/openaccountants/openaccountants/pull/166) merged 22 September 2026; [#162](https://github.com/openaccountants/openaccountants/pull/162) merged 20 September 2026; [#161](https://github.com/openaccountants/openaccountants/pull/161) merged 17 September 2026; [#158](https://github.com/openaccountants/openaccountants/pull/158) merged 14 September 2026; [#131](https://github.com/openaccountants/openaccountants/pull/131) merged 14 September 2026.
+- openaccountants: [#182](https://github.com/openaccountants/openaccountants/pull/182) merged 27 September 2026; [#181](https://github.com/openaccountants/openaccountants/pull/181) merged 27 September 2026; [#180](https://github.com/openaccountants/openaccountants/pull/180) merged 27 September 2026; [#179](https://github.com/openaccountants/openaccountants/pull/179) merged 27 September 2026; [#177](https://github.com/openaccountants/openaccountants/pull/177) merged 27 September 2026; [#175](https://github.com/openaccountants/openaccountants/pull/175) merged 27 September 2026; [#174](https://github.com/openaccountants/openaccountants/pull/174) merged 27 September 2026; [#173](https://github.com/openaccountants/openaccountants/pull/173) merged 27 September 2026; [#168](https://github.com/openaccountants/openaccountants/pull/168) merged 24 September 2026; [#167](https://github.com/openaccountants/openaccountants/pull/167) merged 24 September 2026; [#166](https://github.com/openaccountants/openaccountants/pull/166) merged 22 September 2026; [#162](https://github.com/openaccountants/openaccountants/pull/162) merged 20 September 2026; [#161](https://github.com/openaccountants/openaccountants/pull/161) merged 17 September 2026; [#158](https://github.com/openaccountants/openaccountants/pull/158) merged 14 September 2026; [#131](https://github.com/openaccountants/openaccountants/pull/131) merged 14 September 2026.
 - requests-cache: [#1187](https://github.com/requests-cache/requests-cache/pull/1187) merged 14 September 2026.
 - xero-command-line: [#44](https://github.com/XeroAPI/xero-command-line/pull/44) merged 17 September 2026.
 
 ## Forks with no open contribution
 
-A fork here is due for review under the retention rule below because it holds no open upstream pull request. Listing one is a record of that state, not a decision to delete it. At the 27 September 2026 review: erpnext, hledger, oracle, requests-cache, tax-doc-classifier-au.
+A fork here is due for review under the retention rule below because it holds no open upstream pull request. Listing one is a record of that state, not a decision to delete it. At the 28 September 2026 review: erpnext, hledger, openaccountants, oracle, requests-cache, tax-doc-classifier-au.
 
 The hledger fork was archived on 27 September 2026, after upstream closed [#2740](https://github.com/hledgerorg/hledger/pull/2740) and [#2741](https://github.com/hledgerorg/hledger/pull/2741). Archiving keeps its history and can be reversed.
 
