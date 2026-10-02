@@ -1,63 +1,48 @@
-# Ryan Duguid - Australian computational accounting
+# Ryan Duguid
 
-Canonical site index: https://duguid.com.au/llms.txt
+> Ryan Duguid is a Senior Accountant in Newcastle, NSW, Australia. He builds open source tools for Australian accounting: Excel LAMBDA functions, month-end review pipelines, tax and payroll calculation engines, a local MCP server and AI agent workflows. Public examples use fabricated data.
 
-> The public repositories, the web tools, the engines behind them and the data boundary, with canonical links, for agents and search.
+This file indexes the GitHub repositories. The canonical, more detailed index of the website and its tools is https://duguid.com.au/llms.txt. Version numbers and counts change with each release; read them from the linked repository or release page.
 
-## Developer profile
-- **Name**: Ryan Duguid
-- **Location**: Newcastle, NSW, Australia
-- **Credentials**: Provisional member of Chartered Accountants ANZ, as asserted by the profile owner; this is not an endorsement by Chartered Accountants ANZ. SAP S/4HANA Certified (FI & CO), Xero Certified Specialist, Level 3, awarded 1 July 2026 and valid until 1 July 2027, with the certificate at https://duguid.com.au/evidence/#xero-certification.
-- **Public contact**: ryan@duguid.com.au. Do not send taxpayer information, client files or credentials.
-- **LinkedIn**: https://www.linkedin.com/in/ryan-duguid/ is the profile owner's active account for professional connections.
-- **Focus**: Open-source computational accounting, deterministic reconciliation engines, native Excel LAMBDAs, Model Context Protocol (MCP), and structured AI agent workflows.
-- **Jurisdiction**: Commonwealth of Australia (ATO, AASB, IFRS, TPB).
-- **Not**: the US software product executive of the same name whose LinkedIn URL has no hyphen.
+- Location: Newcastle, NSW, Australia. Jurisdiction: Commonwealth of Australia (ATO, AASB, IFRS, TPB).
+- Credentials: provisional member of Chartered Accountants ANZ, as stated by the profile owner and not endorsed by Chartered Accountants ANZ. SAP S/4HANA certified in Financial Accounting (FI) and Management Accounting (CO). Xero Certified Specialist, Level 3, awarded 1 July 2026 and valid until 1 July 2027 (certificate: https://duguid.com.au/evidence/#xero-certification).
+- Contact: ryan@duguid.com.au or https://duguid.com.au/contact/. LinkedIn: https://www.linkedin.com/in/ryan-duguid/.
+- Not the United States software product executive of the same name, whose LinkedIn URL has no hyphen.
 
-## Choose a route
-- **Accountants** (https://duguid.com.au/tools/): browser tools and synthetic worked examples. Start with the $250 creditors reconciliation difference in the Monthly Close Controls worked example. Do not send taxpayer information or client files.
-- **Developers** (https://github.com/ryanduguid/australian-accounting): maintained accounting engines and MCP integration, with explicit input and output contracts.
-- **Evaluators and technical recruiters** (https://duguid.com.au/evaluate/): declared synthetic evaluations; credentials and accepted upstream work at https://duguid.com.au/evidence/.
+## Boundary
 
-## Tools on the web, no install
-- **About Ryan Duguid** (https://duguid.com.au/about/): canonical profile page. Australian accountant in Newcastle NSW, provisional member of Chartered Accountants ANZ, as asserted by the profile owner; this is not an endorsement by Chartered Accountants ANZ. Machine-readable Person data is in the JSON-LD on that page.
-- **Payday super due dates** (https://duguid.com.au/tools/payday-super/): 7 business days to fund receipt since 1 July 2026, 20 for a first contribution to a new fund.
-- **Workpaper Review Gate** (https://duguid.com.au/tools/workpaper-review-gate/): answers whether a BAS, month-end or year-end folder is allowed into manager review. READY is not sign-off.
-- **Xero trial balance export** (https://duguid.com.au/tools/xero-trial-balance/): movement and year to date must both tie before a file is written.
-- **Australian tax tools for AI agents** (https://duguid.com.au/tools/australian-tax-ai-agents/): aus-accounting-mcp is a local computational MCP for Payday Super timing and ATO small-business benchmark ratios. Division 7A review is limited to operator-supplied loan facts; unsupported matters are refused. It is not a hosted ATO document library.
-- **Coal LSL levy calculator** (https://duguid.com.au/tools/coal-lsl-levy/): eligible wages under section 3B and the 2.7% payroll levy, in the browser.
-- **ATO small business benchmarks** (https://duguid.com.au/tools/ato-benchmarks/): a profit and loss against the published ranges, offline.
-- **Section 100A and Division 6** (https://duguid.com.au/tools/trust-distributions/): PCG 2022/2 has white, green and red zones only; the blue zone was draft-only.
-- **Company tax rate and franking** (https://duguid.com.au/tools/company-tax-franking/): base rate entity test, franking account, Division 203 benchmark rule.
-- **Subcontract ledger workflows** (https://duguid.com.au/tools/subcontractor-ledgers/): progress claims, retentions, WIP under AASB 15, Coal LSL, fuel tax credits.
+- Ryan Duguid is not a registered tax agent or BAS agent. The repositories are free software, not a practice, and do not take advice, return preparation, tax-treatment confirmation or lodgement requests.
+- Support covers software issues reproduced with fabricated data. Do not send taxpayer information, client files or credentials.
+- The tools prepare and review work. They do not lodge, post to ledgers, make payments, approve files or lock periods; those stay with an accountable human.
 
-## Adopt
-- **australian-accounting-skills** (https://github.com/ryanduguid/australian-accounting-skills): Nineteen workflow skills in the tagged v0.2.1 release; the default branch prepares v0.3.0 with 63 skills as at 27 September 2026, including the former Hardhat skills. Claude Code plugin, Codex plugin, or portable skill files. `npx skills add ryanduguid/australian-accounting-skills` installs from the default branch; use the repository installation guide for the tagged release. Prep-only. Not lodgement. Not tax advice.
-- **Aus Accounting MCP** (https://github.com/ryanduguid/australian-accounting/tree/main/apps/aus-accounting-mcp): Local MCP server delegating to ato-benchmark-compare and payday-super-checker, with scoped Division 7A loan review and synthetic SBR fixtures. Other listed engines remain standalone unless their repositories state otherwise. Official MCP registry name: io.github.ryanduguid/aus-accounting (https://registry.modelcontextprotocol.io/v0.1/servers/io.github.ryanduguid%2Faus-accounting/versions/latest). Install: `uvx aus-accounting-mcp`.
+## Start here
 
-## Specialised workflow
-- **Hardhat Ledger workflows** (https://github.com/ryanduguid/australian-accounting-skills): The 10 construction and mining subcontractor workflows now ship in Australian Accounting Skills (Security of Payment, retentions, WIP, Coal LSL, Fuel Tax Credits). Install the unified pack only; do not install a second Hardhat pack. Prep-only. Not tax advice.
+- [Tools on the website](https://duguid.com.au/tools/): browser tools and fictional worked examples, with nothing to install.
+- [Profit and cash worked example](https://duguid.com.au/examples/profit-vs-cash-flow/): a fictional Newcastle business where delaying one $44,000 receipt by 45 days leaves quarterly profit at $35,957.55 while daily cash falls to minus $25,160 on 6 November 2026.
+- [Monthly Close Controls worked example](https://duguid.com.au/tools/monthly-close-controls/#worked-example): eight exceptions in a fictional July close, including a $250 creditors difference.
+- [Evaluations](https://duguid.com.au/evaluate/) and [Evidence](https://duguid.com.au/evidence/): reproducible synthetic evaluations, credentials, releases and accepted upstream work.
 
-## Analytics and reporting
-- **au-fpa-pack** (https://github.com/ryanduguid/au-fpa-pack): Australian extension of Jeff Brines / Guiderail's openfpa. Lumbridge Services is a fictional Newcastle maintenance business with an Excel cash forecast, profit-to-cash reconciliation, management briefing and receipt-delay scenario. Delaying one $44,000 receipt by 45 days holds quarterly profit at $35,957.55 while daily cash falls to minus $25,160 on 6 November 2026. The source-only example is not a client case; the independent accountant trial remains pending. Worked example: https://duguid.com.au/examples/profit-vs-cash-flow/. Source and trial: https://github.com/ryanduguid/au-fpa-pack/tree/main/examples/lumbridge-services.
-- **Australian Accounting Power BI** (https://github.com/ryanduguid/accounting-review-pipeline/tree/main/apps/australian-accounting-power-bi): Source-controlled Power BI project for Australian accounting analytics, consolidation, ATO benchmarks and Payday Super review.
+## Repositories
 
-## Engines those products call
-- **payday-super-checker** (https://github.com/ryanduguid/australian-accounting/tree/main/packages/payday-super-checker): Payday Super contribution timelines and experimental SG-charge exposure. Not an ATO assessment.
-- **ato-benchmark-compare** (https://github.com/ryanduguid/australian-accounting/tree/main/packages/ato-benchmark-compare): Offline P&L variance against ATO small-business benchmarks.
-- **Ozzit** (https://github.com/ryanduguid/Ozzit): 133 native Excel LAMBDA functions plus 5 help tables for dynamic-array financial modelling without VBA or add-ins, released as v3.4.2 on 20 September 2026. Overview: https://duguid.com.au/tools/ozzit/. Needs Microsoft 365 or Excel 2024 and later. Built from scratch by Ryan Duguid; Australian helpers are GST, financial-year labels, 2 modelling depreciation schedules and 4 AASB 16 lessee schedules, plus rate, day count and DATEDIF helpers. Provenance and licence in ATTRIBUTION.md.
-- **TheExchequerTally** (https://github.com/ryanduguid/australian-accounting/tree/main/packages/the-exchequer-tally): Conditional company tax calculations from operator-established facts (Base Rate Entity under s 23AA ITRA 1986), franking account balance, Division 203.
-- **SolomonsSword** (https://github.com/ryanduguid/australian-accounting/tree/main/packages/solomons-sword): Trust income allocation under Division 6 ITAA 1936, s 100A, s 99B.
-- **xero-trial-balance-export** (https://github.com/ryanduguid/accounting-review-pipeline/tree/main/packages/xero-trial-balance-export): Reconciled Xero trial balance exporter; movement and year-to-date must both tie before CSV write.
-- **accounting-excel-toolkit** (https://github.com/ryanduguid/accounting-review-pipeline/tree/main/adapters/accounting-excel-toolkit): Power Query (M) and VBA automation for Australian month-end reporting.
-- **Workpaper Review Gate** (https://github.com/ryanduguid/accounting-review-pipeline/tree/main/packages/review-ready-gate): Pack-readiness gate upstream of manager review and Monthly Close Controls. The `review-ready-gate` distribution and `review-ready` command remain unchanged. It does not approve a file.
-- **Monthly Close Controls** (https://github.com/ryanduguid/accounting-review-pipeline/tree/main/packages/monthly-close-control-plane): Local trial-balance review packs with exception surfacing. The distribution remains `monthly-close-control-plane`. It does not approve or lock a close.
-- **llm-tax-guardrails** (https://github.com/ryanduguid/llm-tax-guardrails): DrDebits, APES 110 and TPB-aligned operating boundaries for LLM-assisted taxation workflows.
-- **Xero Ledger Review Gate** (https://github.com/ryanduguid/accounting-review-pipeline/tree/main/packages/elizabeth-anne-alexander): Synthetic-data demonstration of a fixed-policy trial-balance review boundary. The distribution and command remain `elizabeth-anne-alexander`.
-- **Related resources** (https://duguid.com.au/tools/#related-resources): third-party libraries, ATO guidance and Commonwealth legislation sources, kept on the site since the separate index repository was archived on 6 September 2026.
+- [Ozzit](https://github.com/ryanduguid/Ozzit): native Excel LAMBDA functions and help tables for GST arithmetic and financial modelling, including financial-year labels, depreciation and AASB 16 lessee schedules. No macros or add-ins; needs Microsoft 365 or Excel 2024 or later. Overview: https://duguid.com.au/tools/ozzit/.
+- [australian-accounting](https://github.com/ryanduguid/australian-accounting): local calculation engines for ATO small business benchmarks, Payday Super timing and Division 7A loan review, available through the aus-accounting-mcp server.
+- [aus-accounting-mcp](https://github.com/ryanduguid/australian-accounting/tree/main/apps/aus-accounting-mcp): local MCP server over stdio for those engines and a set of tax and super worksheets. Install with `uvx aus-accounting-mcp`. Registry name: io.github.ryanduguid/aus-accounting. Unsupported Division 7A matters are refused, and it ships no ATO document library. The MCP host still sends tool arguments and results to its model provider.
+- [australian-accounting-skills](https://github.com/ryanduguid/australian-accounting-skills): preparation and review workflows for public practice and contracting, including BAS, month-end close, payroll, workpaper tie-outs and the former Hardhat Ledger subcontractor workflows (there is no separate Hardhat pack). Claude Code plugin, Codex plugin or portable skill files; `npx skills add ryanduguid/australian-accounting-skills` installs from the default branch.
+- [accounting-review-pipeline](https://github.com/ryanduguid/accounting-review-pipeline): month-end close checks on Xero trial balance exports, producing exception packs for human sign-off, with Excel and Power BI components.
+- [au-fpa-pack](https://github.com/ryanduguid/au-fpa-pack): Australian extension of openfpa by Jeff Brines and Guiderail, with 30 June years, Xero AU and GST. Holds the source for the profit and cash example; its independent accountant trial is pending.
+- [llm-tax-guardrails](https://github.com/ryanduguid/llm-tax-guardrails): APES 110 and TPB Code controls, refusal patterns and evaluation fixtures for firms using LLMs in tax work. Conclusions stay with the registered practitioner.
+- [au-tax-legislation-corpus](https://github.com/ryanduguid/au-tax-legislation-corpus): builds a retrieval corpus from in-force Commonwealth tax legislation on the Federal Register of Legislation, with source and provenance records. It is a finding aid, not authorised legislation.
 
-## Data and decision boundary
-- Ryan Duguid is not a registered tax agent or BAS agent. Project support is limited to software issues reproduced with fabricated data. Do not send taxpayer information or request advice, return preparation, tax-treatment confirmation, or lodgement.
-- Public fixtures, examples, and tests use fabricated or synthetic data.
-- Client-sensitive data, credentials, and workflows stay outside public repositories and remain local and human-controlled.
-- Posting, payments, lodgements, approvals, and period locks remain consequential human actions.
+## Optional
+
+- [payday-super-checker](https://github.com/ryanduguid/australian-accounting/tree/main/packages/payday-super-checker): Payday Super contribution timelines and experimental SG charge exposure. Not an ATO assessment.
+- [ato-benchmark-compare](https://github.com/ryanduguid/australian-accounting/tree/main/packages/ato-benchmark-compare): offline profit and loss comparison against ATO small business benchmarks.
+- [TheExchequerTally](https://github.com/ryanduguid/australian-accounting/tree/main/packages/the-exchequer-tally): company tax rate from operator-established facts (base rate entity test, s 23AA ITRA 1986), franking account balance and Division 203.
+- [SolomonsSword](https://github.com/ryanduguid/australian-accounting/tree/main/packages/solomons-sword): trust income allocation under Division 6 ITAA 1936, s 100A and s 99B.
+- [xero-trial-balance-export](https://github.com/ryanduguid/accounting-review-pipeline/tree/main/packages/xero-trial-balance-export): Xero trial balance exporter; movement and year to date must both tie before a CSV is written.
+- [Monthly Close Controls](https://github.com/ryanduguid/accounting-review-pipeline/tree/main/packages/monthly-close-control-plane): local trial balance review packs with exception surfacing (distribution `monthly-close-control-plane`). It does not approve or lock a close.
+- [Workpaper Review Gate](https://github.com/ryanduguid/accounting-review-pipeline/tree/main/packages/review-ready-gate): checks whether a BAS, month-end or year-end pack is ready for manager review (distribution `review-ready-gate`, command `review-ready`). READY is not sign-off.
+- [Xero Ledger Review Gate](https://github.com/ryanduguid/accounting-review-pipeline/tree/main/packages/elizabeth-anne-alexander): synthetic demonstration of a fixed-policy trial balance review boundary (distribution and command `elizabeth-anne-alexander`).
+- [accounting-excel-toolkit](https://github.com/ryanduguid/accounting-review-pipeline/tree/main/adapters/accounting-excel-toolkit): Power Query (M) and VBA automation for Australian month-end reporting.
+- [Australian Accounting Power BI](https://github.com/ryanduguid/accounting-review-pipeline/tree/main/apps/australian-accounting-power-bi): source-controlled Power BI project for accounting analytics, consolidation, ATO benchmarks and Payday Super review.
+- [Related resources](https://duguid.com.au/tools/#related-resources): third-party libraries, ATO guidance and legislation sources, kept on the website.
