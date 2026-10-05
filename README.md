@@ -45,6 +45,7 @@ Skills guide preparation. A configured assistant can call the local MCP server, 
 
 ```mermaid
 flowchart TB
+%%{init: {"theme": "base", "themeVariables": {"background": "#000000", "primaryColor": "#7851A9", "primaryTextColor": "#FFFFF0", "primaryBorderColor": "#FFFFF0", "lineColor": "#7851A9", "textColor": "#FFFFF0", "edgeLabelBackground": "#000000", "clusterBkg": "#000000", "clusterBorder": "#7851A9", "titleColor": "#FFFFF0"}}}%%
     assistant["Assistant using<br/>accounting skills"] <--> mcp["Australian Accounting<br/>MCP server"]
     mcp -->|Calculations| engines["Calculation packages"]
     assistant -->|Workpapers and exceptions| reviewer["Authorised human review"]
