@@ -71,6 +71,8 @@ A fork here is due for review under the retention rule below because it holds no
 
 The hledger fork was archived on 27 September 2026, after upstream closed [#2740](https://github.com/hledgerorg/hledger/pull/2740) and [#2741](https://github.com/hledgerorg/hledger/pull/2741). Archiving keeps its history and can be reversed.
 
+On 6 October 2026, Ryan archived the gnucash, money, ofxtools, oracle, pycubrid and schwifty forks after checks found no open upstream pull request from this account. The gnucash contribution [#2321](https://github.com/Gnucash/gnucash/pull/2321) merged on 5 October 2026.
+
 ## Preserved for retirement
 
 Ryan selected these 3 forks for deletion. On 10 September 2026, checks by author and fork head found no open upstream PRs. Complete advertised Git histories were backed up and restored into fresh repositories, with matching refs and reachable objects. Upstream links retain the contribution record after the forks are deleted.
