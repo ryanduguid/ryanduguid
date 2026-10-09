@@ -52,8 +52,8 @@ flowchart TB
     official["Federal Register<br/>of Legislation"] -->|Corpus build| corpus["Legislation corpus<br/>Finding aid"]
     corpus -. Locate provisions .-> reviewer
     official -. Check authority .-> reviewer
-    style engines fill:#7851A9,stroke:#FFFFF0,stroke-width:2px,color:#FFFFF0
-    style reviewer fill:#7851A9,stroke:#FFFFF0,stroke-width:2px,color:#FFFFF0
+    style engines fill:#990024,stroke:#FFFFF0,stroke-width:2px,color:#FFFFF0
+    style reviewer fill:#990024,stroke:#FFFFF0,stroke-width:2px,color:#FFFFF0
 ```
 
 The corpus is not an automatic source feed into the calculation engines. Dashed arrows show reference use, which still requires checking the applicable authority.
