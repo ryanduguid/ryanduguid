@@ -1,5 +1,8 @@
 # Ryan Duguid
 
+[![Codacy code quality](https://app.codacy.com/project/badge/Grade/40141c3ba4aa47aaa6efdcd6265a8799?branch=main)](https://app.codacy.com/gh/ryanduguid/ryanduguid/dashboard)
+[![licence: CC BY 4.0](https://img.shields.io/badge/licence-CC%20BY%204.0-5C2D91.svg?labelColor=04001F)](LICENSE)
+
 I am a Senior Accountant in Newcastle, Australia. I build open source tools for cash-flow modelling, month-end review and Australian tax and payroll calculations.
 
 [Website](https://duguid.com.au/) · [Tools](https://duguid.com.au/tools/) · [Evaluations](https://duguid.com.au/evaluate/) · [Credentials and evidence](https://duguid.com.au/evidence/)
