@@ -26,9 +26,7 @@ Each example includes its workings, version and review boundary.
 - SAP S/4HANA certified in [Financial Accounting (FI)](https://www.credly.com/badges/750e7557-ab6d-4b28-a241-8252c263613a/public_url) and [Management Accounting (CO)](https://www.credly.com/badges/0f753c71-5f49-41be-8519-51e81030a8f1/public_url)
 - Xero Certified Specialist, Level 3, awarded 1 July 2026 and valid until 1 July 2027
 
-<p><img src="assets/xero-certified-specialist-level-3-badge.png" alt="" width="48" height="48" align="middle" /> Read the <a href="https://duguid.com.au/evidence/#xero-certification">certificate in the evidence register</a>, or explore my <a href="https://duguid.com.au/tools/xero-trial-balance/">Xero trial balance export and review workflow</a>.</p>
-
-<sub>The badge is Xero's artwork, taken from that certificate. Xero has not endorsed or certified anything here.</sub>
+<p><img src="assets/xero-certified-specialist-level-3-badge.png" alt="" width="48" height="48" align="left" hspace="8" /> Read the <a href="https://duguid.com.au/evidence/#xero-certification">certificate in the evidence register</a>, or explore my <a href="https://duguid.com.au/tools/xero-trial-balance/">Xero trial balance export and review workflow</a>.<br /><sub>The badge is Xero's artwork, taken from that certificate. Xero has not endorsed or certified anything here.</sub><br clear="left" /></p>
 
 ## Selected work
 
