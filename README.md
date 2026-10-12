@@ -1,8 +1,8 @@
 # Ryan Duguid
 
-[![Codacy code quality](https://app.codacy.com/project/badge/Grade/40141c3ba4aa47aaa6efdcd6265a8799?branch=main)](https://app.codacy.com/gh/ryanduguid/ryanduguid/dashboard)
-[![licence: CC BY 4.0](https://img.shields.io/badge/licence-CC%20BY%204.0-66023C.svg?labelColor=000000)](LICENSE)
-[![VirusTotal](https://img.shields.io/badge/VirusTotal-release%20files%20scanned-66023C?labelColor=000000&logo=virustotal&logoColor=FFFFF0)](https://github.com/ryanduguid/release-policy/blob/main/docs/virustotal-consumers.md)
+[![Codacy code quality](https://img.shields.io/codacy/grade/40141c3ba4aa47aaa6efdcd6265a8799?label=Codacy&labelColor=000000&style=flat-square)](https://app.codacy.com/gh/ryanduguid/ryanduguid/dashboard)
+[![VirusTotal](https://img.shields.io/badge/VirusTotal-scanned-990024?labelColor=000000&style=flat-square&logo=virustotal&logoColor=FFFFF0)](https://github.com/ryanduguid/release-policy/blob/main/docs/virustotal-consumers.md)
+[![licence: CC BY 4.0](https://img.shields.io/badge/licence-CC%20BY%204.0-66023C?labelColor=000000&style=flat-square)](LICENSE)
 
 I am a Senior Accountant in Newcastle, Australia. I build open source tools for cash-flow modelling, month-end review and Australian tax and payroll calculations.
 
@@ -38,7 +38,7 @@ Each example includes its workings, version and review boundary.
 - **[llm-tax-guardrails](https://github.com/ryanduguid/llm-tax-guardrails):** APES 110 and TPB Code controls, refusal patterns and evaluation fixtures for firms using LLMs in tax work. Conclusions stay with the registered practitioner.
 - **[au-tax-legislation-corpus](https://github.com/ryanduguid/au-tax-legislation-corpus):** Builds retrieval material from in-force Commonwealth tax legislation on the Federal Register of Legislation, with source and provenance records. It is a finding aid, not authorised legislation.
 
-<p align="center"><a href="https://pypi.org/project/aus-accounting-mcp/"><img src="https://img.shields.io/pypi/v/aus-accounting-mcp?label=PyPI&color=66023C&labelColor=000000" alt="aus-accounting-mcp on PyPI" /></a> <a href="https://github.com/ryanduguid/Ozzit/releases/latest"><img src="https://img.shields.io/github/v/release/ryanduguid/Ozzit?label=Ozzit&color=66023C&labelColor=000000" alt="Latest Ozzit release" /></a></p>
+<p align="center"><a href="https://pypi.org/project/aus-accounting-mcp/"><img src="https://img.shields.io/pypi/v/aus-accounting-mcp?label=PyPI&color=66023C&labelColor=000000&style=flat-square" alt="aus-accounting-mcp on PyPI" /></a> <a href="https://github.com/ryanduguid/Ozzit/releases/latest"><img src="https://img.shields.io/github/v/release/ryanduguid/Ozzit?label=Ozzit&color=66023C&labelColor=000000&style=flat-square" alt="Latest Ozzit release" /></a></p>
 
 <details>
 <summary>How the accounting tools fit together</summary>
@@ -47,7 +47,7 @@ Skills guide preparation. A configured assistant can call the local MCP server, 
 
 ```mermaid
 flowchart TB
-%%{init: {"theme": "base", "look": "classic", "themeVariables": {"background": "#000000", "primaryColor": "#66023C", "primaryTextColor": "#FFFFF0", "primaryBorderColor": "#FFFFF0", "lineColor": "#000000", "textColor": "#FFFFF0", "edgeLabelBackground": "#000000", "clusterBkg": "#000000", "clusterBorder": "#FFFFF0", "titleColor": "#FFFFF0"}, "themeCSS": ".flowchart-link, .relationshipLine, marker path { filter: drop-shadow(0px 1px 0px #FFFFF0) drop-shadow(0px -1px 0px #FFFFF0) drop-shadow(1px 0px 0px #FFFFF0) drop-shadow(-1px 0px 0px #FFFFF0); }"}}%%
+%%{init: {"theme": "base", "look": "classic", "themeVariables": {"background": "#000000", "primaryColor": "#66023C", "primaryTextColor": "#FFFFF0", "primaryBorderColor": "#FFFFF0", "lineColor": "#E5E4E2", "textColor": "#FFFFF0", "edgeLabelBackground": "#000000", "clusterBkg": "#000000", "clusterBorder": "#E5E4E2", "titleColor": "#E5E4E2"}}}%%
     assistant["Assistant using<br/>accounting skills"] <--> mcp["Australian Accounting<br/>MCP server"]
     mcp -->|Calculations| engines["Calculation packages"]
     assistant -->|Workpapers and exceptions| reviewer["Authorised human review"]
@@ -56,6 +56,8 @@ flowchart TB
     official -. Check authority .-> reviewer
     style engines fill:#990024,stroke:#FFFFF0,stroke-width:2px,color:#FFFFF0
     style reviewer fill:#990024,stroke:#FFFFF0,stroke-width:2px,color:#FFFFF0
+    classDef external fill:#E5E4E2,stroke:#E5E4E2,stroke-width:2px,color:#000000
+    class official external
 ```
 
 The corpus is not an automatic source feed into the calculation engines. Dashed arrows show reference use, which still requires checking the applicable authority.
