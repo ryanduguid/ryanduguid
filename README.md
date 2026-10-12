@@ -1,8 +1,8 @@
 # Ryan Duguid
 
-[![Codacy code quality](https://app.codacy.com/project/badge/Grade/40141c3ba4aa47aaa6efdcd6265a8799?branch=main)](https://app.codacy.com/gh/ryanduguid/ryanduguid/dashboard)
-[![licence: CC BY 4.0](https://img.shields.io/badge/licence-CC%20BY%204.0-66023C.svg?labelColor=000000)](LICENSE)
-[![VirusTotal](https://img.shields.io/badge/VirusTotal-release%20files%20scanned-66023C?labelColor=000000&logo=virustotal&logoColor=FFFFF0)](https://github.com/ryanduguid/release-policy/blob/main/docs/virustotal-consumers.md)
+[![Code quality](https://img.shields.io/codacy/grade/40141c3ba4aa47aaa6efdcd6265a8799/main?label=code%20quality&logo=codacy&color=0F4B32&labelColor=000000&logoColor=FFFFF0&style=for-the-badge)](https://app.codacy.com/gh/ryanduguid/ryanduguid/dashboard)
+[![Licence: CC BY 4.0](https://img.shields.io/badge/licence-CC%20BY%204.0-66023C?logo=creativecommons&labelColor=000000&logoColor=FFFFF0&style=for-the-badge)](LICENSE)
+[![VirusTotal](https://img.shields.io/badge/VirusTotal-release%20files%20scanned-66023C?logo=virustotal&labelColor=000000&logoColor=FFFFF0&style=for-the-badge)](https://github.com/ryanduguid/release-policy/blob/main/docs/virustotal-consumers.md)
 
 I am a Senior Accountant in Newcastle, Australia. I build open source tools for cash-flow modelling, month-end review and Australian tax and payroll calculations.
 
@@ -40,7 +40,7 @@ Each example includes its workings, version and review boundary.
 - **[llm-tax-guardrails](https://github.com/ryanduguid/llm-tax-guardrails):** APES 110 and TPB Code controls, refusal patterns and evaluation fixtures for firms using LLMs in tax work. Conclusions stay with the registered practitioner.
 - **[au-tax-legislation-corpus](https://github.com/ryanduguid/au-tax-legislation-corpus):** Builds retrieval material from in-force Commonwealth tax legislation on the Federal Register of Legislation, with source and provenance records. It is a finding aid, not authorised legislation.
 
-<p align="center"><a href="https://pypi.org/project/aus-accounting-mcp/"><img src="https://img.shields.io/pypi/v/aus-accounting-mcp?label=PyPI&color=66023C&labelColor=000000" alt="aus-accounting-mcp on PyPI" /></a> <a href="https://github.com/ryanduguid/Ozzit/releases/latest"><img src="https://img.shields.io/github/v/release/ryanduguid/Ozzit?label=Ozzit&color=66023C&labelColor=000000" alt="Latest Ozzit release" /></a></p>
+<p align="center"><a href="https://pypi.org/project/aus-accounting-mcp/"><img src="https://img.shields.io/pypi/v/aus-accounting-mcp?label=PyPI&logo=pypi&color=66023C&labelColor=000000&logoColor=FFFFF0&style=for-the-badge" alt="aus-accounting-mcp on PyPI" /></a> <a href="https://pypi.org/project/aus-accounting-mcp/"><img src="https://img.shields.io/pypi/dm/aus-accounting-mcp?label=downloads&logo=pypi&color=66023C&labelColor=000000&logoColor=FFFFF0&style=for-the-badge" alt="aus-accounting-mcp monthly downloads" /></a> <a href="https://github.com/ryanduguid/Ozzit/releases/latest"><img src="https://img.shields.io/github/v/release/ryanduguid/Ozzit?label=Ozzit&logo=github&color=66023C&labelColor=000000&logoColor=FFFFF0&style=for-the-badge" alt="Latest Ozzit release" /></a></p>
 
 <details>
 <summary>How the accounting tools fit together</summary>
