@@ -49,15 +49,15 @@ Skills guide preparation. A configured assistant can call the local MCP server, 
 
 ```mermaid
 flowchart TB
-%%{init: {"theme": "base", "look": "classic", "themeVariables": {"background": "#000000", "primaryColor": "#66023C", "primaryTextColor": "#FFFFF0", "primaryBorderColor": "#FFFFF0", "lineColor": "#000000", "textColor": "#FFFFF0", "edgeLabelBackground": "#000000", "clusterBkg": "#000000", "clusterBorder": "#FFFFF0", "titleColor": "#FFFFF0"}, "themeCSS": ".flowchart-link, .relationshipLine, marker path { filter: drop-shadow(0px 1px 0px #FFFFF0) drop-shadow(0px -1px 0px #FFFFF0) drop-shadow(1px 0px 0px #FFFFF0) drop-shadow(-1px 0px 0px #FFFFF0); }"}}%%
+%%{init: {"theme": "base", "look": "classic", "themeVariables": {"background": "#000000", "primaryColor": "#66023C", "primaryTextColor": "#FFFFF0", "primaryBorderColor": "#E5E4E2", "lineColor": "#000000", "textColor": "#FFFFF0", "edgeLabelBackground": "#000000", "clusterBkg": "#000000", "clusterBorder": "#E5E4E2", "titleColor": "#FFFFF0"}, "themeCSS": ".flowchart-link, .relationshipLine, marker path { filter: drop-shadow(0px 1px 0px #E5E4E2) drop-shadow(0px -1px 0px #E5E4E2) drop-shadow(1px 0px 0px #E5E4E2) drop-shadow(-1px 0px 0px #E5E4E2); }"}}%%
     assistant["Assistant using<br/>accounting skills"] <--> mcp["Australian Accounting<br/>MCP server"]
     mcp -->|Calculations| engines["Calculation packages"]
     assistant -->|Workpapers and exceptions| reviewer["Authorised human review"]
     official["Federal Register<br/>of Legislation"] -->|Corpus build| corpus["Legislation corpus<br/>Finding aid"]
     corpus -. Locate provisions .-> reviewer
     official -. Check authority .-> reviewer
-    style engines fill:#990024,stroke:#FFFFF0,stroke-width:2px,color:#FFFFF0
-    style reviewer fill:#990024,stroke:#FFFFF0,stroke-width:2px,color:#FFFFF0
+    style engines fill:#990024,stroke:#E5E4E2,stroke-width:2px,color:#FFFFF0
+    style reviewer fill:#990024,stroke:#E5E4E2,stroke-width:2px,color:#FFFFF0
 ```
 
 The corpus is not an automatic source feed into the calculation engines. Dashed arrows show reference use, which still requires checking the applicable authority.
