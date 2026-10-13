@@ -31,7 +31,6 @@ Open, merged and closed are different states. The Open contributions column list
 | [fano-classifier-integration-kit](https://github.com/ryanduguid/fano-classifier-integration-kit) | [lodgeit-labs/fano-classifier-integration-kit](https://github.com/lodgeit-labs/fano-classifier-integration-kit) | [#8](https://github.com/lodgeit-labs/fano-classifier-integration-kit/pull/8), [#7](https://github.com/lodgeit-labs/fano-classifier-integration-kit/pull/7) |
 | [fava](https://github.com/ryanduguid/fava) | [beancount/fava](https://github.com/beancount/fava) | [#2362](https://github.com/beancount/fava/pull/2362), [#2353](https://github.com/beancount/fava/pull/2353), [#2350](https://github.com/beancount/fava/pull/2350) |
 | [Furtim](https://github.com/ryanduguid/Furtim) | [jo-inc/camofox-browser](https://github.com/jo-inc/camofox-browser) | [#11626](https://github.com/jo-inc/camofox-browser/pull/11626), [#11625](https://github.com/jo-inc/camofox-browser/pull/11625), [#11624](https://github.com/jo-inc/camofox-browser/pull/11624), [#11614](https://github.com/jo-inc/camofox-browser/pull/11614), [#11613](https://github.com/jo-inc/camofox-browser/pull/11613), [#11612](https://github.com/jo-inc/camofox-browser/pull/11612), [#11166](https://github.com/jo-inc/camofox-browser/pull/11166) |
-| [gnucash](https://github.com/ryanduguid/gnucash) | [Gnucash/gnucash](https://github.com/Gnucash/gnucash) | [#2321](https://github.com/Gnucash/gnucash/pull/2321) |
 | [gobl](https://github.com/ryanduguid/gobl) | [invopop/gobl](https://github.com/invopop/gobl) | [#987](https://github.com/invopop/gobl/pull/987) |
 | [Graft](https://github.com/ryanduguid/Graft) | [trailhq/Graft](https://github.com/trailhq/Graft) | [#490](https://github.com/trailhq/Graft/pull/490) |
 | [holidays](https://github.com/ryanduguid/holidays) | [vacanza/holidays](https://github.com/vacanza/holidays) | [#3846](https://github.com/vacanza/holidays/pull/3846) |
@@ -71,7 +70,7 @@ A fork here is due for review under the retention rule below because it holds no
 
 The hledger fork was archived on 27 September 2026, after upstream closed [#2740](https://github.com/hledgerorg/hledger/pull/2740) and [#2741](https://github.com/hledgerorg/hledger/pull/2741). Archiving keeps its history and can be reversed.
 
-On 6 October 2026, Ryan archived the gnucash, money, ofxtools, oracle, pycubrid and schwifty forks after checks found no open upstream pull request from this account. The gnucash contribution [#2321](https://github.com/Gnucash/gnucash/pull/2321) merged on 5 October 2026.
+On 6 October 2026, Ryan archived the gnucash, money, ofxtools, oracle, pycubrid and schwifty forks after checks found no open upstream pull request from this account. The gnucash contribution [#2321](https://github.com/Gnucash/gnucash/pull/2321) merged on 5 October 2026. The gnucash fork has since been deleted: GitHub returned 404 for it on 14 October 2026, so its row is removed from the table above.
 
 ## Preserved for retirement
 
