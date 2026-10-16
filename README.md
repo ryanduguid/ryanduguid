@@ -47,7 +47,7 @@ Skills guide preparation. A configured assistant can call the local MCP server, 
 
 ```mermaid
 flowchart TB
-%%{init: {"theme": "base", "look": "classic", "themeVariables": {"background": "#000000", "primaryColor": "#66023C", "primaryTextColor": "#FFFFF0", "primaryBorderColor": "#FFFFF0", "lineColor": "#E5E4E2", "textColor": "#FFFFF0", "edgeLabelBackground": "#000000", "clusterBkg": "#000000", "clusterBorder": "#E5E4E2", "titleColor": "#E5E4E2"}}}%%
+%%{init: {"theme": "base", "look": "classic", "themeVariables": {"background": "#000000", "primaryColor": "#66023C", "primaryTextColor": "#FFFFF0", "primaryBorderColor": "#FFFFF0", "lineColor": "#FFD32A", "textColor": "#FFFFF0", "edgeLabelBackground": "#000000", "clusterBkg": "#000000", "clusterBorder": "#9B7735", "titleColor": "#E5E4E2"}}}%%
     assistant["Assistant using<br/>accounting skills"] <--> mcp["Australian Accounting<br/>MCP server"]
     mcp -->|Calculations| engines["Calculation packages"]
     assistant -->|Workpapers and exceptions| reviewer["Authorised human review"]
@@ -55,8 +55,8 @@ flowchart TB
     corpus -. Locate provisions .-> reviewer
     official -. Check authority .-> reviewer
     style engines fill:#990024,stroke:#FFFFF0,stroke-width:2px,color:#FFFFF0
-    style reviewer fill:#990024,stroke:#FFFFF0,stroke-width:2px,color:#FFFFF0
-    classDef external fill:#E5E4E2,stroke:#E5E4E2,stroke-width:2px,color:#000000
+    style reviewer fill:#E7162F,stroke:#FFFFF0,stroke-width:2px,color:#FFFFF0
+    classDef external fill:#745EB1,stroke:#FFFFF0,stroke-width:2px,color:#FFFFF0
     class official external
 ```
 
