@@ -15,8 +15,7 @@ profile README never depends on the website being deployed to show an image.
 This badge is Xero's trademark and artwork. It is **not** covered by this
 repository's Creative Commons Attribution 4.0 licence, which applies to Ryan
 Duguid's own text. It is published only as a factual record of his own
-certification, and carries no Xero endorsement or certification of anything in
-these repositories.
+certification.
 
 Keep it at its native square aspect ratio, with `width` and `height` set so the
 box is reserved before it loads. Do not recolour, crop, rotate or redraw it, and
