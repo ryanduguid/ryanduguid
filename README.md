@@ -1,8 +1,10 @@
 # Ryan Duguid
 
-[![Codacy code quality](https://img.shields.io/codacy/grade/40141c3ba4aa47aaa6efdcd6265a8799?label=Codacy&labelColor=000000&style=flat)](https://app.codacy.com/gh/ryanduguid/ryanduguid/dashboard)
-[![VirusTotal](https://img.shields.io/badge/VirusTotal-scanned-990024?labelColor=000000&style=flat&logo=virustotal&logoColor=FFD32A&color=990024)](https://github.com/ryanduguid/release-policy/blob/main/docs/virustotal-consumers.md)
-[![licence: CC BY 4.0](https://img.shields.io/badge/licence-CC%20BY%204.0-66023C?labelColor=000000&style=flat&color=66023C)](LICENSE)
+<div align="center">
+
+[![Codacy code quality](https://img.shields.io/codacy/grade/40141c3ba4aa47aaa6efdcd6265a8799?label=Codacy&labelColor=000000&style=flat)](https://app.codacy.com/gh/ryanduguid/ryanduguid/dashboard) [![VirusTotal](https://img.shields.io/badge/VirusTotal-scanned-990024?labelColor=000000&style=flat&logo=virustotal&logoColor=FFD32A&color=990024)](https://github.com/ryanduguid/release-policy/blob/main/docs/virustotal-consumers.md) [![licence: CC BY 4.0](https://img.shields.io/badge/licence-CC%20BY%204.0-66023C?labelColor=000000&style=flat&color=66023C)](LICENSE)
+
+</div>
 
 I am a Senior Accountant in Newcastle, Australia. I build open source tools for cash-flow modelling, month-end review and Australian tax and payroll calculations.
 
