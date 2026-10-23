@@ -6,7 +6,7 @@ Open, merged and closed are different states. The Open contributions column list
 
 ## Active forks
 
-58 of 87 forks hold at least one open upstream pull request. No fork is archived.
+58 of 83 forks hold at least one open upstream pull request. No fork is archived.
 
 | Fork | Upstream | Open contributions |
 | --- | --- | --- |
@@ -137,9 +137,7 @@ Pull requests merged or closed since 13 September 2026:
 
 ## Forks with no open contribution
 
-A fork here is due for review under the retention rule below because it holds no open upstream pull request. Listing one is a record of that state, not a decision to delete it. At the 23 October 2026 review: account-financial-reporting, account-reconcile, beanquery, clawdog-calculator-api-integration-kit, clawdog-kit, clawdog-mcp-server, erpnext, fano-classifier-integration-kit, fava, Graft, hledger, holidays, jsonschema, laconic, mock-data-holder-nodejs, moneymanagerex, openfpa, python-accounting, python-stdnum, pyxero, repo-forensics, requests-cache, rustledger, skills, standards-testing, xero-command-line, xero-mcp, xero-mcp-server, Xero-OpenAPI. The 4 clawdog forks, clawdog-calculator-api-integration-kit, clawdog-kit, clawdog-mcp-server and clawdog-widget-renderer, are kept by choice.
-
-The hledger fork was archived on 27 September 2026, after upstream closed [#2740](https://github.com/hledgerorg/hledger/pull/2740) and [#2741](https://github.com/hledgerorg/hledger/pull/2741). Archiving keeps its history and can be reversed.
+A fork here is due for review under the retention rule below because it holds no open upstream pull request. Listing one is a record of that state, not a decision to delete it. At the 23 October 2026 review: beanquery, clawdog-calculator-api-integration-kit, clawdog-kit, clawdog-mcp-server, erpnext, fano-classifier-integration-kit, fava, Graft, holidays, jsonschema, laconic, mock-data-holder-nodejs, moneymanagerex, openfpa, python-accounting, python-stdnum, pyxero, requests-cache, rustledger, skills, standards-testing, xero-command-line, xero-mcp, xero-mcp-server, Xero-OpenAPI. The 4 clawdog forks, clawdog-calculator-api-integration-kit, clawdog-kit, clawdog-mcp-server and clawdog-widget-renderer, are kept by choice.
 
 On 6 October 2026, Ryan archived the gnucash, money, ofxtools, oracle, pycubrid and schwifty forks after checks found no open upstream pull request from this account. The gnucash contribution [#2321](https://github.com/Gnucash/gnucash/pull/2321) merged on 5 October 2026. GitHub returned 404 for the gnucash fork on 14 October 2026. By 17 October a gnucash fork existed again with an open contribution, listed in the table above.
 
@@ -166,6 +164,10 @@ The sdk and django-money forks were deleted on 6 September 2026 after checking f
 The books fork no longer appeared in the account inventory on 23 October 2026, and its former URL returned 404. The [upstream project](https://github.com/frappe/books) remains available.
 
 The tubesync and p-limit forks no longer appeared in the account inventory on 23 October 2026, and their former URLs returned 404. The tubesync pull request [#1616](https://github.com/meeb/tubesync/pull/1616) merged on 19 October 2026. The [upstream project](https://github.com/meeb/tubesync) remains available.
+
+The account-financial-reporting, account-reconcile and repo-forensics forks were deleted on 23 October 2026, after checks by author and fork head found no open upstream PRs. Their complete advertised Git histories, including fork pull request refs, were preserved in verified local bundles before deletion. Their closed upstream pull requests are listed under Recent contributions.
+
+The hledger fork was archived on 27 September 2026, after upstream closed [#2740](https://github.com/hledgerorg/hledger/pull/2740) and [#2741](https://github.com/hledgerorg/hledger/pull/2741), and deleted on 23 October 2026. Upstream keeps the heads of those pull requests and of [#2766](https://github.com/hledgerorg/hledger/pull/2766).
 
 ## Retention rule
 
