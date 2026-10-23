@@ -6,7 +6,7 @@ Open, merged and closed are different states. The Open contributions column list
 
 ## Active forks
 
-58 of 88 forks hold at least one open upstream pull request. No fork is archived.
+58 of 87 forks hold at least one open upstream pull request. No fork is archived.
 
 | Fork | Upstream | Open contributions |
 | --- | --- | --- |
@@ -137,7 +137,7 @@ Pull requests merged or closed since 13 September 2026:
 
 ## Forks with no open contribution
 
-A fork here is due for review under the retention rule below because it holds no open upstream pull request. Listing one is a record of that state, not a decision to delete it. At the 23 October 2026 review: account-financial-reporting, account-reconcile, awesome-AutoHotkey, beanquery, clawdog-calculator-api-integration-kit, clawdog-kit, clawdog-mcp-server, erpnext, fano-classifier-integration-kit, fava, Graft, hledger, holidays, jsonschema, laconic, mock-data-holder-nodejs, money, moneymanagerex, openfpa, oracle, PlutarchPages, pytest-mock, python-accounting, python-stdnum, pyxero, repo-forensics, requests-cache, rustledger, skills, sqlframe, standards-testing, xero-command-line, xero-mcp, xero-mcp-server, Xero-OpenAPI.
+A fork here is due for review under the retention rule below because it holds no open upstream pull request. Listing one is a record of that state, not a decision to delete it. At the 23 October 2026 review: account-financial-reporting, account-reconcile, beanquery, clawdog-calculator-api-integration-kit, clawdog-kit, clawdog-mcp-server, erpnext, fano-classifier-integration-kit, fava, Graft, hledger, holidays, jsonschema, laconic, mock-data-holder-nodejs, moneymanagerex, openfpa, python-accounting, python-stdnum, pyxero, repo-forensics, requests-cache, rustledger, skills, standards-testing, xero-command-line, xero-mcp, xero-mcp-server, Xero-OpenAPI. The four clawdog forks, clawdog-calculator-api-integration-kit, clawdog-kit, clawdog-mcp-server and clawdog-widget-renderer, are kept by choice.
 
 The hledger fork was archived on 27 September 2026, after upstream closed [#2740](https://github.com/hledgerorg/hledger/pull/2740) and [#2741](https://github.com/hledgerorg/hledger/pull/2741). Archiving keeps its history and can be reversed.
 
