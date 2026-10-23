@@ -6,7 +6,7 @@ Open, merged and closed are different states. The Open contributions column list
 
 ## Active forks
 
-58 of 83 forks hold at least one open upstream pull request. No fork is archived.
+58 of the 83 forks covered by this review hold at least one open upstream pull request. No fork is archived.
 
 | Fork | Upstream | Open contributions |
 | --- | --- | --- |
