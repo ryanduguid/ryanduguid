@@ -1,12 +1,12 @@
 # Contribution forks
 
-Reviewed 23 October 2026 from the GitHub API (fork list and pull requests by author). These are contribution forks, not original Australian accounting products. File product issues upstream. Each section states whether its forks still hold an open upstream contribution.
+Reviewed 23 October 2026 from the GitHub API (fork list and pull requests by author). Fork counts and Pruned forks were updated for deletions through 24 October 2026 without a new review. These are contribution forks, not original Australian accounting products. File product issues upstream. Each section states whether its forks still hold an open upstream contribution.
 
 Open, merged and closed are different states. The Open contributions column lists only pull requests open at the review date; a merged or closed one moves to Recent contributions and keeps its link, because the upstream record is what shows the work.
 
 ## Active forks
 
-58 of the 81 forks covered by this review hold at least one open upstream pull request. No fork is archived.
+58 of the 81 forks remaining from the 23 October 2026 review hold at least one open upstream pull request. No fork is archived.
 
 | Fork | Upstream | Open contributions |
 | --- | --- | --- |
@@ -137,7 +137,7 @@ Pull requests merged or closed since 13 September 2026:
 
 ## Forks with no open contribution
 
-A fork here is due for review under the retention rule below because it holds no open upstream pull request. Listing one is a record of that state, not a decision to delete it. At the 23 October 2026 review: beanquery, clawdog-calculator-api-integration-kit, clawdog-kit, clawdog-mcp-server, fano-classifier-integration-kit, fava, Graft, jsonschema, laconic, mock-data-holder-nodejs, moneymanagerex, openfpa, python-accounting, python-stdnum, pyxero, requests-cache, rustledger, skills, standards-testing, xero-command-line, xero-mcp, xero-mcp-server, Xero-OpenAPI. The 4 clawdog forks, clawdog-calculator-api-integration-kit, clawdog-kit, clawdog-mcp-server and clawdog-widget-renderer, are kept by choice.
+A fork here is due for review under the retention rule below because it holds no open upstream pull request. Listing one is a record of that state, not a decision to delete it. Of the forks in the 23 October 2026 review, those remaining after the deletions recorded through 24 October 2026 are: beanquery, clawdog-calculator-api-integration-kit, clawdog-kit, clawdog-mcp-server, fano-classifier-integration-kit, fava, Graft, jsonschema, laconic, mock-data-holder-nodejs, moneymanagerex, openfpa, python-accounting, python-stdnum, pyxero, requests-cache, rustledger, skills, standards-testing, xero-command-line, xero-mcp, xero-mcp-server, Xero-OpenAPI. The 4 clawdog forks, clawdog-calculator-api-integration-kit, clawdog-kit, clawdog-mcp-server and clawdog-widget-renderer, are kept by choice.
 
 On 6 October 2026, Ryan archived the gnucash, money, ofxtools, oracle, pycubrid and schwifty forks after checks found no open upstream pull request from this account. The gnucash contribution [#2321](https://github.com/Gnucash/gnucash/pull/2321) merged on 5 October 2026. GitHub returned 404 for the gnucash fork on 14 October 2026. By 17 October a gnucash fork existed again with an open contribution, listed in the table above.
 
