@@ -120,7 +120,7 @@ Pull requests merged or closed since 13 September 2026:
 - qmd: [#1006](https://github.com/tobi/qmd/pull/1006) closed 22 October 2026.
 - repo-forensics: [#65](https://github.com/alexgreensh/repo-forensics/pull/65) closed 23 October 2026.
 - requests-cache: [#1202](https://github.com/requests-cache/requests-cache/pull/1202) merged 2 October 2026; [#1187](https://github.com/requests-cache/requests-cache/pull/1187) merged 14 September 2026.
-- rtk: [#4254](https://github.com/rtk-ai/rtk/pull/4254) closed 22 October 2026.
+- rgg: [#4254](https://github.com/rtk-ai/rtk/pull/4254) closed 22 October 2026.
 - rust-decimal: [#864](https://github.com/paupino/rust-decimal/pull/864) merged 6 October 2026.
 - rustledger: [#2659](https://github.com/rustledger/rustledger/pull/2659) merged 21 October 2026.
 - schwifty: [#317](https://github.com/mdomke/schwifty/pull/317) merged 5 October 2026.
