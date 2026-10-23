@@ -129,7 +129,6 @@ Pull requests merged or closed since 13 September 2026:
 - sqlframe: [#649](https://github.com/eakmanrq/sqlframe/pull/649) merged 14 October 2026.
 - standards-testing: [#79](https://github.com/ConsumerDataStandardsAustralia/standards-testing/pull/79) closed 22 October 2026; [#78](https://github.com/ConsumerDataStandardsAustralia/standards-testing/pull/78) closed 22 October 2026; [#77](https://github.com/ConsumerDataStandardsAustralia/standards-testing/pull/77) closed 22 October 2026.
 - toolbelt: [#399](https://github.com/requests/toolbelt/pull/399) closed 22 October 2026.
-- tubesync: [#1616](https://github.com/meeb/tubesync/pull/1616) merged 19 October 2026.
 - xero-command-line: [#44](https://github.com/XeroAPI/xero-command-line/pull/44) merged 17 September 2026; [#42](https://github.com/XeroAPI/xero-command-line/pull/42) closed 22 October 2026.
 - xero-mcp: [#131](https://github.com/john-zhang-dev/xero-mcp/pull/131) closed 22 October 2026.
 - xero-mcp-server: [#313](https://github.com/XeroAPI/xero-mcp-server/pull/313) closed 22 October 2026; [#311](https://github.com/XeroAPI/xero-mcp-server/pull/311) closed 22 October 2026; [#305](https://github.com/XeroAPI/xero-mcp-server/pull/305) closed 19 October 2026; [#304](https://github.com/XeroAPI/xero-mcp-server/pull/304) closed 19 October 2026; [#303](https://github.com/XeroAPI/xero-mcp-server/pull/303) closed 19 October 2026; [#302](https://github.com/XeroAPI/xero-mcp-server/pull/302) closed 19 October 2026; [#301](https://github.com/XeroAPI/xero-mcp-server/pull/301) closed 19 October 2026; [#300](https://github.com/XeroAPI/xero-mcp-server/pull/300) closed 19 October 2026; [#299](https://github.com/XeroAPI/xero-mcp-server/pull/299) closed 19 October 2026; [#298](https://github.com/XeroAPI/xero-mcp-server/pull/298) closed 19 October 2026; [#297](https://github.com/XeroAPI/xero-mcp-server/pull/297) closed 19 October 2026.
@@ -138,7 +137,7 @@ Pull requests merged or closed since 13 September 2026:
 
 ## Forks with no open contribution
 
-A fork here is due for review under the retention rule below because it holds no open upstream pull request. Listing one is a record of that state, not a decision to delete it. At the 23 October 2026 review: account-financial-reporting, account-reconcile, awesome-AutoHotkey, beanquery, clawdog-calculator-api-integration-kit, clawdog-kit, clawdog-mcp-server, erpnext, fano-classifier-integration-kit, fava, Graft, hledger, holidays, jsonschema, laconic, mock-data-holder-nodejs, money, moneymanagerex, openfpa, oracle, p-limit, PlutarchPages, pytest-mock, python-accounting, python-stdnum, pyxero, repo-forensics, requests-cache, rustledger, skills, sqlframe, standards-testing, tubesync, xero-command-line, xero-mcp, xero-mcp-server, Xero-OpenAPI.
+A fork here is due for review under the retention rule below because it holds no open upstream pull request. Listing one is a record of that state, not a decision to delete it. At the 23 October 2026 review: account-financial-reporting, account-reconcile, awesome-AutoHotkey, beanquery, clawdog-calculator-api-integration-kit, clawdog-kit, clawdog-mcp-server, erpnext, fano-classifier-integration-kit, fava, Graft, hledger, holidays, jsonschema, laconic, mock-data-holder-nodejs, money, moneymanagerex, openfpa, oracle, PlutarchPages, pytest-mock, python-accounting, python-stdnum, pyxero, repo-forensics, requests-cache, rustledger, skills, sqlframe, standards-testing, xero-command-line, xero-mcp, xero-mcp-server, Xero-OpenAPI.
 
 The hledger fork was archived on 27 September 2026, after upstream closed [#2740](https://github.com/hledgerorg/hledger/pull/2740) and [#2741](https://github.com/hledgerorg/hledger/pull/2741). Archiving keeps its history and can be reversed.
 
@@ -165,6 +164,8 @@ The aussie-bean-tools fork no longer appeared in the account inventory on 10 Sep
 The sdk and django-money forks were deleted on 6 September 2026 after checking for open upstream PRs by author and fork head. Both had zero. Complete advertised Git histories were preserved in verified local bundles before deletion, including commits absent from the current upstream branch tips. The accepted [Meltano SDK contribution](https://github.com/meltano/sdk/pull/3727) remains upstream.
 
 The books fork no longer appeared in the account inventory on 23 October 2026, and its former URL returned 404. The [upstream project](https://github.com/frappe/books) remains available.
+
+The tubesync and p-limit forks no longer appeared in the account inventory on 23 October 2026, and their former URLs returned 404. The tubesync pull request [#1616](https://github.com/meeb/tubesync/pull/1616) merged on 19 October 2026. The [upstream project](https://github.com/meeb/tubesync) remains available.
 
 ## Retention rule
 
