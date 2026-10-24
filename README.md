@@ -2,15 +2,13 @@
 
 <div align="center">
 
-[![Codacy code quality](https://img.shields.io/codacy/grade/40141c3ba4aa47aaa6efdcd6265a8799?label=Codacy&labelColor=000000&style=flat)](https://app.codacy.com/gh/ryanduguid/ryanduguid/dashboard) [![VirusTotal](https://img.shields.io/badge/VirusTotal-scanned-990024?labelColor=000000&style=flat&logo=virustotal&logoColor=FFD32A&color=990024)](https://github.com/ryanduguid/release-policy/blob/main/docs/virustotal-consumers.md) [![licence: CC BY 4.0](https://img.shields.io/badge/licence-CC%20BY%204.0-66023C?labelColor=000000&style=flat&color=66023C)](LICENSE)
+[![aus-accounting-mcp on PyPI](https://img.shields.io/pypi/v/aus-accounting-mcp?label=PyPI&color=66023C&labelColor=000000&style=flat)](https://pypi.org/project/aus-accounting-mcp/) [![Latest Ozzit release](https://img.shields.io/github/v/release/ryanduguid/Ozzit?label=Ozzit&color=66023C&labelColor=000000&style=flat)](https://github.com/ryanduguid/Ozzit/releases/latest)
 
 </div>
 
 I am a Senior Accountant in Newcastle, Australia. I build open source tools for cash-flow modelling, month-end review and Australian tax and payroll calculations.
 
 [Website](https://duguid.com.au/) · [Tools](https://duguid.com.au/tools/) · [Evaluations](https://duguid.com.au/evaluate/) · [Credentials and evidence](https://duguid.com.au/evidence/)
-
-This is a free software portfolio. I am not a registered tax agent or BAS agent.
 
 ## Try an accounting task
 
@@ -40,24 +38,7 @@ Each example includes its workings, version and review boundary.
 - **[llm-tax-guardrails](https://github.com/ryanduguid/llm-tax-guardrails):** APES 110 and TPB Code controls, refusal patterns and evaluation fixtures for firms using LLMs in tax work. Conclusions stay with the registered practitioner.
 - **[au-tax-legislation-corpus](https://github.com/ryanduguid/au-tax-legislation-corpus):** Builds retrieval material from in-force Commonwealth tax legislation on the Federal Register of Legislation, with source and provenance records. It is a finding aid, not authorised legislation.
 
-<details>
-<summary>Live repository checks</summary>
-
-Results for the default branches of the selected repositories.
-
-| Repository | CI | Coverage | OpenSSF Scorecard |
-| --- | --- | --- | --- |
-| [au-fpa-pack](https://github.com/ryanduguid/au-fpa-pack) | [![tests](https://img.shields.io/github/actions/workflow/status/ryanduguid/au-fpa-pack/ci.yml?branch=main&label=tests&labelColor=000000&style=flat)](https://github.com/ryanduguid/au-fpa-pack/actions/workflows/ci.yml) | [![Codecov](https://img.shields.io/codecov/c/github/ryanduguid/au-fpa-pack?label=coverage&labelColor=000000&style=flat)](https://codecov.io/gh/ryanduguid/au-fpa-pack) | [![OpenSSF Scorecard](https://img.shields.io/ossf-scorecard/github.com/ryanduguid/au-fpa-pack?label=Scorecard&labelColor=000000&style=flat)](https://scorecard.dev/viewer/?uri=github.com/ryanduguid/au-fpa-pack) |
-| [accounting-review-pipeline](https://github.com/ryanduguid/accounting-review-pipeline) | [![tests](https://img.shields.io/github/actions/workflow/status/ryanduguid/accounting-review-pipeline/ci.yml?branch=main&label=tests&labelColor=000000&style=flat)](https://github.com/ryanduguid/accounting-review-pipeline/actions/workflows/ci.yml) | [![Codecov](https://img.shields.io/codecov/c/github/ryanduguid/accounting-review-pipeline?label=coverage&labelColor=000000&style=flat)](https://codecov.io/gh/ryanduguid/accounting-review-pipeline) | [![OpenSSF Scorecard](https://img.shields.io/ossf-scorecard/github.com/ryanduguid/accounting-review-pipeline?label=Scorecard&labelColor=000000&style=flat)](https://scorecard.dev/viewer/?uri=github.com/ryanduguid/accounting-review-pipeline) |
-| [Ozzit](https://github.com/ryanduguid/Ozzit) | [![verify](https://img.shields.io/github/actions/workflow/status/ryanduguid/Ozzit/verify.yml?branch=main&label=verify&labelColor=000000&style=flat)](https://github.com/ryanduguid/Ozzit/actions/workflows/verify.yml) | [![Codecov](https://img.shields.io/codecov/c/github/ryanduguid/Ozzit?label=coverage&labelColor=000000&style=flat)](https://codecov.io/gh/ryanduguid/Ozzit) | [![OpenSSF Scorecard](https://img.shields.io/ossf-scorecard/github.com/ryanduguid/Ozzit?label=Scorecard&labelColor=000000&style=flat)](https://scorecard.dev/viewer/?uri=github.com/ryanduguid/Ozzit) |
-| [australian-accounting](https://github.com/ryanduguid/australian-accounting) | [![tests](https://img.shields.io/github/actions/workflow/status/ryanduguid/australian-accounting/ci.yml?branch=main&label=tests&labelColor=000000&style=flat)](https://github.com/ryanduguid/australian-accounting/actions/workflows/ci.yml) | [![Codecov](https://img.shields.io/codecov/c/github/ryanduguid/australian-accounting?label=coverage&labelColor=000000&style=flat)](https://codecov.io/gh/ryanduguid/australian-accounting) | [![OpenSSF Scorecard](https://img.shields.io/ossf-scorecard/github.com/ryanduguid/australian-accounting?label=Scorecard&labelColor=000000&style=flat)](https://scorecard.dev/viewer/?uri=github.com/ryanduguid/australian-accounting) |
-| [australian-accounting-skills](https://github.com/ryanduguid/australian-accounting-skills) | [![Verify](https://img.shields.io/github/actions/workflow/status/ryanduguid/australian-accounting-skills/verify.yml?branch=main&label=verify&labelColor=000000&style=flat)](https://github.com/ryanduguid/australian-accounting-skills/actions/workflows/verify.yml) | [![Codecov](https://img.shields.io/codecov/c/github/ryanduguid/australian-accounting-skills?label=coverage&labelColor=000000&style=flat)](https://codecov.io/gh/ryanduguid/australian-accounting-skills) | [![OpenSSF Scorecard](https://img.shields.io/ossf-scorecard/github.com/ryanduguid/australian-accounting-skills?label=Scorecard&labelColor=000000&style=flat)](https://scorecard.dev/viewer/?uri=github.com/ryanduguid/australian-accounting-skills) |
-| [llm-tax-guardrails](https://github.com/ryanduguid/llm-tax-guardrails) | [![verify](https://img.shields.io/github/actions/workflow/status/ryanduguid/llm-tax-guardrails/verify.yml?branch=main&label=verify&labelColor=000000&style=flat)](https://github.com/ryanduguid/llm-tax-guardrails/actions/workflows/verify.yml) | [![Codecov](https://img.shields.io/codecov/c/github/ryanduguid/llm-tax-guardrails?label=coverage&labelColor=000000&style=flat)](https://codecov.io/gh/ryanduguid/llm-tax-guardrails) | [![OpenSSF Scorecard](https://img.shields.io/ossf-scorecard/github.com/ryanduguid/llm-tax-guardrails?label=Scorecard&labelColor=000000&style=flat)](https://scorecard.dev/viewer/?uri=github.com/ryanduguid/llm-tax-guardrails) |
-| [au-tax-legislation-corpus](https://github.com/ryanduguid/au-tax-legislation-corpus) | [![tests](https://img.shields.io/github/actions/workflow/status/ryanduguid/au-tax-legislation-corpus/ci.yml?branch=main&label=tests&labelColor=000000&style=flat)](https://github.com/ryanduguid/au-tax-legislation-corpus/actions/workflows/ci.yml) | [![Codecov](https://img.shields.io/codecov/c/github/ryanduguid/au-tax-legislation-corpus?label=coverage&labelColor=000000&style=flat)](https://codecov.io/gh/ryanduguid/au-tax-legislation-corpus) | [![OpenSSF Scorecard](https://img.shields.io/ossf-scorecard/github.com/ryanduguid/au-tax-legislation-corpus?label=Scorecard&labelColor=000000&style=flat)](https://scorecard.dev/viewer/?uri=github.com/ryanduguid/au-tax-legislation-corpus) |
-
-</details>
-
-<p align="center"><a href="https://pypi.org/project/aus-accounting-mcp/"><img src="https://img.shields.io/pypi/v/aus-accounting-mcp?label=PyPI&color=66023C&labelColor=000000&style=flat" alt="aus-accounting-mcp on PyPI" /></a> <a href="https://github.com/ryanduguid/Ozzit/releases/latest"><img src="https://img.shields.io/github/v/release/ryanduguid/Ozzit?label=Ozzit&color=66023C&labelColor=000000&style=flat" alt="Latest Ozzit release" /></a></p>
+Each repository shows its own CI, coverage and OpenSSF Scorecard results in its README.
 
 <details>
 <summary>How the accounting tools fit together</summary>
@@ -87,6 +68,8 @@ Inspect the [local MCP server](https://github.com/ryanduguid/australian-accounti
 
 ## Using these tools
 
-Public examples use fabricated data. The tools are preparation and review aids: they do not lodge or write to ledgers, and professional judgement and sign-off stay with the reviewer. I do not accept advice, return-preparation, tax-treatment confirmation or lodgement requests here. Support covers software issues reproduced with fabricated data, so please do not send taxpayer information.
+This is a free software portfolio. I am not a registered tax agent or BAS agent, and I do not accept advice, return-preparation, tax-treatment confirmation or lodgement requests here.
+
+The tools are preparation and review aids: they do not lodge or write to ledgers, and professional judgement and sign-off stay with the reviewer. Public examples use fabricated data. Support covers software issues reproduced with fabricated data, so please do not send taxpayer information.
 
 To get in touch, use the [contact page](https://duguid.com.au/contact/).
