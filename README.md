@@ -78,3 +78,7 @@ This is a free software portfolio. I am not a registered tax agent or BAS agent,
 The tools are preparation and review aids: they do not lodge or write to ledgers, and professional judgement and sign-off stay with the reviewer. Public examples use fabricated data. Support covers software issues reproduced with fabricated data, so please do not send taxpayer information.
 
 To get in touch, use the [contact page](https://duguid.com.au/contact/).
+
+---
+
+<p align="center"><sub>Raiding ledgers, not tombs.<br>Made in Newcastle, Australia by <a href="https://duguid.com.au/">Ryan Duguid</a>.</sub></p>
