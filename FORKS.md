@@ -6,7 +6,7 @@ Open, merged and closed are different states. The Open contributions column list
 
 ## Active forks
 
-58 of the 81 forks remaining from the 23 October 2026 review hold at least one open upstream pull request. No fork is archived.
+58 of the 81 forks remaining from the 23 October 2026 review held at least one open upstream pull request then. On 27 October 2026, date-holidays and edgartools left this table because their pull requests had merged.
 
 | Fork | Upstream | Open contributions |
 | --- | --- | --- |
@@ -29,10 +29,8 @@ Open, merged and closed are different states. The Open contributions column list
 | [cursor-plugin](https://github.com/ryanduguid/cursor-plugin) | [openaccountants/cursor-plugin](https://github.com/openaccountants/cursor-plugin) | [#1](https://github.com/openaccountants/cursor-plugin/pull/1) |
 | [dacite](https://github.com/ryanduguid/dacite) | [konradhalas/dacite](https://github.com/konradhalas/dacite) | [#310](https://github.com/konradhalas/dacite/pull/310) |
 | [daily-intelligence](https://github.com/ryanduguid/daily-intelligence) | [openaccountants/daily-intelligence](https://github.com/openaccountants/daily-intelligence) | [#2](https://github.com/openaccountants/daily-intelligence/pull/2) |
-| [date-holidays](https://github.com/ryanduguid/date-holidays) | [commenthol/date-holidays](https://github.com/commenthol/date-holidays) | [#679](https://github.com/commenthol/date-holidays/pull/679), [#678](https://github.com/commenthol/date-holidays/pull/678) |
 | [deel-contractor-demo](https://github.com/ryanduguid/deel-contractor-demo) | [openaccountants/deel-contractor-demo](https://github.com/openaccountants/deel-contractor-demo) | [#2](https://github.com/openaccountants/deel-contractor-demo/pull/2) |
 | [django-ledger](https://github.com/ryanduguid/django-ledger) | [arrobalytics/django-ledger](https://github.com/arrobalytics/django-ledger) | [#363](https://github.com/arrobalytics/django-ledger/pull/363), [#362](https://github.com/arrobalytics/django-ledger/pull/362), [#361](https://github.com/arrobalytics/django-ledger/pull/361), [#360](https://github.com/arrobalytics/django-ledger/pull/360) |
-| [edgartools](https://github.com/ryanduguid/edgartools) | [dgunning/edgartools](https://github.com/dgunning/edgartools) | [#1598](https://github.com/dgunning/edgartools/pull/1598) |
 | [exchange_calendars](https://github.com/ryanduguid/exchange_calendars) | [gerrymanoim/exchange_calendars](https://github.com/gerrymanoim/exchange_calendars) | [#626](https://github.com/gerrymanoim/exchange_calendars/pull/626), [#622](https://github.com/gerrymanoim/exchange_calendars/pull/622), [#621](https://github.com/gerrymanoim/exchange_calendars/pull/621), [#620](https://github.com/gerrymanoim/exchange_calendars/pull/620), [#619](https://github.com/gerrymanoim/exchange_calendars/pull/619), [#618](https://github.com/gerrymanoim/exchange_calendars/pull/618) |
 | [finch-payroll-demo](https://github.com/ryanduguid/finch-payroll-demo) | [openaccountants/finch-payroll-demo](https://github.com/openaccountants/finch-payroll-demo) | [#2](https://github.com/openaccountants/finch-payroll-demo/pull/2) |
 | [formulajs](https://github.com/ryanduguid/formulajs) | [formulajs/formulajs](https://github.com/formulajs/formulajs) | [#253](https://github.com/formulajs/formulajs/pull/253) |
@@ -87,8 +85,10 @@ Pull requests merged or closed since 13 September 2026:
 - clawdog-mcp-server: [#5](https://github.com/lodgeit-labs/clawdog-mcp-server/pull/5) closed 22 October 2026; [#4](https://github.com/lodgeit-labs/clawdog-mcp-server/pull/4) closed 22 October 2026.
 - clawdog-widget-renderer: [#2](https://github.com/lodgeit-labs/clawdog-widget-renderer/pull/2) closed 22 October 2026.
 - crypto-tax-demo: [#2](https://github.com/openaccountants/crypto-tax-demo/pull/2) closed 22 October 2026.
+- date-holidays: [#679](https://github.com/commenthol/date-holidays/pull/679) merged 24 October 2026; [#678](https://github.com/commenthol/date-holidays/pull/678) merged 24 October 2026.
 - deel-contractor-demo: [#1](https://github.com/openaccountants/deel-contractor-demo/pull/1) closed 22 October 2026.
 - django-ledger: [#355](https://github.com/arrobalytics/django-ledger/pull/355) closed 22 October 2026.
+- edgartools: [#1598](https://github.com/dgunning/edgartools/pull/1598) merged 24 October 2026.
 - erpnext: [#59499](https://github.com/frappe/erpnext/pull/59499) merged 27 September 2026, opened by a maintainer from this fork's commit.
 - exchange_calendars: [#610](https://github.com/gerrymanoim/exchange_calendars/pull/610) closed 22 October 2026; [#609](https://github.com/gerrymanoim/exchange_calendars/pull/609) closed 22 October 2026.
 - fano-classifier-integration-kit: [#8](https://github.com/lodgeit-labs/fano-classifier-integration-kit/pull/8) closed 22 October 2026; [#7](https://github.com/lodgeit-labs/fano-classifier-integration-kit/pull/7) closed 22 October 2026.
@@ -139,9 +139,11 @@ Pull requests merged or closed since 13 September 2026:
 
 A fork here is due for review under the retention rule below because it holds no open upstream pull request. Listing one is a record of that state, not a decision to delete it. Of the forks in the 23 October 2026 review, those remaining after the deletions recorded through 24 October 2026 are: beanquery, clawdog-calculator-api-integration-kit, clawdog-kit, clawdog-mcp-server, fano-classifier-integration-kit, fava, Graft, jsonschema, laconic, mock-data-holder-nodejs, moneymanagerex, openfpa, python-accounting, python-stdnum, pyxero, requests-cache, rustledger, skills, standards-testing, xero-command-line, xero-mcp, xero-mcp-server, Xero-OpenAPI. The 4 clawdog forks, clawdog-calculator-api-integration-kit, clawdog-kit, clawdog-mcp-server and clawdog-widget-renderer, are kept by choice.
 
-On 6 October 2026, Ryan archived the gnucash, money, ofxtools, oracle, pycubrid and schwifty forks after checks found no open upstream pull request from this account. The gnucash contribution [#2321](https://github.com/Gnucash/gnucash/pull/2321) merged on 5 October 2026. GitHub returned 404 for the gnucash fork on 14 October 2026. By 17 October a gnucash fork existed again with an open contribution, listed in the table above.
+On 6 October 2026, Ryan archived the gnucash, money, ofxtools, oracle, pycubrid and schwifty forks after checks found no open upstream pull request from this account. The gnucash contribution [#2321](https://github.com/Gnucash/gnucash/pull/2321) merged on 5 October 2026. GitHub returned 404 for the gnucash fork on 14 October 2026. By 17 October a gnucash fork existed again with an open contribution.
 
 On 17 October 2026 the GitHub API showed no archived fork, including hledger, money, ofxtools, oracle, pycubrid and schwifty, and listed a gnucash fork again. The same day, 40 fork branches whose upstream pull request had merged with an unchanged head were deleted; branches from closed or open pull requests, or with no pull request, were kept.
+
+On 27 October 2026, the [date-holidays](https://github.com/ryanduguid/date-holidays), [edgartools](https://github.com/ryanduguid/edgartools), [jsonschema](https://github.com/ryanduguid/jsonschema) and [pytest-order](https://github.com/ryanduguid/pytest-order) forks were archived. None had an open upstream pull request from this account. Their default branches differed from upstream only in README badge styling (edgartools also in 2 changelog fragments about badges); the jsonschema fork keeps a `test-error-messages-across-drafts` branch. Archiving is reversible.
 
 ## Preserved for retirement
 
