@@ -1,12 +1,12 @@
 # Contribution forks
 
-Reviewed 23 October 2026 from the GitHub API (fork list and pull requests by author). Fork counts and Pruned forks were updated for deletions through 24 October 2026 without a new review. These are contribution forks, not original Australian accounting products. File product issues upstream. Each section states whether its forks still hold an open upstream contribution.
+Reviewed 23 October 2026 from the GitHub API (fork list and pull requests by author). Fork counts and Pruned forks were updated for deletions through 28 October 2026 without a new review. These are contribution forks, not original Australian accounting products. File product issues upstream. Each section states whether its forks still hold an open upstream contribution.
 
 Open, merged and closed are different states. The Open contributions column lists only pull requests open at the review date; a merged or closed one moves to Recent contributions and keeps its link, because the upstream record is what shows the work.
 
 ## Active forks
 
-58 of the 81 forks remaining from the 23 October 2026 review held at least one open upstream pull request then. On 27 October 2026, date-holidays and edgartools left this table because their pull requests had merged.
+58 of the 81 forks remaining from the 23 October 2026 review held at least one open upstream pull request then. On 27 October 2026, date-holidays and edgartools left this table because their pull requests had merged. On 28 October 2026, pycubrid left it for the same reason and was deleted.
 
 | Fork | Upstream | Open contributions |
 | --- | --- | --- |
@@ -50,7 +50,6 @@ Open, merged and closed are different states. The Open contributions column list
 | [pm4py](https://github.com/ryanduguid/pm4py) | [process-intelligence-solutions/pm4py](https://github.com/process-intelligence-solutions/pm4py) | [#576](https://github.com/process-intelligence-solutions/pm4py/pull/576), [#575](https://github.com/process-intelligence-solutions/pm4py/pull/575), [#574](https://github.com/process-intelligence-solutions/pm4py/pull/574) |
 | [prettytable](https://github.com/ryanduguid/prettytable) | [prettytable/prettytable](https://github.com/prettytable/prettytable) | [#521](https://github.com/prettytable/prettytable/pull/521), [#512](https://github.com/prettytable/prettytable/pull/512) |
 | [pybind11-stubgen](https://github.com/ryanduguid/pybind11-stubgen) | [pybind/pybind11-stubgen](https://github.com/pybind/pybind11-stubgen) | [#323](https://github.com/pybind/pybind11-stubgen/pull/323) |
-| [pycubrid](https://github.com/ryanduguid/pycubrid) | [cubrid-lab/pycubrid](https://github.com/cubrid-lab/pycubrid) | [#981](https://github.com/cubrid-lab/pycubrid/pull/981) |
 | [pyexcel](https://github.com/ryanduguid/pyexcel) | [pyexcel/pyexcel](https://github.com/pyexcel/pyexcel) | [#319](https://github.com/pyexcel/pyexcel/pull/319), [#317](https://github.com/pyexcel/pyexcel/pull/317), [#316](https://github.com/pyexcel/pyexcel/pull/316) |
 | [pypika](https://github.com/ryanduguid/pypika) | [kayak/pypika](https://github.com/kayak/pypika) | [#3531](https://github.com/kayak/pypika/pull/3531) |
 | [python-email-validator](https://github.com/ryanduguid/python-email-validator) | [JoshData/python-email-validator](https://github.com/JoshData/python-email-validator) | [#178](https://github.com/JoshData/python-email-validator/pull/178) |
@@ -111,8 +110,9 @@ Pull requests merged or closed since 13 September 2026:
 - openfpa: [#17](https://github.com/JeffBrines/openfpa/pull/17) closed 19 October 2026.
 - oracle: [#579](https://github.com/steipete/oracle/pull/579) merged 17 October 2026.
 - pm4py: [#571](https://github.com/process-intelligence-solutions/pm4py/pull/571) closed 22 October 2026.
-- pycubrid: [#531](https://github.com/cubrid-lab/pycubrid/pull/531) merged 1 October 2026.
+- pycubrid: [#981](https://github.com/cubrid-lab/pycubrid/pull/981) merged 27 October 2026; [#531](https://github.com/cubrid-lab/pycubrid/pull/531) merged 1 October 2026.
 - pyexcel: [#315](https://github.com/pyexcel/pyexcel/pull/315) closed 22 October 2026.
+- pytest-order: [#269](https://github.com/pytest-dev/pytest-order/pull/269) merged 25 October 2026; [#266](https://github.com/pytest-dev/pytest-order/pull/266) merged 8 October 2026.
 - python-accounting: [#27](https://github.com/ekmungai/python-accounting/pull/27) merged 16 October 2026; [#26](https://github.com/ekmungai/python-accounting/pull/26) merged 16 October 2026; [#22](https://github.com/ekmungai/python-accounting/pull/22) merged 1 October 2026; [#21](https://github.com/ekmungai/python-accounting/pull/21) merged 7 October 2026.
 - python-calamine: [#238](https://github.com/dimastbk/python-calamine/pull/238) merged 8 October 2026.
 - python-stdnum: [#519](https://github.com/arthurdejong/python-stdnum/pull/519) closed 22 October 2026; [#518](https://github.com/arthurdejong/python-stdnum/pull/518) closed 22 October 2026; [#513](https://github.com/arthurdejong/python-stdnum/pull/513) closed 22 October 2026.
@@ -137,19 +137,19 @@ Pull requests merged or closed since 13 September 2026:
 
 ## Forks with no open contribution
 
-A fork here is due for review under the retention rule below because it holds no open upstream pull request. Listing one is a record of that state, not a decision to delete it. Of the forks in the 23 October 2026 review, those remaining after the deletions recorded through 24 October 2026 are: beanquery, clawdog-calculator-api-integration-kit, clawdog-kit, clawdog-mcp-server, fano-classifier-integration-kit, fava, Graft, jsonschema, laconic, mock-data-holder-nodejs, moneymanagerex, openfpa, python-accounting, python-stdnum, pyxero, requests-cache, rustledger, skills, standards-testing, xero-command-line, xero-mcp, xero-mcp-server, Xero-OpenAPI. The 4 clawdog forks, clawdog-calculator-api-integration-kit, clawdog-kit, clawdog-mcp-server and clawdog-widget-renderer, are kept by choice.
+A fork here is due for review under the retention rule below because it holds no open upstream pull request. Listing one is a record of that state, not a decision to delete it. Of the forks in the 23 October 2026 review, those remaining after the deletions recorded through 28 October 2026 are: clawdog-calculator-api-integration-kit, clawdog-kit, clawdog-mcp-server, Graft, jsonschema, laconic, moneymanagerex, openfpa, requests-cache, xero-command-line, xero-mcp, xero-mcp-server, Xero-OpenAPI. The 4 clawdog forks, clawdog-calculator-api-integration-kit, clawdog-kit, clawdog-mcp-server and clawdog-widget-renderer, are kept by choice.
 
 On 6 October 2026, Ryan archived the gnucash, money, ofxtools, oracle, pycubrid and schwifty forks after checks found no open upstream pull request from this account. The gnucash contribution [#2321](https://github.com/Gnucash/gnucash/pull/2321) merged on 5 October 2026. GitHub returned 404 for the gnucash fork on 14 October 2026. By 17 October a gnucash fork existed again with an open contribution.
 
 On 17 October 2026 the GitHub API showed no archived fork, including hledger, money, ofxtools, oracle, pycubrid and schwifty, and listed a gnucash fork again. The same day, 40 fork branches whose upstream pull request had merged with an unchanged head were deleted; branches from closed or open pull requests, or with no pull request, were kept.
 
-On 27 October 2026, the [date-holidays](https://github.com/ryanduguid/date-holidays), [edgartools](https://github.com/ryanduguid/edgartools), [jsonschema](https://github.com/ryanduguid/jsonschema) and [pytest-order](https://github.com/ryanduguid/pytest-order) forks were archived. None had an open upstream pull request from this account. Their default branches differed from upstream only in README badge styling (edgartools also in 2 changelog fragments about badges); the jsonschema fork keeps a `test-error-messages-across-drafts` branch. Archiving is reversible.
+On 27 October 2026, the date-holidays, edgartools, [jsonschema](https://github.com/ryanduguid/jsonschema) and pytest-order forks were archived. None had an open upstream pull request from this account. Their default branches differed from upstream only in README badge styling (edgartools also in 2 changelog fragments about badges); the jsonschema fork keeps a `test-error-messages-across-drafts` branch. Archiving is reversible. The date-holidays, edgartools and pytest-order forks were deleted on 28 October 2026; jsonschema stays archived.
 
 ## Preserved for retirement
 
 Ryan selected these 3 forks for deletion. On 10 September 2026, checks by author and fork head found no open upstream PRs. Complete advertised Git histories were backed up and restored into fresh repositories, with matching refs and reachable objects. Upstream links retain the contribution record after the forks are deleted.
 
-The pyxero fork was recreated on 27 September 2026 for new contributions. Those pull requests have since merged.
+The pyxero fork was recreated on 27 September 2026 for new contributions. Those pull requests have since merged, and the fork was deleted again on 28 October 2026.
 
 | Fork | Upstream | Merged contributions |
 | --- | --- | --- |
@@ -172,6 +172,8 @@ The account-financial-reporting, account-reconcile and repo-forensics forks were
 The hledger fork was archived on 27 September 2026, after upstream closed [#2740](https://github.com/hledgerorg/hledger/pull/2740) and [#2741](https://github.com/hledgerorg/hledger/pull/2741), and deleted on 23 October 2026. Upstream keeps the heads of those pull requests and of [#2766](https://github.com/hledgerorg/hledger/pull/2766).
 
 The erpnext and holidays forks were deleted on 24 October 2026, after checks by author and fork head found no open upstream PRs. Their complete advertised Git histories were preserved in verified local bundles before deletion. Their merged upstream pull requests are listed under Recent contributions.
+
+The beanquery, date-holidays, edgartools, fano-classifier-integration-kit, fava, mock-data-holder-nodejs, pycubrid, pytest-order, python-accounting, python-stdnum, pyxero, rustledger, skills and standards-testing forks were deleted on 28 October 2026, after checks by author and fork head found no open upstream PRs. Their complete advertised Git histories, including fork pull request refs, were preserved in verified local bundles before deletion. Their upstream pull requests are listed under Recent contributions.
 
 ## Retention rule
 
