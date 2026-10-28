@@ -137,13 +137,13 @@ Pull requests merged or closed since 13 September 2026:
 
 ## Forks with no open contribution
 
-A fork here is due for review under the retention rule below because it holds no open upstream pull request. Listing one is a record of that state, not a decision to delete it. Of the forks in the 23 October 2026 review, those remaining after the deletions recorded through 28 October 2026 are: clawdog-calculator-api-integration-kit, clawdog-kit, clawdog-mcp-server, Graft, jsonschema, laconic, moneymanagerex, openfpa, xero-command-line, xero-mcp, xero-mcp-server, Xero-OpenAPI. The 4 clawdog forks, clawdog-calculator-api-integration-kit, clawdog-kit, clawdog-mcp-server and clawdog-widget-renderer, are kept by choice.
+A fork here is due for review under the retention rule below because it holds no open upstream pull request. Listing one is a record of that state, not a decision to delete it. Of the forks in the 23 October 2026 review, those remaining after the deletions recorded through 28 October 2026 are: clawdog-calculator-api-integration-kit, clawdog-kit, clawdog-mcp-server, Graft, laconic, moneymanagerex, openfpa, xero-command-line, xero-mcp, xero-mcp-server, Xero-OpenAPI. The 4 clawdog forks, clawdog-calculator-api-integration-kit, clawdog-kit, clawdog-mcp-server and clawdog-widget-renderer, are kept by choice.
 
 On 6 October 2026, Ryan archived the gnucash, money, ofxtools, oracle, pycubrid and schwifty forks after checks found no open upstream pull request from this account. The gnucash contribution [#2321](https://github.com/Gnucash/gnucash/pull/2321) merged on 5 October 2026. GitHub returned 404 for the gnucash fork on 14 October 2026. By 17 October a gnucash fork existed again with an open contribution.
 
 On 17 October 2026 the GitHub API showed no archived fork, including hledger, money, ofxtools, oracle, pycubrid and schwifty, and listed a gnucash fork again. The same day, 40 fork branches whose upstream pull request had merged with an unchanged head were deleted; branches from closed or open pull requests, or with no pull request, were kept.
 
-On 27 October 2026, the date-holidays, edgartools, [jsonschema](https://github.com/ryanduguid/jsonschema) and pytest-order forks were archived. None had an open upstream pull request from this account. Their default branches differed from upstream only in README badge styling (edgartools also in 2 changelog fragments about badges); the jsonschema fork keeps a `test-error-messages-across-drafts` branch. Archiving is reversible. The date-holidays, edgartools and pytest-order forks were deleted on 28 October 2026; jsonschema stays archived.
+On 27 October 2026, the date-holidays, edgartools, jsonschema and pytest-order forks were archived. None had an open upstream pull request from this account. Their default branches differed from upstream only in README badge styling (edgartools also in 2 changelog fragments about badges). Archiving is reversible. The date-holidays, edgartools, jsonschema and pytest-order forks were deleted on 28 October 2026.
 
 ## Preserved for retirement
 
