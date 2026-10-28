@@ -54,7 +54,7 @@ Open, merged and closed are different states. The Open contributions column list
 | [qmd](https://github.com/ryanduguid/qmd) | [tobi/qmd](https://github.com/tobi/qmd) | [#1076](https://github.com/tobi/qmd/pull/1076), [#1075](https://github.com/tobi/qmd/pull/1075) |
 | [quickbooks-tax-demo](https://github.com/ryanduguid/quickbooks-tax-demo) | [openaccountants/quickbooks-tax-demo](https://github.com/openaccountants/quickbooks-tax-demo) | [#2](https://github.com/openaccountants/quickbooks-tax-demo/pull/2) |
 | [ramp-expense-demo](https://github.com/ryanduguid/ramp-expense-demo) | [openaccountants/ramp-expense-demo](https://github.com/openaccountants/ramp-expense-demo) | [#2](https://github.com/openaccountants/ramp-expense-demo/pull/2) |
-| [rgg](https://github.com/ryanduguid/rgg) | [rtk-ai/rtk](https://github.com/rtk-ai/rtk) | [#4642](https://github.com/rtk-ai/rtk/pull/4642) |
+| [rgg](https://github.com/EquityBot/rgg) | [rtk-ai/rtk](https://github.com/rtk-ai/rtk) | [#4642](https://github.com/rtk-ai/rtk/pull/4642) |
 | [shopify-salestax-demo](https://github.com/ryanduguid/shopify-salestax-demo) | [openaccountants/shopify-salestax-demo](https://github.com/openaccountants/shopify-salestax-demo) | [#3](https://github.com/openaccountants/shopify-salestax-demo/pull/3) |
 | [stripe-vat-demo](https://github.com/ryanduguid/stripe-vat-demo) | [openaccountants/stripe-vat-demo](https://github.com/openaccountants/stripe-vat-demo) | [#2](https://github.com/openaccountants/stripe-vat-demo/pull/2) |
 | [tax-doc-classifier-au](https://github.com/ryanduguid/tax-doc-classifier-au) | [kyotofin/tax-doc-classifier](https://github.com/kyotofin/tax-doc-classifier) | [#6](https://github.com/kyotofin/tax-doc-classifier/pull/6), [#5](https://github.com/kyotofin/tax-doc-classifier/pull/5) |
@@ -179,6 +179,6 @@ The gobl, pyxirr, PyHamcrest and dacite forks were deleted on 28 October 2026, a
 
 ## Retention rule
 
-Keep a fork while an upstream PR is open, even if the fork is archived. Review it after the PR closes. Before deletion, check open PRs and preserve unique work. Do not sync, unarchive or remove contribution branches merely to tidy this list. An upstream PR with no activity and no maintainer comments for more than 15 days may be closed and its fork deleted.
+Keep a fork while an upstream PR is open, even if the fork is archived. Review it after the PR closes. Before deletion, check open PRs and preserve unique work. Do not sync, unarchive or remove contribution branches merely to tidy this list. An upstream PR with no activity and no maintainer comments for more than 15 days may be closed, but close the PR first and record the closure before touching the fork; never delete a fork to close its PR. Only after the PR is closed and recorded, review the fork. Delete it only if no open PRs remain and any unique work has been preserved.
 
 Use synthetic examples only. Do not copy code between repositories without checking attribution and licence compatibility.
