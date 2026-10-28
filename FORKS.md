@@ -12,7 +12,6 @@ Open, merged and closed are different states. The Open contributions column list
 | --- | --- | --- |
 | [ERPNext-Australian-Localisation](https://github.com/ryanduguid/ERPNext-Australian-Localisation) | [Arus-Info/ERPNext-Australian-Localisation](https://github.com/Arus-Info/ERPNext-Australian-Localisation) | [#198](https://github.com/Arus-Info/ERPNext-Australian-Localisation/pull/198) |
 | [Netryx-Astra-V2-Geolocation-Tool](https://github.com/ryanduguid/Netryx-Astra-V2-Geolocation-Tool) | [sparkyniner/Netryx-Astra-V2-Geolocation-Tool](https://github.com/sparkyniner/Netryx-Astra-V2-Geolocation-Tool) | [#23](https://github.com/sparkyniner/Netryx-Astra-V2-Geolocation-Tool/pull/23) |
-| [PyHamcrest](https://github.com/ryanduguid/PyHamcrest) | [hamcrest/PyHamcrest](https://github.com/hamcrest/PyHamcrest) | [#279](https://github.com/hamcrest/PyHamcrest/pull/279) |
 | [SkillOpt](https://github.com/ryanduguid/SkillOpt) | [microsoft/SkillOpt](https://github.com/microsoft/SkillOpt) | [#320](https://github.com/microsoft/SkillOpt/pull/320) |
 | [awesome-mcp-servers](https://github.com/ryanduguid/awesome-mcp-servers) | [punkpeye/awesome-mcp-servers](https://github.com/punkpeye/awesome-mcp-servers) | [#16280](https://github.com/punkpeye/awesome-mcp-servers/pull/16280) |
 | [bank-statement-import](https://github.com/ryanduguid/bank-statement-import) | [OCA/bank-statement-import](https://github.com/OCA/bank-statement-import) | [#1023](https://github.com/OCA/bank-statement-import/pull/1023), [#1022](https://github.com/OCA/bank-statement-import/pull/1022) |
@@ -27,7 +26,6 @@ Open, merged and closed are different states. The Open contributions column list
 | [crypto-tax-demo](https://github.com/ryanduguid/crypto-tax-demo) | [openaccountants/crypto-tax-demo](https://github.com/openaccountants/crypto-tax-demo) | [#3](https://github.com/openaccountants/crypto-tax-demo/pull/3) |
 | [currency](https://github.com/ryanduguid/currency) | [bojanz/currency](https://github.com/bojanz/currency) | [#52](https://github.com/bojanz/currency/pull/52), [#51](https://github.com/bojanz/currency/pull/51) |
 | [cursor-plugin](https://github.com/ryanduguid/cursor-plugin) | [openaccountants/cursor-plugin](https://github.com/openaccountants/cursor-plugin) | [#1](https://github.com/openaccountants/cursor-plugin/pull/1) |
-| [dacite](https://github.com/ryanduguid/dacite) | [konradhalas/dacite](https://github.com/konradhalas/dacite) | [#310](https://github.com/konradhalas/dacite/pull/310) |
 | [daily-intelligence](https://github.com/ryanduguid/daily-intelligence) | [openaccountants/daily-intelligence](https://github.com/openaccountants/daily-intelligence) | [#2](https://github.com/openaccountants/daily-intelligence/pull/2) |
 | [deel-contractor-demo](https://github.com/ryanduguid/deel-contractor-demo) | [openaccountants/deel-contractor-demo](https://github.com/openaccountants/deel-contractor-demo) | [#2](https://github.com/openaccountants/deel-contractor-demo/pull/2) |
 | [django-ledger](https://github.com/ryanduguid/django-ledger) | [arrobalytics/django-ledger](https://github.com/arrobalytics/django-ledger) | [#363](https://github.com/arrobalytics/django-ledger/pull/363), [#362](https://github.com/arrobalytics/django-ledger/pull/362), [#361](https://github.com/arrobalytics/django-ledger/pull/361), [#360](https://github.com/arrobalytics/django-ledger/pull/360) |
@@ -35,7 +33,6 @@ Open, merged and closed are different states. The Open contributions column list
 | [finch-payroll-demo](https://github.com/ryanduguid/finch-payroll-demo) | [openaccountants/finch-payroll-demo](https://github.com/openaccountants/finch-payroll-demo) | [#2](https://github.com/openaccountants/finch-payroll-demo/pull/2) |
 | [formulajs](https://github.com/ryanduguid/formulajs) | [formulajs/formulajs](https://github.com/formulajs/formulajs) | [#253](https://github.com/formulajs/formulajs/pull/253) |
 | [formulas](https://github.com/ryanduguid/formulas) | [vinci1it2000/formulas](https://github.com/vinci1it2000/formulas) | [#185](https://github.com/vinci1it2000/formulas/pull/185) |
-| [gobl](https://github.com/ryanduguid/gobl) | [invopop/gobl](https://github.com/invopop/gobl) | [#987](https://github.com/invopop/gobl/pull/987) |
 | [ijson](https://github.com/ryanduguid/ijson) | [ICRAR/ijson](https://github.com/ICRAR/ijson) | [#184](https://github.com/ICRAR/ijson/pull/184) |
 | [invoice2data](https://github.com/ryanduguid/invoice2data) | [invoice-x/invoice2data](https://github.com/invoice-x/invoice2data) | [#781](https://github.com/invoice-x/invoice2data/pull/781) |
 | [l10n-australia](https://github.com/ryanduguid/l10n-australia) | [OCA/l10n-australia](https://github.com/OCA/l10n-australia) | [#1](https://github.com/OCA/l10n-australia/pull/1) |
@@ -54,7 +51,6 @@ Open, merged and closed are different states. The Open contributions column list
 | [pypika](https://github.com/ryanduguid/pypika) | [kayak/pypika](https://github.com/kayak/pypika) | [#3531](https://github.com/kayak/pypika/pull/3531) |
 | [python-email-validator](https://github.com/ryanduguid/python-email-validator) | [JoshData/python-email-validator](https://github.com/JoshData/python-email-validator) | [#178](https://github.com/JoshData/python-email-validator/pull/178) |
 | [python-markdownify](https://github.com/ryanduguid/python-markdownify) | [matthewwithanm/python-markdownify](https://github.com/matthewwithanm/python-markdownify) | [#285](https://github.com/matthewwithanm/python-markdownify/pull/285) |
-| [pyxirr](https://github.com/ryanduguid/pyxirr) | [Anexen/pyxirr](https://github.com/Anexen/pyxirr) | [#79](https://github.com/Anexen/pyxirr/pull/79) |
 | [qmd](https://github.com/ryanduguid/qmd) | [tobi/qmd](https://github.com/tobi/qmd) | [#1076](https://github.com/tobi/qmd/pull/1076), [#1075](https://github.com/tobi/qmd/pull/1075) |
 | [quickbooks-tax-demo](https://github.com/ryanduguid/quickbooks-tax-demo) | [openaccountants/quickbooks-tax-demo](https://github.com/openaccountants/quickbooks-tax-demo) | [#2](https://github.com/openaccountants/quickbooks-tax-demo/pull/2) |
 | [ramp-expense-demo](https://github.com/ryanduguid/ramp-expense-demo) | [openaccountants/ramp-expense-demo](https://github.com/openaccountants/ramp-expense-demo) | [#2](https://github.com/openaccountants/ramp-expense-demo/pull/2) |
@@ -84,6 +80,7 @@ Pull requests merged or closed since 13 September 2026:
 - clawdog-mcp-server: [#5](https://github.com/lodgeit-labs/clawdog-mcp-server/pull/5) closed 22 October 2026; [#4](https://github.com/lodgeit-labs/clawdog-mcp-server/pull/4) closed 22 October 2026.
 - clawdog-widget-renderer: [#2](https://github.com/lodgeit-labs/clawdog-widget-renderer/pull/2) closed 22 October 2026.
 - crypto-tax-demo: [#2](https://github.com/openaccountants/crypto-tax-demo/pull/2) closed 22 October 2026.
+- dacite: [#310](https://github.com/konradhalas/dacite/pull/310) closed 28 October 2026.
 - date-holidays: [#679](https://github.com/commenthol/date-holidays/pull/679) merged 24 October 2026; [#678](https://github.com/commenthol/date-holidays/pull/678) merged 24 October 2026.
 - deel-contractor-demo: [#1](https://github.com/openaccountants/deel-contractor-demo/pull/1) closed 22 October 2026.
 - django-ledger: [#355](https://github.com/arrobalytics/django-ledger/pull/355) closed 22 October 2026.
@@ -96,6 +93,7 @@ Pull requests merged or closed since 13 September 2026:
 - frictionless-py: [#1831](https://github.com/frictionlessdata/frictionless-py/pull/1831) merged 9 October 2026.
 - Furtim: [#11626](https://github.com/jo-inc/camofox-browser/pull/11626) merged 1 October 2026; [#11625](https://github.com/jo-inc/camofox-browser/pull/11625) closed 3 October 2026; [#11624](https://github.com/jo-inc/camofox-browser/pull/11624) closed 3 October 2026; [#11613](https://github.com/jo-inc/camofox-browser/pull/11613) closed 3 October 2026; [#11612](https://github.com/jo-inc/camofox-browser/pull/11612) closed 3 October 2026.
 - gnucash: [#2321](https://github.com/Gnucash/gnucash/pull/2321) merged 5 October 2026.
+- gobl: [#987](https://github.com/invopop/gobl/pull/987) closed 28 October 2026.
 - Graft: [#536](https://github.com/trailhq/Trail-Code/pull/536) closed 22 October 2026; [#490](https://github.com/trailhq/Trail-Code/pull/490) closed 22 October 2026.
 - hledger: [#2766](https://github.com/hledgerorg/hledger/pull/2766) closed 22 October 2026; [#2741](https://github.com/hledgerorg/hledger/pull/2741) closed 23 September 2026; [#2740](https://github.com/hledgerorg/hledger/pull/2740) closed 23 September 2026.
 - holidays: [#3922](https://github.com/vacanza/holidays/pull/3922) merged 17 October 2026; [#3909](https://github.com/vacanza/holidays/pull/3909) merged 12 October 2026; [#3906](https://github.com/vacanza/holidays/pull/3906) merged 13 October 2026; [#3904](https://github.com/vacanza/holidays/pull/3904) merged 14 October 2026; [#3846](https://github.com/vacanza/holidays/pull/3846) merged 29 September 2026.
@@ -112,11 +110,13 @@ Pull requests merged or closed since 13 September 2026:
 - pm4py: [#571](https://github.com/process-intelligence-solutions/pm4py/pull/571) closed 22 October 2026.
 - pycubrid: [#981](https://github.com/cubrid-lab/pycubrid/pull/981) merged 27 October 2026; [#531](https://github.com/cubrid-lab/pycubrid/pull/531) merged 1 October 2026.
 - pyexcel: [#315](https://github.com/pyexcel/pyexcel/pull/315) closed 22 October 2026.
+- PyHamcrest: [#279](https://github.com/hamcrest/PyHamcrest/pull/279) closed 28 October 2026.
 - pytest-order: [#269](https://github.com/pytest-dev/pytest-order/pull/269) merged 25 October 2026; [#266](https://github.com/pytest-dev/pytest-order/pull/266) merged 8 October 2026.
 - python-accounting: [#27](https://github.com/ekmungai/python-accounting/pull/27) merged 16 October 2026; [#26](https://github.com/ekmungai/python-accounting/pull/26) merged 16 October 2026; [#22](https://github.com/ekmungai/python-accounting/pull/22) merged 1 October 2026; [#21](https://github.com/ekmungai/python-accounting/pull/21) merged 7 October 2026.
 - python-calamine: [#238](https://github.com/dimastbk/python-calamine/pull/238) merged 8 October 2026.
 - python-stdnum: [#519](https://github.com/arthurdejong/python-stdnum/pull/519) closed 22 October 2026; [#518](https://github.com/arthurdejong/python-stdnum/pull/518) closed 22 October 2026; [#513](https://github.com/arthurdejong/python-stdnum/pull/513) closed 22 October 2026.
 - pyxero: [#451](https://github.com/freakboy3742/pyxero/pull/451) merged 19 October 2026; [#450](https://github.com/freakboy3742/pyxero/pull/450) merged 18 October 2026; [#449](https://github.com/freakboy3742/pyxero/pull/449) merged 16 October 2026; [#446](https://github.com/freakboy3742/pyxero/pull/446) merged 5 October 2026; [#445](https://github.com/freakboy3742/pyxero/pull/445) merged 29 September 2026.
+- pyxirr: [#79](https://github.com/Anexen/pyxirr/pull/79) closed 28 October 2026.
 - qmd: [#1006](https://github.com/tobi/qmd/pull/1006) closed 22 October 2026.
 - repo-forensics: [#65](https://github.com/alexgreensh/repo-forensics/pull/65) closed 23 October 2026.
 - requests-cache: [#1202](https://github.com/requests-cache/requests-cache/pull/1202) merged 2 October 2026; [#1187](https://github.com/requests-cache/requests-cache/pull/1187) merged 14 September 2026.
@@ -137,7 +137,7 @@ Pull requests merged or closed since 13 September 2026:
 
 ## Forks with no open contribution
 
-A fork here is due for review under the retention rule below because it holds no open upstream pull request. Listing one is a record of that state, not a decision to delete it. Of the forks in the 23 October 2026 review, those remaining after the deletions recorded through 28 October 2026 are: clawdog-calculator-api-integration-kit, clawdog-kit, clawdog-mcp-server, Graft, jsonschema, laconic, moneymanagerex, openfpa, requests-cache, xero-command-line, xero-mcp, xero-mcp-server, Xero-OpenAPI. The 4 clawdog forks, clawdog-calculator-api-integration-kit, clawdog-kit, clawdog-mcp-server and clawdog-widget-renderer, are kept by choice.
+A fork here is due for review under the retention rule below because it holds no open upstream pull request. Listing one is a record of that state, not a decision to delete it. Of the forks in the 23 October 2026 review, those remaining after the deletions recorded through 28 October 2026 are: clawdog-calculator-api-integration-kit, clawdog-kit, clawdog-mcp-server, Graft, jsonschema, laconic, moneymanagerex, openfpa, xero-command-line, xero-mcp, xero-mcp-server, Xero-OpenAPI. The 4 clawdog forks, clawdog-calculator-api-integration-kit, clawdog-kit, clawdog-mcp-server and clawdog-widget-renderer, are kept by choice.
 
 On 6 October 2026, Ryan archived the gnucash, money, ofxtools, oracle, pycubrid and schwifty forks after checks found no open upstream pull request from this account. The gnucash contribution [#2321](https://github.com/Gnucash/gnucash/pull/2321) merged on 5 October 2026. GitHub returned 404 for the gnucash fork on 14 October 2026. By 17 October a gnucash fork existed again with an open contribution.
 
@@ -175,8 +175,10 @@ The erpnext and holidays forks were deleted on 24 October 2026, after checks by 
 
 The beanquery, date-holidays, edgartools, fano-classifier-integration-kit, fava, mock-data-holder-nodejs, pycubrid, pytest-order, python-accounting, python-stdnum, pyxero, rustledger, skills and standards-testing forks were deleted on 28 October 2026, after checks by author and fork head found no open upstream PRs. Their complete advertised Git histories, including fork pull request refs, were preserved in verified local bundles before deletion. Their upstream pull requests are listed under Recent contributions.
 
+The gobl, pyxirr, PyHamcrest and dacite forks were deleted on 28 October 2026, after their upstream pull requests were closed unmerged ([invopop/gobl #987](https://github.com/invopop/gobl/pull/987), [Anexen/pyxirr #79](https://github.com/Anexen/pyxirr/pull/79), [hamcrest/PyHamcrest #279](https://github.com/hamcrest/PyHamcrest/pull/279), [konradhalas/dacite #310](https://github.com/konradhalas/dacite/pull/310)). The requests-cache fork was deleted the same day with no open upstream PRs. Its merged pull requests are listed under Recent contributions.
+
 ## Retention rule
 
-Keep a fork while an upstream PR is open, even if the fork is archived. Review it after the PR closes. Before deletion, check open PRs and preserve unique work. Do not sync, unarchive or remove contribution branches merely to tidy this list.
+Keep a fork while an upstream PR is open, even if the fork is archived. Review it after the PR closes. Before deletion, check open PRs and preserve unique work. Do not sync, unarchive or remove contribution branches merely to tidy this list. An upstream PR with no activity and no maintainer comments for more than 15 days may be closed and its fork deleted.
 
 Use synthetic examples only. Do not copy code between repositories without checking attribution and licence compatibility.
