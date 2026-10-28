@@ -3,7 +3,7 @@ name: laconic-check
 # Lints the repository's Markdown prose for Australian English house style:
 # em dashes, US spellings, double quotation marks, serial commas, numbers
 # written as words and chatbot closers. laconic-check is built from a pinned
-# commit of ryanduguid/laconic. A finding is a reason to look; where a case is
+# commit of EquityBot/laconic. A finding is a reason to look; where a case is
 # legitimate, such as a comma that prevents a misreading, rephrase it rather
 # than adding an exception. Files under .github/ are out of scope.
 
@@ -29,7 +29,7 @@ jobs:
           persist-credentials: false
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
-          repository: ryanduguid/laconic
+          repository: EquityBot/laconic
           ref: 6da4f8eed08a73486ba279c6f972a4e5a2e5a110
           path: .laconic
           persist-credentials: false
