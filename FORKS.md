@@ -6,7 +6,7 @@ Open, merged and closed are different states. The Open contributions column list
 
 ## Active forks
 
-58 of the 81 forks remaining from the 23 October 2026 review held at least one open upstream pull request then. On 27 October 2026, date-holidays and edgartools left this table because their pull requests had merged. On 28 October 2026, pycubrid left it for the same reason and was deleted.
+58 of the 81 forks remaining from the 23 October 2026 review held at least one open upstream pull request then. On 27 October 2026, date-holidays and edgartools left this table because their pull requests had merged. On 28 October 2026, pycubrid left it for the same reason and was deleted. On 29 October 2026, rgg left this file for [EquityBot's FORKS.md](https://github.com/EquityBot/EquityBot/blob/main/FORKS.md), after the repository moved to EquityBot.
 
 | Fork | Upstream | Open contributions |
 | --- | --- | --- |
@@ -54,7 +54,6 @@ Open, merged and closed are different states. The Open contributions column list
 | [qmd](https://github.com/ryanduguid/qmd) | [tobi/qmd](https://github.com/tobi/qmd) | [#1076](https://github.com/tobi/qmd/pull/1076), [#1075](https://github.com/tobi/qmd/pull/1075) |
 | [quickbooks-tax-demo](https://github.com/ryanduguid/quickbooks-tax-demo) | [openaccountants/quickbooks-tax-demo](https://github.com/openaccountants/quickbooks-tax-demo) | [#2](https://github.com/openaccountants/quickbooks-tax-demo/pull/2) |
 | [ramp-expense-demo](https://github.com/ryanduguid/ramp-expense-demo) | [openaccountants/ramp-expense-demo](https://github.com/openaccountants/ramp-expense-demo) | [#2](https://github.com/openaccountants/ramp-expense-demo/pull/2) |
-| [rgg](https://github.com/EquityBot/rgg) | [rtk-ai/rtk](https://github.com/rtk-ai/rtk) | [#4642](https://github.com/rtk-ai/rtk/pull/4642) |
 | [shopify-salestax-demo](https://github.com/ryanduguid/shopify-salestax-demo) | [openaccountants/shopify-salestax-demo](https://github.com/openaccountants/shopify-salestax-demo) | [#3](https://github.com/openaccountants/shopify-salestax-demo/pull/3) |
 | [stripe-vat-demo](https://github.com/ryanduguid/stripe-vat-demo) | [openaccountants/stripe-vat-demo](https://github.com/openaccountants/stripe-vat-demo) | [#2](https://github.com/openaccountants/stripe-vat-demo/pull/2) |
 | [tax-doc-classifier-au](https://github.com/ryanduguid/tax-doc-classifier-au) | [kyotofin/tax-doc-classifier](https://github.com/kyotofin/tax-doc-classifier) | [#6](https://github.com/kyotofin/tax-doc-classifier/pull/6), [#5](https://github.com/kyotofin/tax-doc-classifier/pull/5) |
@@ -120,7 +119,6 @@ Pull requests merged or closed since 13 September 2026:
 - qmd: [#1006](https://github.com/tobi/qmd/pull/1006) closed 22 October 2026.
 - repo-forensics: [#65](https://github.com/alexgreensh/repo-forensics/pull/65) closed 23 October 2026.
 - requests-cache: [#1202](https://github.com/requests-cache/requests-cache/pull/1202) merged 2 October 2026; [#1187](https://github.com/requests-cache/requests-cache/pull/1187) merged 14 September 2026.
-- rgg: [#4254](https://github.com/rtk-ai/rtk/pull/4254) closed 22 October 2026.
 - rust-decimal: [#864](https://github.com/paupino/rust-decimal/pull/864) merged 6 October 2026.
 - rustledger: [#2659](https://github.com/rustledger/rustledger/pull/2659) merged 21 October 2026.
 - schwifty: [#317](https://github.com/mdomke/schwifty/pull/317) merged 5 October 2026.
