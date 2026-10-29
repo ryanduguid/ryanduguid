@@ -1,6 +1,6 @@
 # Contribution forks
 
-Reviewed 23 October 2026 from the GitHub API (fork list and pull requests by author). Fork counts and Pruned forks were updated for deletions through 28 October 2026 without a new review. These are contribution forks, not original Australian accounting products. File product issues upstream. Each section states whether its forks still hold an open upstream contribution.
+Reviewed 23 October 2026 from the GitHub API (fork list and pull requests by author). Fork counts and Pruned forks were updated for deletions through 29 October 2026 without a new review. These are contribution forks, not original Australian accounting products. File product issues upstream. Each section states whether its forks still hold an open upstream contribution.
 
 Open, merged and closed are different states. The Open contributions column lists only pull requests open at the review date; a merged or closed one moves to Recent contributions and keeps its link, because the upstream record is what shows the work.
 
@@ -15,9 +15,7 @@ Open, merged and closed are different states. The Open contributions column list
 | [SkillOpt](https://github.com/ryanduguid/SkillOpt) | [microsoft/SkillOpt](https://github.com/microsoft/SkillOpt) | [#320](https://github.com/microsoft/SkillOpt/pull/320) |
 | [awesome-mcp-servers](https://github.com/ryanduguid/awesome-mcp-servers) | [punkpeye/awesome-mcp-servers](https://github.com/punkpeye/awesome-mcp-servers) | [#16280](https://github.com/punkpeye/awesome-mcp-servers/pull/16280) |
 | [bank-statement-import](https://github.com/ryanduguid/bank-statement-import) | [OCA/bank-statement-import](https://github.com/OCA/bank-statement-import) | [#1023](https://github.com/OCA/bank-statement-import/pull/1023), [#1022](https://github.com/OCA/bank-statement-import/pull/1022) |
-| [beancount](https://github.com/ryanduguid/beancount) | [beancount/beancount](https://github.com/beancount/beancount) | [#1065](https://github.com/beancount/beancount/pull/1065), [#1063](https://github.com/beancount/beancount/pull/1063) |
 | [beancount-tax-demo](https://github.com/ryanduguid/beancount-tax-demo) | [openaccountants/beancount-tax-demo](https://github.com/openaccountants/beancount-tax-demo) | [#3](https://github.com/openaccountants/beancount-tax-demo/pull/3) |
-| [beangulp](https://github.com/ryanduguid/beangulp) | [beancount/beangulp](https://github.com/beancount/beangulp) | [#219](https://github.com/beancount/beangulp/pull/219) |
 | [bigcapital](https://github.com/ryanduguid/bigcapital) | [bigcapitalhq/bigcapital](https://github.com/bigcapitalhq/bigcapital) | [#1522](https://github.com/bigcapitalhq/bigcapital/pull/1522), [#1521](https://github.com/bigcapitalhq/bigcapital/pull/1521) |
 | [cerberus](https://github.com/ryanduguid/cerberus) | [pyeve/cerberus](https://github.com/pyeve/cerberus) | [#655](https://github.com/pyeve/cerberus/pull/655) |
 | [claude-code-plugin](https://github.com/ryanduguid/claude-code-plugin) | [openaccountants/claude-code-plugin](https://github.com/openaccountants/claude-code-plugin) | [#1](https://github.com/openaccountants/claude-code-plugin/pull/1) |
@@ -28,7 +26,6 @@ Open, merged and closed are different states. The Open contributions column list
 | [cursor-plugin](https://github.com/ryanduguid/cursor-plugin) | [openaccountants/cursor-plugin](https://github.com/openaccountants/cursor-plugin) | [#1](https://github.com/openaccountants/cursor-plugin/pull/1) |
 | [daily-intelligence](https://github.com/ryanduguid/daily-intelligence) | [openaccountants/daily-intelligence](https://github.com/openaccountants/daily-intelligence) | [#2](https://github.com/openaccountants/daily-intelligence/pull/2) |
 | [deel-contractor-demo](https://github.com/ryanduguid/deel-contractor-demo) | [openaccountants/deel-contractor-demo](https://github.com/openaccountants/deel-contractor-demo) | [#2](https://github.com/openaccountants/deel-contractor-demo/pull/2) |
-| [django-ledger](https://github.com/ryanduguid/django-ledger) | [arrobalytics/django-ledger](https://github.com/arrobalytics/django-ledger) | [#363](https://github.com/arrobalytics/django-ledger/pull/363), [#362](https://github.com/arrobalytics/django-ledger/pull/362), [#361](https://github.com/arrobalytics/django-ledger/pull/361), [#360](https://github.com/arrobalytics/django-ledger/pull/360) |
 | [exchange_calendars](https://github.com/ryanduguid/exchange_calendars) | [gerrymanoim/exchange_calendars](https://github.com/gerrymanoim/exchange_calendars) | [#626](https://github.com/gerrymanoim/exchange_calendars/pull/626), [#622](https://github.com/gerrymanoim/exchange_calendars/pull/622), [#621](https://github.com/gerrymanoim/exchange_calendars/pull/621), [#620](https://github.com/gerrymanoim/exchange_calendars/pull/620), [#619](https://github.com/gerrymanoim/exchange_calendars/pull/619), [#618](https://github.com/gerrymanoim/exchange_calendars/pull/618) |
 | [finch-payroll-demo](https://github.com/ryanduguid/finch-payroll-demo) | [openaccountants/finch-payroll-demo](https://github.com/openaccountants/finch-payroll-demo) | [#2](https://github.com/openaccountants/finch-payroll-demo/pull/2) |
 | [formulajs](https://github.com/ryanduguid/formulajs) | [formulajs/formulajs](https://github.com/formulajs/formulajs) | [#253](https://github.com/formulajs/formulajs/pull/253) |
@@ -47,7 +44,7 @@ Open, merged and closed are different states. The Open contributions column list
 | [pm4py](https://github.com/ryanduguid/pm4py) | [process-intelligence-solutions/pm4py](https://github.com/process-intelligence-solutions/pm4py) | [#576](https://github.com/process-intelligence-solutions/pm4py/pull/576), [#575](https://github.com/process-intelligence-solutions/pm4py/pull/575), [#574](https://github.com/process-intelligence-solutions/pm4py/pull/574) |
 | [prettytable](https://github.com/ryanduguid/prettytable) | [prettytable/prettytable](https://github.com/prettytable/prettytable) | [#521](https://github.com/prettytable/prettytable/pull/521), [#512](https://github.com/prettytable/prettytable/pull/512) |
 | [pybind11-stubgen](https://github.com/ryanduguid/pybind11-stubgen) | [pybind/pybind11-stubgen](https://github.com/pybind/pybind11-stubgen) | [#323](https://github.com/pybind/pybind11-stubgen/pull/323) |
-| [pyexcel](https://github.com/ryanduguid/pyexcel) | [pyexcel/pyexcel](https://github.com/pyexcel/pyexcel) | [#319](https://github.com/pyexcel/pyexcel/pull/319), [#317](https://github.com/pyexcel/pyexcel/pull/317), [#316](https://github.com/pyexcel/pyexcel/pull/316) |
+| [pyexcel](https://github.com/ryanduguid/pyexcel) | [pyexcel/pyexcel](https://github.com/pyexcel/pyexcel) | [#319](https://github.com/pyexcel/pyexcel/pull/319), [#317](https://github.com/pyexcel/pyexcel/pull/317) |
 | [pypika](https://github.com/ryanduguid/pypika) | [kayak/pypika](https://github.com/kayak/pypika) | [#3531](https://github.com/kayak/pypika/pull/3531) |
 | [python-email-validator](https://github.com/ryanduguid/python-email-validator) | [JoshData/python-email-validator](https://github.com/JoshData/python-email-validator) | [#178](https://github.com/JoshData/python-email-validator/pull/178) |
 | [python-markdownify](https://github.com/ryanduguid/python-markdownify) | [matthewwithanm/python-markdownify](https://github.com/matthewwithanm/python-markdownify) | [#285](https://github.com/matthewwithanm/python-markdownify/pull/285) |
@@ -69,9 +66,9 @@ Pull requests merged or closed since 13 September 2026:
 - account-reconcile: [#1034](https://github.com/OCA/account-reconcile/pull/1034) closed 22 October 2026; [#1030](https://github.com/OCA/account-reconcile/pull/1030) closed 22 October 2026.
 - awesome-AutoHotkey: [#193](https://github.com/ahkscript/awesome-AutoHotkey/pull/193) merged 15 October 2026.
 - bank-statement-import: [#1002](https://github.com/OCA/bank-statement-import/pull/1002) closed 22 October 2026; [#1000](https://github.com/OCA/bank-statement-import/pull/1000) closed 22 October 2026.
-- beancount: [#1060](https://github.com/beancount/beancount/pull/1060) closed 22 October 2026; [#1059](https://github.com/beancount/beancount/pull/1059) closed 22 October 2026; [#1058](https://github.com/beancount/beancount/pull/1058) closed 22 October 2026; [#1054](https://github.com/beancount/beancount/pull/1054) closed 22 October 2026; [#1049](https://github.com/beancount/beancount/pull/1049) closed 22 October 2026.
+- beancount: [#1065](https://github.com/beancount/beancount/pull/1065) closed 29 October 2026; [#1063](https://github.com/beancount/beancount/pull/1063) closed 29 October 2026; [#1060](https://github.com/beancount/beancount/pull/1060) closed 22 October 2026; [#1059](https://github.com/beancount/beancount/pull/1059) closed 22 October 2026; [#1058](https://github.com/beancount/beancount/pull/1058) closed 22 October 2026; [#1054](https://github.com/beancount/beancount/pull/1054) closed 22 October 2026; [#1049](https://github.com/beancount/beancount/pull/1049) closed 22 October 2026.
 - beancount-tax-demo: [#2](https://github.com/openaccountants/beancount-tax-demo/pull/2) closed 22 October 2026.
-- beangulp: [#218](https://github.com/beancount/beangulp/pull/218) closed 22 October 2026; [#217](https://github.com/beancount/beangulp/pull/217) closed 22 October 2026; [#216](https://github.com/beancount/beangulp/pull/216) closed 22 October 2026.
+- beangulp: [#219](https://github.com/beancount/beangulp/pull/219) closed 29 October 2026; [#218](https://github.com/beancount/beangulp/pull/218) closed 22 October 2026; [#217](https://github.com/beancount/beangulp/pull/217) closed 22 October 2026; [#216](https://github.com/beancount/beangulp/pull/216) closed 22 October 2026.
 - beanquery: [#297](https://github.com/beancount/beanquery/pull/297) closed 2 October 2026; [#296](https://github.com/beancount/beanquery/pull/296) closed 2 October 2026; [#292](https://github.com/beancount/beanquery/pull/292) closed 2 October 2026; [#291](https://github.com/beancount/beanquery/pull/291) closed 2 October 2026.
 - books: [#1564](https://github.com/frappe/books/pull/1564) closed 22 October 2026.
 - clawdog-calculator-api-integration-kit: [#3](https://github.com/lodgeit-labs/clawdog-calculator-api-integration-kit/pull/3) closed 22 October 2026.
@@ -82,7 +79,7 @@ Pull requests merged or closed since 13 September 2026:
 - dacite: [#310](https://github.com/konradhalas/dacite/pull/310) closed 28 October 2026.
 - date-holidays: [#679](https://github.com/commenthol/date-holidays/pull/679) merged 24 October 2026; [#678](https://github.com/commenthol/date-holidays/pull/678) merged 24 October 2026.
 - deel-contractor-demo: [#1](https://github.com/openaccountants/deel-contractor-demo/pull/1) closed 22 October 2026.
-- django-ledger: [#355](https://github.com/arrobalytics/django-ledger/pull/355) closed 22 October 2026.
+- django-ledger: [#363](https://github.com/arrobalytics/django-ledger/pull/363) closed 29 October 2026; [#362](https://github.com/arrobalytics/django-ledger/pull/362) closed 29 October 2026; [#361](https://github.com/arrobalytics/django-ledger/pull/361) closed 27 October 2026; [#360](https://github.com/arrobalytics/django-ledger/pull/360) closed 29 October 2026; [#355](https://github.com/arrobalytics/django-ledger/pull/355) closed 22 October 2026.
 - edgartools: [#1598](https://github.com/dgunning/edgartools/pull/1598) merged 24 October 2026.
 - erpnext: [#59499](https://github.com/frappe/erpnext/pull/59499) merged 27 September 2026, opened by a maintainer from this fork's commit.
 - exchange_calendars: [#610](https://github.com/gerrymanoim/exchange_calendars/pull/610) closed 22 October 2026; [#609](https://github.com/gerrymanoim/exchange_calendars/pull/609) closed 22 October 2026.
@@ -108,7 +105,7 @@ Pull requests merged or closed since 13 September 2026:
 - oracle: [#579](https://github.com/steipete/oracle/pull/579) merged 17 October 2026.
 - pm4py: [#571](https://github.com/process-intelligence-solutions/pm4py/pull/571) closed 22 October 2026.
 - pycubrid: [#981](https://github.com/cubrid-lab/pycubrid/pull/981) merged 27 October 2026; [#531](https://github.com/cubrid-lab/pycubrid/pull/531) merged 1 October 2026.
-- pyexcel: [#315](https://github.com/pyexcel/pyexcel/pull/315) closed 22 October 2026.
+- pyexcel: [#316](https://github.com/pyexcel/pyexcel/pull/316) closed 29 October 2026; [#315](https://github.com/pyexcel/pyexcel/pull/315) closed 22 October 2026.
 - PyHamcrest: [#279](https://github.com/hamcrest/PyHamcrest/pull/279) closed 28 October 2026.
 - pytest-order: [#269](https://github.com/pytest-dev/pytest-order/pull/269) merged 25 October 2026; [#266](https://github.com/pytest-dev/pytest-order/pull/266) merged 8 October 2026.
 - python-accounting: [#27](https://github.com/ekmungai/python-accounting/pull/27) merged 16 October 2026; [#26](https://github.com/ekmungai/python-accounting/pull/26) merged 16 October 2026; [#22](https://github.com/ekmungai/python-accounting/pull/22) merged 1 October 2026; [#21](https://github.com/ekmungai/python-accounting/pull/21) merged 7 October 2026.
@@ -174,6 +171,8 @@ The erpnext and holidays forks were deleted on 24 October 2026, after checks by 
 The beanquery, date-holidays, edgartools, fano-classifier-integration-kit, fava, mock-data-holder-nodejs, pycubrid, pytest-order, python-accounting, python-stdnum, pyxero, rustledger, skills and standards-testing forks were deleted on 28 October 2026, after checks by author and fork head found no open upstream PRs. Their complete advertised Git histories, including fork pull request refs, were preserved in verified local bundles before deletion. Their upstream pull requests are listed under Recent contributions.
 
 The gobl, pyxirr, PyHamcrest and dacite forks were deleted on 28 October 2026, after their upstream pull requests were closed unmerged ([invopop/gobl #987](https://github.com/invopop/gobl/pull/987), [Anexen/pyxirr #79](https://github.com/Anexen/pyxirr/pull/79), [hamcrest/PyHamcrest #279](https://github.com/hamcrest/PyHamcrest/pull/279), [konradhalas/dacite #310](https://github.com/konradhalas/dacite/pull/310)). The requests-cache fork was deleted the same day with no open upstream PRs. Its merged pull requests are listed under Recent contributions.
+
+The beancount, beangulp and django-ledger forks were deleted on 29 October 2026, after their upstream pull requests were closed unmerged under the 15-day rule. Those pull requests are listed under Recent contributions.
 
 ## Retention rule
 
