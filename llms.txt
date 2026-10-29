@@ -1,6 +1,6 @@
 # Ryan Duguid
 
-> Ryan Duguid is a Senior Accountant in Newcastle, NSW, Australia. He builds open source tools for Australian accounting: Excel LAMBDA functions, month-end review pipelines, tax and payroll calculation engines, a local MCP server and AI agent workflows. Public examples use fabricated data.
+> Ryan Duguid is an accountant in Newcastle, NSW, Australia. He builds open source tools for Australian accounting: Excel LAMBDA functions, month-end review pipelines, tax and payroll calculation engines, a local MCP server and AI agent workflows. Public examples use fabricated data.
 
 This file indexes the GitHub repositories. The canonical, more detailed index of the website and its tools is https://duguid.com.au/llms.txt. Version numbers and counts change with each release; read them from the linked repository or release page.
 
