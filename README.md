@@ -9,7 +9,7 @@
 
 <div align="center">
 
-[![aus-accounting-mcp on PyPI](https://img.shields.io/pypi/v/aus-accounting-mcp?label=PyPI&color=66023C&labelColor=000000&style=flat)](https://pypi.org/project/aus-accounting-mcp/) [![Latest Ozzit release](https://img.shields.io/github/v/release/ryanduguid/Ozzit?label=Ozzit&color=66023C&labelColor=000000&style=flat)](https://github.com/ryanduguid/Ozzit/releases/latest)
+[![aus-accounting-mcp on PyPI](https://badgen.net/pypi/v/aus-accounting-mcp?label=PyPI&color=66023C&labelColor=000000)](https://pypi.org/project/aus-accounting-mcp/) [![Latest Ozzit release](https://badgen.net/github/release/ryanduguid/Ozzit/stable?label=Ozzit&color=66023C&labelColor=000000)](https://github.com/ryanduguid/Ozzit/releases/latest)
 
 </div>
 
