@@ -159,7 +159,7 @@ New upstream pull requests from this account have been paused since 30 October 2
 | --- | --- | --- |
 | account-financial-tools | 0 | No upstream pull request from this account; this file does not record why the fork is kept |
 | edgartools | 0 | Branch ryan/mcp-read-schedule13 holds 1 commit that no upstream pull request carries |
-| ledger | 8 | [#3274](https://github.com/ledger/ledger/pull/3274) merged from branch fix/recover-report-state-after-error, deleted on 2 November 2026, and carries none of the 8. They are 3 code fixes that no upstream pull request carries (cbb342e, fcc907d, 1d0efc4), 3 README badge commits and 2 upstream merges. No record says whether the fixes are meant for upstream |
+| ledger | 8 | [#3274](https://github.com/ledger/ledger/pull/3274) merged from branch fix/recover-report-state-after-error, deleted on 2 November 2026 and carries none of the 8. They are 3 code fixes that no upstream pull request carries (cbb342e, fcc907d, 1d0efc4), 3 README badge commits and 2 upstream merges. No record says whether the fixes are meant for upstream |
 | moneymanagerex | 5 | [#8556](https://github.com/moneymanagerex/moneymanagerex/pull/8556) and [#8557](https://github.com/moneymanagerex/moneymanagerex/pull/8557) merged from branches no longer on the fork and carry none of the 5. They are 1 code fix that no upstream pull request carries (fcb6479, report sort variables), 3 README badge commits and 1 upstream merge |
 | python-accounting | 0 | [#35](https://github.com/ekmungai/python-accounting/pull/35) and [#36](https://github.com/ekmungai/python-accounting/pull/36) merged; their branches ryan/fiscal-year-report-dates and ryan/fiscal-year-current-period were deleted on 2 November 2026 |
 | requests-cache | 0 | Branch ryan/vary-header-matching holds 5 commits that no upstream pull request carries |
@@ -215,6 +215,6 @@ The Netryx-Astra-V2-Geolocation-Tool fork was deleted on 29 October 2026 at Ryan
 
 ## Retention rule
 
-Keep a fork while an upstream PR is open, even if the fork is archived. Review it after the PR closes. Before deletion, check open PRs and preserve unique work. Do not sync, unarchive or remove contribution branches merely to tidy this list. An upstream PR with no activity and no maintainer comments for more than 15 days may be closed, but close the PR first and record the closure before touching the fork; never delete a fork to close its PR. Only after the PR is closed and recorded, review the fork. Delete it only if no open PRs remain and any unique work has been preserved.
+Keep a fork whilst an upstream PR is open, even if the fork is archived. Review it after the PR closes. Before deletion, check open PRs and preserve unique work. Do not sync, unarchive or remove contribution branches merely to tidy this list. An upstream PR with no activity and no maintainer comments for more than 15 days may be closed, but close the PR first and record the closure before touching the fork; never delete a fork to close its PR. Only after the PR is closed and recorded, review the fork. Delete it only if no open PRs remain and any unique work has been preserved.
 
 Use synthetic examples only. Do not copy code between repositories without checking attribution and licence compatibility.
