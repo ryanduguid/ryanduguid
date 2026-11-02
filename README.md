@@ -21,7 +21,7 @@ I am an accountant in Newcastle, Australia. I build open source tools for cash-f
 
 - **Explain profit and cash differences:** the [fictional Newcastle cash-flow case](https://duguid.com.au/examples/profit-vs-cash-flow/) shows $35,957.55 quarterly profit and a $25,160 cash shortfall. Read it in your browser; changing the receipt delay needs desktop Excel.
 - **Calculate in Excel:** the [Ozzit formula and workbook](https://duguid.com.au/tools/ozzit/#worked-example) extract $100 GST from a wholly taxable $1,100 amount. Needs Microsoft 365 or Excel 2024 or later.
-- **Review a month-end close:** [Monthly Close Controls](https://duguid.com.au/tools/monthly-close-controls/#worked-example) reports 8 exceptions, including a $250 creditors difference. Read it in your browser; reproducing the pack needs Git and Python 3.10 or later.
+- **Review a month-end close:** [Monthly Close Controls](https://duguid.com.au/tools/monthly-close-controls/#worked-example) reports 8 exceptions, including a $250 creditors difference. Read it in your browser; reproducing the pack needs Git and Rust.
 
 Each example includes its workings, version and review boundary.
 
