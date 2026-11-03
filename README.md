@@ -71,13 +71,9 @@ Inspect the [local MCP server](https://github.com/ryanduguid/australian-accounti
 
 </details>
 
-## Using these tools
-
-This is a free software portfolio. I am not a registered tax agent or BAS agent, and I do not accept advice, return-preparation, tax-treatment confirmation or lodgement requests here.
-
-The tools are preparation and review aids: they do not lodge or write to ledgers, and professional judgement and sign-off stay with the reviewer. Public examples use fabricated data. Support covers software issues reproduced with fabricated data, so please do not send taxpayer information.
-
 To get in touch, use the [contact page](https://duguid.com.au/contact/).
+
+<sub>Not advice. I am not a registered tax agent or BAS agent and take no advice, return-preparation, tax-treatment confirmation or lodgement requests. The tools are review aids that never lodge or write to ledgers; the reviewer keeps judgement and sign-off. Examples use fabricated data, and support covers software issues only, so please send no taxpayer information.</sub>
 
 ---
 
