@@ -1,12 +1,12 @@
 # Contribution forks
 
-Reviewed 2 November 2026 from the GitHub API (fork list and pull requests by author). These are contribution forks, not original Australian accounting products. File product issues upstream. Each section states whether its forks still hold an open upstream contribution.
+Reviewed 3 November 2026 from the GitHub API (fork list and pull requests by author). These are contribution forks, not original Australian accounting products. File product issues upstream. Each section states whether its forks still hold an open upstream contribution.
 
 Open, merged and closed are different states. The Open contributions column lists only pull requests open at the review date; a merged or closed one moves to Recent contributions and keeps its link, because the upstream record is what shows the work.
 
 ## Active forks
 
-On 2 November 2026, 55 of the 84 forks held at least one open upstream pull request. On 27 October 2026, date-holidays and edgartools left this table because their pull requests had merged. On 28 October 2026, pycubrid left it for the same reason and was deleted. On 29 October 2026, rgg left this file for [EquityBot's FORKS.md](https://github.com/EquityBot/EquityBot/blob/main/FORKS.md), after the repository moved to EquityBot. On 29 October 2026, Netryx-Astra-V2-Geolocation-Tool left it when its pull request was closed and the fork deleted at Ryan's request. The openaccountants fork left it when its pull requests merged on 23 October 2026, and the ledger fork on 30 October 2026 for the same reason. The account-invoicing, babel, beancount-import, date-holidays, gnucash, OpenBB, openfisca-core, QuantLib-SWIG, vectorbt, Win11Debloat and XlsxWriter forks joined it with pull requests opened on 30 October 2026; the date-holidays and gnucash forks are new forks of those names.
+On 3 November 2026, 50 of the 65 forks held at least one open upstream pull request. On 27 October 2026, date-holidays and edgartools left this table because their pull requests had merged. On 28 October 2026, pycubrid left it for the same reason and was deleted. On 29 October 2026, rgg left this file for [EquityBot's FORKS.md](https://github.com/EquityBot/EquityBot/blob/main/FORKS.md), after the repository moved to EquityBot. On 29 October 2026, Netryx-Astra-V2-Geolocation-Tool left it when its pull request was closed and the fork deleted at Ryan's request. The openaccountants fork left it when its pull requests merged on 23 October 2026, and the ledger fork on 30 October 2026 for the same reason. The account-invoicing, babel, beancount-import, date-holidays, gnucash, OpenBB, openfisca-core, QuantLib-SWIG, vectorbt, Win11Debloat and XlsxWriter forks joined it with pull requests opened on 30 October 2026; the date-holidays and gnucash forks are new forks of those names. On 3 November 2026, cerberus, currency, formulas, pypika and toolbelt left this table because their pull requests had closed or merged and the forks were deleted.
 
 | Fork | Upstream | Open contributions |
 | --- | --- | --- |
@@ -23,12 +23,10 @@ On 2 November 2026, 55 of the 84 forks held at least one open upstream pull requ
 | [beancount-import](https://github.com/ryanduguid/beancount-import) | [jbms/beancount-import](https://github.com/jbms/beancount-import) | [#269](https://github.com/jbms/beancount-import/pull/269), [#268](https://github.com/jbms/beancount-import/pull/268) |
 | [beancount-tax-demo](https://github.com/ryanduguid/beancount-tax-demo) | [openaccountants/beancount-tax-demo](https://github.com/openaccountants/beancount-tax-demo) | [#3](https://github.com/openaccountants/beancount-tax-demo/pull/3) |
 | [bigcapital](https://github.com/ryanduguid/bigcapital) | [bigcapitalhq/bigcapital](https://github.com/bigcapitalhq/bigcapital) | [#1522](https://github.com/bigcapitalhq/bigcapital/pull/1522), [#1521](https://github.com/bigcapitalhq/bigcapital/pull/1521) |
-| [cerberus](https://github.com/ryanduguid/cerberus) | [pyeve/cerberus](https://github.com/pyeve/cerberus) | [#655](https://github.com/pyeve/cerberus/pull/655) |
 | [claude-code-plugin](https://github.com/ryanduguid/claude-code-plugin) | [openaccountants/claude-code-plugin](https://github.com/openaccountants/claude-code-plugin) | [#1](https://github.com/openaccountants/claude-code-plugin/pull/1) |
 | [clawdog-widget-renderer](https://github.com/ryanduguid/clawdog-widget-renderer) | [lodgeit-labs/clawdog-widget-renderer](https://github.com/lodgeit-labs/clawdog-widget-renderer) | [#3](https://github.com/lodgeit-labs/clawdog-widget-renderer/pull/3) |
 | [copilot-studio](https://github.com/ryanduguid/copilot-studio) | [openaccountants/copilot-studio](https://github.com/openaccountants/copilot-studio) | [#1](https://github.com/openaccountants/copilot-studio/pull/1) |
 | [crypto-tax-demo](https://github.com/ryanduguid/crypto-tax-demo) | [openaccountants/crypto-tax-demo](https://github.com/openaccountants/crypto-tax-demo) | [#3](https://github.com/openaccountants/crypto-tax-demo/pull/3) |
-| [currency](https://github.com/ryanduguid/currency) | [bojanz/currency](https://github.com/bojanz/currency) | [#52](https://github.com/bojanz/currency/pull/52), [#51](https://github.com/bojanz/currency/pull/51) |
 | [cursor-plugin](https://github.com/ryanduguid/cursor-plugin) | [openaccountants/cursor-plugin](https://github.com/openaccountants/cursor-plugin) | [#1](https://github.com/openaccountants/cursor-plugin/pull/1) |
 | [daily-intelligence](https://github.com/ryanduguid/daily-intelligence) | [openaccountants/daily-intelligence](https://github.com/openaccountants/daily-intelligence) | [#2](https://github.com/openaccountants/daily-intelligence/pull/2) |
 | [date-holidays](https://github.com/ryanduguid/date-holidays) | [commenthol/date-holidays](https://github.com/commenthol/date-holidays) | [#693](https://github.com/commenthol/date-holidays/pull/693), [#692](https://github.com/commenthol/date-holidays/pull/692) |
@@ -36,7 +34,6 @@ On 2 November 2026, 55 of the 84 forks held at least one open upstream pull requ
 | [exchange_calendars](https://github.com/ryanduguid/exchange_calendars) | [gerrymanoim/exchange_calendars](https://github.com/gerrymanoim/exchange_calendars) | [#626](https://github.com/gerrymanoim/exchange_calendars/pull/626) |
 | [finch-payroll-demo](https://github.com/ryanduguid/finch-payroll-demo) | [openaccountants/finch-payroll-demo](https://github.com/openaccountants/finch-payroll-demo) | [#2](https://github.com/openaccountants/finch-payroll-demo/pull/2) |
 | [formulajs](https://github.com/ryanduguid/formulajs) | [formulajs/formulajs](https://github.com/formulajs/formulajs) | [#253](https://github.com/formulajs/formulajs/pull/253) |
-| [formulas](https://github.com/ryanduguid/formulas) | [vinci1it2000/formulas](https://github.com/vinci1it2000/formulas) | [#185](https://github.com/vinci1it2000/formulas/pull/185) |
 | [gnucash](https://github.com/ryanduguid/gnucash) | [Gnucash/gnucash](https://github.com/Gnucash/gnucash) | [#2344](https://github.com/Gnucash/gnucash/pull/2344), [#2343](https://github.com/Gnucash/gnucash/pull/2343), [#2342](https://github.com/Gnucash/gnucash/pull/2342) |
 | [ijson](https://github.com/ryanduguid/ijson) | [ICRAR/ijson](https://github.com/ICRAR/ijson) | [#184](https://github.com/ICRAR/ijson/pull/184) |
 | [invoice2data](https://github.com/ryanduguid/invoice2data) | [invoice-x/invoice2data](https://github.com/invoice-x/invoice2data) | [#781](https://github.com/invoice-x/invoice2data/pull/781) |
@@ -52,7 +49,6 @@ On 2 November 2026, 55 of the 84 forks held at least one open upstream pull requ
 | [prettytable](https://github.com/ryanduguid/prettytable) | [prettytable/prettytable](https://github.com/prettytable/prettytable) | [#521](https://github.com/prettytable/prettytable/pull/521), [#512](https://github.com/prettytable/prettytable/pull/512) |
 | [pybind11-stubgen](https://github.com/ryanduguid/pybind11-stubgen) | [pybind/pybind11-stubgen](https://github.com/pybind/pybind11-stubgen) | [#323](https://github.com/pybind/pybind11-stubgen/pull/323) |
 | [pyexcel](https://github.com/ryanduguid/pyexcel) | [pyexcel/pyexcel](https://github.com/pyexcel/pyexcel) | [#319](https://github.com/pyexcel/pyexcel/pull/319), [#317](https://github.com/pyexcel/pyexcel/pull/317) |
-| [pypika](https://github.com/ryanduguid/pypika) | [kayak/pypika](https://github.com/kayak/pypika) | [#3531](https://github.com/kayak/pypika/pull/3531) |
 | [python-email-validator](https://github.com/ryanduguid/python-email-validator) | [JoshData/python-email-validator](https://github.com/JoshData/python-email-validator) | [#178](https://github.com/JoshData/python-email-validator/pull/178) |
 | [python-markdownify](https://github.com/ryanduguid/python-markdownify) | [matthewwithanm/python-markdownify](https://github.com/matthewwithanm/python-markdownify) | [#285](https://github.com/matthewwithanm/python-markdownify/pull/285) |
 | [qmd](https://github.com/ryanduguid/qmd) | [tobi/qmd](https://github.com/tobi/qmd) | [#1076](https://github.com/tobi/qmd/pull/1076), [#1075](https://github.com/tobi/qmd/pull/1075) |
@@ -61,7 +57,6 @@ On 2 November 2026, 55 of the 84 forks held at least one open upstream pull requ
 | [shopify-salestax-demo](https://github.com/ryanduguid/shopify-salestax-demo) | [openaccountants/shopify-salestax-demo](https://github.com/openaccountants/shopify-salestax-demo) | [#3](https://github.com/openaccountants/shopify-salestax-demo/pull/3) |
 | [stripe-vat-demo](https://github.com/ryanduguid/stripe-vat-demo) | [openaccountants/stripe-vat-demo](https://github.com/openaccountants/stripe-vat-demo) | [#2](https://github.com/openaccountants/stripe-vat-demo/pull/2) |
 | [tax-doc-classifier-au](https://github.com/ryanduguid/tax-doc-classifier-au) | [kyotofin/tax-doc-classifier](https://github.com/kyotofin/tax-doc-classifier) | [#6](https://github.com/kyotofin/tax-doc-classifier/pull/6), [#5](https://github.com/kyotofin/tax-doc-classifier/pull/5) |
-| [toolbelt](https://github.com/ryanduguid/toolbelt) | [requests/toolbelt](https://github.com/requests/toolbelt) | [#403](https://github.com/requests/toolbelt/pull/403), [#400](https://github.com/requests/toolbelt/pull/400) |
 | [vectorbt](https://github.com/ryanduguid/vectorbt) | [polakowo/vectorbt](https://github.com/polakowo/vectorbt) | [#897](https://github.com/polakowo/vectorbt/pull/897) |
 | [windsurf](https://github.com/ryanduguid/windsurf) | [openaccountants/windsurf](https://github.com/openaccountants/windsurf) | [#1](https://github.com/openaccountants/windsurf/pull/1) |
 | [xero-python](https://github.com/ryanduguid/xero-python) | [XeroAPI/xero-python](https://github.com/XeroAPI/xero-python) | [#245](https://github.com/XeroAPI/xero-python/pull/245) |
@@ -81,11 +76,13 @@ Pull requests merged or closed since 13 September 2026:
 - beanquery: [#297](https://github.com/beancount/beanquery/pull/297) closed 2 October 2026; [#296](https://github.com/beancount/beanquery/pull/296) closed 2 October 2026; [#292](https://github.com/beancount/beanquery/pull/292) closed 2 October 2026; [#291](https://github.com/beancount/beanquery/pull/291) closed 2 October 2026.
 - books: [#1564](https://github.com/frappe/books/pull/1564) closed 22 October 2026.
 - calamine: [#763](https://github.com/tafia/calamine/pull/763) merged 31 October 2026.
+- cerberus: [#655](https://github.com/pyeve/cerberus/pull/655) closed 2 November 2026.
 - clawdog-calculator-api-integration-kit: [#3](https://github.com/lodgeit-labs/clawdog-calculator-api-integration-kit/pull/3) closed 22 October 2026.
 - clawdog-kit: [#1](https://github.com/lodgeit-labs/clawdog-kit/pull/1) closed 22 October 2026.
 - clawdog-mcp-server: [#5](https://github.com/lodgeit-labs/clawdog-mcp-server/pull/5) closed 22 October 2026; [#4](https://github.com/lodgeit-labs/clawdog-mcp-server/pull/4) closed 22 October 2026.
 - clawdog-widget-renderer: [#2](https://github.com/lodgeit-labs/clawdog-widget-renderer/pull/2) closed 22 October 2026.
 - crypto-tax-demo: [#2](https://github.com/openaccountants/crypto-tax-demo/pull/2) closed 22 October 2026.
+- currency: [#52](https://github.com/bojanz/currency/pull/52) closed 2 November 2026; [#51](https://github.com/bojanz/currency/pull/51) merged 2 November 2026.
 - dacite: [#310](https://github.com/konradhalas/dacite/pull/310) closed 28 October 2026.
 - date-holidays: [#679](https://github.com/commenthol/date-holidays/pull/679) merged 24 October 2026; [#678](https://github.com/commenthol/date-holidays/pull/678) merged 24 October 2026.
 - deel-contractor-demo: [#1](https://github.com/openaccountants/deel-contractor-demo/pull/1) closed 22 October 2026.
@@ -95,7 +92,7 @@ Pull requests merged or closed since 13 September 2026:
 - exchange_calendars: [#622](https://github.com/gerrymanoim/exchange_calendars/pull/622) closed 28 October 2026; [#621](https://github.com/gerrymanoim/exchange_calendars/pull/621) closed 28 October 2026; [#620](https://github.com/gerrymanoim/exchange_calendars/pull/620) closed 28 October 2026; [#619](https://github.com/gerrymanoim/exchange_calendars/pull/619) closed 28 October 2026; [#618](https://github.com/gerrymanoim/exchange_calendars/pull/618) closed 28 October 2026; [#610](https://github.com/gerrymanoim/exchange_calendars/pull/610) closed 22 October 2026; [#609](https://github.com/gerrymanoim/exchange_calendars/pull/609) closed 22 October 2026.
 - fano-classifier-integration-kit: [#8](https://github.com/lodgeit-labs/fano-classifier-integration-kit/pull/8) closed 22 October 2026; [#7](https://github.com/lodgeit-labs/fano-classifier-integration-kit/pull/7) closed 22 October 2026.
 - fava: [#2385](https://github.com/beancount/fava/pull/2385) closed 18 October 2026; [#2384](https://github.com/beancount/fava/pull/2384) closed 23 October 2026; [#2362](https://github.com/beancount/fava/pull/2362) closed 3 October 2026; [#2353](https://github.com/beancount/fava/pull/2353) closed 22 October 2026; [#2350](https://github.com/beancount/fava/pull/2350) closed 22 October 2026.
-- formulas: [#183](https://github.com/vinci1it2000/formulas/pull/183) closed 22 October 2026.
+- formulas: [#185](https://github.com/vinci1it2000/formulas/pull/185) closed 2 November 2026; [#183](https://github.com/vinci1it2000/formulas/pull/183) closed 22 October 2026.
 - frictionless-py: [#1831](https://github.com/frictionlessdata/frictionless-py/pull/1831) merged 9 October 2026.
 - Furtim: [#11626](https://github.com/jo-inc/camofox-browser/pull/11626) merged 1 October 2026; [#11625](https://github.com/jo-inc/camofox-browser/pull/11625) closed 3 October 2026; [#11624](https://github.com/jo-inc/camofox-browser/pull/11624) closed 3 October 2026; [#11613](https://github.com/jo-inc/camofox-browser/pull/11613) closed 3 October 2026; [#11612](https://github.com/jo-inc/camofox-browser/pull/11612) closed 3 October 2026.
 - gnucash: [#2337](https://github.com/Gnucash/gnucash/pull/2337) merged 20 October 2026; [#2321](https://github.com/Gnucash/gnucash/pull/2321) merged 5 October 2026.
@@ -121,6 +118,7 @@ Pull requests merged or closed since 13 September 2026:
 - pycubrid: [#981](https://github.com/cubrid-lab/pycubrid/pull/981) merged 27 October 2026; [#531](https://github.com/cubrid-lab/pycubrid/pull/531) merged 1 October 2026.
 - pyexcel: [#316](https://github.com/pyexcel/pyexcel/pull/316) closed 29 October 2026; [#315](https://github.com/pyexcel/pyexcel/pull/315) closed 22 October 2026.
 - PyHamcrest: [#279](https://github.com/hamcrest/PyHamcrest/pull/279) closed 28 October 2026.
+- pypika: [#3531](https://github.com/kayak/pypika/pull/3531) merged 2 November 2026.
 - pytest-order: [#269](https://github.com/pytest-dev/pytest-order/pull/269) merged 25 October 2026; [#266](https://github.com/pytest-dev/pytest-order/pull/266) merged 8 October 2026.
 - python-accounting: [#36](https://github.com/ekmungai/python-accounting/pull/36) merged 31 October 2026; [#35](https://github.com/ekmungai/python-accounting/pull/35) merged 31 October 2026; [#27](https://github.com/ekmungai/python-accounting/pull/27) merged 16 October 2026; [#26](https://github.com/ekmungai/python-accounting/pull/26) merged 16 October 2026; [#22](https://github.com/ekmungai/python-accounting/pull/22) merged 1 October 2026; [#21](https://github.com/ekmungai/python-accounting/pull/21) merged 7 October 2026.
 - python-calamine: [#238](https://github.com/dimastbk/python-calamine/pull/238) merged 8 October 2026.
@@ -139,7 +137,7 @@ Pull requests merged or closed since 13 September 2026:
 - sqlframe: [#705](https://github.com/eakmanrq/sqlframe/pull/705) merged 31 October 2026; [#704](https://github.com/eakmanrq/sqlframe/pull/704) merged 31 October 2026; [#703](https://github.com/eakmanrq/sqlframe/pull/703) merged 31 October 2026; [#649](https://github.com/eakmanrq/sqlframe/pull/649) merged 14 October 2026.
 - sqlglot: [#8840](https://github.com/tobymao/sqlglot/pull/8840) merged 30 October 2026.
 - standards-testing: [#79](https://github.com/ConsumerDataStandardsAustralia/standards-testing/pull/79) closed 22 October 2026; [#78](https://github.com/ConsumerDataStandardsAustralia/standards-testing/pull/78) closed 22 October 2026; [#77](https://github.com/ConsumerDataStandardsAustralia/standards-testing/pull/77) closed 22 October 2026.
-- toolbelt: [#399](https://github.com/requests/toolbelt/pull/399) closed 22 October 2026.
+- toolbelt: [#403](https://github.com/requests/toolbelt/pull/403) closed 2 November 2026; [#400](https://github.com/requests/toolbelt/pull/400) closed 2 November 2026; [#399](https://github.com/requests/toolbelt/pull/399) closed 22 October 2026.
 - umya-spreadsheet: [#391](https://github.com/MathNya/umya-spreadsheet/pull/391) merged 1 November 2026.
 - xero-command-line: [#44](https://github.com/XeroAPI/xero-command-line/pull/44) merged 17 September 2026; [#42](https://github.com/XeroAPI/xero-command-line/pull/42) closed 22 October 2026.
 - xero-mcp: [#131](https://github.com/john-zhang-dev/xero-mcp/pull/131) closed 22 October 2026.
@@ -151,21 +149,16 @@ Pull requests merged or closed since 13 September 2026:
 
 ## Forks with no open contribution
 
-A fork here is due for review under the retention rule below because it holds no open upstream pull request. Listing one is a record of that state, not a decision to delete it. On 2 November 2026 these were: account-financial-tools, calamine, clawdog-calculator-api-integration-kit, clawdog-kit, clawdog-mcp-server, edgartools, Graft, ledger, lopdf, money, moneymanagerex, openaccountants, openfpa, pandas_market_calendars, portfolio, python-accounting, requests-cache, Riskfolio-Lib, rustledger, schwifty, sqlframe, sqlglot, umya-spreadsheet, xero-command-line, xero-mcp, xero-mcp-server, Xero-OpenAPI, yfinance, zip2. The 4 clawdog forks, clawdog-calculator-api-integration-kit, clawdog-kit, clawdog-mcp-server and clawdog-widget-renderer, are kept by choice. The laconic repository left this list after it moved to EquityBot as EquityBot/Laconic, which is not a fork.
+A fork here is due for review under the retention rule below because it holds no open upstream pull request. Listing one is a record of that state, not a decision to delete it. On 3 November 2026 these were: clawdog-calculator-api-integration-kit, clawdog-kit, clawdog-mcp-server, Graft, ledger, moneymanagerex, openaccountants, openfpa, pandas_market_calendars, requests-cache, rustledger, xero-command-line, xero-mcp, xero-mcp-server, Xero-OpenAPI. The 4 clawdog forks, clawdog-calculator-api-integration-kit, clawdog-kit, clawdog-mcp-server and clawdog-widget-renderer, are kept by choice. The rustledger fork is kept by choice. The laconic repository left this list after it moved to EquityBot as EquityBot/Laconic, which is not a fork.
 
 New upstream pull requests from this account have been paused since 30 October 2026, so branches not yet sent stay on their forks. On 2 November 2026, the forks below compared with upstream as follows. The ahead count compares the fork's default branch with upstream's.
 
 | Fork | Ahead of upstream | Status of the work |
 | --- | --- | --- |
-| account-financial-tools | 0 | No upstream pull request from this account; this file does not record why the fork is kept |
-| edgartools | 0 | Branch ryan/mcp-read-schedule13 holds 1 commit that no upstream pull request carries |
 | ledger | 8 | [#3274](https://github.com/ledger/ledger/pull/3274) merged from branch fix/recover-report-state-after-error, deleted on 2 November 2026 and carries none of the 8. They are 3 code fixes that no upstream pull request carries (cbb342e, fcc907d, 1d0efc4), 3 README badge commits and 2 upstream merges. No record says whether the fixes are meant for upstream |
 | moneymanagerex | 5 | [#8556](https://github.com/moneymanagerex/moneymanagerex/pull/8556) and [#8557](https://github.com/moneymanagerex/moneymanagerex/pull/8557) merged from branches no longer on the fork and carry none of the 5. They are 1 code fix that no upstream pull request carries (fcb6479, report sort variables), 3 README badge commits and 1 upstream merge |
-| python-accounting | 0 | [#35](https://github.com/ekmungai/python-accounting/pull/35) and [#36](https://github.com/ekmungai/python-accounting/pull/36) merged; their branches ryan/fiscal-year-report-dates and ryan/fiscal-year-current-period were deleted on 2 November 2026 |
 | requests-cache | 0 | Branch ryan/vary-header-matching holds 5 commits that no upstream pull request carries |
-| sqlglot | 0 | [#8840](https://github.com/tobymao/sqlglot/pull/8840) merged from branch ryan/duckdb-v2-tilde, deleted on 2 November 2026. Branches ryan/sqlite-cast-json and ryan/sqlite-is-null-safe each hold 1 commit that no upstream pull request carries |
 | Xero-OpenAPI | 19 | None of the 19 went upstream; [#846](https://github.com/XeroAPI/Xero-OpenAPI/pull/846) closed unmerged. They are 7 contract and tooling fixes (0fe895f, 0b480d6, 7d45286, 491bc08, 4bf3b35, 162000d, 229269c), 7 CI and attribution policy commits, 3 README badge commits and 2 upstream merges. 0fe895f and 491bc08, which carries the same change as the earlier 68c06c9, have awaited Ryan's answers since 27 September 2026 |
-| yfinance | 0 | [#3028](https://github.com/ranaroussi/yfinance/pull/3028) merged into upstream dev on 1 November 2026. Its branch ryan/fx-dividend-history-tz, whose head 2cf22207 is in upstream dev, was deleted on 2 November 2026 |
 
 On 6 October 2026, Ryan archived the gnucash, money, ofxtools, oracle, pycubrid and schwifty forks after checks found no open upstream pull request from this account. The gnucash contribution [#2321](https://github.com/Gnucash/gnucash/pull/2321) merged on 5 October 2026. GitHub returned 404 for the gnucash fork on 14 October 2026. By 17 October a gnucash fork existed again with an open contribution.
 
@@ -212,6 +205,8 @@ New forks of date-holidays, edgartools, python-accounting and rustledger were cr
 The beancount, beangulp and django-ledger forks were deleted on 29 October 2026, after their upstream pull requests were closed unmerged under the 15-day rule. Those pull requests are listed under Recent contributions.
 
 The Netryx-Astra-V2-Geolocation-Tool fork was deleted on 29 October 2026 at Ryan's request, after its upstream pull request [#23](https://github.com/sparkyniner/Netryx-Astra-V2-Geolocation-Tool/pull/23) was closed unmerged with no maintainer reply after 12 days, short of the 15-day rule. Its complete advertised Git history was preserved in a verified local bundle before deletion.
+
+The account-financial-tools, calamine, cerberus, currency, edgartools, formulas, lopdf, money, portfolio, pypika, python-accounting, Riskfolio-Lib, schwifty, sqlframe, sqlglot, toolbelt, umya-spreadsheet, yfinance and zip2 forks were deleted by Ryan on 3 November 2026. Restore-tested backups are kept locally. Their upstream pull requests are listed under Recent contributions.
 
 ## Retention rule
 
