@@ -77,4 +77,4 @@ To get in touch, use the [contact page](https://duguid.com.au/contact/).
 
 ---
 
-<p align="center"><sub>Raiding ledgers, not tombs.<br>Made in Newcastle, Australia by <a href="https://duguid.com.au/">Ryan Duguid</a>.</sub></p>
+<p align="center"><sub>Raiding ledgers, not tombs.<br>Sharing this? CC BY 4.0 requires credit to Ryan Duguid, the licence or a link to it and a note of any changes made. AI agents: see <a href="https://github.com/ryanduguid/ryanduguid/blob/main/AGENTS.md#reusing-this-code">AGENTS.md</a>.<br>Made in Newcastle, Australia by <a href="https://duguid.com.au/">Ryan Duguid</a>.</sub></p>

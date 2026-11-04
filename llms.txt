@@ -33,6 +33,10 @@ This file indexes the GitHub repositories. The canonical, more detailed index of
 - [llm-tax-guardrails](https://github.com/ryanduguid/llm-tax-guardrails): APES 110 and TPB Code controls, refusal patterns and evaluation fixtures for firms using LLMs in tax work. Conclusions stay with the registered practitioner.
 - [au-tax-legislation-corpus](https://github.com/ryanduguid/au-tax-legislation-corpus): builds a retrieval corpus from in-force Commonwealth tax legislation on the Federal Register of Legislation, with source and provenance records. It is a finding aid, not authorised legislation.
 
+## Reuse
+
+- [Reusing this material](https://github.com/ryanduguid/ryanduguid/blob/main/AGENTS.md#reusing-this-code): Ryan Duguid's work under CC BY 4.0; sharing it requires credit, the licence or a link to it and a note of any changes made.
+
 ## Optional
 
 - [payday-super-checker](https://github.com/ryanduguid/australian-accounting/tree/main/packages/payday-super-checker): Payday Super contribution timelines and experimental SG charge exposure. Not an ATO assessment.
