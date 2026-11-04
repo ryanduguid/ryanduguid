@@ -35,7 +35,7 @@ This file indexes the GitHub repositories. The canonical, more detailed index of
 
 ## Reuse
 
-- [Reusing this material](https://github.com/ryanduguid/ryanduguid/blob/main/AGENTS.md#reusing-this-code): Ryan Duguid's work under CC BY 4.0; sharing it requires credit, a licence link and a note of changes.
+- [Reusing this material](https://github.com/ryanduguid/ryanduguid/blob/main/AGENTS.md#reusing-this-code): Ryan Duguid's work under CC BY 4.0; sharing it requires credit, the licence or a link to it and a note of any changes made.
 
 ## Optional
 
