@@ -20,7 +20,8 @@ This file indexes the GitHub repositories. The canonical, more detailed index of
 - [Tools on the website](https://duguid.com.au/tools/): browser tools and fictional worked examples, with nothing to install.
 - [Profit and cash worked example](https://duguid.com.au/examples/profit-vs-cash-flow/): a fictional Newcastle business where delaying one $44,000 receipt by 45 days leaves quarterly profit at $35,957.55 while daily cash falls to minus $25,160 on 6 November 2026.
 - [Monthly Close Controls worked example](https://duguid.com.au/tools/monthly-close-controls/#worked-example): eight exceptions in a fictional July close, including a $250 creditors difference.
-- [Evaluations](https://duguid.com.au/evaluate/) and [Evidence](https://duguid.com.au/evidence/): reproducible synthetic evaluations, credentials, releases and accepted upstream work.
+- [Evaluations](https://duguid.com.au/evaluate/): reproducible synthetic evaluations.
+- [Evidence](https://duguid.com.au/evidence/): credentials, releases and accepted upstream work.
 
 ## Repositories
 
