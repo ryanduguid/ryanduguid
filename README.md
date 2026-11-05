@@ -13,19 +13,21 @@
 
 </div>
 
-I am an accountant in Newcastle, Australia. I build open source tools for cash-flow modelling, month-end review and Australian tax and payroll calculations.
+I am Ryan Duguid, an accountant in Newcastle, Australia. I build open source tools for accountants: cash-flow modelling, month-end review, and Australian tax and payroll calculations.
 
 [Website](https://duguid.com.au/) · [Tools](https://duguid.com.au/tools/) · [Evaluations](https://duguid.com.au/evaluate/) · [Credentials and evidence](https://duguid.com.au/evidence/)
 
 ## Try an accounting task
 
+The 3 worked examples below each include their workings, version and review boundary:
+
 - **Explain profit and cash differences:** the [fictional Newcastle cash-flow case](https://duguid.com.au/examples/profit-vs-cash-flow/) shows $35,957.55 quarterly profit and a $25,160 cash shortfall. Read it in your browser; changing the receipt delay needs desktop Excel.
 - **Calculate in Excel:** the [Ozzit formula and workbook](https://duguid.com.au/tools/ozzit/#worked-example) extract $100 GST from a wholly taxable $1,100 amount. Needs Microsoft 365 or Excel 2024 or later.
 - **Review a month-end close:** [Monthly Close Controls](https://duguid.com.au/tools/monthly-close-controls/#worked-example) reports 8 exceptions, including a $250 creditors difference. Read it in your browser; reproducing the pack needs Git and Rust.
 
-Each example includes its workings, version and review boundary.
-
 ## Background
+
+My accounting credentials and certifications are:
 
 - Provisional member of Chartered Accountants ANZ
 - SAP S/4HANA certified in [Financial Accounting (FI)](https://www.credly.com/badges/750e7557-ab6d-4b28-a241-8252c263613a/public_url) and [Management Accounting (CO)](https://www.credly.com/badges/0f753c71-5f49-41be-8519-51e81030a8f1/public_url)
@@ -34,6 +36,8 @@ Each example includes its workings, version and review boundary.
 <p><img src="assets/xero-certified-specialist-level-3-badge.png" alt="Xero Certified Specialist, Level 3 badge" width="48" height="48" align="left" hspace="8" /> Read the <a href="https://duguid.com.au/evidence/#xero-certification">certificate in the evidence register</a>, or explore my <a href="https://duguid.com.au/tools/xero-trial-balance/">Xero trial balance export and review workflow</a>.<br /><sub>The badge is Xero's artwork, taken from that certificate.</sub><br clear="left" /></p>
 
 ## Selected work
+
+Selected public repositories include:
 
 - **[au-fpa-pack](https://github.com/ryanduguid/au-fpa-pack):** Australian cash-flow forecasts and management briefings using fictional businesses. Extends Guiderail's [openfpa](https://github.com/JeffBrines/openfpa).
 - **[Accounting Review Pipeline](https://github.com/ryanduguid/accounting-review-pipeline):** Xero exports, month-end exceptions and workpaper review packs, with Excel and Power BI components.
@@ -45,6 +49,8 @@ Each example includes its workings, version and review boundary.
 
 Each repository shows its own CI, coverage and OpenSSF Scorecard results in its README.
 
+I also build engineering tools: [github-agent-skills](https://github.com/ryanduguid/github-agent-skills) for evidence-based GitHub work by coding agents, [release-policy](https://github.com/ryanduguid/release-policy) for releases with signed provenance, and free tools for coding agents and privacy at [yungSNAT](https://github.com/yungSNAT).
+
 <details>
 <summary>How the accounting tools fit together</summary>
 
@@ -52,6 +58,8 @@ Skills guide preparation. A configured assistant can call the local MCP server, 
 
 ```mermaid
 flowchart TB
+accTitle: How the accounting tools fit together
+accDescr: An assistant using the accounting skills exchanges requests with the Australian Accounting MCP server, which sends calculations to the calculation packages. The assistant sends workpapers and exceptions to authorised human review. The Federal Register of Legislation feeds the legislation corpus, a finding aid. The reviewer uses the corpus to locate provisions and checks authority at the Register.
 %%{init: {"theme": "base", "look": "classic", "themeVariables": {"background": "#000000", "primaryColor": "#66023C", "primaryTextColor": "#FFFFF0", "primaryBorderColor": "#FFFFF0", "lineColor": "#FFD32A", "textColor": "#FFFFF0", "edgeLabelBackground": "#000000", "clusterBkg": "#000000", "clusterBorder": "#9B7735", "titleColor": "#E5E4E2"}}}%%
     assistant["Assistant using<br/>accounting skills"] <--> mcp["Australian Accounting<br/>MCP server"]
     mcp -->|Calculations| engines["Calculation packages"]
