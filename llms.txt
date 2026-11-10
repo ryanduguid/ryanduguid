@@ -31,8 +31,8 @@ This file indexes the GitHub repositories. The canonical, more detailed index of
 - [australian-accounting-skills](https://github.com/ryanduguid/australian-accounting-skills): preparation and review workflows for public practice and contracting, including BAS, month-end close, payroll, workpaper tie-outs and the former Hardhat Ledger subcontractor workflows (there is no separate Hardhat pack). Claude Code plugin, Codex plugin or portable skill files; `npx skills add ryanduguid/australian-accounting-skills` installs from the default branch.
 - [accounting-review-pipeline](https://github.com/ryanduguid/accounting-review-pipeline): month-end close checks on Xero trial balance exports, producing exception packs for human sign-off, with Excel and Power BI components.
 - [au-fpa-pack](https://github.com/ryanduguid/au-fpa-pack): Australian extension of openfpa by Jeff Brines and Guiderail, with 30 June years, Xero AU and GST. Holds the source for the profit and cash example; its independent accountant trial is pending.
-- [llm-tax-guardrails](https://github.com/ryanduguid/llm-tax-guardrails): APES 110 and TPB Code controls, refusal patterns and evaluation fixtures for firms using LLMs in tax work. Conclusions stay with the registered practitioner.
-- [au-tax-legislation-corpus](https://github.com/ryanduguid/au-tax-legislation-corpus): builds a retrieval corpus from in-force Commonwealth tax legislation on the Federal Register of Legislation, with source and provenance records. It is a finding aid, not authorised legislation.
+- [DrDebits](https://github.com/ryanduguid/DrDebits): APES 110 and TPB Code controls, refusal patterns and evaluation fixtures for firms using LLMs in tax work. Conclusions stay with the registered practitioner.
+- [PaulGoodman](https://github.com/ryanduguid/PaulGoodman): builds a retrieval corpus from in-force Commonwealth tax legislation on the Federal Register of Legislation, with source and provenance records. It is a finding aid, not authorised legislation.
 
 ## Reuse
 
