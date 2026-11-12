@@ -11,11 +11,11 @@
 
 [![aus-accounting-mcp on PyPI](https://badgen.net/pypi/v/aus-accounting-mcp?label=PyPI&color=66023C&labelColor=000000)](https://pypi.org/project/aus-accounting-mcp/) [![Latest Ozzit release](https://badgen.net/github/release/ryanduguid/Ozzit/stable?label=Ozzit&color=66023C&labelColor=000000)](https://github.com/ryanduguid/Ozzit/releases/latest)
 
+[Website](https://duguid.com.au/) · [Tools](https://duguid.com.au/tools/) · [Evaluations](https://duguid.com.au/evaluate/) · [Credentials and evidence](https://duguid.com.au/evidence/)
+
 </div>
 
 I am Ryan Duguid, an accountant in Newcastle, Australia. I build open source tools for accountants: cash-flow modelling, month-end review, and Australian tax and payroll calculations.
-
-[Website](https://duguid.com.au/) · [Tools](https://duguid.com.au/tools/) · [Evaluations](https://duguid.com.au/evaluate/) · [Credentials and evidence](https://duguid.com.au/evidence/)
 
 ## Try an accounting task
 
