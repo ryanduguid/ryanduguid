@@ -236,7 +236,7 @@ mod tests {
     }
 
     fn csv(functions: u32, help: u32) -> String {
-        let mut csv = String::from("Function,module,description\n");
+        let mut csv = String::from("function,module,previous_name,signature,description\n");
         for n in 0..functions {
             writeln!(csv, "oz.Fn{n}λ,Finance,\"Does {n}, quoted\"").unwrap();
         }

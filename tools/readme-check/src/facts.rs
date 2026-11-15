@@ -24,7 +24,7 @@ pub const FACTS: &[Fact] = &[
         readme: &["$100 GST", "$1,100 amount"],
         url: "https://duguid.com.au/tools/ozzit/",
         section: Some("worked-example"),
-        page: &["Extract GST from $1,100", "100.00"],
+        page: &["Take $1,100", "The result is 100.00"],
     },
     Fact {
         name: "Monthly Close Controls example",
@@ -56,9 +56,9 @@ pub fn csv_counts(csv: &str) -> Result<(u32, u32), String> {
     let Some((header, rows)) = names.split_first() else {
         return Err("functions.csv is empty".into());
     };
-    if header != "Function" {
+    if !header.eq_ignore_ascii_case("function") {
         return Err(format!(
-            "functions.csv starts with '{header}', not 'Function'"
+            "functions.csv starts with '{header}', not 'function'"
         ));
     }
     let help = rows
@@ -109,7 +109,7 @@ mod tests {
 
     #[test]
     fn counts_split_functions_from_help_tables() {
-        let csv = "Function,module,description\r\n\
+        let csv = "function,module,description\r\n\
 oz.GSTExtractλ,GST,\"Extract GST, from a \"\"wholly\"\" taxable amount\nover lines\"\r\n\
 oz.AboutGSTλ,Help,Help table\r\n\
 \r\n\
