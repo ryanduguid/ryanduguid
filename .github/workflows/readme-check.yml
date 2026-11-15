@@ -5,17 +5,19 @@ name: readme-check
 # and the figures it quotes from duguid.com.au still appear on the pages it
 # links. tools/readme-check does the checking and exits 0 clean, 1 on drift
 # and 2 when a source could not be read (a rate limit, 5xx or timeout that
-# outlasted its retries), which warns without failing.
+# outlasted its retries), which warns without failing. It runs daily, so a new
+# Ozzit release is compared within a day, as the website's release check is.
 #
 # A red scheduled run notifies nobody, so drift found on main is also kept in
 # one tracking issue, as the website's source-freshness workflow does: opened
 # on the first drift, rewritten while drift remains and closed by the first
-# clean run. An inconclusive run (exit 2) skips the issue job. Only the issue job can
-# write, and it runs no repository code.
+# clean run. A source that is inconclusive in this run and the 2 runs on main
+# before it counts as drift too, since a warning on a green run reaches nobody
+# either. Only the issue job can write, and it runs no repository code.
 
 on:
   schedule:
-    - cron: "23 6 * * 1"
+    - cron: "23 6 * * *"
   pull_request:
     paths:
       - README.md
@@ -51,8 +53,9 @@ jobs:
         if: ${{ github.event_name == 'pull_request' }}
         run: |
           cargo fmt --check
-          cargo clippy --locked --all-targets -- -D warnings
-          cargo test --locked
+          cargo clippy --locked --all-targets --release -- -D warnings
+          cargo test --locked --release
+      # Release throughout, so the build below reuses the test build's dependencies.
       - name: Build the checker
         run: cargo build --locked --release
       - name: Check README.md against its sources
@@ -82,10 +85,11 @@ jobs:
 
   issue:
     needs: check
-    if: ${{ !cancelled() && github.event_name != 'pull_request' && github.ref == 'refs/heads/main' && contains(fromJSON('["0", "1"]'), needs.check.outputs.status) }}
+    if: ${{ !cancelled() && github.event_name != 'pull_request' && github.ref == 'refs/heads/main' && contains(fromJSON('["0", "1", "2"]'), needs.check.outputs.status) }}
     timeout-minutes: 5
     runs-on: ubuntu-24.04
     permissions:
+      actions: read
       issues: write
     env:
       TITLE: README.md has drifted from its sources
@@ -100,6 +104,7 @@ jobs:
           GH_TOKEN: ${{ github.token }}
           GH_REPO: ${{ github.repository }}
           STATUS: ${{ needs.check.outputs.status }}
+          RUN_ID: ${{ github.run_id }}
           RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
         run: |
           report="$RUNNER_TEMP/report/report.txt"
@@ -111,11 +116,36 @@ jobs:
             fi
             exit 0
           fi
+          # Sources inconclusive in this run and in each of the 2 earlier runs on
+          # main, keyed on the check and URL. A missing earlier report breaks the run.
+          sources() { sed -nE 's/^INCONCLUSIVE: (.+ [^ ]+): .*$/\1/p' "$1" | sort -u; }
+          sources "$report" > "$RUNNER_TEMP/streak.txt"
+          earlier=$(gh run list --workflow readme-check.yml --branch main --status completed --limit 20 \
+            --json databaseId,event --jq "map(select(.event != \"pull_request\" and .databaseId != $RUN_ID)) | .[0:2] | .[].databaseId")
+          [ "$(echo "$earlier" | grep -c .)" = 2 ] || : > "$RUNNER_TEMP/streak.txt"
+          for id in $earlier; do
+            [ -s "$RUNNER_TEMP/streak.txt" ] || break
+            if gh run download "$id" -n readme-check-report -D "$RUNNER_TEMP/run-$id"; then
+              sources "$RUNNER_TEMP/run-$id/report.txt" | comm -12 "$RUNNER_TEMP/streak.txt" - > "$RUNNER_TEMP/both.txt"
+              mv "$RUNNER_TEMP/both.txt" "$RUNNER_TEMP/streak.txt"
+            else
+              : > "$RUNNER_TEMP/streak.txt"
+            fi
+          done
+          if [ "$STATUS" = 2 ] && [ ! -s "$RUNNER_TEMP/streak.txt" ]; then
+            echo "Inconclusive, and no source failed 3 runs in a row; the issue is unchanged."
+            exit 0
+          fi
           {
             echo "The README check found statements that no longer match their sources."
             echo "Fix README.md, the source or tools/readme-check/src/facts.rs, then dispatch readme-check.yml on main; a clean run closes this issue."
             echo
             grep -E '^(DRIFT|INCONCLUSIVE): ' "$report" | sed 's/^/- /'
+            if [ -s "$RUNNER_TEMP/streak.txt" ]; then
+              echo
+              echo "Unreadable in this run and the 2 runs before it, so treated as drift:"
+              sed 's/^/- /' "$RUNNER_TEMP/streak.txt"
+            fi
             echo
             echo "Last checked: $RUN_URL"
           } > "$RUNNER_TEMP/body.md"
