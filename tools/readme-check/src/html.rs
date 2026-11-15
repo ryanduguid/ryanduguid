@@ -3,13 +3,21 @@
 //! a page writes with an entity fails visibly rather than passing silently.
 
 pub fn has_anchor(html: &str, fragment: &str) -> bool {
-    html.contains(&format!("id=\"{fragment}\"")) || html.contains(&format!("name=\"{fragment}\""))
+    attribute(html, "id", fragment).is_some() || attribute(html, "name", fragment).is_some()
+}
+
+/// Where `name="value"` starts as a whole attribute, so `data-id="x"` is not `id="x"`.
+fn attribute(html: &str, name: &str, value: &str) -> Option<usize> {
+    let needle = format!("{name}=\"{value}\"");
+    html.match_indices(&needle)
+        .map(|(at, _)| at)
+        .find(|&at| at > 0 && html.as_bytes()[at - 1].is_ascii_whitespace())
 }
 
 /// The element carrying `id="<id>"`: up to the next heading of the same or a
 /// higher level when it is a heading, otherwise up to its matching end tag.
 pub fn section<'a>(html: &'a str, id: &str) -> Option<&'a str> {
-    let at = html.find(&format!("id=\"{id}\""))?;
+    let at = attribute(html, "id", id)?;
     let start = html[..at].rfind('<')?;
     let name: String = html[start + 1..]
         .chars()
@@ -117,6 +125,9 @@ mod tests {
     fn anchors_are_found_by_id_only_when_present() {
         assert!(has_anchor(PAGE, "intro"));
         assert!(!has_anchor(PAGE, "croft-manor"));
+        let decoy = r#"<div data-id="worked-example"><p>Take $1,100</p></div>"#;
+        assert!(!has_anchor(decoy, "worked-example"));
+        assert_eq!(section(decoy, "worked-example"), None);
         assert_eq!(section(PAGE, "croft-manor"), None);
     }
 }

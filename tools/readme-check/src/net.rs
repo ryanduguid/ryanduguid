@@ -84,6 +84,8 @@ impl Network {
         let agent = ureq::Agent::config_builder()
             .timeout_global(Some(Duration::from_secs(30)))
             .http_status_as_error(false)
+            // The token must never follow a redirect to another host.
+            .redirect_auth_headers(ureq::config::RedirectAuthHeaders::Never)
             .build()
             .into();
         Self { agent, token }

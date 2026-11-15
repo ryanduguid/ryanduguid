@@ -10,7 +10,7 @@ name: readme-check
 # A red scheduled run notifies nobody, so drift found on main is also kept in
 # one tracking issue, as the website's source-freshness workflow does: opened
 # on the first drift, rewritten while drift remains and closed by the first
-# clean run. An inconclusive run leaves the issue alone. Only the issue job can
+# clean run. An inconclusive run (exit 2) skips the issue job. Only the issue job can
 # write, and it runs no repository code.
 
 on:
@@ -45,7 +45,10 @@ jobs:
           persist-credentials: false
       - name: Install the pinned Rust toolchain
         run: rustup toolchain install
+      # Pull requests only: a scheduled run must reach the checker and the issue
+      # even when a README edit on main breaks the offline real-README test.
       - name: Format, lint and test the checker
+        if: ${{ github.event_name == 'pull_request' }}
         run: |
           cargo fmt --check
           cargo clippy --locked --all-targets -- -D warnings
@@ -78,7 +81,7 @@ jobs:
 
   issue:
     needs: check
-    if: ${{ !cancelled() && github.event_name != 'pull_request' && github.ref == 'refs/heads/main' && needs.check.outputs.status != '' }}
+    if: ${{ !cancelled() && github.event_name != 'pull_request' && github.ref == 'refs/heads/main' && contains(fromJSON('["0", "1"]'), needs.check.outputs.status) }}
     timeout-minutes: 5
     runs-on: ubuntu-24.04
     permissions:
@@ -99,10 +102,6 @@ jobs:
           RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
         run: |
           report="$RUNNER_TEMP/report/report.txt"
-          if [ "$STATUS" != 0 ] && [ "$STATUS" != 1 ]; then
-            echo "Inconclusive (exit $STATUS); the issue is unchanged."
-            exit 0
-          fi
           number=$(gh issue list --state open --search "\"$TITLE\" in:title" --json number,title \
             --jq 'map(select(.title == env.TITLE)) | .[0].number // empty')
           if [ "$STATUS" = 0 ]; then
