@@ -188,6 +188,10 @@ mod tests {
         assert!(links(&shown).is_empty());
         let twice = "150 native Excel LAMBDA functions plus 5 help tables; 151 native Excel LAMBDA functions plus 5 help tables";
         assert_eq!(ozzit_counts(twice), None);
+        assert_eq!(
+            visible("before <!-- hidden --> after <!-- again --> end"),
+            "before  after  end"
+        );
     }
 
     #[test]
