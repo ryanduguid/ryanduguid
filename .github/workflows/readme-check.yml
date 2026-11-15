@@ -1,0 +1,132 @@
+name: readme-check
+
+# Holds README.md to its sources: every link resolves, Ozzit's function and
+# help-table counts equal those in functions.csv at Ozzit's latest release,
+# and the figures it quotes from duguid.com.au still appear on the pages it
+# links. tools/readme-check does the checking and exits 0 clean, 1 on drift
+# and 2 when a source could not be read (a rate limit, 5xx or timeout that
+# outlasted its retries), which warns without failing.
+#
+# A red scheduled run notifies nobody, so drift found on main is also kept in
+# one tracking issue, as the website's source-freshness workflow does: opened
+# on the first drift, rewritten while drift remains and closed by the first
+# clean run. An inconclusive run leaves the issue alone. Only the issue job can
+# write, and it runs no repository code.
+
+on:
+  schedule:
+    - cron: "23 6 * * 1"
+  pull_request:
+    paths:
+      - README.md
+      - tools/readme-check/**
+      - .github/workflows/readme-check.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: readme-check-${{ github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+jobs:
+  check:
+    timeout-minutes: 15
+    runs-on: ubuntu-24.04
+    outputs:
+      status: ${{ steps.check.outputs.status }}
+    defaults:
+      run:
+        working-directory: tools/readme-check
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - name: Install the pinned Rust toolchain
+        run: rustup toolchain install
+      - name: Format, lint and test the checker
+        run: |
+          cargo fmt --check
+          cargo clippy --locked --all-targets -- -D warnings
+          cargo test --locked
+      - name: Build the checker
+        run: cargo build --locked --release
+      - name: Check README.md against its sources
+        id: check
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          set +e
+          target/release/readme-check ../../README.md > "$RUNNER_TEMP/report.txt"
+          status=$?
+          cat "$RUNNER_TEMP/report.txt"
+          echo "status=$status" >> "$GITHUB_OUTPUT"
+          if [ "$status" = 2 ]; then
+            echo "::warning::A source could not be read in this run; nothing drifted."
+            exit 0
+          fi
+          exit "$status"
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        if: ${{ !cancelled() && steps.check.outputs.status != '' }}
+        with:
+          name: readme-check-report
+          path: ${{ runner.temp }}/report.txt
+          if-no-files-found: error
+          overwrite: true
+          retention-days: 7
+
+  issue:
+    needs: check
+    if: ${{ !cancelled() && github.event_name != 'pull_request' && github.ref == 'refs/heads/main' && needs.check.outputs.status != '' }}
+    timeout-minutes: 5
+    runs-on: ubuntu-24.04
+    permissions:
+      issues: write
+    env:
+      TITLE: README.md has drifted from its sources
+    steps:
+      - uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8
+        with:
+          name: readme-check-report
+          path: ${{ runner.temp }}/report
+      - name: Open, update or close the tracking issue
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          STATUS: ${{ needs.check.outputs.status }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          report="$RUNNER_TEMP/report/report.txt"
+          if [ "$STATUS" != 0 ] && [ "$STATUS" != 1 ]; then
+            echo "Inconclusive (exit $STATUS); the issue is unchanged."
+            exit 0
+          fi
+          number=$(gh issue list --state open --search "\"$TITLE\" in:title" --json number,title \
+            --jq 'map(select(.title == env.TITLE)) | .[0].number // empty')
+          if [ "$STATUS" = 0 ]; then
+            if [ -n "$number" ]; then
+              gh issue close "$number" --comment "No drift in $RUN_URL."
+            fi
+            exit 0
+          fi
+          {
+            echo "The README check found statements that no longer match their sources."
+            echo "Fix README.md, the source or tools/readme-check/src/facts.rs, then dispatch readme-check.yml on main; a clean run closes this issue."
+            echo
+            grep -E '^(DRIFT|INCONCLUSIVE): ' "$report" | sed 's/^/- /'
+            echo
+            echo "Last checked: $RUN_URL"
+          } > "$RUNNER_TEMP/body.md"
+          if [ -n "$number" ]; then
+            # A body edit notifies nobody, so a changed drift list also gets a comment.
+            old=$(gh issue view "$number" --json body --jq .body | tr -d '\r' | grep -v '^Last checked: ')
+            new=$(grep -v '^Last checked: ' "$RUNNER_TEMP/body.md")
+            gh issue edit "$number" --body-file "$RUNNER_TEMP/body.md"
+            if [ "$old" != "$new" ]; then
+              gh issue comment "$number" --body "The drift list changed in $RUN_URL."
+            fi
+          else
+            gh issue create --title "$TITLE" --body-file "$RUNNER_TEMP/body.md"
+          fi

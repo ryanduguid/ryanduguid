@@ -21,3 +21,16 @@ updates:
       # unapproved SHA to the portfolio audit without changing the workflow,
       # so re-pin by hand instead.
       - dependency-name: "ryanduguid/release-policy/.github/workflows/*"
+  - package-ecosystem: cargo
+    directory: /tools/readme-check
+    schedule:
+      interval: weekly
+    cooldown:
+      default-days: 7
+    groups:
+      cargo-minor-patch:
+        patterns:
+          - "*"
+        update-types:
+          - minor
+          - patch
