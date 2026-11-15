@@ -364,7 +364,8 @@ mod tests {
     #[test]
     fn the_real_readme_passes_against_a_matching_world() {
         let markdown = std::fs::read_to_string(root().join("README.md")).unwrap();
-        let (functions, help) = readme::ozzit_counts(&markdown).expect("Ozzit counts");
+        let (functions, help) =
+            readme::ozzit_counts(&readme::visible(&markdown)).expect("Ozzit counts");
         assert_eq!(
             drift(&mut world(functions, help), &markdown),
             (0, String::new())
