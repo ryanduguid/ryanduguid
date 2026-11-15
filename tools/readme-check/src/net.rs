@@ -76,11 +76,11 @@ pub fn fetch(transport: &mut dyn Transport, url: &str) -> Outcome {
 /// The real network. The token, when present, is sent only to the GitHub API.
 pub struct Network {
     agent: ureq::Agent,
-    token: Option<String>,
+    bearer: Option<String>,
 }
 
 impl Network {
-    pub fn new(token: Option<String>) -> Self {
+    pub fn new(bearer: Option<String>) -> Self {
         let agent = ureq::Agent::config_builder()
             .timeout_global(Some(Duration::from_secs(30)))
             .http_status_as_error(false)
@@ -88,17 +88,17 @@ impl Network {
             .redirect_auth_headers(ureq::config::RedirectAuthHeaders::Never)
             .build()
             .into();
-        Self { agent, token }
+        Self { agent, bearer }
     }
 }
 
 impl Transport for Network {
     fn get(&mut self, url: &str) -> Reply {
         let mut request = self.agent.get(url).header("User-Agent", USER_AGENT);
-        if let Some(token) = self.token.as_deref()
+        if let Some(bearer) = self.bearer.as_deref()
             && url.starts_with("https://api.github.com/")
         {
-            request = request.header("Authorization", format!("Bearer {token}"));
+            request = request.header("Authorization", format!("Bearer {bearer}"));
         }
         let mut response = match request.call() {
             Ok(response) => response,

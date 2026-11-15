@@ -57,11 +57,12 @@ jobs:
         run: cargo build --locked --release
       - name: Check README.md against its sources
         id: check
+        working-directory: .
         env:
           GITHUB_TOKEN: ${{ github.token }}
         run: |
           set +e
-          target/release/readme-check ../../README.md > "$RUNNER_TEMP/report.txt"
+          tools/readme-check/target/release/readme-check > "$RUNNER_TEMP/report.txt"
           status=$?
           cat "$RUNNER_TEMP/report.txt"
           echo "status=$status" >> "$GITHUB_OUTPUT"

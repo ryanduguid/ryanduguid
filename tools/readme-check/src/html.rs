@@ -34,16 +34,17 @@ pub fn section<'a>(html: &'a str, id: &str) -> Option<&'a str> {
 }
 
 fn heading_level(name: &str) -> Option<u8> {
-    match name.as_bytes() {
-        [b'h', digit @ b'1'..=b'6'] => Some(digit - b'0'),
-        _ => None,
-    }
+    let level: u8 = name.strip_prefix("h")?.parse().ok()?;
+    (1..=6).contains(&level).then_some(level)
 }
 
 fn next_heading(html: &str, level: u8) -> Option<usize> {
     html.match_indices("<h").map(|(i, _)| i).find(|&i| {
-        let tail = html.as_bytes().get(i + 2..i + 4);
-        matches!(tail, Some([d @ b'1'..=b'6', b' ' | b'>']) if d - b'0' <= level)
+        let tag: String = html[i + 1..]
+            .chars()
+            .take_while(char::is_ascii_alphanumeric)
+            .collect();
+        heading_level(&tag).is_some_and(|found| found <= level)
     })
 }
 

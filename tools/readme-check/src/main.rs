@@ -2,7 +2,8 @@
 //! Ozzit counts equal those in `functions.csv` at Ozzit's latest release, and
 //! the figures it quotes from the website still appear there.
 //!
-//! Usage: `readme-check [README.md]`. Prints each finding, then a summary.
+//! Run from the repository root, where it reads README.md. Prints each
+//! finding, then a summary.
 //! Exit 0 clean, 1 on drift, 2 when a source could not be read and nothing
 //! drifted. `GITHUB_TOKEN`, when set, is sent to the GitHub API only.
 
@@ -16,11 +17,7 @@ use check::Severity;
 use std::path::PathBuf;
 
 fn main() {
-    let path = PathBuf::from(
-        std::env::args()
-            .nth(1)
-            .unwrap_or_else(|| "README.md".into()),
-    );
+    let path = PathBuf::from("README.md");
     let markdown = match std::fs::read_to_string(&path) {
         Ok(markdown) => markdown,
         Err(error) => {
