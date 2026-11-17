@@ -184,9 +184,7 @@ functions.csv at {tag} has {want_functions} plus {want_help}"
     }
 
     fn fact(&mut self, markdown: &str, links: &[String], fact: &Fact) {
-        let place = fact
-            .section
-            .map_or_else(|| fact.url.to_owned(), |id| format!("{}#{id}", fact.url));
+        let place = format!("{}#{}", fact.url, fact.section);
         if !links.contains(&place) {
             self.report.drift(format!(
                 "{}: the README no longer links {place}; update tools/readme-check/src/facts.rs with its source",
@@ -204,11 +202,7 @@ functions.csv at {tag} has {want_functions} plus {want_help}"
         let Some(body) = self.page(fact.url, fact.name) else {
             return;
         };
-        let scope = match fact.section {
-            Some(id) => html::section(&body, id),
-            None => body.find("<body").map(|at| &body[at..]),
-        };
-        let Some(scope) = scope else {
+        let Some(scope) = html::section(&body, fact.section) else {
             self.report
                 .drift(format!("{}: {place} not found", fact.name));
             return;
@@ -231,7 +225,8 @@ mod tests {
     use super::{OWN_BLOB, run};
     use crate::facts::{FACTS, Fact, OZZIT_LATEST_RELEASE, ozzit_functions_csv};
     use crate::net::fake::{Fake, status};
-    use crate::readme;
+    use crate::{html, readme};
+    use std::collections::HashMap;
     use std::fmt::Write as _;
     use std::path::{Path, PathBuf};
 
@@ -256,25 +251,39 @@ mod tests {
     /// A network where Ozzit's release has the given counts and every fact page
     /// shows its wording inside the section the README links to.
     fn world(functions: u32, help: u32) -> Fake {
+        world_linked_from(functions, help, "")
+    }
+
+    /// `world`, where each page `markdown` links to a fragment of also has an
+    /// element with that id, so only a missing local file or heading can fail.
+    fn world_linked_from(functions: u32, help: u32, markdown: &str) -> Fake {
         let mut net = Fake::default()
             .ok(OZZIT_LATEST_RELEASE, r#"{"tag_name": "v9.9.9"}"#)
             .ok(&ozzit_functions_csv("v9.9.9"), &csv(functions, help));
+        let mut pages: HashMap<&str, String> = HashMap::new();
         for fact in FACTS {
-            let id = fact.section.unwrap_or("top");
-            let page = format!(
-                "<body><section id=\"{id}\"><p>{}</p></section></body>",
-                fact.page.join(" and ")
-            );
-            net = net.ok(fact.url, &page);
+            let section = fact_section(fact, &fact.page.join(" and "));
+            pages.entry(fact.url).or_default().push_str(&section);
+        }
+        let links = readme::links(&readme::visible(markdown));
+        for (url, id) in links.iter().filter_map(|link| link.split_once('#')) {
+            let page = pages.entry(url).or_default();
+            if url.starts_with("https://") && !html::has_anchor(page, id) {
+                write!(page, "<p id=\"{id}\"></p>").unwrap();
+            }
+        }
+        for (url, page) in pages {
+            net = net.ok(url, &format!("<body>{page}</body>"));
         }
         net
     }
 
+    fn fact_section(fact: &Fact, text: &str) -> String {
+        format!("<section id=\"{}\"><p>{text}</p></section>", fact.section)
+    }
+
     fn fact_link(fact: &Fact) -> String {
-        match fact.section {
-            Some(id) => format!("{}#{id}", fact.url),
-            None => fact.url.to_owned(),
-        }
+        format!("{}#{}", fact.url, fact.section)
     }
 
     /// A README that states every fact and links each fact's source.
@@ -340,23 +349,34 @@ mod tests {
 
     #[test]
     fn a_changed_figure_on_the_site_is_drift() {
-        let cash = &FACTS[0];
-        let mut net = world(150, 5).ok(cash.url, "<body><p>$35,957.55 and ($99,999)</p></body>");
+        let fact = &FACTS[0];
+        let mut net = world(150, 5).ok(
+            fact.url,
+            &format!("<body>{}</body>", fact_section(fact, "($99,999)")),
+        );
         let (code, messages) = drift(&mut net, &fixture_readme(""));
         assert_eq!(code, 1);
-        assert_eq!(
-            messages,
-            format!("{}: {} no longer shows '$25,160'", cash.name, cash.url)
-        );
+        let expected: Vec<String> = fact
+            .page
+            .iter()
+            .map(|wording| {
+                format!(
+                    "{}: {} no longer shows '{wording}'",
+                    fact.name,
+                    fact_link(fact)
+                )
+            })
+            .collect();
+        assert_eq!(messages, expected.join("\n"));
     }
 
     #[test]
     fn a_figure_dropped_from_the_readme_is_drift() {
-        let markdown =
-            fixture_readme("").replace("$250 creditors difference", "$300 creditors difference");
+        let wording = FACTS[0].readme[0];
+        let markdown = fixture_readme("").replace(wording, "Croft Manor");
         let (code, messages) = drift(&mut world(150, 5), &markdown);
         assert_eq!(code, 1);
-        assert!(messages.contains("the README no longer says '$250 creditors difference'"));
+        assert!(messages.contains(&format!("the README no longer says '{wording}'")));
     }
 
     /// The real README passes offline: its local files and anchors exist, it
@@ -366,31 +386,27 @@ mod tests {
         let markdown = std::fs::read_to_string(root().join("README.md")).unwrap();
         let (functions, help) =
             readme::ozzit_counts(&readme::visible(&markdown)).expect("Ozzit counts");
-        assert_eq!(
-            drift(&mut world(functions, help), &markdown),
-            (0, String::new())
-        );
+        let mut net = world_linked_from(functions, help, &markdown);
+        assert_eq!(drift(&mut net, &markdown), (0, String::new()));
     }
 
     #[test]
     fn a_fact_whose_source_link_changed_is_drift() {
-        let cash = &FACTS[0];
-        let moved = format!("{}?croft-manor", cash.url);
+        let fact = &FACTS[0];
+        let moved = format!("{}?croft-manor#{}", fact.url, fact.section);
         let markdown =
-            fixture_readme("").replace(&format!("({})", cash.url), &format!("({moved})"));
+            fixture_readme("").replace(&format!("({})", fact_link(fact)), &format!("({moved})"));
         let (code, messages) = drift(&mut world(150, 5), &markdown);
         assert_eq!(code, 1);
-        assert!(messages.contains(&format!("the README no longer links {}", cash.url)));
+        assert!(messages.contains(&format!("the README no longer links {}", fact_link(fact))));
     }
 
     #[test]
     fn a_figure_kept_only_in_a_comment_is_drift() {
-        let markdown = fixture_readme("").replace(
-            "$250 creditors difference",
-            "<!-- $250 creditors difference -->",
-        );
+        let wording = FACTS[0].readme[0];
+        let markdown = fixture_readme("").replace(wording, &format!("<!-- {wording} -->"));
         let (code, messages) = drift(&mut world(150, 5), &markdown);
         assert_eq!(code, 1);
-        assert!(messages.contains("the README no longer says '$250 creditors difference'"));
+        assert!(messages.contains(&format!("the README no longer says '{wording}'")));
     }
 }
