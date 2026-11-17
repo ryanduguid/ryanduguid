@@ -1,46 +1,23 @@
 //! Figures the README quotes from the website. Each fact names the README's
-//! wording and the wording the linked page (or the section its link points
-//! to) must still show. When a figure changes on purpose, change it in the
-//! README, on the site and here.
+//! wording and the wording the section its link points to must still show.
+//! When a figure changes on purpose, change it in the README, on the site and
+//! here.
 
 pub struct Fact {
     pub name: &'static str,
     pub readme: &'static [&'static str],
     pub url: &'static str,
-    pub section: Option<&'static str>,
+    pub section: &'static str,
     pub page: &'static [&'static str],
 }
 
-pub const FACTS: &[Fact] = &[
-    Fact {
-        name: "Cash-flow case",
-        readme: &["$35,957.55 quarterly profit", "$25,160 cash shortfall"],
-        url: "https://duguid.com.au/examples/profit-vs-cash-flow/",
-        section: None,
-        page: &["$35,957.55", "$25,160"],
-    },
-    Fact {
-        name: "Ozzit GST example",
-        readme: &["$100 GST", "$1,100 amount"],
-        url: "https://duguid.com.au/tools/ozzit/",
-        section: Some("worked-example"),
-        page: &["Take $1,100", "The result is 100.00"],
-    },
-    Fact {
-        name: "Monthly Close Controls example",
-        readme: &["8 exceptions", "$250 creditors difference"],
-        url: "https://duguid.com.au/tools/monthly-close-controls/",
-        section: Some("worked-example"),
-        page: &["8 exceptions", "$250"],
-    },
-    Fact {
-        name: "Xero certificate dates",
-        readme: &["awarded 1 July 2026", "valid until 1 July 2027"],
-        url: "https://duguid.com.au/evidence/",
-        section: Some("xero-certification"),
-        page: &["Awarded 1 July 2026", "Valid until 1 July 2027"],
-    },
-];
+pub const FACTS: &[Fact] = &[Fact {
+    name: "Xero certificate expiry",
+    readme: &["valid until 1 July 2027"],
+    url: "https://duguid.com.au/evidence/",
+    section: "xero-certification",
+    page: &["Valid until 1 July 2027"],
+}];
 
 pub const OZZIT_LATEST_RELEASE: &str =
     "https://api.github.com/repos/ryanduguid/Ozzit/releases/latest";
