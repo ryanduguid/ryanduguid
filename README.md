@@ -13,7 +13,7 @@
 
 </div>
 
-I am Ryan Duguid, an accountant in Newcastle, NSW, Australia. I build open source tools for accountants: cash-flow modelling, month-end review, and Australian tax and payroll calculations.
+I am Ryan Duguid, a senior accountant in Newcastle, NSW, Australia. I build open source tools for accountants: cash-flow modelling, month-end review, and Australian tax and payroll calculations.
 
 ## Try an accounting task
 
