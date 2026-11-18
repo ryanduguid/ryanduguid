@@ -13,17 +13,17 @@
 
 </div>
 
-I am Ryan Duguid, an accountant in Newcastle, Australia. I build open source tools for accountants: cash-flow modelling, month-end review, and Australian tax and payroll calculations.
+I am Ryan Duguid, an accountant in Newcastle, NSW, Australia. I build open source tools for accountants: cash-flow modelling, month-end review, and Australian tax and payroll calculations.
 
 ## Try an accounting task
 
 - **Explain profit and cash differences:** a [fictional Newcastle cash-flow case](https://duguid.com.au/examples/profit-vs-cash-flow/), with its source in [au-fpa-pack](https://github.com/ryanduguid/au-fpa-pack).
-- **Calculate in Excel:** [Ozzit](https://github.com/ryanduguid/Ozzit) has 150 native Excel LAMBDA functions plus 5 help tables, with a [worked GST example](https://duguid.com.au/tools/ozzit/#worked-example).
+- **Calculate in Excel:** [Ozzit](https://github.com/ryanduguid/Ozzit) has 151 native Excel LAMBDA functions plus 5 help tables, with a [worked GST example](https://duguid.com.au/tools/ozzit/#worked-example).
 - **Review a month-end close:** [Monthly Close Controls](https://duguid.com.au/tools/monthly-close-controls/#worked-example), part of the [Accounting Review Pipeline](https://github.com/ryanduguid/accounting-review-pipeline).
 
 More tools, including a local MCP server for Australian tax calculations, are on the [tools page](https://duguid.com.au/tools/). I also build free tools for coding agents and privacy at [yungSNAT](https://github.com/yungSNAT).
 
-## Background
+## Credentials and certifications
 
 - Provisional member of Chartered Accountants ANZ
 - SAP S/4HANA certified in Financial Accounting and Management Accounting
@@ -37,4 +37,4 @@ To get in touch, use the [contact page](https://duguid.com.au/contact/).
 
 ---
 
-<p align="center"><sub>Raiding ledgers, not tombs.<br>Sharing this? CC BY 4.0 requires credit to Ryan Duguid, the licence or a link to it and a note of any changes made. AI agents: see <a href="https://github.com/ryanduguid/ryanduguid/blob/main/AGENTS.md#reusing-this-code">AGENTS.md</a>.<br>Made in Newcastle, Australia by <a href="https://duguid.com.au/">Ryan Duguid</a>.</sub></p>
+<p align="center"><sub>Raiding ledgers, not tombs.<br>Sharing this? CC BY 4.0 requires credit to Ryan Duguid, the licence or a link to it and a note of any changes made. AI agents: see <a href="https://github.com/ryanduguid/ryanduguid/blob/main/AGENTS.md#reusing-this-code">AGENTS.md</a> and the repository index in <a href="https://github.com/ryanduguid/ryanduguid/blob/main/llms.txt">llms.txt</a>.<br>Made in Newcastle, Australia by <a href="https://duguid.com.au/">Ryan Duguid</a>.</sub></p>
