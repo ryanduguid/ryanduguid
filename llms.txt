@@ -51,3 +51,4 @@ This file indexes the GitHub repositories; links to package folders point to the
 - [accounting-excel-toolkit](https://raw.githubusercontent.com/ryanduguid/accounting-review-pipeline/main/adapters/accounting-excel-toolkit/README.md): Power Query (M) and VBA automation for Australian month-end reporting.
 - [Australian Accounting Power BI](https://raw.githubusercontent.com/ryanduguid/accounting-review-pipeline/main/apps/australian-accounting-power-bi/README.md): source-controlled Power BI project for accounting analytics, consolidation, ATO benchmarks and Payday Super review.
 - [Related resources](https://duguid.com.au/tools/#related-resources): third-party libraries, ATO guidance and legislation sources, kept on the website.
+- [Contribution forks](https://raw.githubusercontent.com/ryanduguid/ryanduguid/main/FORKS.md): forks kept for upstream contributions, with their open, merged and closed upstream pull requests.
