@@ -18,7 +18,7 @@ I am Ryan Duguid, an accountant in Newcastle, NSW, Australia. I build open sourc
 ## Try an accounting task
 
 - **Explain profit and cash differences:** a [fictional Newcastle cash-flow case](https://duguid.com.au/examples/profit-vs-cash-flow/), with its source in [au-fpa-pack](https://github.com/ryanduguid/au-fpa-pack).
-- **Calculate in Excel:** [Ozzit](https://github.com/ryanduguid/Ozzit) has 150 native Excel LAMBDA functions plus 5 help tables, with a [worked GST example](https://duguid.com.au/tools/ozzit/#worked-example).
+- **Calculate in Excel:** [Ozzit](https://github.com/ryanduguid/Ozzit) has 151 native Excel LAMBDA functions plus 5 help tables, with a [worked GST example](https://duguid.com.au/tools/ozzit/#worked-example).
 - **Review a month-end close:** [Monthly Close Controls](https://duguid.com.au/tools/monthly-close-controls/#worked-example), part of the [Accounting Review Pipeline](https://github.com/ryanduguid/accounting-review-pipeline).
 
 More tools, including a local MCP server for Australian tax calculations, are on the [tools page](https://duguid.com.au/tools/). I also build free tools for coding agents and privacy at [yungSNAT](https://github.com/yungSNAT).
