@@ -33,7 +33,7 @@ The [evidence register](https://duguid.com.au/evidence/#identity-and-credentials
 
 To get in touch, use the [contact page](https://duguid.com.au/contact/).
 
-<sub>Not advice. I am not a registered tax agent or BAS agent and take no advice, return-preparation, tax-treatment confirmation or lodgement requests. The tools are review aids that never lodge or write to ledgers; the reviewer keeps judgement and sign-off. Examples use fabricated data, and support covers software issues only, so please send no taxpayer information.</sub>
+<sub>Not advice. I am not a registered tax agent or BAS agent and take no advice, return-preparation, tax-treatment confirmation or lodgement requests. The tools are review aids that never lodge or write to ledgers; the reviewer keeps judgement and sign-off.</sub>
 
 ---
 
