@@ -10,8 +10,8 @@ name: recent-releases
 # So a change goes to one branch, and one tracking issue links the pull
 # request to open from it, opened by a person so every check runs. The issue
 # is closed once main lists the latest releases. While that pull request is
-# open the branch is left alone, and the run fails if the pull request no
-# longer matches the latest releases, so a person closes it. Only the land job
+# open the branch is left alone, and the run fails if the pull request is out
+# of date or no longer needed, so a person closes it. Only the land job
 # can write, and it runs no repository code.
 
 on:
@@ -33,11 +33,18 @@ jobs:
     runs-on: ubuntu-24.04
     permissions:
       contents: read
+    outputs:
+      sha: ${{ steps.built.outputs.sha }}
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           ref: main
           persist-credentials: false
+      # The land job checks out this commit, so the README it commits is the
+      # one built here.
+      - name: Record the commit built from
+        id: built
+        run: echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
       - name: Install the pinned Rust toolchain
         working-directory: tools/readme-check
         run: rustup toolchain install
@@ -71,7 +78,7 @@ jobs:
       # Credentials persist so this job can push the branch; it uploads nothing.
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
-          ref: main
+          ref: ${{ needs.build.outputs.sha }}
           persist-credentials: true
       - uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8
         with:
@@ -84,8 +91,19 @@ jobs:
           GH_REPO: ${{ github.repository }}
           RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
           COMPARE_URL: ${{ github.server_url }}/${{ github.repository }}/compare/main...automation/recent-releases?expand=1
+          BUILT: ${{ needs.build.outputs.sha }}
         run: |
           set -euo pipefail
+          # The artifact is a whole README built from $BUILT; if main has moved
+          # since, committing it could revert another change to the README.
+          if ! main=$(git ls-remote --exit-code origin refs/heads/main); then
+            echo "::error::Could not read main."
+            exit 1
+          fi
+          if [ "${main%%$'\t'*}" != "$BUILT" ]; then
+            echo "::error::main moved past $BUILT after the build. The next run rebuilds from the new main."
+            exit 1
+          fi
           cp "$RUNNER_TEMP/new/README.md" README.md
           # Each query is its own statement, so an API error stops the job.
           number=$(gh issue list --state open --search "\"$TITLE\" in:title" --json number,title \
@@ -107,6 +125,10 @@ jobs:
           fi
           # While a pull request from the branch is open, the branch is never pushed.
           if [ -n "$pr" ]; then
+            if git diff --quiet -- README.md; then
+              echo "::error::Pull request #$pr from $BRANCH is no longer needed: main already lists the latest releases. Close it."
+              exit 1
+            fi
             if [ -n "$remote" ] && git diff --quiet "$remote" -- README.md; then
               echo "::notice::Pull request #$pr from $BRANCH already holds the latest release list."
               exit 0
