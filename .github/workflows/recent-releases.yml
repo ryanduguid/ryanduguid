@@ -1,0 +1,169 @@
+name: recent-releases
+
+# Rebuilds the README's 'Recent releases' block weekly from the GitHub API with
+# `readme-check releases`, which fails without writing when a repository cannot
+# be read or nothing is released.
+#
+# main's protection requires a pull request and checks, even for admins, and
+# Actions may not open pull requests here; a pull request opened with this
+# workflow's token would not start the required Attribution policy run either.
+# So a change goes to one branch, and one tracking issue links the pull
+# request to open from it, opened by a person so every check runs. The issue
+# is closed once main lists the latest releases. While that pull request is
+# open the branch is left alone, and the run fails if the pull request is out
+# of date or no longer needed, so a person closes it. Only the land job
+# can write, and it runs no repository code.
+
+on:
+  schedule:
+    - cron: "17 21 * * 0"
+  workflow_dispatch:
+
+permissions: {}
+
+concurrency:
+  group: recent-releases
+  cancel-in-progress: false
+
+jobs:
+  build:
+    # A dispatch from another branch would build from, and push, its history.
+    if: github.ref == 'refs/heads/main'
+    timeout-minutes: 15
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: read
+    outputs:
+      sha: ${{ steps.built.outputs.sha }}
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: main
+          persist-credentials: false
+      # The land job checks out this commit, so the README it commits is the
+      # one built here.
+      - name: Record the commit built from
+        id: built
+        run: echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+      - name: Install the pinned Rust toolchain
+        working-directory: tools/readme-check
+        run: rustup toolchain install
+      - name: Build the generator
+        working-directory: tools/readme-check
+        run: cargo build --locked --release
+      - name: Rebuild the release list
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: tools/readme-check/target/release/readme-check releases
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: recent-releases-readme
+          path: README.md
+          if-no-files-found: error
+          retention-days: 1
+
+  land:
+    needs: build
+    if: github.ref == 'refs/heads/main'
+    timeout-minutes: 5
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: write
+      issues: write
+      pull-requests: read
+    env:
+      BRANCH: automation/recent-releases
+      TITLE: The README's release list is ready to update
+    steps:
+      # Credentials persist so this job can push the branch; it uploads nothing.
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: ${{ needs.build.outputs.sha }}
+          persist-credentials: true
+      - uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8
+        with:
+          name: recent-releases-readme
+          path: ${{ runner.temp }}/new
+      - name: Push the branch and open, keep or close the tracking issue
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+          COMPARE_URL: ${{ github.server_url }}/${{ github.repository }}/compare/main...automation/recent-releases?expand=1
+          BUILT: ${{ needs.build.outputs.sha }}
+        run: |
+          set -euo pipefail
+          # The artifact is a whole README built from $BUILT; if main has moved
+          # since, committing it could revert another change to the README.
+          if ! main=$(git ls-remote --exit-code origin refs/heads/main); then
+            echo "::error::Could not read main."
+            exit 1
+          fi
+          if [ "${main%%$'\t'*}" != "$BUILT" ]; then
+            echo "::error::main moved past $BUILT after the build. The next run rebuilds from the new main."
+            exit 1
+          fi
+          cp "$RUNNER_TEMP/new/README.md" README.md
+          # Each query is its own statement, so an API error stops the job.
+          number=$(gh issue list --state open --search "\"$TITLE\" in:title" --json number,title \
+            --jq 'map(select(.title == env.TITLE)) | .[0].number // empty')
+          pr=$(gh pr list --head "$BRANCH" --state open --json number,isCrossRepository \
+            --jq 'map(select(.isCrossRepository | not)) | .[0].number // empty')
+          # ls-remote exits 2 when the branch is absent; any other failure stops
+          # the job rather than passing for an absent branch.
+          remote=""
+          if git ls-remote --exit-code --heads origin "refs/heads/$BRANCH" > /dev/null; then
+            git fetch -q --depth 2 origin "refs/heads/$BRANCH"
+            remote=$(git rev-parse FETCH_HEAD)
+          else
+            status=$?
+            if [ "$status" -ne 2 ]; then
+              echo "::error::Could not read $BRANCH (git ls-remote exited $status)."
+              exit 1
+            fi
+          fi
+          # While a pull request from the branch is open, the branch is never pushed.
+          if [ -n "$pr" ]; then
+            if git diff --quiet -- README.md; then
+              echo "::error::Pull request #$pr from $BRANCH is no longer needed: main already lists the latest releases. Close it."
+              exit 1
+            fi
+            if [ -n "$remote" ] && git diff --quiet "$remote" -- README.md; then
+              echo "::notice::Pull request #$pr from $BRANCH already holds the latest release list."
+              exit 0
+            fi
+            echo "::error::Pull request #$pr from $BRANCH is out of date. Close it so the next run can refresh the branch."
+            exit 1
+          fi
+          if git diff --quiet -- README.md; then
+            echo "main already lists the latest releases."
+            if [ -n "$number" ]; then
+              gh issue close "$number" --comment "main lists the latest releases as of $RUN_URL."
+            fi
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -q -m "docs(readme): refresh the recent releases list" -- README.md
+          # Push only when the branch does not already hold this change on main's
+          # tip, and only over the commit read above (or none, if it was absent).
+          if [ -n "$remote" ] &&
+            [ "$(git rev-parse "$remote^")" = "$(git rev-parse HEAD^)" ] &&
+            git diff --quiet "$remote" HEAD; then
+            echo "$BRANCH already holds this change."
+          else
+            git push --force-with-lease="refs/heads/$BRANCH:$remote" origin "HEAD:refs/heads/$BRANCH"
+          fi
+          if [ -z "$number" ]; then
+            {
+              echo "A newer release is out than README.md lists. To update the Recent releases block, open the pull request from \`$BRANCH\`:"
+              echo
+              echo "$COMPARE_URL"
+              echo
+              echo "The branch changes only the lines between the recent-releases markers. A later run closes this issue once main lists the latest releases."
+              echo
+              echo "Found by $RUN_URL"
+            } > "$RUNNER_TEMP/body.md"
+            gh issue create --title "$TITLE" --body-file "$RUNNER_TEMP/body.md"
+          fi
