@@ -32,6 +32,8 @@ fn main() {
     };
     let root = path.parent().map(PathBuf::from).unwrap_or_default();
     let token = std::env::var("GITHUB_TOKEN").ok().filter(|t| !t.is_empty());
+    // The argument only picks the mode; it grants nothing.
+    // nosemgrep: rust.lang.security.args.args
     if std::env::args().nth(1).as_deref() == Some("releases") {
         let result = releases::update(&markdown, &mut net::Network::new(token)).and_then(|new| {
             if new == markdown {
