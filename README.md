@@ -23,6 +23,20 @@ I am Ryan Duguid, a senior accountant in Newcastle, NSW, Australia. I build open
 
 More tools, including a local MCP server for Australian tax calculations, are on the [tools page](https://duguid.com.au/tools/). I also build free tools for coding agents and privacy at [yungSNAT](https://github.com/yungSNAT).
 
+## Recent releases
+
+<!-- recent-releases:start -->
+
+- **australian-accounting** [aus-accounting-mcp/v0.11.0](https://github.com/ryanduguid/australian-accounting/releases/tag/aus-accounting-mcp/v0.11.0), 21 November 2026
+- **Ozzit** [v3.7.0](https://github.com/ryanduguid/Ozzit/releases/tag/v3.7.0), 18 November 2026
+- **PaulGoodman** [v0.7.0](https://github.com/ryanduguid/PaulGoodman/releases/tag/v0.7.0), 18 November 2026
+- **au-fpa-pack** [v0.7.0](https://github.com/ryanduguid/au-fpa-pack/releases/tag/v0.7.0), 16 November 2026
+- **DrDebits** [v0.7.0](https://github.com/ryanduguid/DrDebits/releases/tag/v0.7.0), 14 November 2026
+- **accounting-review-pipeline** [monthly-close-control-plane/v1.1.0](https://github.com/ryanduguid/accounting-review-pipeline/releases/tag/monthly-close-control-plane/v1.1.0), 14 November 2026
+- **australian-accounting-skills** [v0.7.0](https://github.com/ryanduguid/australian-accounting-skills/releases/tag/v0.7.0), 14 November 2026
+
+<!-- recent-releases:end -->
+
 ## Credentials and certifications
 
 - Bachelor of Commerce (Accounting), University of Newcastle

@@ -6,12 +6,17 @@
 //! finding, then a summary.
 //! Exit 0 clean, 1 on drift, 2 when a source could not be read and nothing
 //! drifted. `GITHUB_TOKEN`, when set, is sent to the GitHub API only.
+//!
+//! `readme-check releases` instead rebuilds the README's 'Recent releases'
+//! block from the GitHub API (see `releases.rs`): exit 0 whether or not the
+//! block changed, 1 with README.md untouched on any failure.
 
 mod check;
 mod facts;
 mod html;
 mod net;
 mod readme;
+mod releases;
 
 use check::Severity;
 use std::path::PathBuf;
@@ -27,6 +32,23 @@ fn main() {
     };
     let root = path.parent().map(PathBuf::from).unwrap_or_default();
     let token = std::env::var("GITHUB_TOKEN").ok().filter(|t| !t.is_empty());
+    if std::env::args().nth(1).as_deref() == Some("releases") {
+        let result = releases::update(&markdown, &mut net::Network::new(token)).and_then(|new| {
+            if new == markdown {
+                return Ok("the release list is current");
+            }
+            std::fs::write(&path, new).map_err(|e| e.to_string())?;
+            Ok("the release list was updated")
+        });
+        match result {
+            Ok(message) => println!("README.md: {message}"),
+            Err(why) => {
+                eprintln!("readme-check releases: {why}");
+                std::process::exit(1);
+            }
+        }
+        return;
+    }
     let report = check::run(&markdown, &root, &mut net::Network::new(token));
     for (severity, message) in &report.findings {
         let label = match severity {

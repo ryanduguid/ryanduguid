@@ -1,0 +1,118 @@
+name: recent-releases
+
+# Rebuilds the README's 'Recent releases' block weekly from the GitHub API with
+# `readme-check releases`, which fails without writing when a repository cannot
+# be read or nothing is released.
+#
+# main's protection requires a pull request and checks, even for admins, and
+# Actions may not open pull requests here; a pull request opened with this
+# workflow's token would not start the required Attribution policy run either.
+# So a change goes to one branch, and one tracking issue links the pull
+# request to open from it, opened by a person so every check runs. The issue
+# is closed once main lists the latest releases. Only the land job can write,
+# and it runs no repository code.
+
+on:
+  schedule:
+    - cron: "17 21 * * 0"
+  workflow_dispatch:
+
+permissions: {}
+
+concurrency:
+  group: recent-releases
+  cancel-in-progress: false
+
+jobs:
+  build:
+    timeout-minutes: 15
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - name: Install the pinned Rust toolchain
+        working-directory: tools/readme-check
+        run: rustup toolchain install
+      - name: Build the generator
+        working-directory: tools/readme-check
+        run: cargo build --locked --release
+      - name: Rebuild the release list
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: tools/readme-check/target/release/readme-check releases
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: recent-releases-readme
+          path: README.md
+          if-no-files-found: error
+          retention-days: 1
+
+  land:
+    needs: build
+    timeout-minutes: 5
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: write
+      issues: write
+      pull-requests: read
+    env:
+      BRANCH: automation/recent-releases
+      TITLE: The README's release list is ready to update
+    steps:
+      # Credentials persist so this job can push the branch; it uploads nothing.
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: true
+      - uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8
+        with:
+          name: recent-releases-readme
+          path: ${{ runner.temp }}/new
+      - name: Push the branch and open, keep or close the tracking issue
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+          COMPARE_URL: ${{ github.server_url }}/${{ github.repository }}/compare/main...automation/recent-releases?expand=1
+        run: |
+          set -euo pipefail
+          cp "$RUNNER_TEMP/new/README.md" README.md
+          number=$(gh issue list --state open --search "\"$TITLE\" in:title" --json number,title \
+            --jq 'map(select(.title == env.TITLE)) | .[0].number // empty')
+          if git diff --quiet -- README.md; then
+            echo "main already lists the latest releases."
+            if [ -n "$number" ]; then
+              gh issue close "$number" --comment "main lists the latest releases as of $RUN_URL."
+            fi
+            exit 0
+          fi
+          if [ -n "$(gh pr list --head "$BRANCH" --state open --json number --jq '.[].number')" ]; then
+            echo "::notice::A pull request from $BRANCH is open, so the branch is left as it is."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -q -m "docs(readme): refresh the recent releases list" -- README.md
+          # Push only when the branch does not already hold this change on main's tip.
+          if git fetch -q --depth 2 origin "$BRANCH" 2>/dev/null &&
+            [ "$(git rev-parse FETCH_HEAD^)" = "$(git rev-parse HEAD^)" ] &&
+            git diff --quiet FETCH_HEAD HEAD; then
+            echo "$BRANCH already holds this change."
+          else
+            git push --force origin "HEAD:refs/heads/$BRANCH"
+          fi
+          if [ -z "$number" ]; then
+            {
+              echo "A newer release is out than README.md lists. To update the Recent releases block, open the pull request from \`$BRANCH\`:"
+              echo
+              echo "$COMPARE_URL"
+              echo
+              echo "The branch changes only the lines between the recent-releases markers. A later run closes this issue once main lists the latest releases."
+              echo
+              echo "Found by $RUN_URL"
+            } > "$RUNNER_TEMP/body.md"
+            gh issue create --title "$TITLE" --body-file "$RUNNER_TEMP/body.md"
+          fi

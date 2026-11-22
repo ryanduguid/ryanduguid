@@ -380,7 +380,8 @@ mod tests {
     }
 
     /// The real README passes offline: its local files and anchors exist, it
-    /// states the Ozzit counts and every fact's wording, and links every fact page.
+    /// states the Ozzit counts and every fact's wording, links every fact page
+    /// and holds a release block in the generated format.
     #[test]
     fn the_real_readme_passes_against_a_matching_world() {
         let markdown = std::fs::read_to_string(root().join("README.md")).unwrap();
@@ -388,6 +389,7 @@ mod tests {
             readme::ozzit_counts(&readme::visible(&markdown)).expect("Ozzit counts");
         let mut net = world_linked_from(functions, help, &markdown);
         assert_eq!(drift(&mut net, &markdown), (0, String::new()));
+        crate::releases::check_block(&markdown).expect("the Recent releases block");
     }
 
     #[test]
