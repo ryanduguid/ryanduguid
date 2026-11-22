@@ -21,7 +21,7 @@ I am Ryan Duguid, a senior accountant in Newcastle, NSW, Australia. I build open
 - **Calculate in Excel:** [Ozzit](https://github.com/ryanduguid/Ozzit) has 151 native Excel LAMBDA functions plus 5 help tables, with a [worked GST example](https://duguid.com.au/tools/ozzit/#worked-example).
 - **Review a month-end close:** [Monthly Close Controls](https://duguid.com.au/tools/monthly-close-controls/#worked-example), part of the [Accounting Review Pipeline](https://github.com/ryanduguid/accounting-review-pipeline).
 
-More tools, including a local MCP server for Australian tax calculations, are on the [tools page](https://duguid.com.au/tools/). I also build free tools for coding agents and privacy at [yungSNAT](https://github.com/yungSNAT).
+More tools, including a local MCP server for Australian tax calculations, are on the [tools page](https://duguid.com.au/tools/). This account holds my professional projects. My personal projects, free tools for coding agents and privacy, are on my other account, [yungSNAT](https://github.com/yungSNAT).
 
 ## Recent releases
 
