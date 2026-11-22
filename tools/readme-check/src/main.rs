@@ -19,7 +19,7 @@ mod readme;
 mod releases;
 
 use check::Severity;
-use std::path::PathBuf;
+use std::path::{Path, PathBuf};
 
 fn main() {
     let path = PathBuf::from("README.md");
@@ -39,7 +39,7 @@ fn main() {
             if new == markdown {
                 return Ok("the release list is current");
             }
-            std::fs::write(&path, new).map_err(|e| e.to_string())?;
+            replace_file(&path, &new).map_err(|e| e.to_string())?;
             Ok("the release list was updated")
         });
         match result {
@@ -61,4 +61,40 @@ fn main() {
     }
     println!("Checked: {}", report.checked.join("; "));
     std::process::exit(report.exit_code());
+}
+
+/// Writes `contents` to a temporary file beside `path`, then renames it over
+/// `path`, so a failed write leaves the original file whole.
+fn replace_file(path: &Path, contents: &str) -> std::io::Result<()> {
+    let mut name = path.file_name().unwrap_or_default().to_owned();
+    name.push(".tmp");
+    let temporary = path.with_file_name(name);
+    let written =
+        std::fs::write(&temporary, contents).and_then(|()| std::fs::rename(&temporary, path));
+    if written.is_err() {
+        let _ = std::fs::remove_file(&temporary);
+    }
+    written
+}
+
+#[cfg(test)]
+mod tests {
+    use super::replace_file;
+    use std::fs;
+
+    #[test]
+    fn a_failed_write_leaves_the_original() {
+        let dir = std::env::temp_dir().join(format!("readme-check-{}", std::process::id()));
+        let _ = fs::remove_dir_all(&dir);
+        fs::create_dir_all(&dir).unwrap();
+        let path = dir.join("README.md");
+        fs::write(&path, "old").unwrap();
+        replace_file(&path, "new").unwrap();
+        assert_eq!(fs::read_to_string(&path).unwrap(), "new");
+        // A directory where the temporary file goes makes the write fail.
+        fs::create_dir(dir.join("README.md.tmp")).unwrap();
+        assert!(replace_file(&path, "newer").is_err());
+        assert_eq!(fs::read_to_string(&path).unwrap(), "new");
+        fs::remove_dir_all(&dir).unwrap();
+    }
 }

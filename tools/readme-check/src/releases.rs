@@ -52,6 +52,8 @@ pub struct Release {
 
 /// The README with its release block rebuilt from the API.
 pub fn update(markdown: &str, transport: &mut dyn Transport) -> Result<String, String> {
+    // Bad markers fail before any API request.
+    split(markdown)?;
     let lines: Vec<String> = latest(transport)?
         .iter()
         .map(|r| line(r.repo, &r.tag, &r.date))
@@ -191,6 +193,13 @@ fn parse_date(date: &str) -> Option<i64> {
 /// 'D Month YYYY'. NSW daylight saving runs from 2 am standard time on the
 /// first Sunday in October to 2 am standard time on the first Sunday in April.
 pub fn sydney_date(utc: &str) -> Option<String> {
+    let (y, m, d) = civil_from_days(sydney_seconds(utc)?.div_euclid(86_400));
+    Some(format!("{d} {} {y}", MONTHS[usize::try_from(m - 1).ok()?]))
+}
+
+/// Sydney wall-clock time of a UTC time 'YYYY-MM-DDTHH:MM:SSZ', as seconds
+/// since 1970-01-01 00:00 local.
+fn sydney_seconds(utc: &str) -> Option<i64> {
     let (date, time) = utc.strip_suffix('Z')?.split_once('T')?;
     let numbers =
         |text: &str, sep| -> Option<Vec<i64>> { text.split(sep).map(|n| n.parse().ok()).collect() };
@@ -209,9 +218,7 @@ pub fn sydney_date(utc: &str) -> Option<String> {
         (first + (3 - first).rem_euclid(7)) * 86_400 + 2 * 3_600
     };
     let daylight = standard >= changes(10) || standard < changes(4);
-    let local = standard + if daylight { 3_600 } else { 0 };
-    let (y, m, d) = civil_from_days(local.div_euclid(86_400));
-    Some(format!("{d} {} {y}", MONTHS[usize::try_from(m - 1).ok()?]))
+    Some(standard + if daylight { 3_600 } else { 0 })
 }
 
 /// Days since 1970-01-01 of a proleptic Gregorian date (Howard Hinnant).
@@ -237,7 +244,10 @@ fn civil_from_days(days: i64) -> (i64, i64, i64) {
 
 #[cfg(test)]
 mod tests {
-    use super::{END, REPOS, START, check_block, latest, sydney_date, update};
+    use super::{
+        END, REPOS, START, check_block, days_from_civil, latest, sydney_date, sydney_seconds,
+        update,
+    };
     use crate::net::fake::{Fake, status};
 
     const API: &str = "https://api.github.com/repos/ryanduguid/";
@@ -335,6 +345,31 @@ mod tests {
         assert!(update("# Me\n", &mut world()).is_err());
         assert!(update(&format!("{}{START}", readme("")), &mut world()).is_err());
         assert!(update(&format!("{END}\n{START}\n"), &mut world()).is_err());
+        let mut net = world();
+        assert!(update("# Me\n", &mut net).is_err());
+        assert!(net.calls.is_empty(), "{:?}", net.calls);
+    }
+
+    #[test]
+    fn daylight_saving_changes_at_the_second() {
+        // Sydney wall-clock time as seconds since 1970-01-01 00:00 local.
+        let local = |y, mo, d, h: i64, mi: i64, s: i64| {
+            days_from_civil(y, mo, d) * 86_400 + h * 3_600 + mi * 60 + s
+        };
+        for (utc, expected) in [
+            // 2026: 1 April is a Wednesday, so the first Sunday is 5 April;
+            // 1 October is a Thursday, so the first Sunday is 4 October.
+            // 03:00 AEDT on Sunday 5 April is 16:00 UTC on Saturday 4 April,
+            // when clocks go back to 02:00 AEST.
+            ("2026-04-04T15:59:59Z", local(2026, 4, 5, 2, 59, 59)),
+            ("2026-04-04T16:00:00Z", local(2026, 4, 5, 2, 0, 0)),
+            // 02:00 AEST on Sunday 4 October is 16:00 UTC on Saturday 3
+            // October, when clocks go forward to 03:00 AEDT.
+            ("2026-10-03T15:59:59Z", local(2026, 10, 4, 1, 59, 59)),
+            ("2026-10-03T16:00:00Z", local(2026, 10, 4, 3, 0, 0)),
+        ] {
+            assert_eq!(sydney_seconds(utc), Some(expected), "{utc}");
+        }
     }
 
     #[test]
