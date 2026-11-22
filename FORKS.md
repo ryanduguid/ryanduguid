@@ -6,7 +6,7 @@ Open, merged and closed are different states. The Open contributions column list
 
 ## Active forks
 
-On 22 November 2026, 26 of the 27 forks held at least one open upstream pull request. On 27 October 2026, date-holidays and edgartools left this table because their pull requests had merged. On 28 October 2026, pycubrid left it for the same reason and was deleted. On 29 October 2026, rgg left this file for [yungSNAT's FORKS.md](https://github.com/yungSNAT/yungSNAT/blob/main/FORKS.md), after the repository moved to that account, then named EquityBot. On 29 October 2026, Netryx-Astra-V2-Geolocation-Tool left it when its pull request was closed and the fork deleted at Ryan's request. The openaccountants fork left it when its pull requests merged on 23 October 2026, and the ledger fork on 30 October 2026 for the same reason. The account-invoicing, babel, beancount-import, date-holidays, gnucash, OpenBB, openfisca-core, QuantLib-SWIG, vectorbt, Win11Debloat and XlsxWriter forks joined it with pull requests opened on 30 October 2026; the date-holidays and gnucash forks are new forks of those names. On 3 November 2026, cerberus, currency, formulas, pypika and toolbelt left this table because their pull requests had closed or merged and the forks were deleted. On 4 November 2026, Win11Debloat, beancount-import, bigcapital, clawdog-widget-renderer, formulajs, more-itertools, ofxtools, pm4py, prettytable, pybind11-stubgen, python-email-validator, python-markdownify and vectorbt left this table because their pull requests had closed or merged and the forks were deleted. On 2 November 2026, exchange_calendars, l10n-australia, qmd and tax-doc-classifier-au left it because their pull requests had closed; those forks stayed, and all but tax-doc-classifier-au were deleted by 12 November 2026. On 4 November 2026, Graft joined it with a pull request opened that day. On 5 November 2026, ijson left it because its pull request had closed; the fork is no longer in the fork list and its URL returns 404. On 12 November 2026, date-holidays, gnucash, Graft, OpenBB and xero-python left this table because their pull requests had closed or merged and the forks were deleted. On 13 November 2026, QuantLib-SWIG left it because its 3 pull requests had merged on 12 November 2026; the fork no longer appears in the fork list. The same day, a new yfinance fork joined it with a pull request opened that day. On 14 November 2026, an odoo fork joined it with a pull request opened that day. On 15 November 2026, XlsxWriter, babel and openfisca-core left it because their pull requests had closed; by 16 November 2026 those forks no longer appeared in the fork list. On 17 November 2026, awesome-mcp-servers left it because its pull request had merged; the fork was deleted and its URL returns 404. On 21 November 2026, openaccountants rejoined it with 2 pull requests opened that day.
+On 22 November 2026, 26 of the 27 forks held at least one open upstream pull request. Git history records earlier entries and exits.
 
 | Fork | Upstream | Open contributions |
 | --- | --- | --- |
@@ -164,19 +164,9 @@ On 27 October 2026, the date-holidays, edgartools, jsonschema and pytest-order f
 
 The gnucash, money and schwifty forks created on 30 October 2026 for new pull requests were later deleted (see Pruned forks). This file does not record when the earlier forks of those names were deleted.
 
-## Preserved for retirement
-
-Ryan selected these 3 forks for deletion. On 10 September 2026, checks by author and fork head found no open upstream PRs. Complete advertised Git histories were backed up and restored into fresh repositories, with matching refs and reachable objects. Upstream links retain the contribution record after the forks are deleted.
-
-The pyxero fork was recreated on 27 September 2026 for new contributions. Those pull requests have since merged, and the fork was deleted again on 28 October 2026.
-
-| Fork | Upstream | Merged contributions |
-| --- | --- | --- |
-| pyxero | [freakboy3742/pyxero](https://github.com/freakboy3742/pyxero) | [#440](https://github.com/freakboy3742/pyxero/pull/440), merged 10 September 2026; [#439](https://github.com/freakboy3742/pyxero/pull/439), merged 9 September 2026 |
-| rest-application | [pledger-io/rest-application](https://github.com/pledger-io/rest-application) | [#272](https://github.com/pledger-io/rest-application/pull/272), merged 6 September 2026 |
-| LedgerSMB | [ledgersmb/LedgerSMB](https://github.com/ledgersmb/LedgerSMB) | [#9842](https://github.com/ledgersmb/LedgerSMB/pull/9842), merged 6 September 2026 |
-
 ## Pruned forks
+
+The pyxero, rest-application and LedgerSMB forks were deleted at Ryan's selection after their pull requests merged: pyxero [#440](https://github.com/freakboy3742/pyxero/pull/440) and [#439](https://github.com/freakboy3742/pyxero/pull/439) (10 and 9 September 2026); rest-application [#272](https://github.com/pledger-io/rest-application/pull/272) and LedgerSMB [#9842](https://github.com/ledgersmb/LedgerSMB/pull/9842) (both 6 September 2026). Their complete advertised Git histories were backed up and restore-tested first. The pyxero fork was recreated on 27 September 2026 for new contributions. Those merged, and the fork was deleted again on 28 October 2026.
 
 The aussie-bean-tools fork no longer appeared in the account inventory on 10 September 2026, and its former URL returned 404. The [upstream project](https://github.com/johnmee/aussie-bean-tools) remains available; no upstream contribution was open at the last review.
 
