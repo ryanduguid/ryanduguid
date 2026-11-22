@@ -13,7 +13,7 @@
 
 </div>
 
-I am Ryan Duguid, a senior accountant in Newcastle, NSW, Australia. I build open source tools for accountants: cash-flow modelling, month-end review, and Australian tax and payroll calculations.
+I am Ryan Duguid, a senior accountant in Newcastle, NSW, Australia. I build open source tools for accountants: cash-flow modelling, month-end review, and Australian tax and payroll calculations. Not to be confused with the US software product executive of the same name.
 
 ## Try an accounting task
 
@@ -25,6 +25,7 @@ More tools, including a local MCP server for Australian tax calculations, are on
 
 ## Credentials and certifications
 
+- Bachelor of Commerce (Accounting), University of Newcastle
 - Provisional member of Chartered Accountants ANZ
 - SAP S/4HANA certified in Financial Accounting and Management Accounting
 - [Xero Certified Specialist, Level 3](https://duguid.com.au/evidence/#xero-certification), valid until 1 July 2027
