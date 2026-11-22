@@ -9,7 +9,7 @@
 
 <div align="center">
 
-[Website](https://duguid.com.au/) · [Tools](https://duguid.com.au/tools/) · [Credentials and evidence](https://duguid.com.au/evidence/)
+[Website](https://duguid.com.au/) · [Tools](https://duguid.com.au/tools/) · [Credentials and evidence](https://duguid.com.au/evidence/) · [LinkedIn](https://www.linkedin.com/in/ryan-duguid/)
 
 </div>
 
