@@ -166,7 +166,7 @@ The gnucash, money and schwifty forks created on 30 October 2026 for new pull re
 
 ## Pruned forks
 
-The pyxero, rest-application and LedgerSMB forks were deleted at Ryan's selection after their pull requests merged: pyxero [#440](https://github.com/freakboy3742/pyxero/pull/440) and [#439](https://github.com/freakboy3742/pyxero/pull/439) (10 and 9 September 2026); rest-application [#272](https://github.com/pledger-io/rest-application/pull/272) and LedgerSMB [#9842](https://github.com/ledgersmb/LedgerSMB/pull/9842) (both 6 September 2026). Their complete advertised Git histories were backed up and restore-tested first. The pyxero fork was recreated on 27 September 2026 for new contributions, which merged, and was deleted again on 28 October 2026.
+The pyxero, rest-application and LedgerSMB forks were deleted at Ryan's selection after their pull requests merged: pyxero [#440](https://github.com/freakboy3742/pyxero/pull/440) and [#439](https://github.com/freakboy3742/pyxero/pull/439) (10 and 9 September 2026); rest-application [#272](https://github.com/pledger-io/rest-application/pull/272) and LedgerSMB [#9842](https://github.com/ledgersmb/LedgerSMB/pull/9842) (both 6 September 2026). Their complete advertised Git histories were backed up and restore-tested first. The pyxero fork was recreated on 27 September 2026 for new contributions. Those merged, and the fork was deleted again on 28 October 2026.
 
 The aussie-bean-tools fork no longer appeared in the account inventory on 10 September 2026, and its former URL returned 404. The [upstream project](https://github.com/johnmee/aussie-bean-tools) remains available; no upstream contribution was open at the last review.
 
