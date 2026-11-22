@@ -81,10 +81,14 @@ fn replace_file(path: &Path, contents: &str) -> std::io::Result<()> {
 mod tests {
     use super::replace_file;
     use std::fs;
+    use std::path::Path;
 
     #[test]
     fn a_failed_write_leaves_the_original() {
-        let dir = std::env::temp_dir().join(format!("readme-check-{}", std::process::id()));
+        // Under the crate's ignored target folder, not a shared temporary one.
+        let dir = Path::new(env!("CARGO_MANIFEST_DIR"))
+            .join("target")
+            .join(format!("replace-file-test-{}", std::process::id()));
         let _ = fs::remove_dir_all(&dir);
         fs::create_dir_all(&dir).unwrap();
         let path = dir.join("README.md");
