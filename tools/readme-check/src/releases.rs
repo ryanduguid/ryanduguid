@@ -15,7 +15,7 @@ const OWNER: &str = "ryanduguid";
 /// tasks, plus those the 14 November 2026 profile proposal listed.
 pub const REPOS: &[&str] = &[
     "Ozzit",
-    "au-fpa-pack",
+    "OzFPA",
     "accounting-review-pipeline",
     "australian-accounting",
     "australian-accounting-skills",
