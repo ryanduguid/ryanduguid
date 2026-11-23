@@ -5,7 +5,7 @@ use crate::html;
 use crate::llms;
 use crate::net::{Outcome, Transport, fetch};
 use crate::readme;
-use std::collections::HashMap;
+use std::collections::{HashMap, HashSet};
 use std::path::Path;
 
 const OWN_BLOB: &str = "https://github.com/ryanduguid/ryanduguid/blob/main/";
@@ -116,9 +116,10 @@ impl Checker<'_> {
 
     fn llms(&mut self, readme_links: &[String], llms_text: &str, root: &Path, today_days: i64) {
         let llms_links = llms::links(llms_text);
+        let seen: HashSet<&str> = readme_links.iter().map(String::as_str).collect();
         let extra: Vec<String> = llms_links
             .iter()
-            .filter(|link| !readme_links.contains(*link))
+            .filter(|link| !seen.contains(link.as_str()))
             .cloned()
             .collect();
         self.check_targets(&extra, llms_text, root);
@@ -135,13 +136,13 @@ impl Checker<'_> {
     }
 
     fn remote_link(&mut self, base: &str, fragment: Option<&str>, root: &Path) {
-        let Some(body) = self.page(base, "Dead link") else {
-            return;
-        };
         if let Some(path) = base
             .strip_prefix(OWN_BLOB)
             .or_else(|| base.strip_prefix(OWN_RAW))
+            .filter(|p| !p.is_empty() && !p.contains('?') && !p.split('/').any(|seg| seg == ".."))
         {
+            // Check this repository's own blob/raw links against the checked-out
+            // tree first so PR-introduced files and headings validate before merge.
             let local = root.join(path);
             if !local.is_file() {
                 self.report
@@ -149,8 +150,6 @@ impl Checker<'_> {
                 return;
             }
             if let Some(fragment) = fragment {
-                // GitHub renders headings client-side; the anchor is checked in the
-                // file itself, as this branch has it.
                 let markdown = std::fs::read_to_string(&local).unwrap_or_default();
                 if !readme::has_heading(&markdown, fragment) {
                     self.report.drift(format!(
@@ -160,6 +159,9 @@ impl Checker<'_> {
             }
             return;
         }
+        let Some(body) = self.page(base, "Dead link") else {
+            return;
+        };
         let Some(fragment) = fragment else { return };
         if !base.starts_with("https://github.com/") && !html::has_anchor(&body, fragment) {
             self.report.drift(format!(
@@ -526,5 +528,25 @@ mod tests {
         assert!(messages.contains(&format!("Dead link: {LOST}: HTTP 404")));
         assert!(messages.contains("CROFT.md: no such file in the repository"));
         assert!(messages.contains("stale date 'valid until 1 July 2027' has passed"));
+    }
+
+    #[test]
+    fn pr_local_own_raw_file_passes_even_when_remote_main_is_404() {
+        let dir = Path::new(env!("CARGO_MANIFEST_DIR"))
+            .join("target")
+            .join(format!("pr-local-raw-test-{}", std::process::id()));
+        let _ = std::fs::remove_dir_all(&dir);
+        std::fs::create_dir_all(&dir).unwrap();
+        std::fs::write(dir.join("AGENTS.md"), "## Reusing this code\n").unwrap();
+        std::fs::write(dir.join("llms.txt"), "placeholder\n").unwrap();
+        std::fs::write(dir.join("FORKS.md"), "forks\n").unwrap();
+        std::fs::write(dir.join("NEW_DOC.md"), "# New\n").unwrap();
+        let new_url = format!("{OWN_RAW}NEW_DOC.md");
+        let mut net = world(150, 5).script(&new_url, vec![status(404, "")]);
+        let llms_doc = fixture_llms(&format!("- [New]({new_url}): added in PR.\n"));
+        let report = run(&fixture_readme(""), &llms_doc, &dir, today(), &mut net);
+        std::fs::remove_dir_all(&dir).unwrap();
+        assert_eq!(report.exit_code(), 0, "{:?}", report.findings);
+        assert!(!net.calls.iter().any(|u| u == &new_url));
     }
 }

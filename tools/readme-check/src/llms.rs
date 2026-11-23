@@ -232,59 +232,45 @@ pub fn check_dates(text: &str, today_days: i64) -> Vec<String> {
     let tokens: Vec<&str> = shown.split_whitespace().collect();
     let mut drift = Vec::new();
     for i in 0..tokens.len() {
-        check_date_at(&tokens, i, today_days, &mut drift);
-        check_valid_until_at(&tokens, i, &mut drift);
+        let valid_until = is_valid_until_prefix(&tokens, i);
+        match parse_date_tokens(&tokens, i) {
+            Some((label, None)) => drift.push(format!("llms.txt: invalid date '{label}'")),
+            Some((label, Some(days))) if valid_until && days < today_days => {
+                drift.push(format!(
+                    "llms.txt: stale date 'valid until {label}' has passed"
+                ));
+            }
+            Some(_) => {}
+            None if valid_until => {
+                let snippet = tokens[i..tokens.len().min(i + 3)].join(" ");
+                drift.push(format!(
+                    "llms.txt: unreadable 'valid until' date near '{snippet}'"
+                ));
+            }
+            None => {}
+        }
     }
     drift
 }
 
-fn check_date_at(tokens: &[&str], i: usize, today_days: i64, drift: &mut Vec<String>) {
+/// Recognises `<D> <Month> <YYYY>` at `tokens[i..i + 3]`, returning
+/// `Some((label, Some(days)))` when valid or `Some((label, None))` when the
+/// calendar date is impossible.
+fn parse_date_tokens(tokens: &[&str], i: usize) -> Option<(String, Option<i64>)> {
     if i + 2 >= tokens.len() {
-        return;
+        return None;
     }
     let d_tok = tokens[i].trim_start_matches(['(', '[', '\'', '"']);
     let m_tok = tokens[i + 1];
     let y_tok = tokens[i + 2].trim_end_matches(['.', ',', ';', ':', ')', ']', '\'', '"']);
-    let Some(month_idx) = MONTHS.iter().position(|m| *m == m_tok) else {
-        return;
-    };
+    let month_idx = MONTHS.iter().position(|m| *m == m_tok)?;
     let is_day = (1..=2).contains(&d_tok.len()) && d_tok.bytes().all(|b| b.is_ascii_digit());
     let is_year = y_tok.len() == 4 && y_tok.bytes().all(|b| b.is_ascii_digit());
     if !is_day || !is_year {
-        return;
+        return None;
     }
     let label = format!("{d_tok} {m_tok} {y_tok}");
-    let Some(days) = parse_calendar_date(d_tok, month_idx + 1, y_tok) else {
-        drift.push(format!("llms.txt: invalid date '{label}'"));
-        return;
-    };
-    if is_valid_until_prefix(tokens, i) && days < today_days {
-        drift.push(format!(
-            "llms.txt: stale date 'valid until {label}' has passed"
-        ));
-    }
-}
-
-fn check_valid_until_at(tokens: &[&str], i: usize, drift: &mut Vec<String>) {
-    if !is_valid_until_prefix(tokens, i) {
-        return;
-    }
-    let has_date = i + 2 < tokens.len() && {
-        let d_tok = tokens[i].trim_start_matches(['(', '[', '\'', '"']);
-        let m_tok = tokens[i + 1];
-        let y_tok = tokens[i + 2].trim_end_matches(['.', ',', ';', ':', ')', ']', '\'', '"']);
-        MONTHS.contains(&m_tok)
-            && (1..=2).contains(&d_tok.len())
-            && d_tok.bytes().all(|b| b.is_ascii_digit())
-            && y_tok.len() == 4
-            && y_tok.bytes().all(|b| b.is_ascii_digit())
-    };
-    if !has_date {
-        let snippet = tokens[i..tokens.len().min(i + 3)].join(" ");
-        drift.push(format!(
-            "llms.txt: unreadable 'valid until' date near '{snippet}'"
-        ));
-    }
+    Some((label, parse_calendar_date(d_tok, month_idx + 1, y_tok)))
 }
 
 fn is_valid_until_prefix(tokens: &[&str], i: usize) -> bool {
@@ -327,7 +313,7 @@ pub fn check_sync(readme_links: &[String], llms_text: &str, llms_links: &[String
 
 fn check_repos_sync(readme_links: &[String], llms_shown: &str, drift: &mut Vec<String>) {
     let (_, sections) = parse_sections(llms_shown);
-    let repo_urls: HashSet<&str> = sections
+    let llms_entries: Vec<&str> = sections
         .iter()
         .find(|s| s.heading == "Repositories")
         .map(|s| {
@@ -337,19 +323,37 @@ fn check_repos_sync(readme_links: &[String], llms_shown: &str, drift: &mut Vec<S
                 .collect()
         })
         .unwrap_or_default();
-    let mut checked = HashSet::new();
+    let repo_urls: HashSet<&str> = llms_entries.iter().copied().collect();
+    let mut readme_repos = HashSet::new();
     for link in readme_links {
         let Some(rest) = link.strip_prefix(OWN_REPO_PREFIX) else {
             continue;
         };
         let repo = rest.split(['/', '#']).next().unwrap_or_default();
-        if repo.is_empty() || repo == "ryanduguid" || !checked.insert(repo) {
+        if repo.is_empty() || repo == "ryanduguid" || !readme_repos.insert(repo) {
             continue;
         }
         let expected = format!("{OWN_REPO_PREFIX}{repo}");
         if !repo_urls.contains(expected.as_str()) {
             drift.push(format!(
                 "llms.txt: missing repository '{repo}' linked in README.md"
+            ));
+        }
+    }
+    // Check reverse sync for top-level ryanduguid/<repo> entries whilst keeping
+    // non-repo index entries such as package raw README URLs untouched.
+    for entry in llms_entries {
+        let Some(rest) = entry.strip_prefix(OWN_REPO_PREFIX) else {
+            continue;
+        };
+        let repo = rest.trim_end_matches('/');
+        if !repo.is_empty()
+            && !repo.contains(['/', '#'])
+            && repo != "ryanduguid"
+            && !readme_repos.contains(repo)
+        {
+            drift.push(format!(
+                "llms.txt: repository '{repo}' is no longer linked in README.md"
             ));
         }
     }
@@ -378,6 +382,7 @@ fn check_site_pages_sync(readme_links: &[String], llms_links: &[String], drift: 
 }
 
 fn check_facts_sync(llms_shown: &str, llms_links: &[String], drift: &mut Vec<String>) {
+    let shown_words = word_tokens(llms_shown);
     for fact in FACTS {
         let place = format!("{}#{}", fact.url, fact.section);
         if !llms_links.contains(&place) {
@@ -387,7 +392,8 @@ fn check_facts_sync(llms_shown: &str, llms_links: &[String], drift: &mut Vec<Str
             ));
         }
         for wording in fact.readme {
-            if !llms_shown.contains(wording) {
+            let expected = word_tokens(wording);
+            if !contains_words(&shown_words, &expected) {
                 drift.push(format!(
                     "llms.txt: {}: no longer says '{wording}'; update tools/readme-check/src/facts.rs with it",
                     fact.name
@@ -395,6 +401,20 @@ fn check_facts_sync(llms_shown: &str, llms_links: &[String], drift: &mut Vec<Str
             }
         }
     }
+}
+
+fn word_tokens(text: &str) -> Vec<String> {
+    text.split(|c: char| !c.is_alphanumeric())
+        .filter(|w| !w.is_empty())
+        .map(str::to_ascii_lowercase)
+        .collect()
+}
+
+fn contains_words(haystack: &[String], needle: &[String]) -> bool {
+    !needle.is_empty()
+        && haystack
+            .windows(needle.len())
+            .any(|window| window == needle)
 }
 
 /// Days since 1970-01-01 of a proleptic Gregorian date (Howard Hinnant).
@@ -558,6 +578,32 @@ mod tests {
         );
         let fact_findings = check_sync(&fixture_readme_links(), &hidden_fact, &links(&hidden_fact));
         assert!(fact_findings.iter().any(|f| f.contains("no longer says")));
+    }
+
+    #[test]
+    fn fact_sync_tolerates_punctuation_and_rejects_mismatched_tokens() {
+        let punctuated =
+            fixture_llms().replace("valid until 1 July 2027", "valid until: 1 July, 2027");
+        assert!(check_sync(&fixture_readme_links(), &punctuated, &links(&punctuated)).is_empty());
+
+        let wrong_year = fixture_llms().replace("1 July 2027", "1 July 20270");
+        let findings = check_sync(&fixture_readme_links(), &wrong_year, &links(&wrong_year));
+        assert!(findings.iter().any(|f| f.contains("no longer says")));
+    }
+
+    #[test]
+    fn repo_sync_catches_stale_llms_repo_whilst_keeping_package_entries() {
+        let doc = fixture_llms().replace(
+            "- [Ozzit](https://github.com/ryanduguid/Ozzit): Excel functions.\n",
+            "- [Ozzit](https://github.com/ryanduguid/Ozzit): Excel functions.\n\
+- [OldRepo](https://github.com/ryanduguid/OldRepo): archived.\n\
+- [aus-accounting-mcp](https://raw.githubusercontent.com/ryanduguid/australian-accounting/main/apps/aus-accounting-mcp/README.md): package.\n",
+        );
+        let findings = check_sync(&fixture_readme_links(), &doc, &links(&doc));
+        assert_eq!(
+            findings,
+            ["llms.txt: repository 'OldRepo' is no longer linked in README.md"]
+        );
     }
 
     #[test]
