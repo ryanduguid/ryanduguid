@@ -2,12 +2,14 @@
 
 use crate::facts::{FACTS, Fact, OZZIT_LATEST_RELEASE, csv_counts, ozzit_functions_csv};
 use crate::html;
+use crate::llms;
 use crate::net::{Outcome, Transport, fetch};
 use crate::readme;
 use std::collections::HashMap;
 use std::path::Path;
 
 const OWN_BLOB: &str = "https://github.com/ryanduguid/ryanduguid/blob/main/";
+const OWN_RAW: &str = "https://raw.githubusercontent.com/ryanduguid/ryanduguid/main/";
 
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
 pub enum Severity {
@@ -47,8 +49,15 @@ struct Checker<'a> {
     report: Report,
 }
 
-/// Runs every check on `markdown`, the README at the root of `root`.
-pub fn run(markdown: &str, root: &Path, transport: &mut dyn Transport) -> Report {
+/// Runs every check on `markdown` (`README.md`) and `llms_text` (`llms.txt`)
+/// at the root of `root`.
+pub fn run(
+    markdown: &str,
+    llms_text: &str,
+    root: &Path,
+    today_days: i64,
+    transport: &mut dyn Transport,
+) -> Report {
     let mut checker = Checker {
         transport,
         pages: HashMap::new(),
@@ -61,6 +70,7 @@ pub fn run(markdown: &str, root: &Path, transport: &mut dyn Transport) -> Report
     for fact in FACTS {
         checker.fact(&shown, &links, fact);
     }
+    checker.llms(&links, llms_text, root, today_days);
     checker.report
 }
 
@@ -86,6 +96,11 @@ impl Checker<'_> {
     }
 
     fn links(&mut self, targets: &[String], markdown: &str, root: &Path) {
+        self.check_targets(targets, markdown, root);
+        self.report.checked.push(format!("{} links", targets.len()));
+    }
+
+    fn check_targets(&mut self, targets: &[String], markdown: &str, root: &Path) {
         for target in targets {
             let (base, fragment) = match target.split_once('#') {
                 Some((base, fragment)) => (base, Some(fragment)),
@@ -97,24 +112,56 @@ impl Checker<'_> {
                 self.local_link(target, base, fragment, root, markdown);
             }
         }
-        self.report.checked.push(format!("{} links", targets.len()));
+    }
+
+    fn llms(&mut self, readme_links: &[String], llms_text: &str, root: &Path, today_days: i64) {
+        let llms_links = llms::links(llms_text);
+        let extra: Vec<String> = llms_links
+            .iter()
+            .filter(|link| !readme_links.contains(*link))
+            .cloned()
+            .collect();
+        self.check_targets(&extra, llms_text, root);
+        for message in llms::check_structure(llms_text)
+            .into_iter()
+            .chain(llms::check_dates(llms_text, today_days))
+            .chain(llms::check_sync(readme_links, llms_text, &llms_links))
+        {
+            self.report.drift(message);
+        }
+        self.report
+            .checked
+            .push(format!("llms.txt ({} links)", llms_links.len()));
     }
 
     fn remote_link(&mut self, base: &str, fragment: Option<&str>, root: &Path) {
         let Some(body) = self.page(base, "Dead link") else {
             return;
         };
-        let Some(fragment) = fragment else { return };
-        if let Some(path) = base.strip_prefix(OWN_BLOB) {
-            // GitHub renders headings client-side; the anchor is checked in the
-            // file itself, as this branch has it.
-            let markdown = std::fs::read_to_string(root.join(path)).unwrap_or_default();
-            if !readme::has_heading(&markdown, fragment) {
-                self.report.drift(format!(
-                    "Missing anchor: {base}#{fragment}: no such heading in {path}"
-                ));
+        if let Some(path) = base
+            .strip_prefix(OWN_BLOB)
+            .or_else(|| base.strip_prefix(OWN_RAW))
+        {
+            let local = root.join(path);
+            if !local.is_file() {
+                self.report
+                    .drift(format!("Dead link: {base}: no such file in the repository"));
+                return;
             }
-        } else if !base.starts_with("https://github.com/") && !html::has_anchor(&body, fragment) {
+            if let Some(fragment) = fragment {
+                // GitHub renders headings client-side; the anchor is checked in the
+                // file itself, as this branch has it.
+                let markdown = std::fs::read_to_string(&local).unwrap_or_default();
+                if !readme::has_heading(&markdown, fragment) {
+                    self.report.drift(format!(
+                        "Missing anchor: {base}#{fragment}: no such heading in {path}"
+                    ));
+                }
+            }
+            return;
+        }
+        let Some(fragment) = fragment else { return };
+        if !base.starts_with("https://github.com/") && !html::has_anchor(&body, fragment) {
             self.report.drift(format!(
                 "Missing anchor: {base}#{fragment}: no element has that id"
             ));
@@ -222,8 +269,9 @@ functions.csv at {tag} has {want_functions} plus {want_help}"
 
 #[cfg(test)]
 mod tests {
-    use super::{OWN_BLOB, run};
+    use super::{OWN_BLOB, OWN_RAW, run};
     use crate::facts::{FACTS, Fact, OZZIT_LATEST_RELEASE, ozzit_functions_csv};
+    use crate::llms;
     use crate::net::fake::{Fake, status};
     use crate::{html, readme};
     use std::collections::HashMap;
@@ -235,6 +283,10 @@ mod tests {
 
     fn root() -> PathBuf {
         Path::new(env!("CARGO_MANIFEST_DIR")).join("../..")
+    }
+
+    fn today() -> i64 {
+        llms::days_from_civil(2026, 11, 24)
     }
 
     fn csv(functions: u32, help: u32) -> String {
@@ -251,29 +303,40 @@ mod tests {
     /// A network where Ozzit's release has the given counts and every fact page
     /// shows its wording inside the section the README links to.
     fn world(functions: u32, help: u32) -> Fake {
-        world_linked_from(functions, help, "")
+        world_linked_from(functions, help, "", "")
     }
 
-    /// `world`, where each page `markdown` links to a fragment of also has an
-    /// element with that id, so only a missing local file or heading can fail.
-    fn world_linked_from(functions: u32, help: u32, markdown: &str) -> Fake {
+    /// `world`, where each page `markdown` or `llms_text` links to a fragment of
+    /// also has an element with that id, so only a missing local file or heading
+    /// can fail.
+    fn world_linked_from(functions: u32, help: u32, markdown: &str, llms_text: &str) -> Fake {
         let mut net = Fake::default()
             .ok(OZZIT_LATEST_RELEASE, r#"{"tag_name": "v9.9.9"}"#)
             .ok(&ozzit_functions_csv("v9.9.9"), &csv(functions, help));
-        let mut pages: HashMap<&str, String> = HashMap::new();
+        let mut pages: HashMap<String, String> = HashMap::new();
         for fact in FACTS {
             let section = fact_section(fact, &fact.page.join(" and "));
-            pages.entry(fact.url).or_default().push_str(&section);
+            pages
+                .entry(fact.url.to_owned())
+                .or_default()
+                .push_str(&section);
         }
-        let links = readme::links(&readme::visible(markdown));
-        for (url, id) in links.iter().filter_map(|link| link.split_once('#')) {
-            let page = pages.entry(url).or_default();
-            if url.starts_with("https://") && !html::has_anchor(page, id) {
-                write!(page, "<p id=\"{id}\"></p>").unwrap();
+        let all_links = readme::links(&readme::visible(markdown))
+            .into_iter()
+            .chain(llms::links(llms_text));
+        for link in all_links {
+            let Some((url, id)) = link.split_once('#') else {
+                continue;
+            };
+            if url.starts_with("https://") {
+                let page = pages.entry(url.to_owned()).or_default();
+                if !html::has_anchor(page, id) {
+                    write!(page, "<p id=\"{id}\"></p>").unwrap();
+                }
             }
         }
         for (url, page) in pages {
-            net = net.ok(url, &format!("<body>{page}</body>"));
+            net = net.ok(&url, &format!("<body>{page}</body>"));
         }
         net
     }
@@ -294,15 +357,41 @@ mod tests {
             .collect();
         format!(
             "[Ozzit](https://github.com/ryanduguid/Ozzit): 150 native Excel LAMBDA functions plus 5 help tables.\n\
-[badge]({BADGE}) [notes]({OWN_BLOB}AGENTS.md#reusing-this-code)\n{}\n{extra}\n",
+[badge]({BADGE}) [notes]({OWN_BLOB}AGENTS.md#reusing-this-code) [llms]({OWN_BLOB}llms.txt)\n{}\n{extra}\n",
             facts.join(". ")
         )
     }
 
-    fn drift(net: &mut Fake, markdown: &str) -> (i32, String) {
-        let report = run(markdown, &root(), net);
+    fn fixture_llms(extra_optional: &str) -> String {
+        let facts: Vec<String> = FACTS
+            .iter()
+            .map(|f| format!("{} ({})", f.readme.join(", "), fact_link(f)))
+            .collect();
+        format!(
+            "# Ryan Duguid\n\n\
+> Summary.\n\n\
+- Credentials: {}\n\n\
+## Start here\n\n\
+- [Evidence](https://duguid.com.au/evidence/): evidence.\n\n\
+## Repositories\n\n\
+- [Ozzit](https://github.com/ryanduguid/Ozzit): Excel functions.\n\n\
+## Reuse\n\n\
+- [Reusing this material]({OWN_BLOB}AGENTS.md#reusing-this-code): CC BY 4.0.\n\n\
+## Optional\n\n\
+- [Contribution forks]({OWN_RAW}FORKS.md): forks.\n\
+{extra_optional}",
+            facts.join("; ")
+        )
+    }
+
+    fn drift_with(net: &mut Fake, markdown: &str, llms_text: &str, day: i64) -> (i32, String) {
+        let report = run(markdown, llms_text, &root(), day, net);
         let messages: Vec<String> = report.findings.iter().map(|(_, m)| m.clone()).collect();
         (report.exit_code(), messages.join("\n"))
+    }
+
+    fn drift(net: &mut Fake, markdown: &str) -> (i32, String) {
+        drift_with(net, markdown, &fixture_llms(""), today())
     }
 
     #[test]
@@ -325,7 +414,12 @@ mod tests {
     #[test]
     fn a_dead_link_is_drift() {
         let mut net = world(150, 5).script(LOST, vec![status(404, "")]);
-        let (code, messages) = drift(&mut net, &fixture_readme(&format!("[Croft Manor]({LOST})")));
+        let (code, messages) = drift_with(
+            &mut net,
+            &fixture_readme(&format!("[Croft Manor]({LOST})")),
+            &fixture_llms(&format!("- [Croft Manor]({LOST}): lost.\n")),
+            today(),
+        );
         assert_eq!(
             (code, messages),
             (1, format!("Dead link: {LOST}: HTTP 404"))
@@ -379,16 +473,20 @@ mod tests {
         assert!(messages.contains(&format!("the README no longer says '{wording}'")));
     }
 
-    /// The real README passes offline: its local files and anchors exist, it
-    /// states the Ozzit counts and every fact's wording, links every fact page
-    /// and holds a release block in the generated format.
+    /// The real README and llms.txt pass offline: their local files and anchors
+    /// exist, they state the Ozzit counts and every fact's wording, link every
+    /// fact page, stay in sync and hold a valid release block.
     #[test]
     fn the_real_readme_passes_against_a_matching_world() {
         let markdown = std::fs::read_to_string(root().join("README.md")).unwrap();
+        let llms_text = std::fs::read_to_string(root().join("llms.txt")).unwrap();
         let (functions, help) =
             readme::ozzit_counts(&readme::visible(&markdown)).expect("Ozzit counts");
-        let mut net = world_linked_from(functions, help, &markdown);
-        assert_eq!(drift(&mut net, &markdown), (0, String::new()));
+        let mut net = world_linked_from(functions, help, &markdown, &llms_text);
+        assert_eq!(
+            drift_with(&mut net, &markdown, &llms_text, llms::today_utc_days()),
+            (0, String::new())
+        );
         crate::releases::check_block(&markdown).expect("the Recent releases block");
     }
 
@@ -410,5 +508,23 @@ mod tests {
         let (code, messages) = drift(&mut world(150, 5), &markdown);
         assert_eq!(code, 1);
         assert!(messages.contains(&format!("the README no longer says '{wording}'")));
+    }
+
+    #[test]
+    fn llms_txt_dead_link_missing_local_file_and_stale_date_are_drift() {
+        let mut net = world(150, 5).script(LOST, vec![status(404, "")]);
+        let llms_doc = fixture_llms(&format!(
+            "- [Croft]({LOST}): dead.\n- [Gone]({OWN_RAW}CROFT.md): missing.\n"
+        ));
+        let (code, messages) = drift_with(
+            &mut net,
+            &fixture_readme(""),
+            &llms_doc,
+            llms::days_from_civil(2027, 7, 2),
+        );
+        assert_eq!(code, 1);
+        assert!(messages.contains(&format!("Dead link: {LOST}: HTTP 404")));
+        assert!(messages.contains("CROFT.md: no such file in the repository"));
+        assert!(messages.contains("stale date 'valid until 1 July 2027' has passed"));
     }
 }
