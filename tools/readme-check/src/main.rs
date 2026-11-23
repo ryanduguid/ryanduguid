@@ -1,9 +1,10 @@
-//! Checks the profile README against its sources: every link resolves, the
-//! Ozzit counts equal those in `functions.csv` at Ozzit's latest release, and
-//! the figures it quotes from the website still appear there.
+//! Checks the profile README and `llms.txt` against their sources: every link
+//! resolves, Ozzit's counts equal those in `functions.csv` at Ozzit's latest
+//! release, the figures quoted from the website still appear there, and
+//! `llms.txt` keeps valid structure, current dates and repository sync.
 //!
-//! Run from the repository root, where it reads README.md. Prints each
-//! finding, then a summary.
+//! Run from the repository root, where it reads README.md and llms.txt. Prints
+//! each finding, then a summary.
 //! Exit 0 clean, 1 on drift, 2 when a source could not be read and nothing
 //! drifted. `GITHUB_TOKEN`, when set, is sent to the GitHub API only.
 //!
@@ -14,6 +15,7 @@
 mod check;
 mod facts;
 mod html;
+mod llms;
 mod net;
 mod readme;
 mod releases;
@@ -51,7 +53,14 @@ fn main() {
         }
         return;
     }
-    let report = check::run(&markdown, &root, &mut net::Network::new(token));
+    let llms_text = read_llms(&root);
+    let report = check::run(
+        &markdown,
+        &llms_text,
+        &root,
+        llms::today_utc_days(),
+        &mut net::Network::new(token),
+    );
     for (severity, message) in &report.findings {
         let label = match severity {
             Severity::Drift => "DRIFT",
@@ -61,6 +70,18 @@ fn main() {
     }
     println!("Checked: {}", report.checked.join("; "));
     std::process::exit(report.exit_code());
+}
+
+fn read_llms(root: &Path) -> String {
+    let path = root.join("llms.txt");
+    match std::fs::read_to_string(&path) {
+        Ok(text) => text,
+        Err(error) if error.kind() == std::io::ErrorKind::NotFound => String::new(),
+        Err(error) => {
+            eprintln!("readme-check: {}: {error}", path.display());
+            std::process::exit(2);
+        }
+    }
 }
 
 /// Writes `contents` to a temporary file beside `path`, then renames it over

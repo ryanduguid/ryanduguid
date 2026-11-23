@@ -1,9 +1,10 @@
 name: readme-check
 
-# Holds README.md to its sources: every link resolves, Ozzit's function and
-# help-table counts equal those in functions.csv at Ozzit's latest release,
-# and the figures it quotes from duguid.com.au still appear on the pages it
-# links. tools/readme-check does the checking and exits 0 clean, 1 on drift
+# Holds README.md and llms.txt to their sources: every link resolves, Ozzit's
+# function and help-table counts equal those in functions.csv at Ozzit's latest
+# release, the figures quoted from duguid.com.au still appear on the pages they
+# link, and llms.txt keeps valid structure, current dates and repository sync.
+# tools/readme-check does the checking and exits 0 clean, 1 on drift
 # and 2 when a source could not be read (a rate limit, 5xx or timeout that
 # outlasted its retries), which warns without failing. It runs daily, so a new
 # Ozzit release is compared within a day, as the website's release check is.
@@ -21,6 +22,7 @@ on:
   pull_request:
     paths:
       - README.md
+      - llms.txt
       - tools/readme-check/**
       - .github/workflows/readme-check.yml
   workflow_dispatch:
@@ -58,7 +60,7 @@ jobs:
       # Release throughout, so the build below reuses the test build's dependencies.
       - name: Build the checker
         run: cargo build --locked --release
-      - name: Check README.md against its sources
+      - name: Check README.md and llms.txt against their sources
         id: check
         working-directory: .
         env:
@@ -138,7 +140,7 @@ jobs:
           fi
           {
             echo "The README check found statements that no longer match their sources."
-            echo "Fix README.md, the source or tools/readme-check/src/facts.rs, then dispatch readme-check.yml on main; a clean run closes this issue."
+            echo "Fix README.md, llms.txt, the source or tools/readme-check/src/facts.rs, then dispatch readme-check.yml on main; a clean run closes this issue."
             echo
             grep -E '^(DRIFT|INCONCLUSIVE): ' "$report" | sed 's/^/- /'
             if [ -s "$RUNNER_TEMP/streak.txt" ]; then

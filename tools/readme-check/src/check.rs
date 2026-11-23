@@ -2,12 +2,14 @@
 
 use crate::facts::{FACTS, Fact, OZZIT_LATEST_RELEASE, csv_counts, ozzit_functions_csv};
 use crate::html;
+use crate::llms;
 use crate::net::{Outcome, Transport, fetch};
 use crate::readme;
-use std::collections::HashMap;
-use std::path::Path;
+use std::collections::{HashMap, HashSet};
+use std::path::{Component, Path, PathBuf};
 
 const OWN_BLOB: &str = "https://github.com/ryanduguid/ryanduguid/blob/main/";
+const OWN_RAW: &str = "https://raw.githubusercontent.com/ryanduguid/ryanduguid/main/";
 
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
 pub enum Severity {
@@ -47,8 +49,15 @@ struct Checker<'a> {
     report: Report,
 }
 
-/// Runs every check on `markdown`, the README at the root of `root`.
-pub fn run(markdown: &str, root: &Path, transport: &mut dyn Transport) -> Report {
+/// Runs every check on `markdown` (`README.md`) and `llms_text` (`llms.txt`)
+/// at the root of `root`.
+pub fn run(
+    markdown: &str,
+    llms_text: &str,
+    root: &Path,
+    today_days: i64,
+    transport: &mut dyn Transport,
+) -> Report {
     let mut checker = Checker {
         transport,
         pages: HashMap::new(),
@@ -61,6 +70,7 @@ pub fn run(markdown: &str, root: &Path, transport: &mut dyn Transport) -> Report
     for fact in FACTS {
         checker.fact(&shown, &links, fact);
     }
+    checker.llms(&links, llms_text, root, today_days);
     checker.report
 }
 
@@ -86,6 +96,11 @@ impl Checker<'_> {
     }
 
     fn links(&mut self, targets: &[String], markdown: &str, root: &Path) {
+        self.check_targets(targets, markdown, root);
+        self.report.checked.push(format!("{} links", targets.len()));
+    }
+
+    fn check_targets(&mut self, targets: &[String], markdown: &str, root: &Path) {
         for target in targets {
             let (base, fragment) = match target.split_once('#') {
                 Some((base, fragment)) => (base, Some(fragment)),
@@ -97,24 +112,57 @@ impl Checker<'_> {
                 self.local_link(target, base, fragment, root, markdown);
             }
         }
-        self.report.checked.push(format!("{} links", targets.len()));
+    }
+
+    fn llms(&mut self, readme_links: &[String], llms_text: &str, root: &Path, today_days: i64) {
+        let llms_links = llms::links(llms_text);
+        let seen: HashSet<&str> = readme_links.iter().map(String::as_str).collect();
+        let extra: Vec<String> = llms_links
+            .iter()
+            .filter(|link| !seen.contains(link.as_str()))
+            .cloned()
+            .collect();
+        self.check_targets(&extra, llms_text, root);
+        for message in llms::check_structure(llms_text)
+            .into_iter()
+            .chain(llms::check_dates(llms_text, today_days))
+            .chain(llms::check_sync(readme_links, llms_text, &llms_links))
+        {
+            self.report.drift(message);
+        }
+        self.report
+            .checked
+            .push(format!("llms.txt ({} links)", llms_links.len()));
     }
 
     fn remote_link(&mut self, base: &str, fragment: Option<&str>, root: &Path) {
+        if let Some(path) = base
+            .strip_prefix(OWN_BLOB)
+            .or_else(|| base.strip_prefix(OWN_RAW))
+        {
+            // Check this repository's own blob/raw links against the checked-out
+            // tree first so PR-introduced files validate before merge whilst
+            // keeping resolution strictly inside the repository root.
+            let Some(local) = resolve_repo_file(root, path) else {
+                self.report
+                    .drift(format!("Dead link: {base}: no such file in the repository"));
+                return;
+            };
+            if let Some(fragment) = fragment {
+                let markdown = std::fs::read_to_string(&local).unwrap_or_default();
+                if !readme::has_heading(&markdown, fragment) {
+                    self.report.drift(format!(
+                        "Missing anchor: {base}#{fragment}: no such heading in {path}"
+                    ));
+                }
+            }
+            return;
+        }
         let Some(body) = self.page(base, "Dead link") else {
             return;
         };
         let Some(fragment) = fragment else { return };
-        if let Some(path) = base.strip_prefix(OWN_BLOB) {
-            // GitHub renders headings client-side; the anchor is checked in the
-            // file itself, as this branch has it.
-            let markdown = std::fs::read_to_string(root.join(path)).unwrap_or_default();
-            if !readme::has_heading(&markdown, fragment) {
-                self.report.drift(format!(
-                    "Missing anchor: {base}#{fragment}: no such heading in {path}"
-                ));
-            }
-        } else if !base.starts_with("https://github.com/") && !html::has_anchor(&body, fragment) {
+        if !base.starts_with("https://github.com/") && !html::has_anchor(&body, fragment) {
             self.report.drift(format!(
                 "Missing anchor: {base}#{fragment}: no element has that id"
             ));
@@ -220,195 +268,30 @@ functions.csv at {tag} has {want_functions} plus {want_help}"
     }
 }
 
-#[cfg(test)]
-mod tests {
-    use super::{OWN_BLOB, run};
-    use crate::facts::{FACTS, Fact, OZZIT_LATEST_RELEASE, ozzit_functions_csv};
-    use crate::net::fake::{Fake, status};
-    use crate::{html, readme};
-    use std::collections::HashMap;
-    use std::fmt::Write as _;
-    use std::path::{Path, PathBuf};
-
-    const BADGE: &str = "https://badgen.net/github/release/ryanduguid/Ozzit/stable";
-    const LOST: &str = "https://duguid.com.au/croft-manor/";
-
-    fn root() -> PathBuf {
-        Path::new(env!("CARGO_MANIFEST_DIR")).join("../..")
+/// Resolves a repository-relative `OWN_BLOB`/`OWN_RAW` path strictly inside
+/// `root`, rejecting absolute paths, query strings, `..` traversal and symlinks
+/// whose targets escape the canonical repository root.
+fn resolve_repo_file(root: &Path, rel: &str) -> Option<PathBuf> {
+    if rel.is_empty() || rel.contains('?') || rel.starts_with(['/', '\\']) {
+        return None;
     }
-
-    fn csv(functions: u32, help: u32) -> String {
-        let mut csv = String::from("function,module,previous_name,signature,description\n");
-        for n in 0..functions {
-            writeln!(csv, "oz.Fn{n}λ,Finance,\"Does {n}, quoted\"").unwrap();
-        }
-        for n in 0..help {
-            writeln!(csv, "oz.About{n}λ,Help,Help table").unwrap();
-        }
-        csv
+    let rel_path = Path::new(rel);
+    if !rel_path
+        .components()
+        .all(|c| matches!(c, Component::Normal(_)))
+    {
+        return None;
     }
-
-    /// A network where Ozzit's release has the given counts and every fact page
-    /// shows its wording inside the section the README links to.
-    fn world(functions: u32, help: u32) -> Fake {
-        world_linked_from(functions, help, "")
-    }
-
-    /// `world`, where each page `markdown` links to a fragment of also has an
-    /// element with that id, so only a missing local file or heading can fail.
-    fn world_linked_from(functions: u32, help: u32, markdown: &str) -> Fake {
-        let mut net = Fake::default()
-            .ok(OZZIT_LATEST_RELEASE, r#"{"tag_name": "v9.9.9"}"#)
-            .ok(&ozzit_functions_csv("v9.9.9"), &csv(functions, help));
-        let mut pages: HashMap<&str, String> = HashMap::new();
-        for fact in FACTS {
-            let section = fact_section(fact, &fact.page.join(" and "));
-            pages.entry(fact.url).or_default().push_str(&section);
-        }
-        let links = readme::links(&readme::visible(markdown));
-        for (url, id) in links.iter().filter_map(|link| link.split_once('#')) {
-            let page = pages.entry(url).or_default();
-            if url.starts_with("https://") && !html::has_anchor(page, id) {
-                write!(page, "<p id=\"{id}\"></p>").unwrap();
-            }
-        }
-        for (url, page) in pages {
-            net = net.ok(url, &format!("<body>{page}</body>"));
-        }
-        net
-    }
-
-    fn fact_section(fact: &Fact, text: &str) -> String {
-        format!("<section id=\"{}\"><p>{text}</p></section>", fact.section)
-    }
-
-    fn fact_link(fact: &Fact) -> String {
-        format!("{}#{}", fact.url, fact.section)
-    }
-
-    /// A README that states every fact and links each fact's source.
-    fn fixture_readme(extra: &str) -> String {
-        let facts: Vec<String> = FACTS
-            .iter()
-            .map(|f| format!("[{}]({}) {}", f.name, fact_link(f), f.readme.join(", ")))
-            .collect();
-        format!(
-            "[Ozzit](https://github.com/ryanduguid/Ozzit): 150 native Excel LAMBDA functions plus 5 help tables.\n\
-[badge]({BADGE}) [notes]({OWN_BLOB}AGENTS.md#reusing-this-code)\n{}\n{extra}\n",
-            facts.join(". ")
-        )
-    }
-
-    fn drift(net: &mut Fake, markdown: &str) -> (i32, String) {
-        let report = run(markdown, &root(), net);
-        let messages: Vec<String> = report.findings.iter().map(|(_, m)| m.clone()).collect();
-        (report.exit_code(), messages.join("\n"))
-    }
-
-    #[test]
-    fn a_matching_readme_is_clean() {
-        assert_eq!(
-            drift(&mut world(150, 5), &fixture_readme("")),
-            (0, String::new())
-        );
-    }
-
-    #[test]
-    fn a_wrong_function_count_is_drift() {
-        let (code, messages) = drift(&mut world(151, 5), &fixture_readme(""));
-        assert_eq!(code, 1);
-        assert!(messages.contains(
-            "README says 150 functions plus 5 help tables; functions.csv at v9.9.9 has 151 plus 5"
-        ));
-    }
-
-    #[test]
-    fn a_dead_link_is_drift() {
-        let mut net = world(150, 5).script(LOST, vec![status(404, "")]);
-        let (code, messages) = drift(&mut net, &fixture_readme(&format!("[Croft Manor]({LOST})")));
-        assert_eq!(
-            (code, messages),
-            (1, format!("Dead link: {LOST}: HTTP 404"))
-        );
-    }
-
-    #[test]
-    fn a_missing_file_or_anchor_is_drift() {
-        let extra = format!("![x](assets/croft-manor.png) [y]({OWN_BLOB}AGENTS.md#croft-manor)");
-        let (code, messages) = drift(&mut world(150, 5), &fixture_readme(&extra));
-        assert_eq!(code, 1);
-        assert!(messages.contains("Dead link: assets/croft-manor.png"));
-        assert!(messages.contains("AGENTS.md#croft-manor: no such heading"));
-    }
-
-    #[test]
-    fn a_rate_limited_badge_is_inconclusive_not_drift() {
-        let mut net = world(150, 5).script(BADGE, vec![status(429, "")]);
-        assert_eq!(drift(&mut net, &fixture_readme("")).0, 2);
-    }
-
-    #[test]
-    fn a_changed_figure_on_the_site_is_drift() {
-        let fact = &FACTS[0];
-        let mut net = world(150, 5).ok(
-            fact.url,
-            &format!("<body>{}</body>", fact_section(fact, "($99,999)")),
-        );
-        let (code, messages) = drift(&mut net, &fixture_readme(""));
-        assert_eq!(code, 1);
-        let expected: Vec<String> = fact
-            .page
-            .iter()
-            .map(|wording| {
-                format!(
-                    "{}: {} no longer shows '{wording}'",
-                    fact.name,
-                    fact_link(fact)
-                )
-            })
-            .collect();
-        assert_eq!(messages, expected.join("\n"));
-    }
-
-    #[test]
-    fn a_figure_dropped_from_the_readme_is_drift() {
-        let wording = FACTS[0].readme[0];
-        let markdown = fixture_readme("").replace(wording, "Croft Manor");
-        let (code, messages) = drift(&mut world(150, 5), &markdown);
-        assert_eq!(code, 1);
-        assert!(messages.contains(&format!("the README no longer says '{wording}'")));
-    }
-
-    /// The real README passes offline: its local files and anchors exist, it
-    /// states the Ozzit counts and every fact's wording, links every fact page
-    /// and holds a release block in the generated format.
-    #[test]
-    fn the_real_readme_passes_against_a_matching_world() {
-        let markdown = std::fs::read_to_string(root().join("README.md")).unwrap();
-        let (functions, help) =
-            readme::ozzit_counts(&readme::visible(&markdown)).expect("Ozzit counts");
-        let mut net = world_linked_from(functions, help, &markdown);
-        assert_eq!(drift(&mut net, &markdown), (0, String::new()));
-        crate::releases::check_block(&markdown).expect("the Recent releases block");
-    }
-
-    #[test]
-    fn a_fact_whose_source_link_changed_is_drift() {
-        let fact = &FACTS[0];
-        let moved = format!("{}?croft-manor#{}", fact.url, fact.section);
-        let markdown =
-            fixture_readme("").replace(&format!("({})", fact_link(fact)), &format!("({moved})"));
-        let (code, messages) = drift(&mut world(150, 5), &markdown);
-        assert_eq!(code, 1);
-        assert!(messages.contains(&format!("the README no longer links {}", fact_link(fact))));
-    }
-
-    #[test]
-    fn a_figure_kept_only_in_a_comment_is_drift() {
-        let wording = FACTS[0].readme[0];
-        let markdown = fixture_readme("").replace(wording, &format!("<!-- {wording} -->"));
-        let (code, messages) = drift(&mut world(150, 5), &markdown);
-        assert_eq!(code, 1);
-        assert!(messages.contains(&format!("the README no longer says '{wording}'")));
-    }
+    let base_root = if root.as_os_str().is_empty() {
+        Path::new(".")
+    } else {
+        root
+    };
+    let canon_root = std::fs::canonicalize(base_root).ok()?;
+    let canon_file = std::fs::canonicalize(canon_root.join(rel_path)).ok()?;
+    (canon_file.starts_with(&canon_root) && canon_file.is_file()).then_some(canon_file)
 }
+
+#[cfg(test)]
+#[path = "check_tests.rs"]
+mod tests;
