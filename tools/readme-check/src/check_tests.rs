@@ -330,7 +330,7 @@ fn own_raw_symlink_escaping_repo_is_rejected() {
     if let Err(err) = created {
         std::fs::remove_dir_all(&outer).unwrap();
         #[cfg(windows)]
-        if err.kind() == std::io::ErrorKind::PermissionDenied || err.raw_os_error() == Some(1314) {
+        if err.raw_os_error() == Some(1314) {
             return;
         }
         panic!("could not create test symlink: {err}");
@@ -347,4 +347,10 @@ fn own_raw_symlink_escaping_repo_is_rejected() {
         ))
     }));
     assert!(!net.calls.iter().any(|u| u == &escape_url));
+}
+
+#[test]
+fn resolve_repo_file_handles_empty_root_as_current_directory() {
+    assert!(super::resolve_repo_file(Path::new(""), "Cargo.toml").is_some());
+    assert!(super::resolve_repo_file(Path::new(""), "../Cargo.toml").is_none());
 }

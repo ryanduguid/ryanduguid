@@ -282,7 +282,12 @@ fn resolve_repo_file(root: &Path, rel: &str) -> Option<PathBuf> {
     {
         return None;
     }
-    let canon_root = std::fs::canonicalize(root).ok()?;
+    let base_root = if root.as_os_str().is_empty() {
+        Path::new(".")
+    } else {
+        root
+    };
+    let canon_root = std::fs::canonicalize(base_root).ok()?;
     let canon_file = std::fs::canonicalize(canon_root.join(rel_path)).ok()?;
     (canon_file.starts_with(&canon_root) && canon_file.is_file()).then_some(canon_file)
 }
