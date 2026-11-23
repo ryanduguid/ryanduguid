@@ -14,3 +14,8 @@ ureq = { version = "3.5.1", default-features = false, features = ["rustls"] }
 [lints.clippy]
 ref_option = "warn"
 too_many_lines = "warn"
+
+[profile.release]
+lto = true
+codegen-units = 1
+strip = "symbols"
