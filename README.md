@@ -27,7 +27,7 @@ More tools, including a local MCP server for Australian tax calculations, are on
 
 <!-- recent-releases:start -->
 
-- **australian-accounting** [aus-accounting-mcp/v0.11.0](https://github.com/ryanduguid/australian-accounting/releases/tag/aus-accounting-mcp/v0.11.0), 21 November 2026
+- **australian-accounting** [aus-accounting-mcp/v0.12.0](https://github.com/ryanduguid/australian-accounting/releases/tag/aus-accounting-mcp/v0.12.0), 23 November 2026
 - **Ozzit** [v3.7.0](https://github.com/ryanduguid/Ozzit/releases/tag/v3.7.0), 18 November 2026
 - **PaulGoodman** [v0.7.0](https://github.com/ryanduguid/PaulGoodman/releases/tag/v0.7.0), 18 November 2026
 - **au-fpa-pack** [v0.7.0](https://github.com/ryanduguid/au-fpa-pack/releases/tag/v0.7.0), 16 November 2026
