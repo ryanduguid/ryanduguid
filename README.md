@@ -13,11 +13,11 @@
 
 </div>
 
-I am Ryan Duguid, a senior accountant in Newcastle, NSW, Australia. I build open source tools for accountants: cash-flow modelling, month-end review, and Australian tax and payroll calculations. Not to be confused with the US software product executive of the same name.
+I am Ryan Duguid, a senior accountant in Newcastle, NSW, Australia. I build open source tools for accountants: cash-flow modelling, month-end review and Australian tax and payroll calculations. Not to be confused with the US software product executive of the same name.
 
 ## Try an accounting task
 
-- **Explain profit and cash differences:** a [fictional Newcastle cash-flow case](https://duguid.com.au/examples/profit-vs-cash-flow/), with its source in [au-fpa-pack](https://github.com/ryanduguid/au-fpa-pack).
+- **Explain profit and cash differences:** a [fictional Newcastle cash-flow case](https://duguid.com.au/examples/profit-vs-cash-flow/), with its source in [OzFPA](https://github.com/ryanduguid/OzFPA).
 - **Calculate in Excel:** [Ozzit](https://github.com/ryanduguid/Ozzit) has 151 native Excel LAMBDA functions plus 5 help tables, with a [worked GST example](https://duguid.com.au/tools/ozzit/#worked-example).
 - **Review a month-end close:** [Monthly Close Controls](https://duguid.com.au/tools/monthly-close-controls/#worked-example), part of the [Accounting Review Pipeline](https://github.com/ryanduguid/accounting-review-pipeline).
 
@@ -30,7 +30,7 @@ More tools, including a local MCP server for Australian tax calculations, are on
 - **australian-accounting** [aus-accounting-mcp/v0.12.0](https://github.com/ryanduguid/australian-accounting/releases/tag/aus-accounting-mcp/v0.12.0), 23 November 2026
 - **Ozzit** [v3.7.0](https://github.com/ryanduguid/Ozzit/releases/tag/v3.7.0), 18 November 2026
 - **PaulGoodman** [v0.7.0](https://github.com/ryanduguid/PaulGoodman/releases/tag/v0.7.0), 18 November 2026
-- **au-fpa-pack** [v0.7.0](https://github.com/ryanduguid/au-fpa-pack/releases/tag/v0.7.0), 16 November 2026
+- **OzFPA** [v0.7.0](https://github.com/ryanduguid/OzFPA/releases/tag/v0.7.0), 16 November 2026
 - **DrDebits** [v0.7.0](https://github.com/ryanduguid/DrDebits/releases/tag/v0.7.0), 14 November 2026
 - **accounting-review-pipeline** [monthly-close-control-plane/v1.1.0](https://github.com/ryanduguid/accounting-review-pipeline/releases/tag/monthly-close-control-plane/v1.1.0), 14 November 2026
 - **australian-accounting-skills** [v0.7.0](https://github.com/ryanduguid/australian-accounting-skills/releases/tag/v0.7.0), 14 November 2026
