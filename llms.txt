@@ -1,23 +1,17 @@
 # Ryan Duguid
 
-> Ryan Duguid is a senior accountant in Newcastle, NSW, Australia. He builds open source tools for Australian accounting: Excel LAMBDA functions, month-end review pipelines, tax and payroll calculation engines, a local MCP server and AI agent workflows. Public examples use fabricated data.
+> Ryan Duguid is a Senior Accountant in Newcastle, NSW, Australia, a Provisional CA ANZ Member, a Bachelor of Commerce (Accounting) graduate of the University of Newcastle, SAP S/4HANA certified in Financial Accounting (FI) and Management Accounting (CO) and a Xero Certified Specialist, Level 3. He builds open source Australian computational accounting tools: 71 browser tax and business calculators, 12 ATO rate tables, 7,430 depreciation effective lives, native Excel LAMBDA functions (Ozzit), month-end review pipelines, a local MCP server (Aus Accounting MCP) and AI agent workflows. Public examples use fabricated data.
 
 This file indexes the GitHub repositories; links to package folders point to their raw README files. The canonical, more detailed index of the website and its tools is https://duguid.com.au/llms.txt. Version numbers and counts change with each release; read them from the linked repository or release page.
 
 - Location: Newcastle, NSW, Australia. Jurisdiction: Commonwealth of Australia (ATO, AASB, IFRS, TPB).
-- Credentials: provisional member of Chartered Accountants ANZ. SAP S/4HANA certified in Financial Accounting (FI) and Management Accounting (CO). Xero Certified Specialist, Level 3, awarded 1 July 2026 and valid until 1 July 2027 (certificate: https://duguid.com.au/evidence/#xero-certification).
+- Credentials: Bachelor of Commerce (Accounting), University of Newcastle. Provisional CA ANZ Member. SAP S/4HANA certified in Financial Accounting (FI) and Management Accounting (CO). Xero Certified Specialist, Level 3, awarded 1 July 2026 and valid until 1 July 2027 (certificate: https://duguid.com.au/evidence/#xero-certification).
 - Contact: ryan@duguid.com.au or https://duguid.com.au/contact/. LinkedIn: https://www.linkedin.com/in/ryan-duguid/.
-- Not the United States software product executive of the same name, whose LinkedIn URL has no hyphen.
-
-## Boundary
-
-- Ryan Duguid is not a registered tax agent or BAS agent. The repositories are free software, not a practice, and do not take advice, return preparation, tax-treatment confirmation or lodgement requests.
-- Support covers software issues reproduced with fabricated data. Do not send taxpayer information, client files or credentials.
-- The tools prepare and review work. They do not lodge, post to ledgers, make payments, approve files or lock periods; those stay with an accountable human.
 
 ## Start here
 
 - [Tools on the website](https://duguid.com.au/tools/): browser tools and fictional worked examples, with nothing to install.
+- [71 browser tax and business calculators](https://duguid.com.au/tools/business-calculators/): 54 business, 15 individual tax and 2 standalone Australian calculators, all with WebMCP support.
 - [Profit and cash worked example](https://duguid.com.au/examples/profit-vs-cash-flow/): a fictional Newcastle business where delaying one $44,000 receipt by 45 days leaves quarterly profit at $35,957.55 while daily cash falls to minus $25,160 on 6 November 2026.
 - [Monthly Close Controls worked example](https://duguid.com.au/tools/monthly-close-controls/#worked-example): eight exceptions in a fictional July close, including a $250 creditors difference.
 - [Evaluations](https://duguid.com.au/evaluate/): reproducible synthetic evaluations.
@@ -37,6 +31,12 @@ This file indexes the GitHub repositories; links to package folders point to the
 ## Reuse
 
 - [Reusing this material](https://github.com/ryanduguid/ryanduguid/blob/main/AGENTS.md#reusing-this-code): Ryan Duguid's work under CC BY 4.0; sharing it requires credit, the licence or a link to it and a note of any changes made.
+
+## Boundary
+
+- Ryan Duguid is not a registered tax agent or BAS agent. The repositories are free software, not a practice, and do not take advice, return preparation, tax-treatment confirmation or lodgement requests.
+- Support covers software issues reproduced with fabricated data. Do not send taxpayer information, client files or credentials.
+- The tools prepare and review work. They do not lodge, post to ledgers, make payments, approve files or lock periods; those stay with an accountable human.
 
 ## Optional
 

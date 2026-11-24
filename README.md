@@ -13,12 +13,13 @@
 
 </div>
 
-I am Ryan Duguid, a senior accountant in Newcastle, NSW, Australia. I build open source tools for accountants: cash-flow modelling, month-end review and Australian tax and payroll calculations. Not to be confused with the US software product executive of the same name.
+I am Ryan Duguid, a senior accountant in Newcastle, NSW, Australia, a Provisional CA ANZ Member, a Bachelor of Commerce (Accounting) graduate of the University of Newcastle, SAP S/4HANA certified in Financial Accounting (FI) and Management Accounting (CO), and a Xero Certified Specialist, Level 3. I build open source Australian computational accounting tools: 71 browser tax and business calculators, 12 ATO rate tables, 7,430 depreciation effective lives, native Excel LAMBDA functions, month-end review controls and a local MCP server.
 
 ## Try an accounting task
 
+- **Run 71 Australian calculators:** [business and individual tax calculators](https://duguid.com.au/tools/business-calculators/) in your browser, with WebMCP support and primary sources visible.
 - **Explain profit and cash differences:** a [fictional Newcastle cash-flow case](https://duguid.com.au/examples/profit-vs-cash-flow/), with its source in [OzFPA](https://github.com/ryanduguid/OzFPA).
-- **Calculate in Excel:** [Ozzit](https://github.com/ryanduguid/Ozzit) has 151 native Excel LAMBDA functions plus 5 help tables, with a [worked GST example](https://duguid.com.au/tools/ozzit/#worked-example).
+- **Calculate in Excel:** [Ozzit](https://github.com/ryanduguid/Ozzit) has 165 native Excel LAMBDA functions plus 5 help tables, with a [worked GST example](https://duguid.com.au/tools/ozzit/#worked-example).
 - **Review a month-end close:** [Monthly Close Controls](https://duguid.com.au/tools/monthly-close-controls/#worked-example), part of the [Accounting Review Pipeline](https://github.com/ryanduguid/accounting-review-pipeline).
 
 More tools, including a local MCP server for Australian tax calculations, are on the [tools page](https://duguid.com.au/tools/). This account holds my professional projects. My personal projects, free tools for coding agents and privacy, are on my other account, [yungSNAT](https://github.com/yungSNAT).
