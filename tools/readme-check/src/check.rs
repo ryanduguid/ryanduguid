@@ -1,6 +1,8 @@
 //! The checks themselves, collecting findings into one report.
 
-use crate::facts::{FACTS, Fact, OZZIT_LATEST_RELEASE, csv_counts, ozzit_functions_csv};
+use crate::facts::{
+    FACTS, Fact, OZZIT_LATEST_RELEASE, SITE_LLMS_TXT, csv_counts, ozzit_functions_csv,
+};
 use crate::html;
 use crate::llms;
 use crate::net::{Outcome, Transport, fetch};
@@ -64,9 +66,11 @@ pub fn run(
         report: Report::default(),
     };
     let shown = readme::visible(markdown);
+    let llms_shown = readme::visible(llms_text);
     let links = readme::links(&shown);
     checker.links(&links, markdown, root);
     checker.ozzit(&shown);
+    checker.calculators(&shown, &llms_shown);
     for fact in FACTS {
         checker.fact(&shown, &links, fact);
     }
@@ -228,6 +232,63 @@ impl Checker<'_> {
 functions.csv at {tag} has {want_functions} plus {want_help}"
             )),
             Err(why) => self.report.drift(format!("Ozzit: {tag}: {why}")),
+        }
+    }
+
+    fn calculators(&mut self, readme_shown: &str, llms_shown: &str) {
+        let readme_counts = readme::calculator_counts(readme_shown);
+        let Some(&expected) = readme_counts.first() else {
+            self.report
+                .drift("Calculators: README.md no longer states a calculator count".into());
+            return;
+        };
+        if readme_counts.iter().any(|&n| n != expected) {
+            self.report.drift(format!(
+                "Calculators: README.md states conflicting counts ({readme_counts:?})"
+            ));
+            return;
+        }
+        let llms_counts = readme::calculator_counts(llms_shown);
+        if llms_counts.is_empty() || llms_counts.iter().any(|&n| n != expected) {
+            self.report.drift(format!(
+                "Calculators: llms.txt counts ({llms_counts:?}) disagree with README.md ({expected})"
+            ));
+        }
+        self.check_calculator_breakdown(llms_shown, expected);
+        let Some(site_llms) = self.page(SITE_LLMS_TXT, "duguid.com.au calculator count") else {
+            return;
+        };
+        let site_visible = readme::visible(&site_llms);
+        let site_counts =
+            readme::counts_before(&site_visible, " browser tax and business calculators");
+        match site_counts.as_slice() {
+            [actual] if *actual == expected => {
+                self.report
+                    .checked
+                    .push(format!("Calculators: {expected} on duguid.com.au"));
+            }
+            [actual] => self.report.drift(format!(
+                "Calculators: README.md says {expected}; {SITE_LLMS_TXT} says {actual}"
+            )),
+            _ => self.report.drift(format!(
+                "Calculators: {SITE_LLMS_TXT} did not show a single '<N> browser tax and business calculators' count"
+            )),
+        }
+    }
+
+    fn check_calculator_breakdown(&mut self, llms_shown: &str, expected: u32) {
+        match readme::calculator_breakdown(llms_shown) {
+            Some((business, individual, standalone))
+                if business
+                    .checked_add(individual)
+                    .and_then(|n| n.checked_add(standalone))
+                    == Some(expected) => {}
+            Some((business, individual, standalone)) => self.report.drift(format!(
+                "Calculators: llms.txt breakdown ({business} + {individual} + {standalone}) does not equal {expected}"
+            )),
+            None => self.report.drift(
+                "Calculators: llms.txt no longer shows an '<A> business, <B> individual tax and <C> standalone' breakdown".into(),
+            ),
         }
     }
 
