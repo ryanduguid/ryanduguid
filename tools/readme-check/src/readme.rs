@@ -112,6 +112,8 @@ pub fn has_heading(markdown: &str, fragment: &str) -> bool {
 }
 
 const COUNT_PHRASE: &str = " native Excel LAMBDA functions plus ";
+const BROWSER_CALC_PHRASE: &str = " browser tax and business calculators";
+const AU_CALC_PHRASE: &str = " Australian calculators";
 
 /// The function and help-table counts in '150 native Excel LAMBDA functions
 /// plus 5 help tables', which must appear exactly once.
@@ -131,9 +133,80 @@ pub fn ozzit_counts(markdown: &str) -> Option<(u32, u32)> {
         .map(|help| (functions, help))
 }
 
+/// Every integer immediately preceding `phrase`, requiring a non-alphanumeric
+/// boundary before the digits so substrings like `x76` do not match.
+pub fn counts_before(text: &str, phrase: &str) -> Vec<u32> {
+    text.match_indices(phrase)
+        .filter_map(|(at, _)| trailing_u32(&text[..at]))
+        .collect()
+}
+
+/// Calculator totals quoted in `README.md`, `llms.txt` or `duguid.com.au/llms.txt`.
+pub fn calculator_counts(text: &str) -> Vec<u32> {
+    let mut found = counts_before(text, BROWSER_CALC_PHRASE);
+    found.extend(counts_before(text, AU_CALC_PHRASE));
+    found
+}
+
+/// Parses `<A> business, <B> individual tax and <C> standalone`, scanning past
+/// any earlier prose containing `" business, "`.
+pub fn calculator_breakdown(text: &str) -> Option<(u32, u32, u32)> {
+    const MID: &str = " business, ";
+    const END: &str = " individual tax and ";
+    const WORD: &str = "standalone";
+    for (at, _) in text.match_indices(MID) {
+        let Some(business) = trailing_u32(&text[..at]) else {
+            continue;
+        };
+        let after_mid = &text[at + MID.len()..];
+        let Some(end_at) = after_mid.find(END) else {
+            continue;
+        };
+        let Some(individual) = parse_ascii_u32(&after_mid[..end_at]) else {
+            continue;
+        };
+        let after_end = &after_mid[end_at + END.len()..];
+        let Some((standalone_str, rest)) = after_end.split_once(' ') else {
+            continue;
+        };
+        let Some(standalone) = parse_ascii_u32(standalone_str) else {
+            continue;
+        };
+        let Some(tail) = rest.strip_prefix(WORD) else {
+            continue;
+        };
+        if tail.chars().next().is_none_or(|c| !c.is_alphanumeric()) {
+            return Some((business, individual, standalone));
+        }
+    }
+    None
+}
+
+fn parse_ascii_u32(text: &str) -> Option<u32> {
+    (!text.is_empty() && text.bytes().all(|b| b.is_ascii_digit()))
+        .then(|| text.parse().ok())
+        .flatten()
+}
+
+fn trailing_u32(before: &str) -> Option<u32> {
+    let digits = before.len() - before.trim_end_matches(|c: char| c.is_ascii_digit()).len();
+    if digits == 0 {
+        return None;
+    }
+    let start = before.len() - digits;
+    if let Some(prev) = before[..start].chars().next_back()
+        && prev.is_alphanumeric()
+    {
+        return None;
+    }
+    parse_ascii_u32(&before[start..])
+}
+
 #[cfg(test)]
 mod tests {
-    use super::{has_heading, links, ozzit_counts, slug, visible};
+    use super::{
+        calculator_breakdown, calculator_counts, has_heading, links, ozzit_counts, slug, visible,
+    };
 
     #[test]
     fn links_cover_markdown_html_and_srcset_once_each_and_skip_code() {
@@ -215,6 +288,30 @@ mod tests {
         );
         assert_eq!(
             ozzit_counts("150 native Excel LAMBDA functions plus five help tables"),
+            None
+        );
+    }
+
+    #[test]
+    fn calculator_counts_and_breakdown_require_word_boundaries() {
+        let text = "76 browser tax and business calculators. Run 76 Australian calculators. x99 browser tax and business calculators.";
+        assert_eq!(calculator_counts(text), [76, 76]);
+        assert_eq!(
+            calculator_breakdown(
+                "For your business, see: 57 business, 17 individual tax and 2 standalone Australian"
+            ),
+            Some((57, 17, 2))
+        );
+        assert_eq!(
+            calculator_breakdown("x57 business, 17 individual tax and 2 standalone"),
+            None
+        );
+        assert_eq!(
+            calculator_breakdown("57 business, +17 individual tax and 2 standalone"),
+            None
+        );
+        assert_eq!(
+            calculator_breakdown("57 business, 17 individual tax and 2 standalones"),
             None
         );
     }
