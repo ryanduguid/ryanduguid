@@ -12,8 +12,8 @@ This file indexes the GitHub repositories; links to package folders point to the
 
 - [Tools on the website](https://duguid.com.au/tools/): browser tools and fictional worked examples, with nothing to install.
 - [76 browser tax and business calculators](https://duguid.com.au/tools/business-calculators/): 57 business, 17 individual tax and 2 standalone Australian calculators, all with WebMCP support.
-- [Profit and cash worked example](https://duguid.com.au/examples/profit-vs-cash-flow/): a fictional Newcastle business where delaying one $44,000 receipt by 45 days leaves quarterly profit at $35,957.55 while daily cash falls to minus $25,160 on 6 November 2026.
-- [Monthly Close Controls worked example](https://duguid.com.au/tools/monthly-close-controls/#worked-example): eight exceptions in a fictional July close, including a $250 creditors difference.
+- [Profit and cash worked example](https://duguid.com.au/examples/profit-vs-cash-flow/): a fictional Newcastle business where delaying one $44,000 receipt by 45 days leaves quarterly profit at $35,957.55 whilst daily cash falls to minus $25,160 on 6 November 2026.
+- [Monthly Close Controls worked example](https://duguid.com.au/tools/monthly-close-controls/#worked-example): 8 exceptions in a fictional July close, including a $250 creditors difference.
 - [Evaluations](https://duguid.com.au/evaluate/): reproducible synthetic evaluations.
 - [Evidence](https://duguid.com.au/evidence/): credentials, releases and accepted upstream work.
 
@@ -24,7 +24,7 @@ This file indexes the GitHub repositories; links to package folders point to the
 - [aus-accounting-mcp](https://raw.githubusercontent.com/ryanduguid/australian-accounting/main/apps/aus-accounting-mcp/README.md): local MCP server over stdio for those engines and a set of tax and super worksheets. Install with `uvx aus-accounting-mcp`. Registry name: io.github.ryanduguid/aus-accounting. Unsupported Division 7A matters are refused, and it ships no ATO document library. The MCP host still sends tool arguments and results to its model provider.
 - [australian-accounting-skills](https://github.com/ryanduguid/australian-accounting-skills): preparation and review workflows for public practice and contracting, including BAS, month-end close, payroll, workpaper tie-outs and the former Hardhat Ledger subcontractor workflows (there is no separate Hardhat pack). Claude Code plugin, Codex plugin or portable skill files; `npx skills add ryanduguid/australian-accounting-skills` installs from the default branch.
 - [accounting-review-pipeline](https://github.com/ryanduguid/accounting-review-pipeline): month-end close checks on Xero trial balance exports, producing exception packs for human sign-off, with Excel and Power BI components.
-- [OzFPA](https://github.com/ryanduguid/OzFPA): Australian extension of openfpa by Jeff Brines and Guiderail, with 30 June years, Xero AU and GST. Holds the source for the profit and cash example; its independent accountant trial is pending.
+- [OzFPA](https://github.com/ryanduguid/OzFPA): Australian extension of openfpa by Jeff Brines and Guiderail, with 30 June years, Xero AU and GST. Holds the source for the profit and cash example.
 - [DrDebits](https://github.com/ryanduguid/DrDebits): APES 110 and TPB Code controls, refusal patterns and evaluation fixtures for firms using LLMs in tax work. Conclusions stay with the registered practitioner.
 - [PaulGoodman](https://github.com/ryanduguid/PaulGoodman): builds a retrieval corpus from in-force Commonwealth tax legislation on the Federal Register of Legislation, with source and provenance records. It is a finding aid, not authorised legislation.
 
