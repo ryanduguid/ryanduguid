@@ -13,7 +13,7 @@
 
 </div>
 
-I am Ryan Duguid, a senior accountant in Newcastle, NSW, Australia and a Provisional CA ANZ Member. I build open source Australian computational accounting tools: 76 browser tax and business calculators, 12 ATO rate tables, 7,430 depreciation effective lives, native Excel LAMBDA functions, month-end review controls and a local MCP server.
+I am Ryan Duguid, a senior accountant in Newcastle, NSW, Australia and a Provisional CA ANZ Member. I build open source Australian computational accounting tools: 76 browser tax and business calculators, 12 ATO rate tables, 7,430 depreciation effective lives, native Excel LAMBDA functions, month-end review controls and a local MCP server. Not to be confused with the US software product executive of the same name.
 
 ## Try an accounting task
 
@@ -47,7 +47,7 @@ More tools, including a local MCP server for Australian tax calculations, are on
 
 The [evidence register](https://duguid.com.au/evidence/#identity-and-credentials) has the issuers' verification links and the Xero certificate.
 
-To get in touch, use the [contact page](https://duguid.com.au/contact/).
+To get in touch, use the [contact page](https://duguid.com.au/contact/) or [LinkedIn](https://www.linkedin.com/in/ryan-duguid/).
 
 <sub>Not advice. I am not a registered tax agent or BAS agent and take no advice, return-preparation, tax-treatment confirmation or lodgement requests. The tools are review aids that never lodge or write to ledgers; the reviewer keeps judgement and sign-off.</sub>
 
