@@ -23,6 +23,7 @@ on:
     paths:
       - README.md
       - llms.txt
+      - deny.toml
       - tools/readme-check/**
       - .github/workflows/readme-check.yml
   workflow_dispatch:
