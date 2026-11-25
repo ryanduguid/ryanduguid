@@ -7,7 +7,8 @@
 //!
 //! A URL that still fails with a timeout, 429 or 5xx is inconclusive: badge and
 //! credential hosts rate-limit runners, and a brief outage is not a dead link.
-//! A 4xx, a DNS failure or another transport failure is a dead link.
+//! An HTTP 999 response does not retry and is a refusal: reported, never a
+//! finding. Other 4xx, a DNS failure or another transport failure is a dead link.
 
 use std::time::Duration;
 
@@ -39,6 +40,7 @@ pub enum Outcome {
     Ok(String),
     Dead(String),
     Transient(String),
+    Refused(String),
 }
 
 pub fn fetch(transport: &mut dyn Transport, url: &str) -> Outcome {
@@ -47,6 +49,9 @@ pub fn fetch(transport: &mut dyn Transport, url: &str) -> Outcome {
     for attempt in 1..=MAX_ATTEMPTS {
         let hint = match transport.get(url) {
             Reply::Status { code, body, .. } if code < 400 => return Outcome::Ok(body),
+            Reply::Status { code: 999, .. } => {
+                return Outcome::Refused("HTTP 999 (the host refuses automated clients)".into());
+            }
             Reply::Status {
                 code, retry_after, ..
             } if code == 429 || code >= 500 => {
@@ -202,6 +207,13 @@ mod tests {
     fn a_404_is_dead_without_retrying() {
         let mut net = Fake::default().script(URL, vec![status(404, "")]);
         assert_eq!(fetch(&mut net, URL), Outcome::Dead("HTTP 404".into()));
+        assert_eq!(net.calls.len(), 1);
+    }
+
+    #[test]
+    fn a_999_is_refused_without_retrying() {
+        let mut net = Fake::default().script(URL, vec![status(999, "")]);
+        assert!(matches!(fetch(&mut net, URL), Outcome::Refused(_)));
         assert_eq!(net.calls.len(), 1);
     }
 

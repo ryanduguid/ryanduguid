@@ -89,7 +89,9 @@ pub fn latest(transport: &mut dyn Transport) -> Result<Vec<Release>, String> {
 fn json(transport: &mut dyn Transport, url: &str) -> Result<Value, String> {
     match fetch(transport, url) {
         Outcome::Ok(body) => serde_json::from_str(&body).map_err(|e| format!("{url}: {e}")),
-        Outcome::Dead(why) | Outcome::Transient(why) => Err(format!("{url}: {why}")),
+        Outcome::Dead(why) | Outcome::Transient(why) | Outcome::Refused(why) => {
+            Err(format!("{url}: {why}"))
+        }
     }
 }
 
