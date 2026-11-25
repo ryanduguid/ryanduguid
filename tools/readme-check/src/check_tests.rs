@@ -265,6 +265,22 @@ fn a_rate_limited_badge_is_inconclusive_not_drift() {
 }
 
 #[test]
+fn a_999_refusal_is_checked_not_a_finding() {
+    const REFUSED: &str = "https://www.linkedin.com/in/croft-manor/";
+    let mut net = world(150, 5).script(REFUSED, vec![status(999, "")]);
+    let report = run(
+        &fixture_readme(&format!("[Profile]({REFUSED})")),
+        &fixture_llms(""),
+        &root(),
+        today(),
+        &mut net,
+    );
+    assert_eq!(report.exit_code(), 0, "{:?}", report.findings);
+    assert!(report.findings.is_empty());
+    assert!(report.checked.iter().any(|item| item.contains(REFUSED)));
+}
+
+#[test]
 fn a_changed_figure_on_the_site_is_drift() {
     let fact = &FACTS[0];
     let mut net = world(150, 5).ok(

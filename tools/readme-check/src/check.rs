@@ -92,6 +92,10 @@ impl Checker<'_> {
             Outcome::Ok(body) => return Some(body),
             Outcome::Dead(why) => (Severity::Drift, why),
             Outcome::Transient(why) => (Severity::Inconclusive, why),
+            Outcome::Refused(why) => {
+                self.report.checked.push(format!("{what}: {url}: {why}"));
+                return None;
+            }
         };
         self.report
             .findings
