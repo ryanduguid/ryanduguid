@@ -28,11 +28,11 @@ More tools, including a local MCP server for Australian tax calculations, are on
 
 <!-- recent-releases:start -->
 
+- **australian-accounting** [aus-accounting-mcp/v0.13.0](https://github.com/ryanduguid/australian-accounting/releases/tag/aus-accounting-mcp/v0.13.0), 25 November 2026
+- **australian-accounting-skills** [v0.8.1](https://github.com/ryanduguid/australian-accounting-skills/releases/tag/v0.8.1), 25 November 2026
+- **PaulGoodman** [v0.9.0](https://github.com/ryanduguid/PaulGoodman/releases/tag/v0.9.0), 25 November 2026
 - **accounting-review-pipeline** [monthly-close-control-plane/v1.2.0](https://github.com/ryanduguid/accounting-review-pipeline/releases/tag/monthly-close-control-plane/v1.2.0), 25 November 2026
-- **australian-accounting** [australian-tax-calculators/v1.3.0](https://github.com/ryanduguid/australian-accounting/releases/tag/australian-tax-calculators/v1.3.0), 25 November 2026
-- **australian-accounting-skills** [v0.8.0](https://github.com/ryanduguid/australian-accounting-skills/releases/tag/v0.8.0), 25 November 2026
 - **OzFPA** [v0.8.0](https://github.com/ryanduguid/OzFPA/releases/tag/v0.8.0), 25 November 2026
-- **PaulGoodman** [v0.8.0](https://github.com/ryanduguid/PaulGoodman/releases/tag/v0.8.0), 25 November 2026
 - **DrDebits** [v0.8.0](https://github.com/ryanduguid/DrDebits/releases/tag/v0.8.0), 25 November 2026
 - **Ozzit** [v3.8.0](https://github.com/ryanduguid/Ozzit/releases/tag/v3.8.0), 24 November 2026
 
