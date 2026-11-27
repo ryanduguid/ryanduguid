@@ -94,6 +94,8 @@ oz.AboutGSTλ,Help,Help table\r\n\
 \r\n\
 \"oz.NPVλ\",Finance,NPV\r\n";
         assert_eq!(csv_counts(csv), Ok((2, 1)));
+        // The last record counts without a closing newline.
+        assert_eq!(csv_counts("function,module\noz.NPVλ,Finance"), Ok((1, 0)));
     }
 
     #[test]

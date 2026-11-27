@@ -314,5 +314,14 @@ mod tests {
             calculator_breakdown("57 business, 17 individual tax and 2 standalones"),
             None
         );
+        for unfinished in [
+            "57 business, 17 individual",
+            "57 business, x individual tax and 2 standalone",
+            "57 business, 17 individual tax and 2",
+            "57 business, 17 individual tax and x standalone",
+            "57 business, 17 individual tax and 2 others",
+        ] {
+            assert_eq!(calculator_breakdown(unfinished), None, "{unfinished}");
+        }
     }
 }

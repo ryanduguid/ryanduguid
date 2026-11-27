@@ -1,0 +1,80 @@
+name: coverage
+
+# Measures tools/readme-check's line coverage and reports it to Codecov, which
+# codecov.yml holds at 100% for the project and for each change. It runs on
+# every pull request and every push to main, so Codecov always has main's
+# figure to compare a change against.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: coverage-${{ github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+jobs:
+  coverage:
+    timeout-minutes: 20
+    runs-on: ubuntu-24.04
+    defaults:
+      run:
+        working-directory: tools/readme-check
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - name: Install the pinned toolchain and its coverage tools
+        run: |
+          rustup toolchain install
+          rustup component add llvm-tools
+      - name: Install the pinned cargo-llvm-cov
+        uses: taiki-e/install-action@ab49d3c64680143e184118bed66a46419fc15519 # v2.90.5
+        with:
+          tool: cargo-llvm-cov@0.9.1
+          fallback: none
+      - name: Run the tests with line coverage
+        run: cargo llvm-cov --locked --lcov --output-path coverage-rust.lcov --fail-under-lines 100
+      - name: Use repository paths in the coverage report
+        run: |
+          sed -i "s|^SF:${GITHUB_WORKSPACE}/|SF:|" coverage-rust.lcov
+          if grep -q '^SF:/' coverage-rust.lcov; then
+            echo "::error::Coverage source is outside the repository"
+            exit 1
+          fi
+      - name: Keep the coverage report for the Codecov upload
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: coverage-codecov
+          path: tools/readme-check/coverage-rust.lcov
+          retention-days: 1
+
+  # The upload runs apart from the tests so the OIDC token is never available
+  # while test code runs.
+  codecov:
+    name: upload coverage to Codecov
+    needs: coverage
+    if: github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    permissions:
+      contents: read
+      id-token: write # Authenticate the Codecov upload with OIDC; no stored token.
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
+        with:
+          name: coverage-codecov
+      - uses: codecov/codecov-action@303a32d7a59b442fa8d48b6a1cc6825c09c847a5 # v7.1.1
+        with:
+          use_oidc: true
+          files: coverage-rust.lcov
+          disable_search: true
+          fail_ci_if_error: true
