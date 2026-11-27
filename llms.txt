@@ -1,6 +1,6 @@
 # Ryan Duguid
 
-> Ryan Duguid is a Senior Accountant in Newcastle, NSW, Australia, a Provisional CA ANZ Member, a Bachelor of Commerce (Accounting) graduate of the University of Newcastle, SAP S/4HANA certified in Financial Accounting (FI) and Management Accounting (CO) and a Xero Certified Specialist, Level 3. He builds open source Australian computational accounting tools: 77 browser tax and business calculators, 12 ATO rate tables, 7,430 depreciation effective lives, native Excel LAMBDA functions (Ozzit), month-end review pipelines, a local MCP server (Aus Accounting MCP) and AI agent workflows. Public examples use fabricated data.
+> Ryan Duguid is a Senior Accountant in Newcastle, NSW, Australia, a Provisional CA ANZ Member, a Bachelor of Commerce (Accounting) graduate of the University of Newcastle, SAP S/4HANA certified in Financial Accounting (FI) and Management Accounting (CO) and a Xero Certified Specialist, Level 3. He builds open source Australian computational accounting tools: browser tax and business calculators, 12 ATO rate tables, 7,430 depreciation effective lives, native Excel LAMBDA functions (Ozzit), month-end review pipelines, a local MCP server (Aus Accounting MCP) and AI agent workflows. Public examples use fabricated data.
 
 This file indexes the GitHub repositories; links to package folders point to their raw README files. The canonical, more detailed index of the website and its tools is https://duguid.com.au/llms.txt. Version numbers and counts change with each release; read them from the linked repository or release page.
 
@@ -11,7 +11,7 @@ This file indexes the GitHub repositories; links to package folders point to the
 ## Start here
 
 - [Tools on the website](https://duguid.com.au/tools/): browser tools and fictional worked examples, with nothing to install.
-- [77 browser tax and business calculators](https://duguid.com.au/tools/business-calculators/): 58 business, 17 individual tax and 2 standalone Australian calculators, all with WebMCP support.
+- [Browser tax and business calculators](https://duguid.com.au/tools/business-calculators/): business, individual tax and standalone Australian calculators, all with WebMCP support. The current counts are on that page and in https://duguid.com.au/llms.txt.
 - [Profit and cash worked example](https://duguid.com.au/examples/profit-vs-cash-flow/): a fictional Newcastle business where delaying one $44,000 receipt by 45 days leaves quarterly profit at $35,957.55 whilst daily cash falls to minus $25,160 on 6 November 2026.
 - [Monthly Close Controls worked example](https://duguid.com.au/tools/monthly-close-controls/#worked-example): 8 exceptions in a fictional July close, including a $250 creditors difference.
 - [Evaluations](https://duguid.com.au/evaluate/): reproducible synthetic evaluations.

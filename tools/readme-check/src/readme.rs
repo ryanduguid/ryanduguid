@@ -112,8 +112,11 @@ pub fn has_heading(markdown: &str, fragment: &str) -> bool {
 }
 
 const COUNT_PHRASE: &str = " native Excel LAMBDA functions plus ";
-const BROWSER_CALC_PHRASE: &str = " browser tax and business calculators";
-const AU_CALC_PHRASE: &str = " Australian calculators";
+const CALC_PHRASES: [&str; 3] = [
+    " browser tax and business calculators",
+    " Australian calculators",
+    " calculators",
+];
 
 /// The function and help-table counts in '150 native Excel LAMBDA functions
 /// plus 5 help tables', which must appear exactly once.
@@ -135,17 +138,18 @@ pub fn ozzit_counts(markdown: &str) -> Option<(u32, u32)> {
 
 /// Every integer immediately preceding `phrase`, requiring a non-alphanumeric
 /// boundary before the digits so substrings like `x76` do not match.
-pub fn counts_before(text: &str, phrase: &str) -> Vec<u32> {
+fn counts_before(text: &str, phrase: &str) -> Vec<u32> {
     text.match_indices(phrase)
         .filter_map(|(at, _)| trailing_u32(&text[..at]))
         .collect()
 }
 
-/// Calculator totals quoted in `README.md`, `llms.txt` or `duguid.com.au/llms.txt`.
+/// Calculator totals quoted in `README.md` or `llms.txt`.
 pub fn calculator_counts(text: &str) -> Vec<u32> {
-    let mut found = counts_before(text, BROWSER_CALC_PHRASE);
-    found.extend(counts_before(text, AU_CALC_PHRASE));
-    found
+    CALC_PHRASES
+        .iter()
+        .flat_map(|phrase| counts_before(text, phrase))
+        .collect()
 }
 
 /// Parses `<A> business, <B> individual tax and <C> standalone`, scanning past
@@ -294,8 +298,9 @@ mod tests {
 
     #[test]
     fn calculator_counts_and_breakdown_require_word_boundaries() {
-        let text = "76 browser tax and business calculators. Run 76 Australian calculators. x99 browser tax and business calculators.";
-        assert_eq!(calculator_counts(text), [76, 76]);
+        let text = "76 browser tax and business calculators. Run 75 Australian calculators. \
+All 74 calculators. x99 browser tax and business calculators. Browser calculators.";
+        assert_eq!(calculator_counts(text), [76, 75, 74]);
         assert_eq!(
             calculator_breakdown(
                 "For your business, see: 57 business, 17 individual tax and 2 standalone Australian"
