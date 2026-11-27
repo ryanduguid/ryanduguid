@@ -22,7 +22,7 @@ pub const FACTS: &[Fact] = &[Fact {
 pub const OZZIT_LATEST_RELEASE: &str =
     "https://api.github.com/repos/ryanduguid/Ozzit/releases/latest";
 
-pub const SITE_LLMS_TXT: &str = "https://duguid.com.au/llms.txt";
+pub const CALCULATORS_PAGE: &str = "https://duguid.com.au/tools/business-calculators/";
 
 pub fn ozzit_functions_csv(tag: &str) -> String {
     format!("https://raw.githubusercontent.com/ryanduguid/Ozzit/{tag}/functions.csv")

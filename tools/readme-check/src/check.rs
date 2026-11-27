@@ -1,7 +1,7 @@
 //! The checks themselves, collecting findings into one report.
 
 use crate::facts::{
-    FACTS, Fact, OZZIT_LATEST_RELEASE, SITE_LLMS_TXT, csv_counts, ozzit_functions_csv,
+    CALCULATORS_PAGE, FACTS, Fact, OZZIT_LATEST_RELEASE, csv_counts, ozzit_functions_csv,
 };
 use crate::html;
 use crate::llms;
@@ -70,7 +70,7 @@ pub fn run(
     let links = readme::links(&shown);
     checker.links(&links, markdown, root);
     checker.ozzit(&shown);
-    checker.calculators(&shown, &llms_shown);
+    checker.calculators(&links, &shown, &llms_shown);
     for fact in FACTS {
         checker.fact(&shown, &links, fact);
     }
@@ -239,60 +239,27 @@ functions.csv at {tag} has {want_functions} plus {want_help}"
         }
     }
 
-    fn calculators(&mut self, readme_shown: &str, llms_shown: &str) {
-        let readme_counts = readme::calculator_counts(readme_shown);
-        let Some(&expected) = readme_counts.first() else {
-            self.report
-                .drift("Calculators: README.md no longer states a calculator count".into());
-            return;
-        };
-        if readme_counts.iter().any(|&n| n != expected) {
+    /// The website's calculator count changes whenever a calculator page lands,
+    /// so a count copied here goes stale within days. README.md and llms.txt
+    /// state none and link the calculators page, which shows the current one.
+    fn calculators(&mut self, links: &[String], readme_shown: &str, llms_shown: &str) {
+        if !links.iter().any(|link| link == CALCULATORS_PAGE) {
             self.report.drift(format!(
-                "Calculators: README.md states conflicting counts ({readme_counts:?})"
-            ));
-            return;
-        }
-        let llms_counts = readme::calculator_counts(llms_shown);
-        if llms_counts.is_empty() || llms_counts.iter().any(|&n| n != expected) {
-            self.report.drift(format!(
-                "Calculators: llms.txt counts ({llms_counts:?}) disagree with README.md ({expected})"
+                "Calculators: README.md no longer links {CALCULATORS_PAGE}"
             ));
         }
-        self.check_calculator_breakdown(llms_shown, expected);
-        let Some(site_llms) = self.page(SITE_LLMS_TXT, "duguid.com.au calculator count") else {
-            return;
-        };
-        let site_visible = readme::visible(&site_llms);
-        let site_counts =
-            readme::counts_before(&site_visible, " browser tax and business calculators");
-        match site_counts.as_slice() {
-            [actual] if *actual == expected => {
-                self.report
-                    .checked
-                    .push(format!("Calculators: {expected} on duguid.com.au"));
+        for (file, shown) in [("README.md", readme_shown), ("llms.txt", llms_shown)] {
+            let counts = readme::calculator_counts(shown);
+            if !counts.is_empty() {
+                self.report.drift(format!(
+                    "Calculators: {file} states a count ({counts:?}); {CALCULATORS_PAGE} shows the current one, so link it instead"
+                ));
             }
-            [actual] => self.report.drift(format!(
-                "Calculators: README.md says {expected}; {SITE_LLMS_TXT} says {actual}"
-            )),
-            _ => self.report.drift(format!(
-                "Calculators: {SITE_LLMS_TXT} did not show a single '<N> browser tax and business calculators' count"
-            )),
-        }
-    }
-
-    fn check_calculator_breakdown(&mut self, llms_shown: &str, expected: u32) {
-        match readme::calculator_breakdown(llms_shown) {
-            Some((business, individual, standalone))
-                if business
-                    .checked_add(individual)
-                    .and_then(|n| n.checked_add(standalone))
-                    == Some(expected) => {}
-            Some((business, individual, standalone)) => self.report.drift(format!(
-                "Calculators: llms.txt breakdown ({business} + {individual} + {standalone}) does not equal {expected}"
-            )),
-            None => self.report.drift(
-                "Calculators: llms.txt no longer shows an '<A> business, <B> individual tax and <C> standalone' breakdown".into(),
-            ),
+            if let Some((business, individual, standalone)) = readme::calculator_breakdown(shown) {
+                self.report.drift(format!(
+                    "Calculators: {file} states a breakdown ({business} business, {individual} individual tax, {standalone} standalone); {CALCULATORS_PAGE} shows the current one, so link it instead"
+                ));
+            }
         }
     }
 
