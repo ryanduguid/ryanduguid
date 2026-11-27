@@ -44,8 +44,9 @@ pub fn csv_counts(csv: &str) -> Result<(u32, u32), String> {
         .iter()
         .filter(|name| name.starts_with("oz.About"))
         .count();
-    let to_u32 = |n: usize| u32::try_from(n).map_err(|e| e.to_string());
-    Ok((to_u32(rows.len() - help)?, to_u32(help)?))
+    // A count past u32::MAX saturates; no catalogue comes near it.
+    let to_u32 = |n: usize| u32::try_from(n).unwrap_or(u32::MAX);
+    Ok((to_u32(rows.len() - help), to_u32(help)))
 }
 
 /// The first field of every non-blank record.
@@ -94,6 +95,8 @@ oz.AboutGSTλ,Help,Help table\r\n\
 \r\n\
 \"oz.NPVλ\",Finance,NPV\r\n";
         assert_eq!(csv_counts(csv), Ok((2, 1)));
+        // The last record counts without a closing newline.
+        assert_eq!(csv_counts("function,module\noz.NPVλ,Finance"), Ok((1, 0)));
     }
 
     #[test]

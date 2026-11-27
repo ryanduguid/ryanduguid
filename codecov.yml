@@ -1,0 +1,16 @@
+# Codecov holds tools/readme-check at 100% line coverage: the project check
+# fails below that, and so does the patch check for any change that leaves a
+# line it adds or changes untested. Codecov posts no comments.
+coverage:
+  round: down
+  status:
+    project:
+      default:
+        target: 100%
+        threshold: 0%
+        if_not_found: failure
+    patch:
+      default:
+        target: 100%
+        threshold: 0%
+comment: false

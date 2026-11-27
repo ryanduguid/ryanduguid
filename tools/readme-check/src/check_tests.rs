@@ -451,3 +451,113 @@ fn resolve_repo_file_handles_empty_root_as_current_directory() {
     assert!(super::resolve_repo_file(Path::new(""), "Cargo.toml").is_some());
     assert!(super::resolve_repo_file(Path::new(""), "../Cargo.toml").is_none());
 }
+
+#[test]
+fn other_schemes_are_skipped_and_a_same_page_anchor_needs_a_heading() {
+    let readme = fixture_readme(
+        "[mail](mailto:someone@example.test)\n\n## Croft Manor\n\n[here](#croft-manor)",
+    );
+    assert_eq!(drift(&mut world(150, 5), &readme), (0, String::new()));
+    let (code, messages) = drift(&mut world(150, 5), &fixture_readme("[lost](#croft-manor)"));
+    assert_eq!(
+        (code, messages),
+        (
+            1,
+            "Missing anchor: #croft-manor: no such heading".to_owned()
+        )
+    );
+}
+
+#[test]
+fn ozzit_sources_that_fail_or_change_shape_are_drift() {
+    let release_csv = ozzit_functions_csv("v9.9.9");
+    let unstated = fixture_readme("").replace(
+        "150 native Excel LAMBDA functions plus 5 help tables",
+        "Excel functions",
+    );
+    let cases: [(Fake, String, &str); 5] = [
+        (world(150, 5), unstated, "Ozzit: the README no longer says"),
+        (
+            world(150, 5).script(OZZIT_LATEST_RELEASE, vec![status(404, "")]),
+            fixture_readme(""),
+            "Ozzit's latest release: https://api.github.com/",
+        ),
+        (
+            world(150, 5).ok(OZZIT_LATEST_RELEASE, "{}"),
+            fixture_readme(""),
+            "Ozzit: the latest release has no tag_name",
+        ),
+        (
+            world(150, 5).script(&release_csv, vec![status(404, "")]),
+            fixture_readme(""),
+            "Ozzit's functions.csv: ",
+        ),
+        (
+            world(150, 5).ok(&release_csv, "name,module\n"),
+            fixture_readme(""),
+            "Ozzit: v9.9.9: functions.csv starts with",
+        ),
+    ];
+    for (mut net, readme, expected) in cases {
+        let (code, messages) = drift(&mut net, &readme);
+        assert_eq!(code, 1, "{expected}");
+        assert!(messages.contains(expected), "{expected}: {messages}");
+    }
+}
+
+#[test]
+fn calculator_counts_that_are_missing_conflict_or_cannot_be_read_are_findings() {
+    let base = fixture_readme("");
+    let none = base
+        .replace(
+            "76 browser tax and business calculators",
+            "browser calculators",
+        )
+        .replace("Run 76 Australian calculators", "Run them");
+    let conflicting = base.replace("Run 76 Australian", "Run 75 Australian");
+    let cases: [(Fake, String, i32, &str); 4] = [
+        (
+            world(150, 5),
+            none,
+            1,
+            "Calculators: README.md no longer states a calculator count",
+        ),
+        (
+            world(150, 5),
+            conflicting,
+            1,
+            "Calculators: README.md states conflicting counts ([76, 75])",
+        ),
+        (
+            world(150, 5).script(SITE_LLMS_TXT, vec![status(503, "")]),
+            base.clone(),
+            2,
+            "duguid.com.au calculator count: ",
+        ),
+        (
+            world(150, 5).ok(SITE_LLMS_TXT, "No count here."),
+            base,
+            1,
+            "did not show a single '<N> browser tax and business calculators' count",
+        ),
+    ];
+    for (mut net, readme, want, expected) in cases {
+        let (code, messages) = drift(&mut net, &readme);
+        assert_eq!(code, want, "{expected}");
+        assert!(messages.contains(expected), "{expected}: {messages}");
+    }
+}
+
+#[test]
+fn a_fact_page_that_fails_or_lost_its_section_is_a_finding() {
+    let fact = &FACTS[0];
+    let mut down = world(150, 5).script(fact.url, vec![status(503, "")]);
+    let (code, messages) = drift(&mut down, &fixture_readme(""));
+    assert_eq!(code, 2);
+    assert!(messages.contains(&format!("{}: {}: HTTP 503", fact.name, fact.url)));
+
+    let mut moved = world(150, 5).ok(fact.url, "<body><p>Moved.</p></body>");
+    let (code, messages) = drift(&mut moved, &fixture_readme(""));
+    assert_eq!(code, 1);
+    assert!(messages.contains(&format!("{}: {} not found", fact.name, fact_link(fact))));
+}

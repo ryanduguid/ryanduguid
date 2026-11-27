@@ -62,6 +62,62 @@ fn links_extracts_markdown_and_bare_urls_without_punctuation() {
 }
 
 #[test]
+fn bare_urls_need_a_host_and_either_scheme_counts() {
+    assert_eq!(
+        links(
+            "Plain http://old.example.test/ then https://new.example.test/ and https:// alone.\n"
+        ),
+        ["http://old.example.test/", "https://new.example.test/"]
+    );
+    assert_eq!(
+        links("Only http://old.example.test/a.\n"),
+        ["http://old.example.test/a"]
+    );
+}
+
+#[test]
+fn an_empty_heading_or_untitled_entry_is_drift() {
+    let doc = format!(
+        "{}\n##\n\n- [](https://example.test/untitled)\n",
+        fixture_llms()
+    );
+    let findings = check_structure(&doc);
+    assert!(
+        findings
+            .iter()
+            .any(|f| f == "llms.txt: empty '##' section heading")
+    );
+    let doc = fixture_llms().replace("[Tools]", "[[Tools]]");
+    assert!(
+        check_structure(&doc)
+            .iter()
+            .any(|f| f.contains("malformed link entry"))
+    );
+}
+
+#[test]
+fn sync_catches_a_missing_reuse_or_fact_source_link() {
+    let fact = &FACTS[0];
+    let doc = fixture_llms()
+        .replace(REUSE_LINK, "https://example.test/reuse")
+        .replace(
+            &format!("{}#{}", fact.url, fact.section),
+            "https://example.test/moved",
+        );
+    let findings = check_sync(&fixture_readme_links(), &doc, &links(&doc));
+    assert!(
+        findings
+            .iter()
+            .any(|f| f == &format!("llms.txt: missing reuse link {REUSE_LINK}"))
+    );
+    assert!(
+        findings
+            .iter()
+            .any(|f| f.starts_with(&format!("llms.txt: {}: no longer links", fact.name)))
+    );
+}
+
+#[test]
 fn structure_catches_missing_parts_duplicates_and_bad_entries() {
     assert_eq!(check_structure("   "), ["llms.txt: file is empty"]);
     let bad = "## Start here\n\n- plain bullet\n\n## Repositories\n\n## Repositories\n\n\

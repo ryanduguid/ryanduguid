@@ -335,6 +335,7 @@ mod tests {
             r#"{"tag_name": "v1", "published_at": "2026-11-01T00:00:00Z", "draft": false, "prerelease": true}"#.to_owned(),
             release("v1](https://x.test)", "2026-11-01T00:00:00Z"),
             release("v1", "1 November 2026"),
+            r#"{"published_at": "2026-11-01T00:00:00Z", "draft": false, "prerelease": false}"#.to_owned(),
             "not json".to_owned(),
         ] {
             assert!(update(&readme(""), &mut world().ok(&latest_of, &body)).is_err());

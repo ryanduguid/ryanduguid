@@ -123,6 +123,14 @@ mod tests {
     }
 
     #[test]
+    fn an_unclosed_tag_ends_the_text() {
+        assert_eq!(
+            text("Kept <b>bold</b> <i unclosed and dropped"),
+            "Kept bold"
+        );
+    }
+
+    #[test]
     fn anchors_are_found_by_id_only_when_present() {
         assert!(has_anchor(PAGE, "intro"));
         assert!(!has_anchor(PAGE, "croft-manor"));

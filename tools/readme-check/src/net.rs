@@ -78,22 +78,35 @@ pub fn fetch(transport: &mut dyn Transport, url: &str) -> Outcome {
     last
 }
 
+const GITHUB_API: &str = "https://api.github.com/";
+
 /// The real network. The token, when present, is sent only to the GitHub API.
 pub struct Network {
     agent: ureq::Agent,
     bearer: Option<String>,
+    api: String,
 }
 
 impl Network {
     pub fn new(bearer: Option<String>) -> Self {
+        Self::with(bearer, GITHUB_API, Duration::from_secs(30))
+    }
+
+    /// A network that sends `bearer` only to URLs under `api`, giving up on a
+    /// request after `timeout`.
+    fn with(bearer: Option<String>, api: &str, timeout: Duration) -> Self {
         let agent = ureq::Agent::config_builder()
-            .timeout_global(Some(Duration::from_secs(30)))
+            .timeout_global(Some(timeout))
             .http_status_as_error(false)
             // The token must never follow a redirect to another host.
             .redirect_auth_headers(ureq::config::RedirectAuthHeaders::Never)
             .build()
             .into();
-        Self { agent, bearer }
+        Self {
+            agent,
+            bearer,
+            api: api.to_owned(),
+        }
     }
 }
 
@@ -101,7 +114,7 @@ impl Transport for Network {
     fn get(&mut self, url: &str) -> Reply {
         let mut request = self.agent.get(url).header("User-Agent", USER_AGENT);
         if let Some(bearer) = self.bearer.as_deref()
-            && url.starts_with("https://api.github.com/")
+            && url.starts_with(&self.api)
         {
             request = request.header("Authorization", format!("Bearer {bearer}"));
         }
@@ -255,5 +268,106 @@ mod tests {
     fn a_timeout_that_persists_is_inconclusive() {
         let mut net = Fake::default().script(URL, vec![Reply::Timeout]);
         assert!(matches!(fetch(&mut net, URL), Outcome::Transient(_)));
+    }
+}
+
+#[cfg(test)]
+mod network_tests {
+    use super::{Network, Reply, Transport};
+    use std::io::{Read, Write};
+    use std::net::{SocketAddr, TcpListener, TcpStream};
+    use std::sync::mpsc;
+    use std::thread;
+    use std::time::Duration;
+
+    /// Reads one request's head from `stream`, lowercased.
+    fn request_head(stream: &mut TcpStream) -> String {
+        let mut head = Vec::new();
+        let mut byte = [0; 1];
+        while !head.ends_with(b"\r\n\r\n") && stream.read(&mut byte).unwrap_or(0) == 1 {
+            head.push(byte[0]);
+        }
+        String::from_utf8_lossy(&head).to_lowercase()
+    }
+
+    /// A local server answering each connection with the next of `responses`
+    /// (raw HTTP), sending back the request heads it read.
+    fn serve(responses: Vec<&'static str>) -> (SocketAddr, mpsc::Receiver<String>) {
+        let listener = TcpListener::bind("127.0.0.1:0").unwrap();
+        let addr = listener.local_addr().unwrap();
+        let (heads, received) = mpsc::channel();
+        thread::spawn(move || {
+            for response in responses {
+                let (mut stream, _) = listener.accept().unwrap();
+                heads.send(request_head(&mut stream)).unwrap();
+                stream.write_all(response.as_bytes()).unwrap();
+            }
+        });
+        (addr, received)
+    }
+
+    fn network(addr: SocketAddr, timeout: Duration) -> Network {
+        Network::with(
+            Some("t0ken".into()),
+            &format!("http://{addr}/api/"),
+            timeout,
+        )
+    }
+
+    #[test]
+    fn the_token_goes_only_to_the_api_and_bodies_are_read() {
+        const OK: &str = "HTTP/1.1 200 OK\r\nContent-Length: 5\r\nConnection: close\r\n\r\nhello";
+        let (addr, heads) = serve(vec![OK, OK]);
+        let mut net = network(addr, Duration::from_secs(5));
+        for (path, sends_token) in [("api/repos", true), ("elsewhere", false)] {
+            let reply = net.get(&format!("http://{addr}/{path}"));
+            assert!(
+                matches!(reply, Reply::Status { code: 200, retry_after: None, ref body } if body == "hello")
+            );
+            let head = heads.recv().unwrap();
+            assert!(head.starts_with(&format!("get /{path} ")));
+            assert!(head.contains("user-agent: ryanduguid-readme-check/"));
+            assert_eq!(head.contains("authorization: bearer t0ken"), sends_token);
+        }
+    }
+
+    #[test]
+    fn an_error_status_keeps_retry_after_and_drops_the_body() {
+        const BUSY: &str = "HTTP/1.1 503 Service Unavailable\r\nRetry-After: 7\r\nContent-Length: 4\r\nConnection: close\r\n\r\nbusy";
+        let (addr, _heads) = serve(vec![BUSY]);
+        let reply = network(addr, Duration::from_secs(5)).get(&format!("http://{addr}/"));
+        assert!(
+            matches!(reply, Reply::Status { code: 503, retry_after: Some(7), ref body } if body.is_empty())
+        );
+    }
+
+    #[test]
+    fn a_body_cut_short_is_a_transport_failure() {
+        const SHORT: &str =
+            "HTTP/1.1 200 OK\r\nContent-Length: 100\r\nConnection: close\r\n\r\nhello";
+        let (addr, _heads) = serve(vec![SHORT]);
+        let reply = network(addr, Duration::from_secs(5)).get(&format!("http://{addr}/"));
+        assert!(matches!(reply, Reply::Transport(_)), "{reply:?}");
+    }
+
+    #[test]
+    fn a_refused_connection_is_a_transport_failure() {
+        let addr = TcpListener::bind("127.0.0.1:0")
+            .unwrap()
+            .local_addr()
+            .unwrap();
+        let reply = network(addr, Duration::from_secs(5)).get(&format!("http://{addr}/"));
+        assert!(matches!(reply, Reply::Transport(_)), "{reply:?}");
+    }
+
+    #[test]
+    fn a_server_that_never_answers_times_out() {
+        let listener = TcpListener::bind("127.0.0.1:0").unwrap();
+        let addr = listener.local_addr().unwrap();
+        let mut net = network(addr, Duration::from_millis(300));
+        let reply = net.get(&format!("http://{addr}/"));
+        assert!(matches!(reply, Reply::Timeout), "{reply:?}");
+        drop(listener);
+        net.sleep(0);
     }
 }
